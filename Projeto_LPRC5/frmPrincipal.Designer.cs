@@ -1,7 +1,7 @@
 ﻿
 namespace Projeto_LPRC5
 {
-    partial class Form1
+    partial class frmPrincipal
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,10 +29,17 @@ namespace Projeto_LPRC5
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "frmPrincipal";
+            this.Text = "Software de Controle de Condomínio";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
