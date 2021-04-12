@@ -41,7 +41,7 @@ namespace Projeto_LPRC5
             this.mnuCadastro.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuCadastro.Location = new System.Drawing.Point(0, 0);
             this.mnuCadastro.Name = "mnuCadastro";
-            this.mnuCadastro.Size = new System.Drawing.Size(800, 28);
+            this.mnuCadastro.Size = new System.Drawing.Size(956, 24);
             this.mnuCadastro.TabIndex = 0;
             // 
             // barMenu
@@ -49,9 +49,9 @@ namespace Projeto_LPRC5
             this.barMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.barMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
-            this.barMenu.Location = new System.Drawing.Point(0, 28);
+            this.barMenu.Location = new System.Drawing.Point(0, 24);
             this.barMenu.Name = "barMenu";
-            this.barMenu.Size = new System.Drawing.Size(800, 39);
+            this.barMenu.Size = new System.Drawing.Size(956, 39);
             this.barMenu.TabIndex = 1;
             // 
             // toolStripButton1
@@ -67,12 +67,15 @@ namespace Projeto_LPRC5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(956, 548);
             this.Controls.Add(this.barMenu);
             this.Controls.Add(this.mnuCadastro);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuCadastro;
             this.Name = "frmPrincipal";
             this.Text = "Software de Controle de Condomínio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.barMenu.ResumeLayout(false);
             this.barMenu.PerformLayout();
             this.ResumeLayout(false);

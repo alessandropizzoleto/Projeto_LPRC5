@@ -16,5 +16,16 @@ namespace Projeto_LPRC5
         {
             InitializeComponent();
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            //util suporte = new util();
+
+            //suporte.lerArquivoAcessoBanco(@"C:\software\acesso.txt");
+
+            frmAcesso acesso = new frmAcesso();
+            acesso.MdiParent = this;
+            acesso.Show();
+        }
     }
 }
