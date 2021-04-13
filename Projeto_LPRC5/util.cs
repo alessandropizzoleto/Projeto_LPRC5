@@ -1,4 +1,23 @@
-﻿using System;
+﻿//****************************************************************************************
+//**Criado por: Alessandro Viola 
+//**Data de Criação: 12/04/2021
+//**Descrição: 
+// Contém Funções úteis para o gerenciamento e configurção das funcionalidades implementadas 
+// de uso geral para o Software
+//**Instruções:
+// 
+// 
+//****** Atualizações:
+//*** Data: 13/04/2021
+//*** Responsável: Alessandro Viola
+//*** O que feito:
+// Inclusão da informação para guardar o SGBD Selecionado.
+//*** Data:
+//*** Responsável:
+//*** O que feito:
+// 
+//****************************************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +33,7 @@ namespace Projeto_LPRC5
         public string usuario = "";
         public string senha = "";
         public string banco = "";
+        public Int16 sgbd_Id = -1;
 
         public void lerArquivoAcessoBanco(string path)
         {
@@ -38,17 +58,22 @@ namespace Projeto_LPRC5
                 {
                     senha = linha.Substring(6, linha.IndexOf(";") - 6);
                 }
+                else if (linha.Contains("sgbd="))
+                {
+                    sgbd_Id = Convert.ToInt16(linha.Substring(5, linha.IndexOf(";") - 5));
+                }
             }
             texto.Close();
         }
 
-        public void gravaArquivoAcessoBanco(string path, string servidor, string usuario, string banco, string senha)
+        public void gravaArquivoAcessoBanco(string path, string servidor, string usuario, string banco, string senha, Int16 sgbd)
         {
             StreamWriter texto = new StreamWriter(path);
             texto.WriteLine("servidor=" + servidor + ";");
             texto.WriteLine("usuario=" + usuario + ";");
             texto.WriteLine("banco=" + banco + ";");
             texto.WriteLine("senha=" + senha + ";");
+            texto.WriteLine("sgbd=" + sgbd.ToString() + ";");
             texto.Close();
         }
     }

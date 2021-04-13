@@ -1,4 +1,19 @@
-﻿using System;
+﻿//****************************************************************************************
+//**Criado por: Alessandro Viola 
+//**Data de Criação: 12/04/2021
+//**Descrição: 
+// Faz a conexão com o SGBD MySql.
+//**Instruções:
+// Faz uso do MySqlConnector, versão 8.0.23, que deve ser instalado;
+// Pode ser encontrado no site: https://dev.mysql.com/downloads/connector/net/
+// Incluir nas referências do projeto, "MySqlData"
+// Incluir "using MySql.Data.MySqlClient;"
+// 
+//****** Atualizações:
+//*** Data:
+//*** Responsável:
+//****************************************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
