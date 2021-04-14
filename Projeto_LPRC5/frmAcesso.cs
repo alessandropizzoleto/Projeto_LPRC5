@@ -21,7 +21,7 @@ namespace Projeto_LPRC5
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            suporte.gravaArquivoAcessoBanco(@"C:\software\acesso.txt", txtServidor.Text, txtUsuario.Text, txtBasedeDados.Text, txtSenha.Text); 
+            suporte.gravaArquivoAcessoBanco(@"C:\software\acesso.txt", txtServidor.Text, txtUsuario.Text, txtBasedeDados.Text, txtSenha.Text, -1); 
         }
 
         private void frmAcesso_Load(object sender, EventArgs e)
