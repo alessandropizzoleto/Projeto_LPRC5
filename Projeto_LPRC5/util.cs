@@ -15,7 +15,7 @@
 //*** Data: 14/04/2021
 //*** Responsável: Caique, Guilherme, Alexandro
 //*** O que feito:
-//  Botão Salvar exibe mensagem de confirmação e limpa campos, botão cancelar fecha frame Acesso.
+//  Botão Salvar exibe mensagem de confirmação e limpa campos, botão cancelar fecha frame Acesso..
 //*** Data:
 //*** Responsável:
 //*** O que feito:

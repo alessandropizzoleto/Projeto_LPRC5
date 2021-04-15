@@ -23,7 +23,7 @@ namespace Projeto_LPRC5
         {
             suporte.gravaArquivoAcessoBanco(@"C:\software\acesso.txt", txtServidor.Text, txtUsuario.Text, txtBasedeDados.Text, txtSenha.Text, -1);
             txtServidor.Text = ""; txtUsuario.Text = ""; txtBasedeDados.Text = ""; txtSenha.Text = "";
-            MessageBox.Show("Salvo com Sucesso!", "Alerta!", MessageBoxButtons.OK);
+            MessageBox.Show("Salvo com Sucesso!", "Alerta!", MessageBoxButtons.OK); ;
         }
 
         private void frmAcesso_Load(object sender, EventArgs e)
