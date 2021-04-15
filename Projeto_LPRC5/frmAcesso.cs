@@ -21,7 +21,9 @@ namespace Projeto_LPRC5
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            suporte.gravaArquivoAcessoBanco(@"C:\software\acesso.txt", txtServidor.Text, txtUsuario.Text, txtBasedeDados.Text, txtSenha.Text, -1); 
+            suporte.gravaArquivoAcessoBanco(@"C:\software\acesso.txt", txtServidor.Text, txtUsuario.Text, txtBasedeDados.Text, txtSenha.Text, -1);
+            txtServidor.Text = ""; txtUsuario.Text = ""; txtBasedeDados.Text = ""; txtSenha.Text = "";
+            MessageBox.Show("Salvo com Sucesso!", "Alerta!", MessageBoxButtons.OK);
         }
 
         private void frmAcesso_Load(object sender, EventArgs e)
@@ -31,6 +33,11 @@ namespace Projeto_LPRC5
             txtUsuario.Text = suporte.usuario.ToString();
             txtBasedeDados.Text = suporte.banco.ToString();
             txtSenha.Text = suporte.senha.ToString();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Projeto_LPRC5
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 21);
+            this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Servidor";
             // 
@@ -54,7 +54,7 @@ namespace Projeto_LPRC5
             // 
             this.txtServidor.Location = new System.Drawing.Point(160, 13);
             this.txtServidor.Name = "txtServidor";
-            this.txtServidor.Size = new System.Drawing.Size(200, 28);
+            this.txtServidor.Size = new System.Drawing.Size(200, 24);
             this.txtServidor.TabIndex = 1;
             // 
             // label2
@@ -62,7 +62,7 @@ namespace Projeto_LPRC5
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 21);
+            this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Base de Dados";
             // 
@@ -70,7 +70,7 @@ namespace Projeto_LPRC5
             // 
             this.txtBasedeDados.Location = new System.Drawing.Point(160, 55);
             this.txtBasedeDados.Name = "txtBasedeDados";
-            this.txtBasedeDados.Size = new System.Drawing.Size(200, 28);
+            this.txtBasedeDados.Size = new System.Drawing.Size(200, 24);
             this.txtBasedeDados.TabIndex = 3;
             // 
             // label3
@@ -78,7 +78,7 @@ namespace Projeto_LPRC5
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 21);
+            this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Usuário";
             // 
@@ -86,7 +86,7 @@ namespace Projeto_LPRC5
             // 
             this.txtUsuario.Location = new System.Drawing.Point(160, 100);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(200, 28);
+            this.txtUsuario.Size = new System.Drawing.Size(200, 24);
             this.txtUsuario.TabIndex = 5;
             // 
             // label4
@@ -94,7 +94,7 @@ namespace Projeto_LPRC5
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 21);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Senha";
             // 
@@ -104,7 +104,7 @@ namespace Projeto_LPRC5
             this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(200, 28);
+            this.txtSenha.Size = new System.Drawing.Size(200, 24);
             this.txtSenha.TabIndex = 7;
             // 
             // btnSalvar
@@ -125,10 +125,11 @@ namespace Projeto_LPRC5
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmAcesso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 271);
             this.Controls.Add(this.btnCancelar);
@@ -142,7 +143,7 @@ namespace Projeto_LPRC5
             this.Controls.Add(this.txtServidor);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAcesso";
             this.Text = "Configuração de Acesso";
             this.Load += new System.EventHandler(this.frmAcesso_Load);
