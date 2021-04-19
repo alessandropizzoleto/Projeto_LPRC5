@@ -42,32 +42,35 @@ namespace Projeto_LPRC5
         public void lerArquivoAcessoBanco(string path)
         {
             string linha = "";
-            StreamReader texto = new StreamReader(path);
-            while (texto.EndOfStream == false)
+            if (System.IO.File.Exists(path))
             {
-                linha = texto.ReadLine().ToString();
-                if (linha.Contains("servidor="))
+                StreamReader texto = new StreamReader(path);
+                while (texto.EndOfStream == false)
                 {
-                    servidor = linha.Substring(9, linha.IndexOf(";") - 9);
+                    linha = texto.ReadLine().ToString();
+                    if (linha.Contains("servidor="))
+                    {
+                        servidor = linha.Substring(9, linha.IndexOf(";") - 9);
+                    }
+                    else if (linha.Contains("usuario="))
+                    {
+                        usuario = linha.Substring(8, linha.IndexOf(";") - 8);
+                    }
+                    else if (linha.Contains("banco="))
+                    {
+                        banco = linha.Substring(6, linha.IndexOf(";") - 6);
+                    }
+                    else if (linha.Contains("senha="))
+                    {
+                        senha = linha.Substring(6, linha.IndexOf(";") - 6);
+                    }
+                    else if (linha.Contains("sgbd="))
+                    {
+                        sgbd_Id = Convert.ToInt16(linha.Substring(5, linha.IndexOf(";") - 5));
+                    }
                 }
-                else if (linha.Contains("usuario="))
-                {
-                    usuario = linha.Substring(8, linha.IndexOf(";") - 8);
-                }
-                else if (linha.Contains("banco="))
-                {
-                    banco = linha.Substring(6, linha.IndexOf(";") - 6);
-                }
-                else if (linha.Contains("senha="))
-                {
-                    senha = linha.Substring(6, linha.IndexOf(";") - 6);
-                }
-                else if (linha.Contains("sgbd="))
-                {
-                    sgbd_Id = Convert.ToInt16(linha.Substring(5, linha.IndexOf(";") - 5));
-                }
+                texto.Close();
             }
-            texto.Close();
         }
 
         public void gravaArquivoAcessoBanco(string path, string servidor, string usuario, string banco, string senha, Int16 sgbd)
