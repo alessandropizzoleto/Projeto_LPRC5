@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class classeFeriado
+    class ClasseFeriado
     {
         //Atributos da Classe
         private int feriadoId;
@@ -26,7 +26,7 @@ namespace Projeto_LPRC5
         public string Descricao { get; set; }
 
         //Método Construtor
-        public classeFeriado()
+        public ClasseFeriado()
         {
 
         }
