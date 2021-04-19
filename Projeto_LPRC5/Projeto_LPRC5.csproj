@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classeDefault.cs" />
     <Compile Include="conexao.cs" />
     <Compile Include="conexaoMySql.cs" />
+    <Compile Include="dbDefault.cs" />
     <Compile Include="frmAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
