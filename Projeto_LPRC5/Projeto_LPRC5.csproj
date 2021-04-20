@@ -97,6 +97,7 @@
     <Compile Include="classeClassificaPessoa.cs" />
     <Compile Include="classeFeriado .cs" />
     <Compile Include="classeDefault.cs" />
+    <Compile Include="classeVeiculoModelo.cs" />
     <Compile Include="conexao.cs" />
     <Compile Include="conexaoMySql.cs" />
     <Compile Include="dbDefault.cs" />
