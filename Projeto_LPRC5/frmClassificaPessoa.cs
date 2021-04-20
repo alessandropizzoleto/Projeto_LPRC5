@@ -9,13 +9,6 @@
 //*** Responsável:
 //****************************************************************************************
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projeto_LPRC5
@@ -222,6 +215,16 @@ namespace Projeto_LPRC5
         {
             padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Text_Desc_Func_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

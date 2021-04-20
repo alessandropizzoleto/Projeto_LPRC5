@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDefault));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClassificaPessoa));
             this.barManutencao = new System.Windows.Forms.ToolStrip();
             this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
             this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
@@ -38,6 +38,8 @@
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosCid = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
+            this.Text_Desc_Func = new System.Windows.Forms.TextBox();
+            this.Desc_Func = new System.Windows.Forms.Label();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +57,7 @@
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(229, 39);
+            this.barManutencao.Size = new System.Drawing.Size(259, 39);
             this.barManutencao.TabIndex = 0;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -139,20 +141,40 @@
             // 
             this.txtBusca.Location = new System.Drawing.Point(13, 41);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 30);
+            this.txtBusca.Size = new System.Drawing.Size(239, 26);
             this.txtBusca.TabIndex = 2;
             // 
-            // frmDefault
+            // Text_Desc_Func
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.Text_Desc_Func.Location = new System.Drawing.Point(295, 41);
+            this.Text_Desc_Func.Name = "Text_Desc_Func";
+            this.Text_Desc_Func.Size = new System.Drawing.Size(239, 26);
+            this.Text_Desc_Func.TabIndex = 4;
+            this.Text_Desc_Func.TextChanged += new System.EventHandler(this.Text_Desc_Func_TextChanged);
+            // 
+            // Desc_Func
+            // 
+            this.Desc_Func.AutoSize = true;
+            this.Desc_Func.Location = new System.Drawing.Point(311, 20);
+            this.Desc_Func.Name = "Desc_Func";
+            this.Desc_Func.Size = new System.Drawing.Size(205, 19);
+            this.Desc_Func.TabIndex = 5;
+            this.Desc_Func.Text = "Insira a descrição do funcionário";
+            this.Desc_Func.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // frmClassificaPessoa
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 438);
+            this.Controls.Add(this.Desc_Func);
+            this.Controls.Add(this.Text_Desc_Func);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosCid);
             this.Controls.Add(this.barManutencao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmDefault";
+            this.Name = "frmClassificaPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manutenção Default";
             this.Load += new System.EventHandler(this.frmCid_Load);
@@ -175,5 +197,7 @@
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosCid;
         private System.Windows.Forms.TextBox txtBusca;
+        private System.Windows.Forms.TextBox Text_Desc_Func;
+        private System.Windows.Forms.Label Desc_Func;
     }
 }

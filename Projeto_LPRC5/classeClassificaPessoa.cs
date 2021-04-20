@@ -1,7 +1,7 @@
 ﻿//****************************************************************************************
-//**Criado por:
-//**Data de Criação:
-//**Instruções:
+//**Criado por: Antonio Jose Naranjo, Leticia Lopes Abelha, Rafael de Angelis Fogaça e Daniel Galdencio
+//**Data de Criação: 19/04/2021
+//**Instruções: criação dos atributos id e descrição utilizando propriedades
 //
 //
 //****** Atualizações:
@@ -19,7 +19,9 @@ namespace Projeto_LPRC5
     class classeClassificaPessoa
     {
         //Atributos da Classe
-        private int defaultId;
+        private int classificapessoaid;
+        private int classificapessoadescricao { get; set}
+
 
         //Método Construtor
         public classeClassificaPessoa()
@@ -30,11 +32,11 @@ namespace Projeto_LPRC5
         //Métodos Acessores
         public void setId(int id)
         {
-            defaultId = id;
+            classificapessoaid = id;
         }
         public int getId()
         {
-            return defaultId;
+            return classificapessoaid;
         }
      } 
 }
