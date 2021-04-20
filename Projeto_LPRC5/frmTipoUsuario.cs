@@ -28,7 +28,7 @@ namespace Projeto_LPRC5
             InitializeComponent();
         }
 
-        dbDefault db_TipoUsuario = new dbDefault(); //Alterar o nome
+        dbTipoUsuario dbtipoUsu = new dbTipoUsuario(); //Alterar o nome
         tipoUsuario usuario = new tipoUsuario();
 
         private void formataGrid()
@@ -44,7 +44,14 @@ namespace Projeto_LPRC5
 
         }
 
-        public void atualizaDadosGrid()
+        private void selectUsuarioDBase()
+        {
+            grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
+        }
+
+             
+
+            public void atualizaDadosGrid()
         {
             //DataTable tabelaCidade = new DataTable();
             //tabelaCidade = dbCidade.selectCiddBase();
@@ -52,13 +59,12 @@ namespace Projeto_LPRC5
 
             //pode ser também
 
-            grdDadosCid.DataSource = db_TipoUsuario.selectTipoUsuario();
+            grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
         }
 
         private void atualizaDadosControles()
         {
-            usuario = db_TipoUsuario.RetornaDadosObjeto(usuario);
-
+            
             //txtNome.Text = cidade.getNome();
         }
 
@@ -121,7 +127,7 @@ namespace Projeto_LPRC5
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_TipoUsuario.excluiTipoUsuario(usuario);
+                    dbtipoUsu.excluiTipoUsuario(usuario);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -143,12 +149,14 @@ namespace Projeto_LPRC5
                 if (usuario.getId() == 0)
                 {
                     //Insere os dados
-                    db_TipoUsuario.insereTipoUsuario(usuario);
+                    usuario.setDescricao(txtDescricaoTipo.Text);
+                    dbtipoUsu.insereTipoUsuario(usuario);
                 }
                 else
                 {
                     //Altera os dados
-                    db_TipoUsuario.alteraTipoUsuario(usuario);
+                    usuario.setDescricao(txtDescricaoTipo.Text);
+                    dbtipoUsu.alteraTipoUsuario(usuario);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -194,6 +202,7 @@ namespace Projeto_LPRC5
 
         private void frmTipoUsuario_Load(object sender, EventArgs e)
         {
+            dbtipoUsu.selectTipoUsuarioDBase();
             habilitaBotoesMenu(true);
             habilitaCamposDados(false);
             atualizaDadosGrid();
@@ -218,7 +227,15 @@ namespace Projeto_LPRC5
         private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             usuario.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            selectTipoUsuarioDBase(usuario);
             atualizaDadosControles();
+        }
+
+        private void selectTipoUsuarioDBase(tipoUsuario tUsuario)
+        {
+            usuario = dbtipoUsu.selectTipoUsuarioDBase(usuario);
+
+            txtDescricaoTipo.Text = usuario.getDescricao();
         }
     }
 }
