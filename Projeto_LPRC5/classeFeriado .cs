@@ -5,6 +5,12 @@
 // O prop ja cria os metodos get e set para os atributos criados
 //
 //
+//****** Atualizações: passei a variavel feriadoId para Id e utilizei o prop para criar os 
+// metods get e set
+//*** Data:20/04
+//*** Responsável: André Sirikaku
+//
+//
 //****** Atualizações:
 //*** Data:
 //*** Responsável:
@@ -20,7 +26,7 @@ namespace Projeto_LPRC5
     class ClasseFeriado
     {
         //Atributos da Classe
-        private int feriadoId;
+        public int Id { get; set; }
         public int Dia { get; set; }
         public int Mes { get; set; }
         public string Descricao { get; set; }
@@ -32,13 +38,5 @@ namespace Projeto_LPRC5
         }
 
         //Métodos Acessores
-        public void setId(int id)
-        {
-            feriadoId = id;
-        }
-        public int getId()
-        {
-            return feriadoId;
-        }
-     } 
+    }
 }
