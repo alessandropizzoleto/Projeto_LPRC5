@@ -94,12 +94,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classeCidade.cs" />
     <Compile Include="classeClassificaPessoa.cs" />
     <Compile Include="classeFeriado .cs" />
     <Compile Include="classeDefault.cs" />
     <Compile Include="classeVeiculoModelo.cs" />
     <Compile Include="conexao.cs" />
     <Compile Include="conexaoMySql.cs" />
+    <Compile Include="dbCidade.cs" />
     <Compile Include="dbDefault.cs" />
     <Compile Include="dbTipoUsuario.cs" />
     <Compile Include="frmAcesso.cs">
@@ -107,6 +109,12 @@
     </Compile>
     <Compile Include="frmAcesso.Designer.cs">
       <DependentUpon>frmAcesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCidade.Designer.cs">
+      <DependentUpon>frmCidade.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClassificaPessoa.cs">
       <SubType>Form</SubType>
