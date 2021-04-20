@@ -9,9 +9,9 @@
 // Incluir nas referências do projeto, "MySqlData"
 // Incluir "using MySql.Data.MySqlClient;"
 // 
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Adição das funções executaSQL e retornaSQL.
+//*** Data: 19/04/2020
+//*** Responsável: Giovanna Valim
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -23,13 +23,13 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
-    class conexaoMySql
+    public class conexaoMySql
     {
         private MySqlConnection conexao;
-
+        private MySqlCommand command;
         public void conectaMySql(string servidor, string usuario, string bancoNome, string senha)
         {
-            conexao = new MySqlConnection("server=" + servidor + ";uid=" + usuario + ";database=" + bancoNome + ";pwd=" + senha);
+             conexao = new MySqlConnection("server=" + servidor + ";uid=" + usuario + ";database=" + bancoNome + ";pwd=" + senha);
 
             try
             {
@@ -41,9 +41,27 @@ namespace Projeto_LPRC5
             }
         }
 
-        public void desconetaMySql()
+        public void desconectaMySql()
         {
             conexao.Close();
+        }
+
+
+        public Int32 executaSQL(string instrucaoSQL)
+        {
+            conectaMySql("localhost", "root", "dbcondominio","");
+            command = new MySqlCommand(instrucaoSQL, conexao);
+            command.ExecuteNonQuery();
+            desconectaMySql();
+            return 0;
+        }
+
+        public MySqlDataAdapter retornaSQL(string instrucaoSQL)
+        {
+            conectaMySql("localhost", "root", "dbcondominio", "");
+            MySqlDataAdapter adapter = new MySqlDataAdapter(instrucaoSQL, conexao);
+            desconectaMySql();
+            return adapter;
         }
     }
 }

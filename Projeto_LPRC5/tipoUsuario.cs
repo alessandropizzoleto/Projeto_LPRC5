@@ -44,7 +44,7 @@ namespace Projeto_LPRC5
             tipoUsuarioDescricao = desc;
         }
 
-        public string getDescricao(string desc)
+        public string getDescricao()
         {
             return tipoUsuarioDescricao;
         }
