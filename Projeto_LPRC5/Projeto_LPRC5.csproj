@@ -96,7 +96,7 @@
   <ItemGroup>
     <Compile Include="classeCidade.cs" />
     <Compile Include="classeClassificaPessoa.cs" />
-    <Compile Include="classeFeriado .cs" />
+    <Compile Include="classeFeriado.cs" />
     <Compile Include="classeDefault.cs" />
     <Compile Include="classeVeiculoModelo.cs" />
     <Compile Include="conexao.cs" />
@@ -123,6 +123,12 @@
     <Compile Include="frmClassificaPessoa.designer.cs">
       <DependentUpon>frmClassificaPessoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFeriado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFeriado.designer.cs">
+      <DependentUpon>frmFeriado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDefault.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,8 +154,14 @@
     <EmbeddedResource Include="frmAcesso.resx">
       <DependentUpon>frmAcesso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCidade.resx">
+      <DependentUpon>frmCidade.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClassificaPessoa.resx">
       <DependentUpon>frmClassificaPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFeriado.resx">
+      <DependentUpon>frmFeriado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDefault.resx">
       <DependentUpon>frmDefault.cs</DependentUpon>
