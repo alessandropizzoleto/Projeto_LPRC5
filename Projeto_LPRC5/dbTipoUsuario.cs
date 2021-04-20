@@ -29,14 +29,14 @@ namespace Projeto_LPRC5
         //Cria as intstrução SQL para insert de dados na Base de dados
 
         
-        public void insereTipoUsuario(tipoUsuario tUsuario)
+        public void insereTipoUsuario(classeTipoUsuario tUsuario)
         {
             command.CommandText = "insert into tipousuario (tipousuariodescricao) values ('" + tUsuario.getDescricao() + "');";
             //command.Parameters.AddWithValue("descricao", tUsuario.getDescricao());
             retorno = connectUsu.executaSQL(command.CommandText.ToString());
         }
 
-        public void alteraTipoUsuario(tipoUsuario tUsuario)
+        public void alteraTipoUsuario(classeTipoUsuario tUsuario)
         {
             command.CommandText = "update tipousuario set tipousuariodescricao = ('" + tUsuario.getDescricao() + "') where tipousuarioid= " + tUsuario.getId() + ";";
            // command.Parameters.AddWithValue("descricao", tUsuario.getDescricao());
@@ -45,23 +45,23 @@ namespace Projeto_LPRC5
         }
 
         //Cria a instrução SQL para Delete de dados na base de dados
-        public void excluiTipoUsuario(tipoUsuario tUsuario)
+        public void excluiTipoUsuario(classeTipoUsuario tUsuario)
         {
             command.CommandText = "DELETE FROM tipousuario WHERE tipousuarioid = " + tUsuario.getId() + ";";
             retorno = connectUsu.executaSQL(command.CommandText.ToString());
         }
 
         //Cria a instrução SQL para Retornar dados da Base de Dados
-        public MySqlDataAdapter selectTipoUsuario(tipoUsuario tUsuario)
+        public MySqlDataAdapter selectTipoUsuario(classeTipoUsuario tUsuario)
         {
             command.CommandText = "SELECT tipousuarioid, tipousuariodescricao FROM tipousuario;";
             retorno = connectUsu.executaSQL(command.CommandText.ToString());
             return connectUsu.retornaSQL(command.CommandText);      
         }
 
-        public tipoUsuario selectTipoUsuarioDBase(tipoUsuario tUsuario)
+        public classeTipoUsuario selectTipoUsuarioDBase(classeTipoUsuario tUsuario)
         {
-            tipoUsuario tempUsuario = new tipoUsuario();
+            classeTipoUsuario tempUsuario = new classeTipoUsuario();
             DataSet ds = new DataSet();       
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 

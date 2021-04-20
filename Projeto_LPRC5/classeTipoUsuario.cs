@@ -17,14 +17,14 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class tipoUsuario
+    class classeTipoUsuario
     {
         //Atributos da Classe
         private int tipoUsuarioId;
         private string tipoUsuarioDescricao;
 
         //Método Construtor
-        public tipoUsuario()
+        public classeTipoUsuario()
         {
 
         }

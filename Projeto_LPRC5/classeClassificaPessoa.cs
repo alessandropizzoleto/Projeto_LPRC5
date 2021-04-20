@@ -20,7 +20,7 @@ namespace Projeto_LPRC5
     {
         //Atributos da Classe
         private int classificapessoaid;
-        private int classificapessoadescricao { get; set}
+        private int classificapessoadescricao { get; set; }
 
 
         //Método Construtor

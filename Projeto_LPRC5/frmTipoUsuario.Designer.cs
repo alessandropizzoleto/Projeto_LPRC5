@@ -39,8 +39,6 @@ namespace Projeto_LPRC5
             this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
             this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIdTipo = new System.Windows.Forms.TextBox();
             this.txtDescricaoTipo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
@@ -49,24 +47,25 @@ namespace Projeto_LPRC5
             // 
             // txtBusca
             // 
-            this.txtBusca.Location = new System.Drawing.Point(25, 53);
+            this.txtBusca.Location = new System.Drawing.Point(13, 43);
+            this.txtBusca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 20);
+            this.txtBusca.Size = new System.Drawing.Size(317, 22);
             this.txtBusca.TabIndex = 5;
             // 
             // grdDadosCid
             // 
             this.grdDadosCid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCid.Location = new System.Drawing.Point(24, 88);
+            this.grdDadosCid.Location = new System.Drawing.Point(10, 88);
+            this.grdDadosCid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grdDadosCid.Name = "grdDadosCid";
             this.grdDadosCid.RowHeadersWidth = 51;
-            this.grdDadosCid.Size = new System.Drawing.Size(240, 350);
+            this.grdDadosCid.Size = new System.Drawing.Size(320, 431);
             this.grdDadosCid.TabIndex = 4;
             this.grdDadosCid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
             // barManutencao
             // 
-            this.barManutencao.Dock = System.Windows.Forms.DockStyle.None;
             this.barManutencao.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.barManutencao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barbtnNovo,
@@ -75,9 +74,9 @@ namespace Projeto_LPRC5
             this.barbtnSalvar,
             this.barbtnCancelar,
             this.barbtnFechar});
-            this.barManutencao.Location = new System.Drawing.Point(12, 12);
+            this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(228, 39);
+            this.barManutencao.Size = new System.Drawing.Size(766, 39);
             this.barManutencao.TabIndex = 3;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -147,56 +146,39 @@ namespace Projeto_LPRC5
             this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(358, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 23);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Id Tipo Usuário:";
-            // 
-            // txtIdTipo
-            // 
-            this.txtIdTipo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdTipo.Location = new System.Drawing.Point(362, 114);
-            this.txtIdTipo.Name = "txtIdTipo";
-            this.txtIdTipo.Size = new System.Drawing.Size(293, 32);
-            this.txtIdTipo.TabIndex = 7;
-            // 
             // txtDescricaoTipo
             // 
             this.txtDescricaoTipo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoTipo.Location = new System.Drawing.Point(362, 224);
+            this.txtDescricaoTipo.Location = new System.Drawing.Point(351, 78);
+            this.txtDescricaoTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescricaoTipo.Name = "txtDescricaoTipo";
-            this.txtDescricaoTipo.Size = new System.Drawing.Size(288, 32);
+            this.txtDescricaoTipo.Size = new System.Drawing.Size(402, 38);
             this.txtDescricaoTipo.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(358, 198);
+            this.label2.Location = new System.Drawing.Point(345, 43);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 23);
+            this.label2.Size = new System.Drawing.Size(127, 31);
             this.label2.TabIndex = 9;
             this.label2.Text = "Descrição:";
             // 
             // frmTipoUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(766, 524);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescricaoTipo);
-            this.Controls.Add(this.txtIdTipo);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosCid);
             this.Controls.Add(this.barManutencao);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTipoUsuario";
-            this.Text = "frmTipoUsuario";
+            this.Text = "Manutenção de Tipo de Usuário";
             this.Load += new System.EventHandler(this.frmTipoUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).EndInit();
             this.barManutencao.ResumeLayout(false);
@@ -217,8 +199,6 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnSalvar;
         private System.Windows.Forms.ToolStripButton barbtnCancelar;
         private System.Windows.Forms.ToolStripButton barbtnFechar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIdTipo;
         private System.Windows.Forms.TextBox txtDescricaoTipo;
         private System.Windows.Forms.Label label2;
     }

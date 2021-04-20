@@ -46,7 +46,6 @@
             // 
             // barManutencao
             // 
-            this.barManutencao.Dock = System.Windows.Forms.DockStyle.None;
             this.barManutencao.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.barManutencao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barbtnNovo,
@@ -57,7 +56,7 @@
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(259, 39);
+            this.barManutencao.Size = new System.Drawing.Size(593, 39);
             this.barManutencao.TabIndex = 0;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -141,32 +140,32 @@
             // 
             this.txtBusca.Location = new System.Drawing.Point(13, 41);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 26);
+            this.txtBusca.Size = new System.Drawing.Size(239, 30);
             this.txtBusca.TabIndex = 2;
             // 
             // Text_Desc_Func
             // 
-            this.Text_Desc_Func.Location = new System.Drawing.Point(295, 41);
+            this.Text_Desc_Func.Location = new System.Drawing.Point(261, 67);
             this.Text_Desc_Func.Name = "Text_Desc_Func";
-            this.Text_Desc_Func.Size = new System.Drawing.Size(239, 26);
+            this.Text_Desc_Func.Size = new System.Drawing.Size(320, 30);
             this.Text_Desc_Func.TabIndex = 4;
             this.Text_Desc_Func.TextChanged += new System.EventHandler(this.Text_Desc_Func_TextChanged);
             // 
             // Desc_Func
             // 
             this.Desc_Func.AutoSize = true;
-            this.Desc_Func.Location = new System.Drawing.Point(311, 20);
+            this.Desc_Func.Location = new System.Drawing.Point(265, 42);
             this.Desc_Func.Name = "Desc_Func";
-            this.Desc_Func.Size = new System.Drawing.Size(205, 19);
+            this.Desc_Func.Size = new System.Drawing.Size(91, 22);
             this.Desc_Func.TabIndex = 5;
-            this.Desc_Func.Text = "Insira a descrição do funcionário";
+            this.Desc_Func.Text = "Descrição";
             this.Desc_Func.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmClassificaPessoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
+            this.ClientSize = new System.Drawing.Size(593, 438);
             this.Controls.Add(this.Desc_Func);
             this.Controls.Add(this.Text_Desc_Func);
             this.Controls.Add(this.txtBusca);
@@ -176,7 +175,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClassificaPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manutenção Default";
+            this.Text = "Manutenção Classificação de Pessoas";
             this.Load += new System.EventHandler(this.frmCid_Load);
             this.barManutencao.ResumeLayout(false);
             this.barManutencao.PerformLayout();
