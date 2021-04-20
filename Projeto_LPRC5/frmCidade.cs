@@ -9,22 +9,25 @@
 //*** Responsável:
 //****************************************************************************************
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projeto_LPRC5
-{
-    public partial class frmClassificaPessoa : Form
-    {
-        public frmClassificaPessoa()
-        {
+namespace Projeto_LPRC5 {
+    public partial class frmCidade : Form {
+        public frmCidade() {
             InitializeComponent();
         }
 
-        dbDefault db_Default = new dbDefault();
-        classeDefault padrao = new classeDefault();
+        dbCidade db_Cidade = new dbCidade();
+        classeCidade padrao = new classeCidade();
 
-        private void formataGrid()
-        {
+        private void formataGrid() {
             //Opção para selecionar a linha inteira do grid
             grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
@@ -36,26 +39,23 @@ namespace Projeto_LPRC5
 
         }
 
-        public void atualizaDadosGrid()
-        {
+        public void atualizaDadosGrid() {
             //DataTable tabelaCidade = new DataTable();
             //tabelaCidade = dbCidade.selectCiddBase();
             //grdDadosCid.DataSource = tabelaCidade;
 
             //pode ser também
 
-            grdDadosCid.DataSource = db_Default.selectDefaultBase();
+            grdDadosCid.DataSource = db_Cidade.selectCidadeBase();
         }
 
-        private void atualizaDadosControles()
-        {
-            padrao = db_Default.RetornaDadosObjeto(padrao);
+        private void atualizaDadosControles() {
+            padrao = db_Cidade.RetornaDadosObjeto(padrao);
 
             //txtNome.Text = cidade.getNome();
         }
 
-        private void habilitaBotoesMenu(bool hablitar)
-        {
+        private void habilitaBotoesMenu(bool hablitar) {
             barbtnNovo.Enabled = hablitar;
             barbtnEditar.Enabled = hablitar;
             barbtnExcluir.Enabled = hablitar;
@@ -64,22 +64,19 @@ namespace Projeto_LPRC5
             barbtnFechar.Enabled = hablitar;
         }
 
-        private void habilitaCamposDados(bool habilitar)
-        {
+        private void habilitaCamposDados(bool habilitar) {
             //txtNome.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
 
-        private void limpaCamposDados()
-        {
+        private void limpaCamposDados() {
             //txtNome.Text = "";
 
-            padrao.setId(0);
+            padrao.setCidadeId(0);
             //padrao.setNome("");
         }
 
-        private bool verificaDadosObrigatorios()
-        {
+        private bool verificaDadosObrigatorios() {
             bool resultado = true;
 
             //if (txtNome.Text.Trim().Length < 4)
@@ -91,140 +88,104 @@ namespace Projeto_LPRC5
             return resultado;
         }
 
-        private void insereDefault()
-        {
+        private void insereCidade() {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
             limpaCamposDados();
         }
 
-        private void alteraDefault()
-        {
+        private void alteraCidade() {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
         }
 
-        private void excluiDefault()
-        {
-            if (padrao.getId() != 0)
-            {
+        private void excluiCidade() {
+            if (padrao.getCidadeId() != 0) {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (retorno == DialogResult.Yes)
-                {
-                    db_Default.excluiDefaultBase(padrao);
+                if (retorno == DialogResult.Yes) {
+                    db_Cidade.excluiCidadeBase(padrao);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
                 }
-            }
-            else
-            {
+            } else {
                 MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void salvaDefault()
-        {
-            if (verificaDadosObrigatorios() == true)
-            {
+        private void salvaCidade() {
+            if (verificaDadosObrigatorios() == true) {
                 //Atualizando os dados do objeto estado.
                 //padrao.setNome(txtNome.Text);
 
-                if (padrao.getId() == 0)
-                {
+                if (padrao.getCidadeId() == 0) {
                     //Insere os dados
-                    db_Default.insereDefaultBase(padrao);
-                }
-                else
-                {
+                    db_Cidade.insereCidadeBase(padrao);
+                } else {
                     //Altera os dados
-                    db_Default.alteraDefaultBase(padrao);
+                    db_Cidade.alteraCidadeBase(padrao);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
                 limpaCamposDados();
                 atualizaDadosGrid();
-            }
-            else
-            {
+            } else {
                 MessageBox.Show("Dados Obrigatórios não informados ", "Urgente!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void cancelaDefault()
-        {
-            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Default?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        private void cancelaCidade() {
+            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Cidade?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (retorno == DialogResult.Yes)
-            {
+            if (retorno == DialogResult.Yes) {
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
                 limpaCamposDados();
             }
         }
-        private void fechaDefault()
-        {
+        private void fechaCidade() {
             this.Close();
         }
 
-        private void lblNome_Click(object sender, EventArgs e)
-        {
+        private void lblNome_Click(object sender, EventArgs e) {
 
         }
 
-        private void frmCid_Load(object sender, EventArgs e)
-        {
+        private void frmCid_Load(object sender, EventArgs e) {
             habilitaBotoesMenu(true);
             habilitaCamposDados(false);
             atualizaDadosGrid();
             formataGrid();
         }
 
-        private void barbtnNovo_Click(object sender, EventArgs e)
-        {
-            insereDefault();
+        private void barbtnNovo_Click(object sender, EventArgs e) {
+            insereCidade();
         }
 
-        private void barbtnEditar_Click(object sender, EventArgs e)
-        {
-            alteraDefault();
+        private void barbtnEditar_Click(object sender, EventArgs e) {
+            alteraCidade();
         }
 
-        private void barbtnExcluir_Click(object sender, EventArgs e)
-        {
-            excluiDefault();
+        private void barbtnExcluir_Click(object sender, EventArgs e) {
+            excluiCidade();
         }
 
-        private void barbtnSalvar_Click(object sender, EventArgs e)
-        {
-            salvaDefault();
+        private void barbtnSalvar_Click(object sender, EventArgs e) {
+            salvaCidade();
         }
 
-        private void barbtnCancelar_Click(object sender, EventArgs e)
-        {
-            cancelaDefault();
+        private void barbtnCancelar_Click(object sender, EventArgs e) {
+            cancelaCidade();
         }
 
-        private void barbtnFechar_Click(object sender, EventArgs e)
-        {
-            fechaDefault();
+        private void barbtnFechar_Click(object sender, EventArgs e) {
+            fechaCidade();
         }
 
-        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
+            padrao.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Text_Desc_Func_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

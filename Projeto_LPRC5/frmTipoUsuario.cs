@@ -1,27 +1,35 @@
 ﻿//****************************************************************************************
-//**Criado por:
-//**Data de Criação:
-//**Instruções:
+//**Criado por: André Luiz Costa
+//**Data de Criação: 19/04/2021
+//**Instruções: Criação do formulário 'Tipo de Usuário'
 //
 //
 //****** Atualizações:
 //*** Data:
 //*** Responsável:
 //****************************************************************************************
+
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
-    public partial class frmClassificaPessoa : Form
+    public partial class frmTipoUsuario : Form
     {
-        public frmClassificaPessoa()
+        public frmTipoUsuario()
         {
             InitializeComponent();
         }
 
-        dbDefault db_Default = new dbDefault();
-        classeDefault padrao = new classeDefault();
+        dbTipoUsuario dbtipoUsu = new dbTipoUsuario(); //Alterar o nome
+        classeTipoUsuario tipoUsuario = new classeTipoUsuario();
 
         private void formataGrid()
         {
@@ -29,14 +37,21 @@ namespace Projeto_LPRC5
             grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             grdDadosCid.Columns[0].HeaderText = "Código";
-            grdDadosCid.Columns[1].HeaderText = "Nome";
+            grdDadosCid.Columns[1].HeaderText = "Descrição";
 
             grdDadosCid.Columns[0].Width = 0;
             grdDadosCid.Columns[1].Width = 120;
 
         }
 
-        public void atualizaDadosGrid()
+        private void selectUsuarioDBase()
+        {
+            grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
+        }
+
+             
+
+            public void atualizaDadosGrid()
         {
             //DataTable tabelaCidade = new DataTable();
             //tabelaCidade = dbCidade.selectCiddBase();
@@ -44,13 +59,12 @@ namespace Projeto_LPRC5
 
             //pode ser também
 
-            grdDadosCid.DataSource = db_Default.selectDefaultBase();
+            grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
         }
 
         private void atualizaDadosControles()
         {
-            padrao = db_Default.RetornaDadosObjeto(padrao);
-
+            
             //txtNome.Text = cidade.getNome();
         }
 
@@ -66,53 +80,52 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            //txtNome.Enabled = habilitar;
+            txtDescricaoTipo.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            //txtNome.Text = "";
-
-            padrao.setId(0);
-            //padrao.setNome("");
+            txtDescricaoTipo.Text = "";
+            tipoUsuario.setId(0);
+            tipoUsuario.setDescricao("");
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            //if (txtNome.Text.Trim().Length < 4)
-            //{
-            //    resultado = false;
-            //}
+            if (txtDescricaoTipo.Text.Length == 0)
+            {
+                resultado = false;
+            }
 
 
             return resultado;
         }
 
-        private void insereDefault()
+        private void insereTipoUsuario()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
             limpaCamposDados();
         }
 
-        private void alteraDefault()
+        private void alteraTipoUsuario()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
         }
 
-        private void excluiDefault()
+        private void excluiTipoUsuario()
         {
-            if (padrao.getId() != 0)
+            if (tipoUsuario.getId() != 0)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_Default.excluiDefaultBase(padrao);
+                    dbtipoUsu.excluiTipoUsuario(tipoUsuario);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -124,22 +137,24 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void salvaDefault()
+        private void salvaTipoUsuario()
         {
             if (verificaDadosObrigatorios() == true)
             {
                 //Atualizando os dados do objeto estado.
                 //padrao.setNome(txtNome.Text);
 
-                if (padrao.getId() == 0)
+                if (tipoUsuario.getId() == 0)
                 {
                     //Insere os dados
-                    db_Default.insereDefaultBase(padrao);
+                    tipoUsuario.setDescricao(txtDescricaoTipo.Text);
+                    dbtipoUsu.insereTipoUsuario(tipoUsuario);
                 }
                 else
                 {
                     //Altera os dados
-                    db_Default.alteraDefaultBase(padrao);
+                    tipoUsuario.setDescricao(txtDescricaoTipo.Text);
+                    dbtipoUsu.alteraTipoUsuario(tipoUsuario);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -152,7 +167,7 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void cancelaDefault()
+        private void cancelaTipoUsuario()
         {
             DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Default?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -163,68 +178,62 @@ namespace Projeto_LPRC5
                 limpaCamposDados();
             }
         }
-        private void fechaDefault()
+        private void fechaTipoUsuario()
         {
             this.Close();
         }
 
-        private void lblNome_Click(object sender, EventArgs e)
+        private void barbtnNovo_Click(object sender, EventArgs e)
         {
-
+            insereTipoUsuario();
         }
 
-        private void frmCid_Load(object sender, EventArgs e)
+        private void barbtnEditar_Click(object sender, EventArgs e)
         {
+            alteraTipoUsuario();
+        }
+
+        private void barbtnSalvar_Click(object sender, EventArgs e)
+        {
+            salvaTipoUsuario();
+        }
+
+        private void frmTipoUsuario_Load(object sender, EventArgs e)
+        {
+            dbtipoUsu.selectTipoUsuarioDBase();
             habilitaBotoesMenu(true);
             habilitaCamposDados(false);
             atualizaDadosGrid();
             formataGrid();
         }
 
-        private void barbtnNovo_Click(object sender, EventArgs e)
-        {
-            insereDefault();
-        }
-
-        private void barbtnEditar_Click(object sender, EventArgs e)
-        {
-            alteraDefault();
-        }
-
         private void barbtnExcluir_Click(object sender, EventArgs e)
         {
-            excluiDefault();
-        }
-
-        private void barbtnSalvar_Click(object sender, EventArgs e)
-        {
-            salvaDefault();
+            excluiTipoUsuario();
         }
 
         private void barbtnCancelar_Click(object sender, EventArgs e)
         {
-            cancelaDefault();
+            cancelaTipoUsuario();
         }
 
         private void barbtnFechar_Click(object sender, EventArgs e)
         {
-            fechaDefault();
+            fechaTipoUsuario();
         }
 
-        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            tipoUsuario.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            selectTipoUsuarioDBase(tipoUsuario);
             atualizaDadosControles();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void selectTipoUsuarioDBase(classeTipoUsuario tUsuario)
         {
+            tipoUsuario = dbtipoUsu.selectTipoUsuarioDBase(tipoUsuario);
 
-        }
-
-        private void Text_Desc_Func_TextChanged(object sender, EventArgs e)
-        {
-
+            txtDescricaoTipo.Text = tipoUsuario.getDescricao();
         }
     }
 }

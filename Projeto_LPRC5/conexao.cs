@@ -20,5 +20,7 @@ namespace Projeto_LPRC5
 {
     class conexao
     {
+        //util suporte = new util();
+        //suporte.lerArquivoAcessoBanco(@"C:\software\acesso.txt");
     }
 }

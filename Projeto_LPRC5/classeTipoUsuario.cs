@@ -1,13 +1,14 @@
 ﻿//****************************************************************************************
-//**Criado por: Antonio Jose Naranjo, Leticia Lopes Abelha, Rafael de Angelis Fogaça e Daniel Galdencio
+//**Criado por: André Luiz Costa
 //**Data de Criação: 19/04/2021
-//**Instruções: criação dos atributos id e descrição utilizando propriedades
+//**Instruções: Criação da classe 'Tipo de Usuário'
 //
 //
 //****** Atualizações:
 //*** Data:
 //*** Responsável:
 //****************************************************************************************
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,14 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class classeClassificaPessoa
+    class classeTipoUsuario
     {
         //Atributos da Classe
-        private int classificapessoaid;
-        private int classificapessoadescricao { get; set; }
-
+        private int tipoUsuarioId;
+        private string tipoUsuarioDescricao;
 
         //Método Construtor
-        public classeClassificaPessoa()
+        public classeTipoUsuario()
         {
 
         }
@@ -32,11 +32,21 @@ namespace Projeto_LPRC5
         //Métodos Acessores
         public void setId(int id)
         {
-            classificapessoaid = id;
+            tipoUsuarioId = id;
         }
         public int getId()
         {
-            return classificapessoaid;
+            return tipoUsuarioId;
         }
-     } 
+
+        public void setDescricao(string desc)
+        {
+            tipoUsuarioDescricao = desc;
+        }
+
+        public string getDescricao()
+        {
+            return tipoUsuarioDescricao;
+        }
+    }
 }

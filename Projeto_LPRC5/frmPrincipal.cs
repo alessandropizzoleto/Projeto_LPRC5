@@ -19,10 +19,25 @@ namespace Projeto_LPRC5
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            //util suporte = new util();
+ 
+        }
 
-            //suporte.lerArquivoAcessoBanco(@"C:\software\acesso.txt");
+        private void tipoDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoUsuario tipoUsuario = new frmTipoUsuario();
+            tipoUsuario.MdiParent = this;
+            tipoUsuario.Show();
+        }
 
+        private void mnuClassificaPessoa_Click(object sender, EventArgs e)
+        {
+            frmClassificaPessoa classificaPessoa = new frmClassificaPessoa();
+            classificaPessoa.MdiParent = this;
+            classificaPessoa.Show();
+        }
+
+        private void mnuAcesso_Click(object sender, EventArgs e)
+        {
             frmAcesso acesso = new frmAcesso();
             acesso.MdiParent = this;
             acesso.Show();

@@ -1,6 +1,6 @@
 ﻿//****************************************************************************************
-//**Criado por:
-//**Data de Criação:
+//**Criado por: Geanluca
+//**Data de Criação: 20/04/2021
 //**Instruções:
 //
 //
@@ -8,68 +8,60 @@
 //*** Data:
 //*** Responsável:
 //****************************************************************************************
-
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using System.Data;
 
-namespace Projeto_LPRC5
-{
-    class dbDefault
-    {
+
+namespace Projeto_LPRC5 {
+    class dbCidade {
         conexaoMySql connect = new conexaoMySql();
 
         //Cria as intstrução SQL para insert de dados na Base de dados
-        public void insereDefaultBase(classeDefault padrao)
-        {
+        public void insereCidadeBase(classeCidade padrao) {
             string sql = "";
             //connect.executaSQL("");
         }
 
         //Cria as instrução SQL para update de dados na Base de dados
-        public void alteraDefaultBase(classeDefault padrao)
-        {
+        public void alteraCidadeBase(classeCidade padrao) {
             string sql = "";
             //connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Delete de dados na base de dados
-        public void excluiDefaultBase(classeDefault padrao)
-        {
+        public void excluiCidadeBase(classeCidade padrao) {
             string sql = "";
             //connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Retornar dados da Base de Dados
-        public MySqlDataAdapter selectDefaultBase(classeDefault padrao)
-        {
+        public MySqlDataAdapter selectCidadeBase(classeCidade padrao) {
             string sql = "";
             //return connect.retornaSQL(sql);
             return null;
         }
 
-        public classeDefault RetornaDadosObjeto(classeDefault padrao)
-        {
+        public classeCidade RetornaDadosObjeto(classeCidade padrao) {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataSet ds = new DataSet();
-            classeDefault defaultTemp = new classeDefault();
+            classeCidade cidadeTemp = new classeCidade();
 
             //string sql = "select cidId, cidNome from cidade where cidId = " + padrao.getId() + ";";
             //adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
-            defaultTemp.setId(padrao.getId());
-            
+            cidadeTemp.setCidadeId(padrao.getCidadeId());
 
-            return defaultTemp;
+
+            return cidadeTemp;
         }
 
-        public DataTable selectDefaultBase()
-        {
+        public DataTable selectCidadeBase() {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable tabela = new DataTable();
 
