@@ -96,15 +96,23 @@
   <ItemGroup>
     <Compile Include="classeCidade.cs" />
     <Compile Include="classeClassificaPessoa.cs" />
+    <Compile Include="classeCor.cs" />
     <Compile Include="classeFeriado.cs" />
     <Compile Include="classeDefault.cs" />
     <Compile Include="classeVeiculoModelo.cs" />
     <Compile Include="conexao.cs" />
     <Compile Include="conexaoMySql.cs" />
     <Compile Include="dbCidade.cs" />
+    <Compile Include="dbCor.cs" />
     <Compile Include="dbDefault.cs" />
     <Compile Include="dbFeriado.cs" />
     <Compile Include="dbTipoUsuario.cs" />
+    <Compile Include="frmCor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCor.Designer.cs">
+      <DependentUpon>frmCor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +159,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="classeTipoUsuario.cs" />
     <Compile Include="util.cs" />
+    <EmbeddedResource Include="frmCor.resx">
+      <DependentUpon>frmCor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAcesso.resx">
       <DependentUpon>frmAcesso.cs</DependentUpon>
     </EmbeddedResource>

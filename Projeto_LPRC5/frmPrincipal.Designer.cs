@@ -35,12 +35,13 @@ namespace Projeto_LPRC5
             this.mnuTipoUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClassificaPessoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.barMenu = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcesso = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.barMenu = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.corToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadastro.SuspendLayout();
             this.barMenu.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +70,8 @@ namespace Projeto_LPRC5
             // 
             this.mnuTipoUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipoDeUsuárioToolStripMenuItem,
-            this.mnuClassificaPessoa});
+            this.mnuClassificaPessoa,
+            this.corToolStripMenuItem});
             this.mnuTipoUsuario.Name = "mnuTipoUsuario";
             this.mnuTipoUsuario.Size = new System.Drawing.Size(224, 26);
             this.mnuTipoUsuario.Text = "Básico";
@@ -87,6 +89,35 @@ namespace Projeto_LPRC5
             this.mnuClassificaPessoa.Size = new System.Drawing.Size(252, 26);
             this.mnuClassificaPessoa.Text = "Classificação de Pessoas";
             this.mnuClassificaPessoa.Click += new System.EventHandler(this.mnuClassificaPessoa_Click);
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAcesso});
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            // 
+            // mnuAcesso
+            // 
+            this.mnuAcesso.Name = "mnuAcesso";
+            this.mnuAcesso.Size = new System.Drawing.Size(180, 26);
+            this.mnuAcesso.Text = "Acesso SGBD";
+            this.mnuAcesso.Click += new System.EventHandler(this.mnuAcesso_Click);
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sobreToolStripMenuItem1});
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.sobreToolStripMenuItem.Text = "Sobre";
+            // 
+            // sobreToolStripMenuItem1
+            // 
+            this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(131, 26);
+            this.sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // barMenu
             // 
@@ -107,34 +138,12 @@ namespace Projeto_LPRC5
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // configuraçõesToolStripMenuItem
+            // corToolStripMenuItem
             // 
-            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuAcesso});
-            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
-            this.configuraçõesToolStripMenuItem.Text = "Configurações";
-            // 
-            // mnuAcesso
-            // 
-            this.mnuAcesso.Name = "mnuAcesso";
-            this.mnuAcesso.Size = new System.Drawing.Size(224, 26);
-            this.mnuAcesso.Text = "Acesso SGBD";
-            this.mnuAcesso.Click += new System.EventHandler(this.mnuAcesso_Click);
-            // 
-            // sobreToolStripMenuItem
-            // 
-            this.sobreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sobreToolStripMenuItem1});
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.sobreToolStripMenuItem.Text = "Sobre";
-            // 
-            // sobreToolStripMenuItem1
-            // 
-            this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.sobreToolStripMenuItem1.Text = "Sobre";
+            this.corToolStripMenuItem.Name = "corToolStripMenuItem";
+            this.corToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.corToolStripMenuItem.Text = "Cor";
+            this.corToolStripMenuItem.Click += new System.EventHandler(this.corToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -171,6 +180,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripMenuItem mnuAcesso;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem corToolStripMenuItem;
     }
 }
 

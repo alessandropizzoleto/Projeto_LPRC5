@@ -42,5 +42,11 @@ namespace Projeto_LPRC5
             acesso.MdiParent = this;
             acesso.Show();
         }
+
+        private void corToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCor Corno = new frmCor();
+            Corno.Show();
+        }
     }
 }
