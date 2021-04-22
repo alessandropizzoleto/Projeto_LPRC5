@@ -48,5 +48,11 @@ namespace Projeto_LPRC5
             frmCor Corno = new frmCor();
             Corno.Show();
         }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarca marca = new frmMarca();
+            marca.Show();
+        }
     }
 }
