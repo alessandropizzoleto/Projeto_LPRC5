@@ -54,5 +54,11 @@ namespace Projeto_LPRC5
             frmMarca marca = new frmMarca();
             marca.Show();
         }
-    }
+
+		private void estadoToolStripMenuItem_Click(object sender, EventArgs e) {
+            new FrmEstado {
+                MdiParent = this
+            }.Show();
+		}
+	}
 }
