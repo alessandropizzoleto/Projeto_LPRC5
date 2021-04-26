@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasseEstado.cs" />
+    <Compile Include="classeEmpresaPrestadoraServico.cs" />
     <Compile Include="classeMarca.cs" />
     <Compile Include="classeCidade.cs" />
     <Compile Include="classeClassificaPessoa.cs" />
