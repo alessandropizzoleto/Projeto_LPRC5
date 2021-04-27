@@ -20,15 +20,15 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
-    public partial class frmFeriado : Form
+    public partial class frmEmpresaPrestadoraServico : Form
     {
-        public frmFeriado()
+        public frmEmpresaPrestadoraServico()
         {
             InitializeComponent();
         }
 
-        bdFeriado db_Feriado = new bdFeriado();
-        ClasseFeriado feriado = new ClasseFeriado();
+        bdEmpresaPrestadoraServico db_EmpresaPrestadoraServico = new bdEmpresaPrestadoraServico();
+        ClasseEmpresaPrestadoraServico EmpresaPrestadoraServico = new ClasseEmpresaPrestadoraServico();
 
         private void formataGrid()
         {
@@ -51,12 +51,12 @@ namespace Projeto_LPRC5
 
             //pode ser também
 
-            grdDadosCid.DataSource = db_Feriado.selectFeriadoBase();
+            grdDadosCid.DataSource = db_EmpresaPrestadoraServico.selectEmpresaPrestadoraServicoBase();
         }
 
         private void atualizaDadosControles()
         {
-            feriado = db_Feriado.RetornaDadosObjeto(feriado);
+            EmpresaPrestadoraServico = db_EmpresaPrestadoraServico.RetornaDadosObjeto(EmpresaPrestadoraServico);
 
             //txtNome.Text = cidade.getNome();
         }
@@ -81,8 +81,8 @@ namespace Projeto_LPRC5
         {
             //txtNome.Text = "";
 
-            feriado.Id= 0;
-            //feriado.setNome("");
+            EmpresaPrestadoraServico.Id= 0;
+            //EmpresaPrestadoraServico.setNome("");
         }
 
         private bool verificaDadosObrigatorios()
@@ -98,28 +98,28 @@ namespace Projeto_LPRC5
             return resultado;
         }
 
-        private void insereFeriado()
+        private void insereEmpresaPrestadoraServico()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
             limpaCamposDados();
         }
 
-        private void alteraFeriado()
+        private void alteraEmpresaPrestadoraServico()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
         }
 
-        private void excluiFeriado()
+        private void excluiEmpresaPrestadoraServico()
         {
-            if (feriado.Id != 0)
+            if (EmpresaPrestadoraServico.Id != 0)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_Feriado.excluiFeriadoBase(feriado);
+                    db_EmpresaPrestadoraServico.excluiEmpresaPrestadoraServicoBase(EmpresaPrestadoraServico);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -131,22 +131,22 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void salvaFeriado()
+        private void salvaEmpresaPrestadoraServico()
         {
             if (verificaDadosObrigatorios() == true)
             {
                 //Atualizando os dados do objeto estado.
-                //feriado.setNome(txtNome.Text);
+                //EmpresaPrestadoraServico.setNome(txtNome.Text);
 
-                if (feriado.Id == 0)
+                if (EmpresaPrestadoraServico.Id == 0)
                 {
                     //Insere os dados
-                    db_Feriado.insereFeriadoBase(feriado);
+                    db_EmpresaPrestadoraServico.insereEmpresaPrestadoraServicoBase(EmpresaPrestadoraServico);
                 }
                 else
                 {
                     //Altera os dados
-                    db_Feriado.alteraFeriadoBase(feriado);
+                    db_EmpresaPrestadoraServico.alteraEmpresaPrestadoraServicoBase(EmpresaPrestadoraServico);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -159,9 +159,9 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void cancelaFeriado()
+        private void cancelaEmpresaPrestadoraServico()
         {
-            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Feriado?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da EmpresaPrestadoraServico?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (retorno == DialogResult.Yes)
             {
@@ -170,7 +170,7 @@ namespace Projeto_LPRC5
                 limpaCamposDados();
             }
         }
-        private void fechaFeriado()
+        private void fechaEmpresaPrestadoraServico()
         {
             this.Close();
         }
@@ -190,41 +190,41 @@ namespace Projeto_LPRC5
 
         private void barbtnNovo_Click(object sender, EventArgs e)
         {
-            insereFeriado();
+            insereEmpresaPrestadoraServico();
         }
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
-            alteraFeriado();
+            alteraEmpresaPrestadoraServico();
         }
 
         private void barbtnExcluir_Click(object sender, EventArgs e)
         {
-            excluiFeriado();
+            excluiEmpresaPrestadoraServico();
         }
 
         private void barbtnSalvar_Click(object sender, EventArgs e)
         {
-            salvaFeriado();
+            salvaEmpresaPrestadoraServico();
         }
 
         private void barbtnCancelar_Click(object sender, EventArgs e)
         {
-            cancelaFeriado();
+            cancelaEmpresaPrestadoraServico();
         }
 
         private void barbtnFechar_Click(object sender, EventArgs e)
         {
-            fechaFeriado();
+            fechaEmpresaPrestadoraServico();
         }
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            feriado.Id = Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString());
+            EmpresaPrestadoraServico.Id = Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString());
             atualizaDadosControles();
         }
 
-        private void frmFeriado_Load(object sender, EventArgs e)
+        private void frmEmpresaPrestadoraServico_Load(object sender, EventArgs e)
         {
 
         }
@@ -235,6 +235,21 @@ namespace Projeto_LPRC5
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -127,6 +127,12 @@
     <Compile Include="frmDefault.designer.cs">
       <DependentUpon>frmDefault.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmpresaPrestadoraServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpresaPrestadoraServico.designer.cs">
+      <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDefault.resx">
       <DependentUpon>frmDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpresaPrestadoraServico.resx">
+      <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
