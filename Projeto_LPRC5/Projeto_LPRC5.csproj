@@ -114,6 +114,7 @@
     <Compile Include="dbFeriado.cs" />
     <Compile Include="dbMarca.cs" />
     <Compile Include="dbTipoUsuario.cs" />
+    <Compile Include="dbVeiculoModelo.cs" />
     <Compile Include="FrmEstado.cs">
       <SubType>Form</SubType>
     </Compile>
