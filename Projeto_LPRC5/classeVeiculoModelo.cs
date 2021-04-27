@@ -1,5 +1,5 @@
 ﻿//****************************************************************************************
-//**Criado por: Guilherme A Rissato, Caio Costa e Roberto Marcheti
+//**Criado por: Guilherme A Rissato
 //**Data de Criação: 19/04/2021
 //**Descrição: criação dos getters and setters do objeto veiculo modelo
 //**Instruções: 
