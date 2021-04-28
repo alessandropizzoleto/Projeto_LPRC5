@@ -1,6 +1,6 @@
 ﻿namespace Projeto_LPRC5
 {
-    partial class frmClassificaPessoa
+    partial class frmVeiculoModelo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClassificaPessoa));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVeiculoModelo));
             this.barManutencao = new System.Windows.Forms.ToolStrip();
             this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
             this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
@@ -38,14 +38,15 @@
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosCid = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.Text_Desc_Func = new System.Windows.Forms.TextBox();
-            this.Desc_Func = new System.Windows.Forms.Label();
+            this.txtVeiculomodelo = new System.Windows.Forms.TextBox();
+            this.lblVeiculomodelo = new System.Windows.Forms.Label();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
             this.SuspendLayout();
             // 
             // barManutencao
             // 
+            this.barManutencao.Dock = System.Windows.Forms.DockStyle.None;
             this.barManutencao.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.barManutencao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barbtnNovo,
@@ -56,7 +57,7 @@
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(593, 39);
+            this.barManutencao.Size = new System.Drawing.Size(228, 39);
             this.barManutencao.TabIndex = 0;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -143,39 +144,37 @@
             this.txtBusca.Size = new System.Drawing.Size(239, 26);
             this.txtBusca.TabIndex = 2;
             // 
-            // Text_Desc_Func
+            // txtVeiculomodelo
             // 
-            this.Text_Desc_Func.Location = new System.Drawing.Point(261, 67);
-            this.Text_Desc_Func.Name = "Text_Desc_Func";
-            this.Text_Desc_Func.Size = new System.Drawing.Size(320, 26);
-            this.Text_Desc_Func.TabIndex = 4;
-            this.Text_Desc_Func.TextChanged += new System.EventHandler(this.Text_Desc_Func_TextChanged);
+            this.txtVeiculomodelo.Location = new System.Drawing.Point(265, 67);
+            this.txtVeiculomodelo.Name = "txtVeiculomodelo";
+            this.txtVeiculomodelo.Size = new System.Drawing.Size(239, 26);
+            this.txtVeiculomodelo.TabIndex = 3;
             // 
-            // Desc_Func
+            // lblVeiculomodelo
             // 
-            this.Desc_Func.AutoSize = true;
-            this.Desc_Func.Location = new System.Drawing.Point(265, 42);
-            this.Desc_Func.Name = "Desc_Func";
-            this.Desc_Func.Size = new System.Drawing.Size(70, 19);
-            this.Desc_Func.TabIndex = 5;
-            this.Desc_Func.Text = "Descrição";
-            this.Desc_Func.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // frmClassificaPessoa
+            this.lblVeiculomodelo.AutoSize = true;
+            this.lblVeiculomodelo.Location = new System.Drawing.Point(262, 43);
+            this.lblVeiculomodelo.Name = "lblVeiculomodelo";
+            this.lblVeiculomodelo.Size = new System.Drawing.Size(169, 19);
+            this.lblVeiculomodelo.TabIndex = 4;
+            this.lblVeiculomodelo.Text = "Cadastrar Veículo Modelo";
+             // 
+            // frmVeiculoModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 438);
-            this.Controls.Add(this.Desc_Func);
-            this.Controls.Add(this.Text_Desc_Func);
+            this.ClientSize = new System.Drawing.Size(678, 438);
+            this.Controls.Add(this.lblVeiculomodelo);
+            this.Controls.Add(this.txtVeiculomodelo);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosCid);
             this.Controls.Add(this.barManutencao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmClassificaPessoa";
+            this.Name = "frmVeiculoModelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manutenção Classificação de Pessoas";
+            this.Text = "Manutenção de Veículo Modelo";
             this.Load += new System.EventHandler(this.frmCid_Load);
             this.barManutencao.ResumeLayout(false);
             this.barManutencao.PerformLayout();
@@ -196,7 +195,7 @@
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosCid;
         private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.TextBox Text_Desc_Func;
-        private System.Windows.Forms.Label Desc_Func;
+        private System.Windows.Forms.TextBox txtVeiculomodelo;
+        private System.Windows.Forms.Label lblVeiculomodelo;
     }
 }

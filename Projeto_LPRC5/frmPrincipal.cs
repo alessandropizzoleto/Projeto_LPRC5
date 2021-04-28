@@ -60,5 +60,12 @@ namespace Projeto_LPRC5
                 MdiParent = this
             }.Show();
 		}
-	}
+
+        private void veículoModeloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVeiculoModelo veiculomodelo = new frmVeiculoModelo();
+             veiculomodelo.MdiParent = this;
+            veiculomodelo.Show();
+        }
+    }
 }
