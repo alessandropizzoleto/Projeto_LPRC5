@@ -187,6 +187,12 @@
     <Compile Include="frmTipoUsuario.Designer.cs">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisitantePrestador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisitantePrestador.Designer.cs">
+      <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="classeTipoUsuario.cs" />
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTipoUsuario.resx">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisitantePrestador.resx">
+      <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
