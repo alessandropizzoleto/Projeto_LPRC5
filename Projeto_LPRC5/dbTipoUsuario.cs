@@ -27,8 +27,6 @@ namespace Projeto_LPRC5
         public MySqlCommand command = new MySqlCommand();
 
         //Cria as intstrução SQL para insert de dados na Base de dados
-
-        
         public void insereTipoUsuario(classeTipoUsuario tUsuario)
         {
             command.CommandText = "insert into tipousuario (tipousuariodescricao) values ('" + tUsuario.getDescricao() + "');";

@@ -4,9 +4,9 @@
 //**Instruções: Criação do formulário 'Tipo de Usuário'
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Alteração no setId do Tipo Usuário e criacação da variável comando para distinguir inserts de updates.
+//*** Data: 01/05/2021
+//*** Responsável: Giovanna Valim Frederico
 //****************************************************************************************
 
 using System;
@@ -30,6 +30,7 @@ namespace Projeto_LPRC5
 
         dbTipoUsuario dbtipoUsu = new dbTipoUsuario(); //Alterar o nome
         classeTipoUsuario tipoUsuario = new classeTipoUsuario();
+        bool comando;
 
         private void formataGrid()
         {
@@ -41,7 +42,6 @@ namespace Projeto_LPRC5
 
             grdDadosCid.Columns[0].Width = 0;
             grdDadosCid.Columns[1].Width = 120;
-
         }
 
         private void selectUsuarioDBase()
@@ -53,12 +53,6 @@ namespace Projeto_LPRC5
 
             public void atualizaDadosGrid()
         {
-            //DataTable tabelaCidade = new DataTable();
-            //tabelaCidade = dbCidade.selectCiddBase();
-            //grdDadosCid.DataSource = tabelaCidade;
-
-            //pode ser também
-
             grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
         }
 
@@ -87,7 +81,7 @@ namespace Projeto_LPRC5
         private void limpaCamposDados()
         {
             txtDescricaoTipo.Text = "";
-            tipoUsuario.setId(0);
+            tipoUsuario.setId(-1);
             tipoUsuario.setDescricao("");
         }
 
@@ -144,13 +138,13 @@ namespace Projeto_LPRC5
                 //Atualizando os dados do objeto estado.
                 //padrao.setNome(txtNome.Text);
 
-                if (tipoUsuario.getId() == 0)
+                if (comando == true)
                 {
                     //Insere os dados
                     tipoUsuario.setDescricao(txtDescricaoTipo.Text);
                     dbtipoUsu.insereTipoUsuario(tipoUsuario);
                 }
-                else
+                else if(comando == false)
                 {
                     //Altera os dados
                     tipoUsuario.setDescricao(txtDescricaoTipo.Text);
@@ -186,11 +180,13 @@ namespace Projeto_LPRC5
         private void barbtnNovo_Click(object sender, EventArgs e)
         {
             insereTipoUsuario();
+            comando = true;
         }
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
             alteraTipoUsuario();
+            comando = false;
         }
 
         private void barbtnSalvar_Click(object sender, EventArgs e)

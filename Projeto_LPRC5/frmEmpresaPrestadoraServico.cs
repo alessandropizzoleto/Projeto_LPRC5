@@ -21,7 +21,7 @@ using System.Windows.Forms;
 namespace Projeto_LPRC5
 {
     public partial class frmEmpresaPrestadoraServico : Form
-    {
+    { 
         public frmEmpresaPrestadoraServico()
         {
             InitializeComponent();

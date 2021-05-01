@@ -7,6 +7,10 @@
 //****** Atualizações: Formulário criado
 //*** Data:20/04/2021
 //*** Responsável:Guilherme Beig
+
+//****** Atualizações: Criação de novas funções para mostrar resultados no grid e usar as informações do grid para executar o update e delete.
+//*** Data: 01/05/2021
+//*** Responsável: Amanda Ferrari, André Costa, Giovanna Valim
 //****************************************************************************************
 
 using System;
@@ -29,31 +33,27 @@ namespace Projeto_LPRC5
         }
         dbCor db_Cor = new dbCor();
         classeCor tinta = new classeCor();
+        bool comando;
 
         private void formataGrid()
         {
-           grdDadosCor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdDadosCor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             grdDadosCor.Columns[0].HeaderText = "Código";
             grdDadosCor.Columns[1].HeaderText = "Nome";
 
             grdDadosCor.Columns[0].Width = 0;
             grdDadosCor.Columns[1].Width = 120;
-
         }
 
         public void atualizaDadosGrid()
         {
-            
-
-            grdDadosCor.DataSource = db_Cor.selectCorBase();
+            grdDadosCor.DataSource = db_Cor.selectCorDBaseGrid();
         }
  
         private void atualizaDadosControles()
         {
-            tinta = db_Cor.RetornaDadosObjeto(tinta);
-
-            
+            grdDadosCor.DataSource = db_Cor.selectCorDBaseGrid();
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -68,37 +68,33 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-         
+            txtBuscaCor.Enabled = habilitar;
             grdDadosCor.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-           
-
-            tinta.setCorId(0);
-            
+            txtBuscaCor.Text = "";
+            tinta.setCorNome("");
+            tinta.setCorId(-1);
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            
-
+            if (txtBuscaCor.Text.Length == 0)
+            {
+                resultado = false;
+            }
 
             return resultado;
         }
         private void insereCor()
         {
-            //     habilitaBotoesMenu(false);
-            //     habilitaCamposDados(true);
-            //     limpaCamposDados();
-
-            classeCor CorTemp = new classeCor();
-            CorTemp.setCorNome(txtBuscaCor.Text);
-            db_Cor.insereCorBase(CorTemp);
-           
+            habilitaBotoesMenu(false);
+            habilitaCamposDados(true);
+            limpaCamposDados();
         }
 
         private void alteraCor()
@@ -126,23 +122,21 @@ namespace Projeto_LPRC5
                 MessageBox.Show("Não foi possível excluir", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void salvaCor()
         {
             if (verificaDadosObrigatorios() == true)
             {
-                
-
-                if (tinta.getCorId() == 0)
+                if (comando == true)
                 {
-                  
+                    tinta.setCorNome(txtBuscaCor.Text);
                     db_Cor.insereCorBase(tinta);
                 }
-                else
+                else if  (comando == false)
                 {
-                    
+                    tinta.setCorNome(txtBuscaCor.Text);
                     db_Cor.alteraCorBase(tinta);
                 }
+
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
                 limpaCamposDados();
@@ -153,7 +147,6 @@ namespace Projeto_LPRC5
                 MessageBox.Show("Insira todos os dados obrigatórios nos campos mostrados. ", "Urgente!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void cancelaCor()
         {
             DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Cor?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -186,11 +179,13 @@ namespace Projeto_LPRC5
         private void barbtnNovo_Click(object sender, EventArgs e)
         {
             insereCor();
+            comando = true;
         }
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
             alteraCor();
+            comando = false;
         }
 
         private void barbtnExcluir_Click(object sender, EventArgs e)
@@ -215,18 +210,33 @@ namespace Projeto_LPRC5
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tinta.setCorId(Convert.ToInt16(grdDadosCor.Rows[grdDadosCor.CurrentRow.Index].Cells[0].Value.ToString()));
-            atualizaDadosControles();
+            
         }
 
         private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            tinta.setCorId(Convert.ToInt16(grdDadosCor.Rows[grdDadosCor.CurrentRow.Index].Cells[0].Value.ToString()));
+            selectCorDBase(tinta);
+            atualizaDadosControles();
+        }
+        private void selectCorDBase(classeCor tinta)
+        {
+            tinta = db_Cor.selectCorDBase(tinta);
+            txtBuscaCor.Text = tinta.getCorNome();
+        }
 
+        private void selectCorDBase()
+        {
+            grdDadosCor.DataSource = db_Cor.selectCorDBaseGrid();
         }
 
         private void fmrCor_Load(object sender, EventArgs e)
         {
-
+            db_Cor.selectCorDBase();
+            habilitaBotoesMenu(true);
+            habilitaCamposDados(false);
+            atualizaDadosGrid();
+            formataGrid();
         }
 
         private void barbtnSair_Click(object sender, EventArgs e)

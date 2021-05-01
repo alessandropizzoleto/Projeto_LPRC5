@@ -57,7 +57,7 @@ namespace Projeto_LPRC5
             this.barManutencaoCor.Location = new System.Drawing.Point(0, 0);
             this.barManutencaoCor.Name = "barManutencaoCor";
             this.barManutencaoCor.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barManutencaoCor.Size = new System.Drawing.Size(230, 39);
+            this.barManutencaoCor.Size = new System.Drawing.Size(260, 39);
             this.barManutencaoCor.TabIndex = 1;
             this.barManutencaoCor.Text = "toolStrip1";
             // 
@@ -132,7 +132,7 @@ namespace Projeto_LPRC5
             this.txtBuscaCor.Location = new System.Drawing.Point(13, 43);
             this.txtBuscaCor.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscaCor.Name = "txtBuscaCor";
-            this.txtBuscaCor.Size = new System.Drawing.Size(239, 30);
+            this.txtBuscaCor.Size = new System.Drawing.Size(239, 26);
             this.txtBuscaCor.TabIndex = 3;
             this.txtBuscaCor.Click += new System.EventHandler(this.barbtnNovo_Click);
             // 
@@ -149,7 +149,7 @@ namespace Projeto_LPRC5
             // 
             // frmCor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 438);
             this.Controls.Add(this.grdDadosCor);
