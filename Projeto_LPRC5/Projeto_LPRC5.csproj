@@ -105,6 +105,7 @@
     <Compile Include="classeFeriado.cs" />
     <Compile Include="classeDefault.cs" />
     <Compile Include="classeVeiculoModelo.cs" />
+    <Compile Include="classeVisitantePrestador.cs" />
     <Compile Include="conexao.cs" />
     <Compile Include="conexaoMySql.cs" />
     <Compile Include="dbCidade.cs" />
