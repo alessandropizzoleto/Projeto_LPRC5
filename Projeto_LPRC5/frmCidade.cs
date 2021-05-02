@@ -4,9 +4,9 @@
 //**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações:mudança do nome da variavel da instancia da classeCidade, verificação se o objeto não é nulo para fazer a requisição no BD 
+//*** Data:02/05/2021
+//*** Responsável:Guilherme de Andrade Rissato
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace Projeto_LPRC5 {
         }
 
         dbCidade db_Cidade = new dbCidade();
-        classeCidade padrao = new classeCidade();
+        classeCidade classeCidade = new classeCidade();
 
         private void formataGrid() {
             //Opção para selecionar a linha inteira do grid
@@ -50,7 +50,14 @@ namespace Projeto_LPRC5 {
         }
 
         private void atualizaDadosControles() {
-            padrao = db_Cidade.RetornaDadosObjeto(padrao);
+            //verificação se o objeto nao é nulo
+            if (classeCidade.Equals(null))
+            {
+
+            }
+            else { 
+                classeCidade = db_Cidade.RetornaDadosObjeto(classeCidade);
+            }
 
             //txtNome.Text = cidade.getNome();
         }
@@ -66,23 +73,23 @@ namespace Projeto_LPRC5 {
 
         private void habilitaCamposDados(bool habilitar) {
             //txtNome.Enabled = habilitar;
+            //habilitação do campo txtCidade no form
+            txtCidade.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
 
         private void limpaCamposDados() {
-            //txtNome.Text = "";
-
-            padrao.setCidadeId(0);
-            //padrao.setNome("");
+            txtCidade.Text = "";
+            classeCidade.setCidadeId(0);
         }
 
         private bool verificaDadosObrigatorios() {
             bool resultado = true;
-
-            //if (txtNome.Text.Trim().Length < 4)
-            //{
-            //    resultado = false;
-            //}
+            // habilitacao da verificao
+            if (txtCidade.Text.Trim().Length < 2)
+            {
+                resultado = false;
+            }
 
 
             return resultado;
@@ -100,11 +107,11 @@ namespace Projeto_LPRC5 {
         }
 
         private void excluiCidade() {
-            if (padrao.getCidadeId() != 0) {
+            if (classeCidade.getCidadeId() != 0) {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes) {
-                    db_Cidade.excluiCidadeBase(padrao);
+                    db_Cidade.excluiCidadeBase(classeCidade);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -116,15 +123,19 @@ namespace Projeto_LPRC5 {
 
         private void salvaCidade() {
             if (verificaDadosObrigatorios() == true) {
-                //Atualizando os dados do objeto estado.
-                //padrao.setNome(txtNome.Text);
+                //Atualizando os dados do objeto cidade.
+                classeCidade.setCidadeNome(txtCidade.Text);
 
-                if (padrao.getCidadeId() == 0) {
+                if (classeCidade.getCidadeId() == 0) {
                     //Insere os dados
-                    db_Cidade.insereCidadeBase(padrao);
+                    //alimentacao da classe objeto com a informacao do txtCidade para ser enviado ao banco de dados
+                    classeCidade.setCidadeNome(txtCidade.Text);
+                    db_Cidade.insereCidadeBase(classeCidade);
                 } else {
                     //Altera os dados
-                    db_Cidade.alteraCidadeBase(padrao);
+                    //alimentacao da classe objeto com a informacao do txtCidade para ser enviado ao banco de dados
+                    classeCidade.setCidadeNome(txtCidade.Text);
+                    db_Cidade.alteraCidadeBase(classeCidade);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -146,10 +157,6 @@ namespace Projeto_LPRC5 {
         }
         private void fechaCidade() {
             this.Close();
-        }
-
-        private void lblNome_Click(object sender, EventArgs e) {
-
         }
 
         private void frmCid_Load(object sender, EventArgs e) {
@@ -184,7 +191,7 @@ namespace Projeto_LPRC5 {
         }
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
-            padrao.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            classeCidade.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
         }
     }

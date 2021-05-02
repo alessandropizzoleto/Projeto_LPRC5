@@ -56,16 +56,16 @@ namespace Projeto_LPRC5
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataSet ds = new DataSet();
-            classeDefault defaultTemp = new classeDefault();
+            classeDefault veiculoModeloTemp = new classeDefault();
 
             //string sql = "SELECT * FROM veiculomodelo WHERE IDVeiculo="+ veiculoModelo.getVeiculoID() +";";
             //adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
-            defaultTemp.setId(veiculoModelo.getVeiculoID());
+            veiculoModeloTemp.setId(veiculoModelo.getVeiculoID());
 
 
-            return defaultTemp;
+            return veiculoModeloTemp;
         }
 
         public DataTable selectDefaultBase()

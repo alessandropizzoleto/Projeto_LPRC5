@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCidade));
             this.barManutencao = new System.Windows.Forms.ToolStrip();
             this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
             this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
@@ -52,17 +51,16 @@
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(228, 39);
+            this.barManutencao.Size = new System.Drawing.Size(150, 25);
             this.barManutencao.TabIndex = 0;
             this.barManutencao.Text = "toolStrip1";
             // 
             // barbtnNovo
             // 
             this.barbtnNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.barbtnNovo.Image = ((System.Drawing.Image)(resources.GetObject("barbtnNovo.Image")));
             this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnNovo.Name = "barbtnNovo";
-            this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
+            this.barbtnNovo.Size = new System.Drawing.Size(23, 22);
             this.barbtnNovo.Text = "Novo";
             this.barbtnNovo.ToolTipText = "Adicionar Cidade";
             this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
@@ -70,10 +68,9 @@
             // barbtnEditar
             // 
             this.barbtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.barbtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnEditar.Image")));
             this.barbtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnEditar.Name = "barbtnEditar";
-            this.barbtnEditar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnEditar.Size = new System.Drawing.Size(23, 22);
             this.barbtnEditar.Text = "Editar";
             this.barbtnEditar.ToolTipText = "Editar Cidade";
             this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
@@ -81,10 +78,9 @@
             // barbtnExcluir
             // 
             this.barbtnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.barbtnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("barbtnExcluir.Image")));
             this.barbtnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnExcluir.Name = "barbtnExcluir";
-            this.barbtnExcluir.Size = new System.Drawing.Size(36, 36);
+            this.barbtnExcluir.Size = new System.Drawing.Size(23, 22);
             this.barbtnExcluir.Text = "Excluir";
             this.barbtnExcluir.ToolTipText = "Excluir Cidade";
             this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
@@ -92,10 +88,9 @@
             // barbtnSalvar
             // 
             this.barbtnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.barbtnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnSalvar.Image")));
             this.barbtnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnSalvar.Name = "barbtnSalvar";
-            this.barbtnSalvar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnSalvar.Size = new System.Drawing.Size(23, 22);
             this.barbtnSalvar.Text = "Salvar";
             this.barbtnSalvar.ToolTipText = "Salvar nova Cidade";
             this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
@@ -103,10 +98,9 @@
             // barbtnCancelar
             // 
             this.barbtnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.barbtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnCancelar.Image")));
             this.barbtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnCancelar.Name = "barbtnCancelar";
-            this.barbtnCancelar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnCancelar.Size = new System.Drawing.Size(23, 22);
             this.barbtnCancelar.Text = "Cancelar";
             this.barbtnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
             this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
@@ -114,10 +108,9 @@
             // barbtnFechar
             // 
             this.barbtnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.barbtnFechar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnFechar.Image")));
             this.barbtnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnFechar.Name = "barbtnFechar";
-            this.barbtnFechar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnFechar.Size = new System.Drawing.Size(23, 22);
             this.barbtnFechar.Text = "Fechar";
             this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);

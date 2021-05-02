@@ -4,9 +4,9 @@
 //**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações:a classe objeto está correta, não é necessario fazer alterações
+//*** Data:02/05/2021
+//*** Responsável:Guilherme de Andrade Rissato
 //****************************************************************************************
 using System;
 using System.Collections.Generic;

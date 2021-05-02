@@ -7,6 +7,10 @@
 //****** Atualizações: Criação do acesso ao banco de dados
 //*** Data: 26/04/2021
 //*** Responsável: Geanluca Sampaio de Sousa
+
+//****** Atualizações: atualização no comando alteraCidadeBase, comando sql escrito de maneira errada
+//*** Data: 02/05/2021
+//*** Responsável: Guilherme de Andrade Rissato
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -29,7 +33,8 @@ namespace Projeto_LPRC5 {
 
         //Cria as instrução SQL para update de dados na Base de dados
         public void alteraCidadeBase(classeCidade cidade) {
-            string sql = $"update cidade (cidadenome) values {cidade.getCidadeNome()} where cidadeid = {cidade.getCidadeId()}";
+            //string sql = $"update cidade (cidadenome) values {cidade.getCidadeNome()} where cidadeid = {cidade.getCidadeId()}";
+            string sql = $"update cidade (cidadenome) set cidadenome = {cidade.getCidadeNome()} where cidadeid = {cidade.getCidadeId()}";
             //connect.executaSQL(sql);
         }
 
@@ -51,7 +56,7 @@ namespace Projeto_LPRC5 {
             DataSet ds = new DataSet();
             classeCidade cidadeTemp = new classeCidade();
 
-            //string sql = "select cidId, cidNome from cidade where cidId = " + padrao.getId() + ";";
+            //string sql = "select cidId, cidNome from cidade where cidId = " + cidade.getCidadeId() + ";";
             //adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
