@@ -4,9 +4,9 @@
 //**Instruções: criação dos atributos id e descrição utilizando propriedades
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Mudar tipo de classificapessoadescricao de int para String
+//*** Data: 03/05/2021
+//*** Responsável: Geanluca Sampaio de Sousa
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace Projeto_LPRC5
     {
         //Atributos da Classe
         private int classificapessoaid;
-        private int classificapessoadescricao { get; set; }
+        private String classificapessoadescricao { get; set; }
 
 
         //Método Construtor
