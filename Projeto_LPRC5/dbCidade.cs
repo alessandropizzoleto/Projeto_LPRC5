@@ -27,28 +27,27 @@ namespace Projeto_LPRC5 {
 
         //Cria as intstrução SQL para insert de dados na Base de dados
         public void insereCidadeBase(classeCidade cidade) {
-            string sql = $"insert into cidade  (cidadeid, cidadenome)  values {cidade.getCidadeId()}, {cidade.getCidadeNome()};";
-            //connect.executaSQL("");
+            string sql = $"insert into cidade  (cidadenome)  values ('{cidade.getCidadeNome()}');";
+            connect.executaSQL(sql);
         }
 
         //Cria as instrução SQL para update de dados na Base de dados
         public void alteraCidadeBase(classeCidade cidade) {
             //string sql = $"update cidade (cidadenome) values {cidade.getCidadeNome()} where cidadeid = {cidade.getCidadeId()}";
-            string sql = $"update cidade (cidadenome) set cidadenome = {cidade.getCidadeNome()} where cidadeid = {cidade.getCidadeId()}";
-            //connect.executaSQL(sql);
+            string sql = $"update cidade set cidadenome = '{cidade.getCidadeNome()}' where cidadeid = {cidade.getCidadeId()}";
+            connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Delete de dados na base de dados
         public void excluiCidadeBase(classeCidade cidade) {
             string sql = $"delete from cidade where cidadeid = {cidade.getCidadeId()} limit 1";
-            //connect.executaSQL(sql);
+            connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Retornar dados da Base de Dados
         public MySqlDataAdapter selectCidadeBase(classeCidade cidade) {
             string sql = $"select * from cidade where cidadeid = {cidade.getCidadeId()}";
-            //return connect.retornaSQL(sql);
-            return null;
+            return connect.retornaSQL(sql);
         }
 
         public classeCidade RetornaDadosObjeto(classeCidade cidade) {
@@ -56,12 +55,12 @@ namespace Projeto_LPRC5 {
             DataSet ds = new DataSet();
             classeCidade cidadeTemp = new classeCidade();
 
-            //string sql = "select cidId, cidNome from cidade where cidId = " + cidade.getCidadeId() + ";";
-            //adapter = connect.retornaSQL(sql);
+            string sql = "select cidadeId, cidadeNome from cidade where cidadeId = " + cidade.getCidadeId() + ";";
+            adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
             cidadeTemp.setCidadeId(cidade.getCidadeId());
-
+            cidadeTemp.setCidadeNome(ds.Tables[0].Rows[0][1].ToString());
 
             return cidadeTemp;
         }
@@ -70,8 +69,8 @@ namespace Projeto_LPRC5 {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable tabela = new DataTable();
 
-            //string sql = "select cidId, cidNome from cidade;";
-            //adapter = connect.retornaSQL(sql);
+            string sql = "select cidadeId, cidadeNome from cidade;";
+            adapter = connect.retornaSQL(sql);
             adapter.Fill(tabela);
 
             return tabela;

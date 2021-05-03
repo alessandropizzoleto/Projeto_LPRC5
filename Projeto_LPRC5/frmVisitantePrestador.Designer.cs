@@ -30,7 +30,7 @@ namespace Projeto_LPRC5
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVisitantePrestador));
-            this.grdDadosCor = new System.Windows.Forms.DataGridView();
+            this.grdDadosVisitante = new System.Windows.Forms.DataGridView();
             this.txtBuscaCor = new System.Windows.Forms.TextBox();
             this.barManutencaoCor = new System.Windows.Forms.ToolStrip();
             this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
@@ -52,26 +52,26 @@ namespace Projeto_LPRC5
             this.chkVeiculo = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPlaca = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDadosVisitante)).BeginInit();
             this.barManutencaoCor.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grdDadosCor
+            // grdDadosVisitante
             // 
-            this.grdDadosCor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCor.Location = new System.Drawing.Point(20, 127);
-            this.grdDadosCor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grdDadosCor.Name = "grdDadosCor";
-            this.grdDadosCor.RowHeadersWidth = 51;
-            this.grdDadosCor.Size = new System.Drawing.Size(304, 377);
-            this.grdDadosCor.TabIndex = 7;
+            this.grdDadosVisitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDadosVisitante.Location = new System.Drawing.Point(20, 127);
+            this.grdDadosVisitante.Margin = new System.Windows.Forms.Padding(6);
+            this.grdDadosVisitante.Name = "grdDadosVisitante";
+            this.grdDadosVisitante.RowHeadersWidth = 51;
+            this.grdDadosVisitante.Size = new System.Drawing.Size(304, 377);
+            this.grdDadosVisitante.TabIndex = 7;
             // 
             // txtBuscaCor
             // 
             this.txtBuscaCor.Location = new System.Drawing.Point(22, 80);
-            this.txtBuscaCor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBuscaCor.Margin = new System.Windows.Forms.Padding(6);
             this.txtBuscaCor.Name = "txtBuscaCor";
-            this.txtBuscaCor.Size = new System.Drawing.Size(302, 26);
+            this.txtBuscaCor.Size = new System.Drawing.Size(302, 30);
             this.txtBuscaCor.TabIndex = 6;
             // 
             // barManutencaoCor
@@ -88,7 +88,7 @@ namespace Projeto_LPRC5
             this.barManutencaoCor.Location = new System.Drawing.Point(3, 18);
             this.barManutencaoCor.Name = "barManutencaoCor";
             this.barManutencaoCor.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.barManutencaoCor.Size = new System.Drawing.Size(230, 39);
+            this.barManutencaoCor.Size = new System.Drawing.Size(231, 39);
             this.barManutencaoCor.TabIndex = 5;
             this.barManutencaoCor.Text = "toolStrip1";
             // 
@@ -155,9 +155,9 @@ namespace Projeto_LPRC5
             // txtNomeVisitante
             // 
             this.txtNomeVisitante.Location = new System.Drawing.Point(367, 80);
-            this.txtNomeVisitante.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNomeVisitante.Margin = new System.Windows.Forms.Padding(6);
             this.txtNomeVisitante.Name = "txtNomeVisitante";
-            this.txtNomeVisitante.Size = new System.Drawing.Size(356, 26);
+            this.txtNomeVisitante.Size = new System.Drawing.Size(356, 30);
             this.txtNomeVisitante.TabIndex = 8;
             // 
             // label1
@@ -166,7 +166,7 @@ namespace Projeto_LPRC5
             this.label1.Location = new System.Drawing.Point(363, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 19);
+            this.label1.Size = new System.Drawing.Size(63, 22);
             this.label1.TabIndex = 9;
             this.label1.Text = "Nome:";
             // 
@@ -176,7 +176,7 @@ namespace Projeto_LPRC5
             this.label2.Location = new System.Drawing.Point(362, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 19);
+            this.label2.Size = new System.Drawing.Size(51, 22);
             this.label2.TabIndex = 11;
             this.label2.Text = "CPF:";
             // 
@@ -185,7 +185,7 @@ namespace Projeto_LPRC5
             this.txtCPF.Location = new System.Drawing.Point(366, 148);
             this.txtCPF.Margin = new System.Windows.Forms.Padding(6);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(356, 26);
+            this.txtCPF.Size = new System.Drawing.Size(356, 30);
             this.txtCPF.TabIndex = 10;
             // 
             // chkVisitante
@@ -193,7 +193,7 @@ namespace Projeto_LPRC5
             this.chkVisitante.AutoSize = true;
             this.chkVisitante.Location = new System.Drawing.Point(369, 205);
             this.chkVisitante.Name = "chkVisitante";
-            this.chkVisitante.Size = new System.Drawing.Size(83, 23);
+            this.chkVisitante.Size = new System.Drawing.Size(106, 26);
             this.chkVisitante.TabIndex = 12;
             this.chkVisitante.Text = "Visitante ";
             this.chkVisitante.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@ namespace Projeto_LPRC5
             this.chkPrestador.AutoSize = true;
             this.chkPrestador.Location = new System.Drawing.Point(498, 205);
             this.chkPrestador.Name = "chkPrestador";
-            this.chkPrestador.Size = new System.Drawing.Size(153, 23);
+            this.chkPrestador.Size = new System.Drawing.Size(196, 26);
             this.chkPrestador.TabIndex = 13;
             this.chkPrestador.Text = "Prestador de serviço";
             this.chkPrestador.UseVisualStyleBackColor = true;
@@ -214,7 +214,7 @@ namespace Projeto_LPRC5
             this.label3.Location = new System.Drawing.Point(359, 246);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 19);
+            this.label3.Size = new System.Drawing.Size(137, 22);
             this.label3.TabIndex = 15;
             this.label3.Text = "Nome Empresa:";
             // 
@@ -223,7 +223,7 @@ namespace Projeto_LPRC5
             this.textNomeEmpresa.Location = new System.Drawing.Point(363, 271);
             this.textNomeEmpresa.Margin = new System.Windows.Forms.Padding(6);
             this.textNomeEmpresa.Name = "textNomeEmpresa";
-            this.textNomeEmpresa.Size = new System.Drawing.Size(356, 26);
+            this.textNomeEmpresa.Size = new System.Drawing.Size(356, 30);
             this.textNomeEmpresa.TabIndex = 14;
             // 
             // label4
@@ -232,7 +232,7 @@ namespace Projeto_LPRC5
             this.label4.Location = new System.Drawing.Point(359, 321);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 19);
+            this.label4.Size = new System.Drawing.Size(177, 22);
             this.label4.TabIndex = 17;
             this.label4.Text = "Vínculo do Visitante:";
             // 
@@ -241,7 +241,7 @@ namespace Projeto_LPRC5
             this.txtVeiculo.Location = new System.Drawing.Point(363, 346);
             this.txtVeiculo.Margin = new System.Windows.Forms.Padding(6);
             this.txtVeiculo.Name = "txtVeiculo";
-            this.txtVeiculo.Size = new System.Drawing.Size(356, 26);
+            this.txtVeiculo.Size = new System.Drawing.Size(356, 30);
             this.txtVeiculo.TabIndex = 16;
             // 
             // chkVeiculo
@@ -249,7 +249,7 @@ namespace Projeto_LPRC5
             this.chkVeiculo.AutoSize = true;
             this.chkVeiculo.Location = new System.Drawing.Point(366, 399);
             this.chkVeiculo.Name = "chkVeiculo";
-            this.chkVeiculo.Size = new System.Drawing.Size(123, 23);
+            this.chkVeiculo.Size = new System.Drawing.Size(156, 26);
             this.chkVeiculo.TabIndex = 18;
             this.chkVeiculo.Text = "Usando Veículo";
             this.chkVeiculo.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@ namespace Projeto_LPRC5
             this.label5.Location = new System.Drawing.Point(359, 443);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 19);
+            this.label5.Size = new System.Drawing.Size(150, 22);
             this.label5.TabIndex = 20;
             this.label5.Text = "Placa do Veículo:";
             // 
@@ -269,12 +269,12 @@ namespace Projeto_LPRC5
             this.txtPlaca.Location = new System.Drawing.Point(363, 468);
             this.txtPlaca.Margin = new System.Windows.Forms.Padding(6);
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(356, 26);
+            this.txtPlaca.Size = new System.Drawing.Size(356, 30);
             this.txtPlaca.TabIndex = 19;
             // 
             // frmVisitantePrestador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 530);
             this.Controls.Add(this.label5);
@@ -290,15 +290,15 @@ namespace Projeto_LPRC5
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNomeVisitante);
-            this.Controls.Add(this.grdDadosCor);
+            this.Controls.Add(this.grdDadosVisitante);
             this.Controls.Add(this.txtBuscaCor);
             this.Controls.Add(this.barManutencaoCor);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVisitantePrestador";
             this.Text = "Cadastro Visitante / Prestador de Serviço";
             this.Load += new System.EventHandler(this.frmVisitantePrestador_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDadosVisitante)).EndInit();
             this.barManutencaoCor.ResumeLayout(false);
             this.barManutencaoCor.PerformLayout();
             this.ResumeLayout(false);
@@ -308,7 +308,7 @@ namespace Projeto_LPRC5
 
         #endregion
 
-        private System.Windows.Forms.DataGridView grdDadosCor;
+        private System.Windows.Forms.DataGridView grdDadosVisitante;
         private System.Windows.Forms.TextBox txtBuscaCor;
         private System.Windows.Forms.ToolStrip barManutencaoCor;
         private System.Windows.Forms.ToolStripButton barbtnNovo;
