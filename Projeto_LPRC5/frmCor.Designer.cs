@@ -39,7 +39,7 @@ namespace Projeto_LPRC5
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.txtBuscaCor = new System.Windows.Forms.TextBox();
             this.grdDadosCor = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCorNome = new System.Windows.Forms.Label();
             this.txtDescricaoCor = new System.Windows.Forms.TextBox();
             this.barManutencaoCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCor)).BeginInit();
@@ -131,16 +131,22 @@ namespace Projeto_LPRC5
             // 
             // txtBuscaCor
             // 
+            this.txtBuscaCor.Enabled = false;
             this.txtBuscaCor.Location = new System.Drawing.Point(13, 43);
             this.txtBuscaCor.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscaCor.Name = "txtBuscaCor";
             this.txtBuscaCor.Size = new System.Drawing.Size(239, 26);
             this.txtBuscaCor.TabIndex = 3;
-            this.txtBuscaCor.Click += new System.EventHandler(this.barbtnNovo_Click);
             // 
             // grdDadosCor
             // 
+            this.grdDadosCor.AllowUserToAddRows = false;
+            this.grdDadosCor.AllowUserToDeleteRows = false;
+            this.grdDadosCor.AllowUserToResizeColumns = false;
+            this.grdDadosCor.AllowUserToResizeRows = false;
+            this.grdDadosCor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdDadosCor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDadosCor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grdDadosCor.Location = new System.Drawing.Point(11, 75);
             this.grdDadosCor.Margin = new System.Windows.Forms.Padding(4);
             this.grdDadosCor.Name = "grdDadosCor";
@@ -149,16 +155,15 @@ namespace Projeto_LPRC5
             this.grdDadosCor.TabIndex = 4;
             this.grdDadosCor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
-            // label2
+            // lblCorNome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(265, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 23);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Descrição:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblCorNome.AutoSize = true;
+            this.lblCorNome.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorNome.Location = new System.Drawing.Point(265, 47);
+            this.lblCorNome.Name = "lblCorNome";
+            this.lblCorNome.Size = new System.Drawing.Size(128, 23);
+            this.lblCorNome.TabIndex = 11;
+            this.lblCorNome.Text = "Nome da Cor:";
             // 
             // txtDescricaoCor
             // 
@@ -172,8 +177,8 @@ namespace Projeto_LPRC5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 606);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(574, 431);
+            this.Controls.Add(this.lblCorNome);
             this.Controls.Add(this.txtDescricaoCor);
             this.Controls.Add(this.grdDadosCor);
             this.Controls.Add(this.txtBuscaCor);
@@ -203,7 +208,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.TextBox txtBuscaCor;
         private System.Windows.Forms.DataGridView grdDadosCor;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCorNome;
         private System.Windows.Forms.TextBox txtDescricaoCor;
     }
 }

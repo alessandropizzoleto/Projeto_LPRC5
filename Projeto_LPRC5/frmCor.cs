@@ -42,12 +42,14 @@ namespace Projeto_LPRC5
         private void formataGrid()
         {
             grdDadosCor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            grdDadosCor.RowHeadersVisible = false;
             grdDadosCor.Columns[0].HeaderText = "Código";
             grdDadosCor.Columns[1].HeaderText = "Nome";
 
             grdDadosCor.Columns[0].Width = 0;
             grdDadosCor.Columns[1].Width = 120;
+            grdDadosCor.Columns[0].Visible = false;
+            
         }
 
         public void atualizaDadosGrid()
@@ -248,9 +250,6 @@ namespace Projeto_LPRC5
             this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
