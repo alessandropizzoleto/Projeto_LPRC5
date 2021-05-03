@@ -1,7 +1,7 @@
 ﻿//****************************************************************************************
-//**Criado por:
-//**Data de Criação:
-//**Instruções:
+//**Criado por: Geanluca Sampaio de Sousa, Thomas Taino, Aldemir Humberto Soares Neto, Felipe Lopes Silva e Silva
+//**Data de Criação: 19/04/2021
+//**Instruções: Criação de formulário
 //
 //
 //****** Atualizações:mudança do nome da variavel da instancia da classeCidade, verificação se o objeto não é nulo para fazer a requisição no BD 
