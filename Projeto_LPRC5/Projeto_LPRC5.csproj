@@ -111,6 +111,7 @@
     <Compile Include="conexaoMySql.cs" />
     <Compile Include="dbCadastroFuncionarios.cs" />
     <Compile Include="dbCidade.cs" />
+    <Compile Include="dbClassificaPessoa.cs" />
     <Compile Include="dbCor.cs" />
     <Compile Include="dbDefault.cs" />
     <Compile Include="dbEncomenda.cs" />
