@@ -40,7 +40,7 @@ namespace Projeto_LPRC5
             this.txtBuscaCor = new System.Windows.Forms.TextBox();
             this.grdDadosCor = new System.Windows.Forms.DataGridView();
             this.lblCorNome = new System.Windows.Forms.Label();
-            this.txtDescricaoCor = new System.Windows.Forms.TextBox();
+            this.txtNomeCor = new System.Windows.Forms.TextBox();
             this.barManutencaoCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCor)).BeginInit();
             this.SuspendLayout();
@@ -165,13 +165,13 @@ namespace Projeto_LPRC5
             this.lblCorNome.TabIndex = 11;
             this.lblCorNome.Text = "Nome da Cor:";
             // 
-            // txtDescricaoCor
+            // txtNomeCor
             // 
-            this.txtDescricaoCor.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoCor.Location = new System.Drawing.Point(408, 73);
-            this.txtDescricaoCor.Name = "txtDescricaoCor";
-            this.txtDescricaoCor.Size = new System.Drawing.Size(258, 32);
-            this.txtDescricaoCor.TabIndex = 10;
+            this.txtNomeCor.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeCor.Location = new System.Drawing.Point(408, 73);
+            this.txtNomeCor.Name = "txtNomeCor";
+            this.txtNomeCor.Size = new System.Drawing.Size(258, 32);
+            this.txtNomeCor.TabIndex = 10;
             // 
             // frmCor
             // 
@@ -179,7 +179,7 @@ namespace Projeto_LPRC5
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 438);
             this.Controls.Add(this.lblCorNome);
-            this.Controls.Add(this.txtDescricaoCor);
+            this.Controls.Add(this.txtNomeCor);
             this.Controls.Add(this.grdDadosCor);
             this.Controls.Add(this.txtBuscaCor);
             this.Controls.Add(this.barManutencaoCor);
@@ -208,6 +208,6 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.TextBox txtBuscaCor;
         private System.Windows.Forms.DataGridView grdDadosCor;
         private System.Windows.Forms.Label lblCorNome;
-        private System.Windows.Forms.TextBox txtDescricaoCor;
+        private System.Windows.Forms.TextBox txtNomeCor;
     }
 }

@@ -4,9 +4,9 @@
 //**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Modificação de praticamente todo o codico pois só existia conflito por conta de copiar e colar. Adicionados comandos para realizar a query, novas funções para selecionar informações e exibir no grid e por fim a organização completa do código.
+//*** Data:03/05/2021
+//*** Responsável:Grupo 6
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -21,62 +21,70 @@ namespace Projeto_LPRC5
 {
     class bdFeriado
     {
+        private Int32 retornoferiado;
         conexaoMySql connect = new conexaoMySql();
 
-        //Cria as intstrução SQL para insert de dados na Base de dados
-        public void insereFeriadoBase(ClasseFeriado feriado)
+        
+        public void insereFeriadoBase(classeFeriado feriado)
         {
-            string sql = $"insert into feriados  (feriadoId, feriadoDia, feriadoMes, feriadoDescricao)  values {feriado.Dia}, {feriado.Mes},{feriado.Descricao} );";
-            //connect.executaSQL("");
+            string sql = "insert into feriado  (feriadodia, feriadomes, feriadonome)  values ("+feriado.getFeriadoDia()+", "+feriado.getFeriadoMes()+",'"+feriado.getFeriadoNome() + "')";
+
+            retornoferiado = connect.executaSQL(sql.ToString());
         }
 
-        //Cria as instrução SQL para update de dados na Base de dados
-        public void alteraFeriadoBase(ClasseFeriado feriado)
+        
+        public void alteraFeriadoBase(classeFeriado feriado)
         {
-            string sql = $"Update feriados set feriadoDia ={feriado.Dia}, feriadoMes ={feriado.Mes}, feriadoDescricao = {feriado.Descricao} where feriadoId = {feriado.Id};";
-            //connect.executaSQL(sql);
+            string sql = "Update feriado set feriadodia ="+feriado.getFeriadoDia()+", feriadomes ="+feriado.getFeriadoMes()+", feriadonome = '"+feriado.getFeriadoNome()+"' where feriadoid = "+feriado.getFeriadoId()+";";
+            retornoferiado = connect.executaSQL(sql.ToString());
         }
 
-        //Cria a instrução SQL para Delete de dados na base de dados
-        public void excluiFeriadoBase(ClasseFeriado feriado)
+        
+        public void excluiFeriadoBase(classeFeriado feriado)
         {
-            string sql = $"Delete from feriados where feriadoId = {feriado.Id};" ;
-            //connect.executaSQL(sql);
+            string sql = "Delete from feriado where feriadoid = "+feriado.getFeriadoId()+";" ;
+            retornoferiado = connect.executaSQL(sql.ToString());
         }
 
-        //Cria a instrução SQL para Retornar dados da Base de Dados
-        public MySqlDataAdapter selectFeriadoBase(ClasseFeriado feriado)
+        
+        public MySqlDataAdapter selectFeriadoBase(classeFeriado feriado)
         {
-            string sql = $"Select * from feriados where feriadoId = {feriado.Id};" ;
-            //return connect.retornaSQL(sql);
-            return null;
+            string sql = "Select * from feriado where feriadoid = "+feriado.getFeriadoId()+";" ;
+            retornoferiado = connect.executaSQL(sql.ToString());
+            return connect.retornaSQL(sql.ToString());
         }
 
-        public ClasseFeriado RetornaDadosObjeto(ClasseFeriado feriado)
+        public classeFeriado selectFeriadoDBase(classeFeriado feriado)
         {
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+          
+            classeFeriado FeriadoTemp = new classeFeriado();
             DataSet ds = new DataSet();
-            ClasseFeriado feriadoTemp = new ClasseFeriado();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            //string sql = "select cidId, cidNome from cidade where cidId = " + feriado.getId() + ";";
-            //adapter = connect.retornaSQL(sql);
+            string sql = "SELECT feriadonome FROM feriado where feriadoid =" + feriado.getFeriadoId() + " ;";
+
+            adapter = connect.retornaSQL(sql.ToString());
             adapter.Fill(ds);
 
-            feriadoTemp.Id = feriado.Id;
-            
+            FeriadoTemp.setFeriadoId(feriado.getFeriadoId());
+            FeriadoTemp.setFeriadoNome(ds.Tables[0].Rows[0][0].ToString());
 
-            return feriadoTemp;
+
+            return FeriadoTemp;
         }
 
-        public DataTable selectFeriadoBase()
+        public MySqlDataAdapter selectFeriadoDBase()
+        {
+            string sql = "SELECT feriadoid, feriadonome, feriadodia,feriadomes FROM feriado;";
+            return connect.retornaSQL(sql.ToString());
+        }
+
+        public DataTable selectFeriadoDBaseGrid()
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable tabela = new DataTable();
-
-            //string sql = "select cidId, cidNome from cidade;";
-            //adapter = connect.retornaSQL(sql);
+            adapter = selectFeriadoDBase();
             adapter.Fill(tabela);
-
             return tabela;
         }
     }

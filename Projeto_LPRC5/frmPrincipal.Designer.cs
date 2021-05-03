@@ -40,13 +40,14 @@ namespace Projeto_LPRC5
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículoModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcesso = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feriadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadastro.SuspendLayout();
             this.barMenu.SuspendLayout();
             this.SuspendLayout();
@@ -76,13 +77,14 @@ namespace Projeto_LPRC5
             // 
             this.mnuTipoUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipoDeUsuárioToolStripMenuItem,
-            this.mnuClassificaPessoa,
             this.corToolStripMenuItem,
+            this.mnuClassificaPessoa,
             this.marcaToolStripMenuItem,
             this.estadoToolStripMenuItem,
             this.veículoModeloToolStripMenuItem,
             this.cidadeToolStripMenuItem,
-            this.moradoresToolStripMenuItem});
+            this.moradoresToolStripMenuItem,
+            this.feriadoToolStripMenuItem});
             this.mnuTipoUsuario.Name = "mnuTipoUsuario";
             this.mnuTipoUsuario.Size = new System.Drawing.Size(180, 22);
             this.mnuTipoUsuario.Text = "Básico";
@@ -136,6 +138,13 @@ namespace Projeto_LPRC5
             this.cidadeToolStripMenuItem.Text = "Cidade";
             this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
             // 
+            // moradoresToolStripMenuItem
+            // 
+            this.moradoresToolStripMenuItem.Name = "moradoresToolStripMenuItem";
+            this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.moradoresToolStripMenuItem.Text = "Moradores";
+            this.moradoresToolStripMenuItem.Click += new System.EventHandler(this.moradoresToolStripMenuItem_Click);
+            // 
             // configuraçõesToolStripMenuItem
             // 
             this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -184,12 +193,12 @@ namespace Projeto_LPRC5
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // moradoresToolStripMenuItem
+            // feriadoToolStripMenuItem
             // 
-            this.moradoresToolStripMenuItem.Name = "moradoresToolStripMenuItem";
-            this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.moradoresToolStripMenuItem.Text = "Moradores";
-            this.moradoresToolStripMenuItem.Click += new System.EventHandler(this.moradoresToolStripMenuItem_Click);
+            this.feriadoToolStripMenuItem.Name = "feriadoToolStripMenuItem";
+            this.feriadoToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.feriadoToolStripMenuItem.Text = "Feriado";
+            this.feriadoToolStripMenuItem.Click += new System.EventHandler(this.feriadoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -200,7 +209,7 @@ namespace Projeto_LPRC5
             this.Controls.Add(this.mnuCadastro);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuCadastro;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPrincipal";
             this.Text = "Software de Controle de Condomínio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -233,6 +242,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripMenuItem veículoModeloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moradoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem feriadoToolStripMenuItem;
     }
 }
 
