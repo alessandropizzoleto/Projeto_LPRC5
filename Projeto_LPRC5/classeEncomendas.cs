@@ -5,9 +5,9 @@
 //**Instruções: Criação dos getters and setters do objeto frmEncomendas
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações:ajuste de variaveis
+//*** Data:03/05/2021
+//*** Responsável:Guilherme de Andrade Rissato
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -19,26 +19,27 @@ namespace Projeto_LPRC5
 {
     class classeEncomendas
     {
-        private string tipoEncomenda;
+        private int codigo;
         private string destinatario;
         private string recebidaPor;
-        private string dataEntrada;
+        private DateTime? dataEntrada;
         private string entreguePor;
-        private string dataSaida;
+        private DateTime? dataSaida;
         private string entreguePara;
-        private string unidade;
+        private string complemento;
+        private string descricao;
 
-        public classeEncomendas(string tipoEncomenda, string destinatario, string recebidaPor, string dataEntrada, string entreguePor, string dataSaida, string entreguePara, string unidade)
+        public classeEncomendas(int codigo,string descricao, string destinatario, string recebidaPor, DateTime? dataEntrada, string entreguePor, DateTime? dataSaida, string entreguePara, string complemento)
         {
-            
-            this.tipoEncomenda = tipoEncomenda;
+            this.codigo = codigo;
+            this.descricao = descricao;
             this.destinatario = destinatario;
             this.recebidaPor = recebidaPor;
             this.dataEntrada = dataEntrada;
             this.entreguePor = entreguePor;
             this.dataSaida = dataSaida;
             this.entreguePara = entreguePara;
-            this.unidade = unidade;
+            this.complemento = complemento;
         }
 
         public classeEncomendas()
@@ -46,16 +47,25 @@ namespace Projeto_LPRC5
 
         }       
 
-        public void settipoEncomenda(string tipo)
+        public void setCodigo(int codigo)
         {
-            tipoEncomenda = tipo;
+            this.codigo = codigo;
         }
 
-        public string gettipoEncomenda()
-        {
-            return tipoEncomenda;
+        public int getCodigo() {
+            return codigo;
         }
-        public void setdestinatario(string destina)
+
+        public void setDescricao(string descricao)
+        {
+            this.descricao = descricao;
+        }
+
+        public string getDescricao()
+        {
+            return descricao;
+        }
+        public void setDestinatario(string destina)
         {
             destinatario = destina;
         }
@@ -64,59 +74,59 @@ namespace Projeto_LPRC5
         {
             return destinatario;
         }
-        public void setrecebidaPor(string recepor)
+        public void setRecebidaPor(string recepor)
         {
             recebidaPor = recepor;
         }
 
-        public string getrecebidaPor()
+        public string getRecebidaPor()
         {
             return recebidaPor;
         }
-        public void setdataEntrada(string datentra)
+        public void setDataEntrada(DateTime? datentra)
         {
             dataEntrada = datentra;
         }
 
-        public string getdataEntrada()
+        public DateTime? getDataEntrada()
         {
             return dataEntrada;
         }
-        public void setentreguePor(string entrepor)
+        public void setEntreguePor(string entrepor)
         {
             entreguePor = entrepor;
         }
 
-        public string getentreguePor()
+        public string getEntreguePor()
         {
             return entreguePor;
         }
-        public void setdataSaida(string datesai)
+        public void setDataSaida(DateTime? datesai)
         {
             dataSaida = datesai;
         }
 
-        public string getdataSaida()
+        public DateTime? getDataSaida()
         {
             return dataSaida;
         }
-        public void setentreguePara(string entrepara)
+        public void setEntreguePara(string entrepara)
         {
             entreguePara = entrepara;
         }
 
-        public string getentreguePara()
+        public string getEntreguePara()
         {
             return entreguePara;
         }
-        public void setunidade(string unide)
+        public void setComplemento(string complemento)
         {
-            unidade = unide;
+            this.complemento = complemento;
         }
 
-        public string getunidade()
+        public string getComplemento()
         {
-            return unidade;
+            return complemento;
         }
     }
 }

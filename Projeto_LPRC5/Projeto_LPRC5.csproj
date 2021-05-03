@@ -114,6 +114,7 @@
     <Compile Include="dbCidade.cs" />
     <Compile Include="dbCor.cs" />
     <Compile Include="dbDefault.cs" />
+    <Compile Include="dbEncomenda.cs" />
     <Compile Include="DbEstado.cs" />
     <Compile Include="dbFeriado.cs" />
     <Compile Include="dbMarca.cs" />
