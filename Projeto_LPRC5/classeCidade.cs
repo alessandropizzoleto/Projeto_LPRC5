@@ -7,6 +7,11 @@
 //****** Atualizações:a classe objeto está correta, não é necessario fazer alterações
 //*** Data:02/05/2021
 //*** Responsável:Guilherme de Andrade Rissato
+//
+//
+//****** Atualizações: Mudança do tipo da variável cidadeNome de 'string' para 'String'
+//*** Data: 03/05/2021
+//*** Responsável: Geanluca Sampaio de Sousa
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -18,7 +23,7 @@ namespace Projeto_LPRC5 {
     class classeCidade {
         //Atributos da Classe
         private int cidadeId;
-        private string cidadeNome;
+        private String cidadeNome;
 
         //Método Construtor
         public classeCidade() {

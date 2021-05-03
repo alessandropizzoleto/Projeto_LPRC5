@@ -4,24 +4,29 @@
 //**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Edição do acesso ao banco de dados por completo. Informações ainda estavam em Default
+//*** Data: 03/05/2021
+//*** Responsável: Geanluca Sampaio de Sousa
 //****************************************************************************************
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projeto_LPRC5
-{
-    public partial class frmClassificaPessoa : Form
-    {
+namespace Projeto_LPRC5{
+    public partial class frmClassificaPessoa : Form{
         public frmClassificaPessoa()
         {
             InitializeComponent();
         }
 
-        dbDefault db_Default = new dbDefault();
-        classeDefault padrao = new classeDefault();
+        dbClassificaPessoa db_ClassificaPessoa = new dbClassificaPessoa();
+        classeClassificaPessoa classeClassificaPessoa = new classeClassificaPessoa();
 
         private void formataGrid()
         {
@@ -29,7 +34,7 @@ namespace Projeto_LPRC5
             grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             grdDadosCid.Columns[0].HeaderText = "Código";
-            grdDadosCid.Columns[1].HeaderText = "Nome";
+            grdDadosCid.Columns[1].HeaderText = "Desc";
 
             grdDadosCid.Columns[0].Width = 0;
             grdDadosCid.Columns[1].Width = 120;
@@ -44,14 +49,17 @@ namespace Projeto_LPRC5
 
             //pode ser também
 
-            grdDadosCid.DataSource = db_Default.selectDefaultBase();
+            grdDadosCid.DataSource = db_ClassificaPessoa.selectClassificaPessoaBase();
         }
 
         private void atualizaDadosControles()
         {
-            padrao = db_Default.RetornaDadosObjeto(padrao);
+            if (classeClassificaPessoa.Equals(null)) {
 
-            //txtNome.Text = cidade.getNome();
+            } else {
+                classeClassificaPessoa = db_ClassificaPessoa.RetornaDadosObjeto(classeClassificaPessoa);
+            }
+            txtClassificaPessoa.Text = classeClassificaPessoa.getClassificaPessoaDescricao();
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -67,14 +75,15 @@ namespace Projeto_LPRC5
         private void habilitaCamposDados(bool habilitar)
         {
             //txtNome.Enabled = habilitar;
+            txtClassificaPessoa.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
             //txtNome.Text = "";
-
-            padrao.setId(0);
+            txtClassificaPessoa.Text = "";
+            classeClassificaPessoa.setClassificaPessoaId(0);
             //padrao.setNome("");
         }
 
@@ -82,37 +91,37 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            //if (txtNome.Text.Trim().Length < 4)
-            //{
-            //    resultado = false;
-            //}
+            if (txtClassificaPessoa.Text.Trim().Length < 4)
+            {
+                resultado = false;
+            }
 
 
             return resultado;
         }
 
-        private void insereDefault()
+        private void insereClassificaPessoa()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
             limpaCamposDados();
         }
 
-        private void alteraDefault()
+        private void alteraClassificaPessoa()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
         }
 
-        private void excluiDefault()
+        private void excluiClassificaPessoa()
         {
-            if (padrao.getId() != 0)
+            if (classeClassificaPessoa.getClassificaPessoaId() != 0)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_Default.excluiDefaultBase(padrao);
+                    db_ClassificaPessoa.excluiClassificaPessoaBase(classeClassificaPessoa);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -124,22 +133,24 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void salvaDefault()
+        private void salvaClassificaPessoa()
         {
             if (verificaDadosObrigatorios() == true)
             {
                 //Atualizando os dados do objeto estado.
                 //padrao.setNome(txtNome.Text);
 
-                if (padrao.getId() == 0)
+                if (classeClassificaPessoa.getClassificaPessoaId() == 0)
                 {
                     //Insere os dados
-                    db_Default.insereDefaultBase(padrao);
+                    classeClassificaPessoa.setClassificaPessoaDescricao(txtClassificaPessoa.Text);
+                    db_ClassificaPessoa.insereClassificaPessoaBase(classeClassificaPessoa);
                 }
                 else
                 {
                     //Altera os dados
-                    db_Default.alteraDefaultBase(padrao);
+                    classeClassificaPessoa.setClassificaPessoaDescricao(txtClassificaPessoa.Text);
+                    db_ClassificaPessoa.alteraClassificaPessoaBase(classeClassificaPessoa);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -152,9 +163,9 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void cancelaDefault()
+        private void cancelaClassificaPessoa()
         {
-            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Default?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Classifição Pessoa?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (retorno == DialogResult.Yes)
             {
@@ -163,14 +174,9 @@ namespace Projeto_LPRC5
                 limpaCamposDados();
             }
         }
-        private void fechaDefault()
+        private void fechaClassificaPessoa()
         {
             this.Close();
-        }
-
-        private void lblNome_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void frmCid_Load(object sender, EventArgs e)
@@ -183,48 +189,38 @@ namespace Projeto_LPRC5
 
         private void barbtnNovo_Click(object sender, EventArgs e)
         {
-            insereDefault();
+            insereClassificaPessoa();
         }
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
-            alteraDefault();
+            alteraClassificaPessoa();
         }
 
         private void barbtnExcluir_Click(object sender, EventArgs e)
         {
-            excluiDefault();
+            excluiClassificaPessoa();
         }
 
         private void barbtnSalvar_Click(object sender, EventArgs e)
         {
-            salvaDefault();
+            salvaClassificaPessoa();
         }
 
         private void barbtnCancelar_Click(object sender, EventArgs e)
         {
-            cancelaDefault();
+            cancelaClassificaPessoa();
         }
 
         private void barbtnFechar_Click(object sender, EventArgs e)
         {
-            fechaDefault();
+            fechaClassificaPessoa();
         }
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            classeClassificaPessoa.setClassificaPessoaId (Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Text_Desc_Func_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

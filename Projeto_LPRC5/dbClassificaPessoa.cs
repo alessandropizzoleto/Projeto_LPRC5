@@ -1,7 +1,7 @@
 ﻿//****************************************************************************************
 //**Criado por: Geanluca Sampaio de Sousa, Thomas Taino, Aldemir Humberto Soares Neto, Felipe Lopes Silva e Silva
 //**Data de Criação: 03/05/2021
-//**Instruções: Criação do arquivo
+//**Instruções: Criação do arquivo que não foi disponibilizado
 //
 //
 //****** Atualizações:
@@ -29,19 +29,19 @@ namespace Projeto_LPRC5 {
 
         //Cria as instrução SQL para update de dados na Base de dados
         public void alteraClassificaPessoaBase(classeClassificaPessoa classificaPessoa) {
-            string sql = $"update classificapessoa set classificapessoadescricao = '{classificaPessoa.getClassificaPessoaDescricao()}' where classificapessoaid = {classificaPessoa.getClassificapessoaId()}";
+            string sql = $"update classificapessoa set classificapessoadescricao = '{classificaPessoa.getClassificaPessoaDescricao()}' where classificapessoaid = {classificaPessoa.getClassificaPessoaId()}";
             connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Delete de dados na base de dados
         public void excluiClassificaPessoaBase(classeClassificaPessoa classificaPessoa) {
-            string sql = $"delete from classificapessoa where classificapessoaid = {classificaPessoa.getClassificapessoaId()} limit 1";
+            string sql = $"delete from classificapessoa where classificapessoaid = {classificaPessoa.getClassificaPessoaId()} limit 1";
             connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Retornar dados da Base de Dados
         public MySqlDataAdapter selectClassificaPessoaBase(classeClassificaPessoa classificaPessoa) {
-            string sql = $"select * from classificapessoa where cidadeid = {classificaPessoa.getClassificapessoaId()}";
+            string sql = $"select * from classificapessoa where cidadeid = {classificaPessoa.getClassificaPessoaId()}";
             return connect.retornaSQL(sql);
         }
 
@@ -50,11 +50,11 @@ namespace Projeto_LPRC5 {
             DataSet ds = new DataSet();
             classeClassificaPessoa classificaPessoaTemp = new classeClassificaPessoa();
 
-            string sql = $"select classificapessoaid, classificapessoadescricao from classificapessoa where classificapessoaid =  {classificaPessoa.getClassificapessoaId()};";
+            string sql = $"select classificapessoaid, classificapessoadescricao from classificapessoa where classificapessoaid =  {classificaPessoa.getClassificaPessoaId()};";
             adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
-            classificaPessoaTemp.setClassificapessoaId(classificaPessoa.getClassificapessoaId());
+            classificaPessoaTemp.setClassificaPessoaId(classificaPessoa.getClassificaPessoaId());
             classificaPessoaTemp.setClassificaPessoaDescricao(ds.Tables[0].Rows[0][1].ToString());
 
             return classificaPessoaTemp;

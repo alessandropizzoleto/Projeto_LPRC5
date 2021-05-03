@@ -4,7 +4,7 @@
 //**Instruções: criação dos atributos id e descrição utilizando propriedades
 //
 //
-//****** Atualizações: Mudar tipo de classificapessoadescricao de int para String
+//****** Atualizações: Mudar tipo de classificapessoadescricao de int para String / Edição nos gets e sets
 //*** Data: 03/05/2021
 //*** Responsável: Geanluca Sampaio de Sousa
 //****************************************************************************************
@@ -30,11 +30,11 @@ namespace Projeto_LPRC5
         }
 
         //Métodos Acessores
-        public void setClassificapessoaId(int id)
+        public void setClassificaPessoaId(int id)
         {
             classificapessoaid = id;
         }
-        public int getClassificapessoaId()
+        public int getClassificaPessoaId()
         {
             return classificapessoaid;
         }

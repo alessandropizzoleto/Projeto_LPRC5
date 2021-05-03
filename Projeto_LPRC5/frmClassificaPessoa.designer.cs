@@ -38,8 +38,8 @@
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosCid = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.Text_Desc_Func = new System.Windows.Forms.TextBox();
-            this.Desc_Func = new System.Windows.Forms.Label();
+            this.txtClassificaPessoa = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
             this.SuspendLayout();
@@ -143,31 +143,29 @@
             this.txtBusca.Size = new System.Drawing.Size(239, 26);
             this.txtBusca.TabIndex = 2;
             // 
-            // Text_Desc_Func
+            // txtClassificaPessoa
             // 
-            this.Text_Desc_Func.Location = new System.Drawing.Point(261, 67);
-            this.Text_Desc_Func.Name = "Text_Desc_Func";
-            this.Text_Desc_Func.Size = new System.Drawing.Size(320, 26);
-            this.Text_Desc_Func.TabIndex = 4;
-            this.Text_Desc_Func.TextChanged += new System.EventHandler(this.Text_Desc_Func_TextChanged);
+            this.txtClassificaPessoa.Location = new System.Drawing.Point(261, 67);
+            this.txtClassificaPessoa.Name = "txtClassificaPessoa";
+            this.txtClassificaPessoa.Size = new System.Drawing.Size(320, 26);
+            this.txtClassificaPessoa.TabIndex = 4;
             // 
-            // Desc_Func
+            // lblDescricao
             // 
-            this.Desc_Func.AutoSize = true;
-            this.Desc_Func.Location = new System.Drawing.Point(265, 42);
-            this.Desc_Func.Name = "Desc_Func";
-            this.Desc_Func.Size = new System.Drawing.Size(70, 19);
-            this.Desc_Func.TabIndex = 5;
-            this.Desc_Func.Text = "Descrição";
-            this.Desc_Func.Click += new System.EventHandler(this.label1_Click);
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(265, 42);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(70, 19);
+            this.lblDescricao.TabIndex = 5;
+            this.lblDescricao.Text = "Descrição";
             // 
             // frmClassificaPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 438);
-            this.Controls.Add(this.Desc_Func);
-            this.Controls.Add(this.Text_Desc_Func);
+            this.Controls.Add(this.lblDescricao);
+            this.Controls.Add(this.txtClassificaPessoa);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosCid);
             this.Controls.Add(this.barManutencao);
@@ -196,7 +194,7 @@
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosCid;
         private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.TextBox Text_Desc_Func;
-        private System.Windows.Forms.Label Desc_Func;
+        private System.Windows.Forms.TextBox txtClassificaPessoa;
+        private System.Windows.Forms.Label lblDescricao;
     }
 }
