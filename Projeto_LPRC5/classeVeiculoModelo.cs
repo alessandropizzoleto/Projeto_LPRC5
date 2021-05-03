@@ -5,9 +5,9 @@
 //**Instruções: 
 // 
 // 
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: O código está OK, não sendo necessário efetuar alterações
+//*** Data: 03/05/2021
+//*** Responsável: Giovanni Marques
 //****************************************************************************************
 using System;
 using System.Collections.Generic;

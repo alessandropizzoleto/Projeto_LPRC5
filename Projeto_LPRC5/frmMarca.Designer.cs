@@ -39,6 +39,8 @@ namespace Projeto_LPRC5
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.txtEncontrarMarca = new System.Windows.Forms.TextBox();
             this.grdDadosMarca = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             this.barraManutencaoMarca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosMarca)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +59,7 @@ namespace Projeto_LPRC5
             this.barraManutencaoMarca.Location = new System.Drawing.Point(9, 9);
             this.barraManutencaoMarca.Name = "barraManutencaoMarca";
             this.barraManutencaoMarca.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barraManutencaoMarca.Size = new System.Drawing.Size(260, 39);
+            this.barraManutencaoMarca.Size = new System.Drawing.Size(229, 39);
             this.barraManutencaoMarca.TabIndex = 3;
             this.barraManutencaoMarca.Text = "toolStrip1";
             // 
@@ -138,11 +140,30 @@ namespace Projeto_LPRC5
             this.grdDadosMarca.Size = new System.Drawing.Size(240, 350);
             this.grdDadosMarca.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(311, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Adicionar Marca:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(265, 114);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(179, 20);
+            this.txtMarca.TabIndex = 7;
+            // 
             // frmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.grdDadosMarca);
             this.Controls.Add(this.txtEncontrarMarca);
             this.Controls.Add(this.barraManutencaoMarca);
@@ -168,5 +189,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.TextBox txtEncontrarMarca;
         private System.Windows.Forms.DataGridView grdDadosMarca;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtMarca;
     }
 }

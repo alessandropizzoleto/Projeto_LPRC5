@@ -33,8 +33,8 @@ namespace Projeto_LPRC5
 
 
 
-        dbCadastroFuncionarios db_CadastroFuncionarios = new dbCadastroFuncionarios();
-        classeCadastroFuncionarios CadastroFuncionarios = new classeCadastroFuncionarios();
+       dbCadastroFuncionarios db_CadastroFuncionarios = new dbCadastroFuncionarios();
+       classeCadastroFuncionarios CadastroFuncionarios = new classeCadastroFuncionarios();
 
         private void formataGrid()
         {
@@ -43,16 +43,20 @@ namespace Projeto_LPRC5
 
             dataGridView1.Columns[0].HeaderText = "Código";
             dataGridView1.Columns[1].HeaderText = "Nome";
+            dataGridView1.Columns[2].HeaderText = "CPF";
+            dataGridView1.Columns[3].HeaderText = "Telefone";
+            dataGridView1.Columns[4].HeaderText = "Data de Nascimento";
+            dataGridView1.Columns[5].HeaderText = "Endereço";
+            dataGridView1.Columns[6].HeaderText = "Data de Adimissão";
+            dataGridView1.Columns[7].HeaderText = "Sexo";
+            dataGridView1.Columns[8].HeaderText = "Estado Civil";
 
             dataGridView1.Columns[0].Width = 0;
-            dataGridView1.Columns[1].Width = 120;
-
+            
         }
 
         public void atualizaDadosGrid()
         {
-
-
 
             dataGridView1.DataSource = db_CadastroFuncionarios.selectCadastroFuncionariosBase();
         }
@@ -83,8 +87,6 @@ namespace Projeto_LPRC5
         private void limpaCamposDados()
         {
 
-
-            CadastroFuncionarios.Id = 0;
 
         }
 
@@ -213,7 +215,7 @@ namespace Projeto_LPRC5
             fechaCadastroFuncionarios();
         }
 
-        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             CadastroFuncionarios.Id = Convert.ToInt16(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
             atualizaDadosControles();
