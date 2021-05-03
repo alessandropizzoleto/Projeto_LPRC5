@@ -58,8 +58,7 @@ namespace Projeto_LPRC5 {
             else { 
                 classeCidade = db_Cidade.RetornaDadosObjeto(classeCidade);
             }
-
-            //txtNome.Text = cidade.getNome();
+            txtCidade.Text = classeCidade.getCidadeNome();
         }
 
         private void habilitaBotoesMenu(bool hablitar) {
@@ -193,6 +192,11 @@ namespace Projeto_LPRC5 {
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
             classeCidade.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
+        }
+
+        private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

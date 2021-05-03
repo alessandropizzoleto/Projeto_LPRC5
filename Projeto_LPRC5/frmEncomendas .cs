@@ -1,13 +1,13 @@
 ﻿//****************************************************************************************
 //**Grupo: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por: Roberto Marcheti Neto
-//**Data de Criação: 28/04/2021
-//**Instruções: Criação do formulário frmVeiculoModelo
-// 
+//**Data de Criação: 03/05/2021
+//**Instruções: Criação do formulário frmEncomendas
 //
-//****** Atualizações: Tanto código quanto form estão OK, não sendo necessário fazer alterações
-//*** Data: 03/05/2021
-//*** Responsável: Giovanni Marques
+//
+//****** Atualizações: Ajustes das funçoes de procedures
+//*** Data:03/05/2021
+//*** Responsável: Guilherme de Andrade Rissato
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -21,45 +21,40 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
-    public partial class frmVeiculoModelo : Form
+    public partial class frmEncomendas : Form
     {
-        public frmVeiculoModelo()
+        public frmEncomendas()
         {
             InitializeComponent();
         }
 
-        dbDefault db_Default = new dbDefault();
-        classeDefault padrao = new classeDefault();
+        dbEncomenda db_Encomenda = new dbEncomenda();
+        classeEncomendas encomenda = new classeEncomendas();
 
         private void formataGrid()
         {
             //Opção para selecionar a linha inteira do grid
-            grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdDadosEncomenda.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            grdDadosCid.Columns[0].HeaderText = "Código";
-            grdDadosCid.Columns[1].HeaderText = "Nome";
+            grdDadosEncomenda.Columns[0].HeaderText = "Código";
+            grdDadosEncomenda.Columns[1].HeaderText = "Destinatário";
+            grdDadosEncomenda.Columns[2].HeaderText = "Complemento";
 
-            grdDadosCid.Columns[0].Width = 0;
-            grdDadosCid.Columns[1].Width = 120;
+            grdDadosEncomenda.Columns[0].Width = 0;
+            grdDadosEncomenda.Columns[1].Width = 60;
+            grdDadosEncomenda.Columns[2].Width = 60;
 
         }
 
         public void atualizaDadosGrid()
         {
-            //DataTable tabelaCidade = new DataTable();
-            //tabelaCidade = dbCidade.selectCiddBase();
-            //grdDadosCid.DataSource = tabelaCidade;
-
-            //pode ser também
-
-            grdDadosCid.DataSource = db_Default.selectDefaultBase();
+            grdDadosEncomenda.DataSource = db_Encomenda.selectEncomendaBase();
         }
 
         private void atualizaDadosControles()
         {
-            padrao = db_Default.RetornaDadosObjeto(padrao);
+            encomenda = db_Encomenda.RetornaDadosObjeto(encomenda);
 
-            //txtNome.Text = cidade.getNome();
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -74,53 +69,68 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            //txtNome.Enabled = habilitar;
-            grdDadosCid.Enabled = !habilitar;
+            txtBusca.Enabled = !habilitar;
+            txtDescrição.Enabled = !habilitar;
+            txtDestinatario.Enabled = !habilitar;
+            txtEntreguePara.Enabled = !habilitar;
+            txtEntreguePor.Enabled = !habilitar;
+            txtRecebida.Enabled = !habilitar;
+            txtUnidade.Enabled = !habilitar;
+            msktxtDataEntrada.Enabled = !habilitar;
+            msktxtDataSaida.Enabled = !habilitar;
+            grdDadosEncomenda.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            //txtNome.Text = "";
-
-            padrao.setId(0);
-            //padrao.setNome("");
+            encomenda.setCodigo(-1);
+            encomenda.setComplemento("");
+            encomenda.setDataEntrada(null);
+            encomenda.setDataSaida(null);
+            encomenda.setDescricao("");
+            encomenda.setDestinatario("");
+            encomenda.setEntreguePara("");
+            encomenda.setEntreguePor("");
+            encomenda.setRecebidaPor("");
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            //if (txtNome.Text.Trim().Length < 4)
-            //{
-            //    resultado = false;
-            //}
-
+            if (txtDestinatario.Text == "" || txtDescrição.Text == "" || 
+                txtEntreguePara.Text == "" || txtEntreguePor.Text == "" ||
+                msktxtDataEntrada.Text == "" ||
+                txtRecebida.Text == ""|| txtUnidade.Text == "")
+                {
+                    resultado = false;
+                }
 
             return resultado;
         }
 
-        private void insereDefault()
+        private void InsereEncomenda()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
             limpaCamposDados();
         }
 
-        private void alteraDefault()
+        private void AlteraEncomenda()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
         }
 
-        private void excluiDefault()
+        private void ExcluiEncomenda()
         {
-            if (padrao.getId() != 0)
+            if (encomenda.getCodigo() != -1)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_Default.excluiDefaultBase(padrao);
+                    db_Encomenda.excluiEncomendaBase(encomenda);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -132,22 +142,21 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void salvaDefault()
+        private void SalvaEncomenda()
         {
             if (verificaDadosObrigatorios() == true)
             {
-                //Atualizando os dados do objeto estado.
-                //padrao.setNome(txtNome.Text);
+                
 
-                if (padrao.getId() == 0)
+                if (encomenda.getCodigo() == -1)
                 {
                     //Insere os dados
-                    db_Default.insereDefaultBase(padrao);
+                    db_Encomenda.insereEncomendaBase(encomenda);
                 }
                 else
                 {
                     //Altera os dados
-                    db_Default.alteraDefaultBase(padrao);
+                    db_Encomenda.alteraEncomendaBase(encomenda);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -162,7 +171,7 @@ namespace Projeto_LPRC5
 
         private void cancelaDefault()
         {
-            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Default?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Encomenda?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (retorno == DialogResult.Yes)
             {
@@ -171,42 +180,38 @@ namespace Projeto_LPRC5
                 limpaCamposDados();
             }
         }
-        private void fechaDefault()
-        {
-            this.Close();
-        }
 
-        private void lblNome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmCid_Load(object sender, EventArgs e)
+        private void frmEncomendas_Load(object sender, EventArgs e)
         {
             habilitaBotoesMenu(true);
-            habilitaCamposDados(false);
+            habilitaCamposDados(true);
             atualizaDadosGrid();
             formataGrid();
         }
 
+        private void FechaEncomenda()
+        {
+            this.Close();
+        }
+
         private void barbtnNovo_Click(object sender, EventArgs e)
         {
-            insereDefault();
+            InsereEncomenda();
         }
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
-            alteraDefault();
+            AlteraEncomenda();
         }
 
         private void barbtnExcluir_Click(object sender, EventArgs e)
         {
-            excluiDefault();
+            ExcluiEncomenda();
         }
 
         private void barbtnSalvar_Click(object sender, EventArgs e)
         {
-            salvaDefault();
+            SalvaEncomenda();
         }
 
         private void barbtnCancelar_Click(object sender, EventArgs e)
@@ -216,12 +221,12 @@ namespace Projeto_LPRC5
 
         private void barbtnFechar_Click(object sender, EventArgs e)
         {
-            fechaDefault();
+            FechaEncomenda();
         }
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            encomenda.setCodigo(Convert.ToInt16(grdDadosEncomenda.Rows[grdDadosEncomenda.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
         }
     }

@@ -36,19 +36,19 @@ namespace Projeto_LPRC5
         private void formataGrid()
         {
             //Opção para selecionar a linha inteira do grid
-            grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdDadosVisitante.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            grdDadosCid.Columns[0].HeaderText = "Código";
-            grdDadosCid.Columns[1].HeaderText = "Descrição";
+            grdDadosVisitante.Columns[0].HeaderText = "Código";
+            grdDadosVisitante.Columns[1].HeaderText = "Descrição";
 
-            grdDadosCid.Columns[0].Width = 0;
-            grdDadosCid.Columns[1].Width = 120;
+            grdDadosVisitante.Columns[0].Width = 0;
+            grdDadosVisitante.Columns[1].Width = 120;
 
         }
 
         private void selectUsuarioDBase()
         {
-            grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
+            grdDadosVisitante.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
         }
 
 
@@ -60,7 +60,7 @@ namespace Projeto_LPRC5
 
             //pode ser também
 
-            grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
+            grdDadosVisitante.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
         }
 
         private void atualizaDadosControles()
@@ -81,13 +81,13 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            txtDescricaoTipo.Enabled = habilitar;
-            grdDadosCid.Enabled = !habilitar;
+            txtNomeVisitante.Enabled = habilitar;
+            grdDadosVisitante.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            txtDescricaoTipo.Text = "";
+            txtNomeVisitante.Text = "";
             tipoUsuario.setId(0);
             tipoUsuario.setDescricao("");
         }
@@ -96,7 +96,7 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            if (txtDescricaoTipo.Text.Length == 0)
+            if (txtNomeVisitante.Text.Length == 0)
             {
                 resultado = false;
             }
@@ -148,13 +148,13 @@ namespace Projeto_LPRC5
                 if (tipoUsuario.getId() == 0)
                 {
                     //Insere os dados
-                    tipoUsuario.setDescricao(txtDescricaoTipo.Text);
+                    tipoUsuario.setDescricao(txtNomeVisitante.Text);
                     dbtipoUsu.insereTipoUsuario(tipoUsuario);
                 }
                 else
                 {
                     //Altera os dados
-                    tipoUsuario.setDescricao(txtDescricaoTipo.Text);
+                    tipoUsuario.setDescricao(txtNomeVisitante.Text);
                     dbtipoUsu.alteraTipoUsuario(tipoUsuario);
                 }
                 habilitaBotoesMenu(true);
@@ -223,9 +223,9 @@ namespace Projeto_LPRC5
             fechaTipoUsuario();
         }
 
-        private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void grdDadosVisitante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tipoUsuario.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            tipoUsuario.setId(Convert.ToInt16(grdDadosVisitante.Rows[grdDadosVisitante.CurrentRow.Index].Cells[0].Value.ToString()));
             selectTipoUsuarioDBase(tipoUsuario);
             atualizaDadosControles();
         }
@@ -234,7 +234,7 @@ namespace Projeto_LPRC5
         {
             tipoUsuario = dbtipoUsu.selectTipoUsuarioDBase(tipoUsuario);
 
-            txtDescricaoTipo.Text = tipoUsuario.getDescricao();
+            txtNomeVisitante.Text = tipoUsuario.getDescricao();
         }
 
     }

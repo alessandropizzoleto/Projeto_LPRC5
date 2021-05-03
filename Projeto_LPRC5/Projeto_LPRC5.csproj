@@ -52,9 +52,7 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.24\lib\net452\MySql.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2020.0.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
@@ -97,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasseCadastroFuncionarios.cs" />
+    <Compile Include="classeEncomendas.cs" />
     <Compile Include="ClasseEstado.cs" />
     <Compile Include="classeEmpresaPrestadoraServico.cs" />
     <Compile Include="classeMarca.cs" />
@@ -114,6 +113,7 @@
     <Compile Include="dbCidade.cs" />
     <Compile Include="dbCor.cs" />
     <Compile Include="dbDefault.cs" />
+    <Compile Include="dbEncomenda.cs" />
     <Compile Include="DbEstado.cs" />
     <Compile Include="dbFeriado.cs" />
     <Compile Include="dbMarca.cs" />
@@ -124,6 +124,12 @@
     </Compile>
     <Compile Include="FrmCadastroFuncionarios.Designer.cs">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEncomendas .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEncomendas .designer.cs">
+      <DependentUpon>frmEncomendas .cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVeiculo.cs">
       <SubType>Form</SubType>
@@ -215,6 +221,9 @@
     <Compile Include="util.cs" />
     <EmbeddedResource Include="FrmCadastroFuncionarios.resx">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEncomendas .resx">
+      <DependentUpon>frmEncomendas .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVeiculo.resx">
       <DependentUpon>FrmVeiculo.cs</DependentUpon>

@@ -38,8 +38,8 @@
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosCid = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.txtVeiculomodelo = new System.Windows.Forms.TextBox();
-            this.lblVeiculomodelo = new System.Windows.Forms.Label();
+            this.txtVeiculoModelo = new System.Windows.Forms.TextBox();
+            this.lblVeiculoModelo = new System.Windows.Forms.Label();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
             this.SuspendLayout();
@@ -144,29 +144,29 @@
             this.txtBusca.Size = new System.Drawing.Size(239, 26);
             this.txtBusca.TabIndex = 2;
             // 
-            // txtVeiculomodelo
+            // txtVeiculoModelo
             // 
-            this.txtVeiculomodelo.Location = new System.Drawing.Point(265, 67);
-            this.txtVeiculomodelo.Name = "txtVeiculomodelo";
-            this.txtVeiculomodelo.Size = new System.Drawing.Size(239, 26);
-            this.txtVeiculomodelo.TabIndex = 3;
+            this.txtVeiculoModelo.Location = new System.Drawing.Point(265, 67);
+            this.txtVeiculoModelo.Name = "txtVeiculoModelo";
+            this.txtVeiculoModelo.Size = new System.Drawing.Size(239, 26);
+            this.txtVeiculoModelo.TabIndex = 3;
             // 
-            // lblVeiculomodelo
+            // lblVeiculoModelo
             // 
-            this.lblVeiculomodelo.AutoSize = true;
-            this.lblVeiculomodelo.Location = new System.Drawing.Point(262, 43);
-            this.lblVeiculomodelo.Name = "lblVeiculomodelo";
-            this.lblVeiculomodelo.Size = new System.Drawing.Size(169, 19);
-            this.lblVeiculomodelo.TabIndex = 4;
-            this.lblVeiculomodelo.Text = "Cadastrar Veículo Modelo";
-             // 
+            this.lblVeiculoModelo.AutoSize = true;
+            this.lblVeiculoModelo.Location = new System.Drawing.Point(262, 43);
+            this.lblVeiculoModelo.Name = "lblVeiculoModelo";
+            this.lblVeiculoModelo.Size = new System.Drawing.Size(169, 19);
+            this.lblVeiculoModelo.TabIndex = 4;
+            this.lblVeiculoModelo.Text = "Cadastrar Veículo Modelo";
+            // 
             // frmVeiculoModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 438);
-            this.Controls.Add(this.lblVeiculomodelo);
-            this.Controls.Add(this.txtVeiculomodelo);
+            this.Controls.Add(this.lblVeiculoModelo);
+            this.Controls.Add(this.txtVeiculoModelo);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosCid);
             this.Controls.Add(this.barManutencao);
@@ -195,7 +195,7 @@
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosCid;
         private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.TextBox txtVeiculomodelo;
-        private System.Windows.Forms.Label lblVeiculomodelo;
+        private System.Windows.Forms.TextBox txtVeiculoModelo;
+        private System.Windows.Forms.Label lblVeiculoModelo;
     }
 }

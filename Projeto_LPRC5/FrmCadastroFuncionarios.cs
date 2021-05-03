@@ -33,8 +33,8 @@ namespace Projeto_LPRC5
 
 
 
-       dbCadastroFuncionarios db_CadastroFuncionarios = new dbCadastroFuncionarios();
-       classeCadastroFuncionarios CadastroFuncionarios = new classeCadastroFuncionarios();
+        dbCadastroFuncionarios db_CadastroFuncionarios = new dbCadastroFuncionarios();
+        classeCadastroFuncionarios CadastroFuncionarios = new classeCadastroFuncionarios();
 
         private void formataGrid()
         {
@@ -58,12 +58,14 @@ namespace Projeto_LPRC5
         public void atualizaDadosGrid()
         {
 
+
+
             dataGridView1.DataSource = db_CadastroFuncionarios.selectCadastroFuncionariosBase();
         }
 
         private void atualizaDadosControles()
         {
-            CadastroFuncionarios = db_CadastroFuncionarios.RetornaDadosObjeto(CadastroFuncionarios);
+            //CadastroFuncionarios = db_CadastroFuncionarios.RetornaDadosObjeto(CadastroFuncionarios);
 
 
         }
@@ -87,6 +89,8 @@ namespace Projeto_LPRC5
         private void limpaCamposDados()
         {
 
+
+            CadastroFuncionarios.Id = 0;
 
         }
 
@@ -112,13 +116,13 @@ namespace Projeto_LPRC5
 
         private void excluiCadastroFuncionarios()
         {
-            if (CadastroFuncionarios.Id != 0)
+            if (0 != 0)  //if (CadastroFuncionarios.Id != 0)
             {
                 DialogResult retorno = MessageBox.Show("A informação será excluida", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_CadastroFuncionarios.excluiCadastroFuncionariosBase(CadastroFuncionarios);
+                    //db_CadastroFuncionarios.excluiCadastroFuncionariosBase(CadastroFuncionarios);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -135,15 +139,15 @@ namespace Projeto_LPRC5
             if (verificaDadosObrigatorios() == true)
             {
 
-                if (CadastroFuncionarios.Id == 0)
+                if (0 == 0)  //if (CadastroFuncionarios.Id == 0)
                 {
                     //Insere os dados
-                    db_CadastroFuncionarios.insereCadastroFuncionariosBase(CadastroFuncionarios);
+                    //db_CadastroFuncionarios.insereCadastroFuncionariosBase(CadastroFuncionarios);
                 }
                 else
                 {
                     //Altera os dados
-                    db_CadastroFuncionarios.alteraCadastroFuncionariosBase(CadastroFuncionarios);
+                    //db_CadastroFuncionarios.alteraCadastroFuncionariosBase(CadastroFuncionarios);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -217,8 +221,13 @@ namespace Projeto_LPRC5
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CadastroFuncionarios.Id = Convert.ToInt16(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
+            //CadastroFuncionarios.Id = Convert.ToInt16(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
             atualizaDadosControles();
+
+        }
+
+        private void FrmCadastroFuncionarios_Load_1(object sender, EventArgs e)
+        {
 
         }
     }

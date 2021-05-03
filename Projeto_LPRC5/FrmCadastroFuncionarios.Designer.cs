@@ -336,6 +336,7 @@ namespace Projeto_LPRC5
             this.Controls.Add(this.label1);
             this.Name = "FrmCadastroFuncionarios";
             this.Text = "FrmCadastroFuncionarios";
+            this.Load += new System.EventHandler(this.FrmCadastroFuncionarios_Load_1);
             this.barraManutencaoMarca.ResumeLayout(false);
             this.barraManutencaoMarca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
