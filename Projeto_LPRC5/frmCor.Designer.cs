@@ -39,6 +39,8 @@ namespace Projeto_LPRC5
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.txtBuscaCor = new System.Windows.Forms.TextBox();
             this.grdDadosCor = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDescricaoCor = new System.Windows.Forms.TextBox();
             this.barManutencaoCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCor)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +59,7 @@ namespace Projeto_LPRC5
             this.barManutencaoCor.Location = new System.Drawing.Point(0, 0);
             this.barManutencaoCor.Name = "barManutencaoCor";
             this.barManutencaoCor.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barManutencaoCor.Size = new System.Drawing.Size(260, 39);
+            this.barManutencaoCor.Size = new System.Drawing.Size(229, 39);
             this.barManutencaoCor.TabIndex = 1;
             this.barManutencaoCor.Text = "toolStrip1";
             // 
@@ -147,11 +149,32 @@ namespace Projeto_LPRC5
             this.grdDadosCor.TabIndex = 4;
             this.grdDadosCor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(265, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 23);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Descrição:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txtDescricaoCor
+            // 
+            this.txtDescricaoCor.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoCor.Location = new System.Drawing.Point(269, 75);
+            this.txtDescricaoCor.Name = "txtDescricaoCor";
+            this.txtDescricaoCor.Size = new System.Drawing.Size(302, 32);
+            this.txtDescricaoCor.TabIndex = 10;
+            // 
             // frmCor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
+            this.ClientSize = new System.Drawing.Size(574, 606);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtDescricaoCor);
             this.Controls.Add(this.grdDadosCor);
             this.Controls.Add(this.txtBuscaCor);
             this.Controls.Add(this.barManutencaoCor);
@@ -180,5 +203,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.TextBox txtBuscaCor;
         private System.Windows.Forms.DataGridView grdDadosCor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDescricaoCor;
     }
 }

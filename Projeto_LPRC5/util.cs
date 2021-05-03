@@ -38,8 +38,9 @@ namespace Projeto_LPRC5
         public string senha = "";
         public string banco = "";
         public Int16 sgbd_Id = -1;
+        private string path = "C:\\software\\acesso.txt";
 
-        public void lerArquivoAcessoBanco(string path)
+        public void lerArquivoAcessoBanco()
         {
             string linha = "";
             if (System.IO.File.Exists(path))
@@ -73,7 +74,7 @@ namespace Projeto_LPRC5
             }
         }
 
-        public void gravaArquivoAcessoBanco(string path, string servidor, string usuario, string banco, string senha, Int16 sgbd)
+        public void gravaArquivoAcessoBanco(string servidor, string usuario, string banco, string senha, Int16 sgbd)
         {
             StreamWriter texto = new StreamWriter(path);
             texto.WriteLine("servidor=" + servidor + ";");

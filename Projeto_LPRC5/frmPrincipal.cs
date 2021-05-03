@@ -64,8 +64,15 @@ namespace Projeto_LPRC5
         private void veículoModeloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVeiculoModelo veiculomodelo = new frmVeiculoModelo();
-             veiculomodelo.MdiParent = this;
+            veiculomodelo.MdiParent = this;
             veiculomodelo.Show();
+        }
+
+        private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCidade cidade = new frmCidade();
+            cidade.MdiParent = this;
+            cidade.Show();
         }
     }
 }

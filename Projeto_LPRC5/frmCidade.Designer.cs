@@ -51,7 +51,7 @@
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(150, 25);
+            this.barManutencao.Size = new System.Drawing.Size(187, 25);
             this.barManutencao.TabIndex = 0;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -60,7 +60,7 @@
             this.barbtnNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnNovo.Name = "barbtnNovo";
-            this.barbtnNovo.Size = new System.Drawing.Size(23, 22);
+            this.barbtnNovo.Size = new System.Drawing.Size(29, 22);
             this.barbtnNovo.Text = "Novo";
             this.barbtnNovo.ToolTipText = "Adicionar Cidade";
             this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
@@ -70,7 +70,7 @@
             this.barbtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.barbtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnEditar.Name = "barbtnEditar";
-            this.barbtnEditar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnEditar.Size = new System.Drawing.Size(29, 22);
             this.barbtnEditar.Text = "Editar";
             this.barbtnEditar.ToolTipText = "Editar Cidade";
             this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
@@ -80,7 +80,7 @@
             this.barbtnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.barbtnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnExcluir.Name = "barbtnExcluir";
-            this.barbtnExcluir.Size = new System.Drawing.Size(23, 22);
+            this.barbtnExcluir.Size = new System.Drawing.Size(29, 22);
             this.barbtnExcluir.Text = "Excluir";
             this.barbtnExcluir.ToolTipText = "Excluir Cidade";
             this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
@@ -90,7 +90,7 @@
             this.barbtnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.barbtnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnSalvar.Name = "barbtnSalvar";
-            this.barbtnSalvar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnSalvar.Size = new System.Drawing.Size(29, 22);
             this.barbtnSalvar.Text = "Salvar";
             this.barbtnSalvar.ToolTipText = "Salvar nova Cidade";
             this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
@@ -100,7 +100,7 @@
             this.barbtnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.barbtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnCancelar.Name = "barbtnCancelar";
-            this.barbtnCancelar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnCancelar.Size = new System.Drawing.Size(29, 22);
             this.barbtnCancelar.Text = "Cancelar";
             this.barbtnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
             this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
@@ -110,26 +110,30 @@
             this.barbtnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.barbtnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnFechar.Name = "barbtnFechar";
-            this.barbtnFechar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnFechar.Size = new System.Drawing.Size(29, 22);
             this.barbtnFechar.Text = "Fechar";
             this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
             // 
             // grdDadosCid
             // 
+            this.grdDadosCid.AllowUserToAddRows = false;
+            this.grdDadosCid.AllowUserToDeleteRows = false;
             this.grdDadosCid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDadosCid.Location = new System.Drawing.Point(12, 76);
             this.grdDadosCid.Name = "grdDadosCid";
+            this.grdDadosCid.ReadOnly = true;
             this.grdDadosCid.RowHeadersWidth = 51;
             this.grdDadosCid.Size = new System.Drawing.Size(240, 350);
             this.grdDadosCid.TabIndex = 1;
             this.grdDadosCid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
+            this.grdDadosCid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
             // txtBusca
             // 
             this.txtBusca.Location = new System.Drawing.Point(13, 41);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 26);
+            this.txtBusca.Size = new System.Drawing.Size(239, 30);
             this.txtBusca.TabIndex = 2;
             // 
             // lblCidade
@@ -137,7 +141,7 @@
             this.lblCidade.AutoSize = true;
             this.lblCidade.Location = new System.Drawing.Point(292, 41);
             this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(117, 19);
+            this.lblCidade.Size = new System.Drawing.Size(149, 22);
             this.lblCidade.TabIndex = 3;
             this.lblCidade.Text = "Cadastrar Cidade";
             // 
@@ -145,12 +149,12 @@
             // 
             this.txtCidade.Location = new System.Drawing.Point(296, 76);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(225, 26);
+            this.txtCidade.Size = new System.Drawing.Size(225, 30);
             this.txtCidade.TabIndex = 4;
             // 
             // frmCidade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 438);
             this.Controls.Add(this.txtCidade);

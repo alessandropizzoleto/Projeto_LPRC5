@@ -11,6 +11,10 @@
 //****** Atualizações: Criação de novas funções para mostrar resultados no grid e usar as informações do grid para executar o update e delete.
 //*** Data: 01/05/2021
 //*** Responsável: Amanda Ferrari, André Costa, Giovanna Valim
+
+//****** Atualizações: Criação do campo "Descrição cor" no form e adaptação do código.
+//*** Data: 03/05/2021
+//*** Responsável: Giovanna Valim
 //****************************************************************************************
 
 using System;
@@ -68,13 +72,13 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            txtBuscaCor.Enabled = habilitar;
+            txtDescricaoCor.Enabled = habilitar;
             grdDadosCor.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            txtBuscaCor.Text = "";
+            txtDescricaoCor.Text = "";
             tinta.setCorNome("");
             tinta.setCorId(-1);
         }
@@ -83,7 +87,7 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            if (txtBuscaCor.Text.Length == 0)
+            if (txtDescricaoCor.Text.Length == 0)
             {
                 resultado = false;
             }
@@ -128,12 +132,12 @@ namespace Projeto_LPRC5
             {
                 if (comando == true)
                 {
-                    tinta.setCorNome(txtBuscaCor.Text);
+                    tinta.setCorNome(txtDescricaoCor.Text);
                     db_Cor.insereCorBase(tinta);
                 }
                 else if  (comando == false)
                 {
-                    tinta.setCorNome(txtBuscaCor.Text);
+                    tinta.setCorNome(txtDescricaoCor.Text);
                     db_Cor.alteraCorBase(tinta);
                 }
 
@@ -222,7 +226,7 @@ namespace Projeto_LPRC5
         private void selectCorDBase(classeCor tinta)
         {
             tinta = db_Cor.selectCorDBase(tinta);
-            txtBuscaCor.Text = tinta.getCorNome();
+            txtDescricaoCor.Text = tinta.getCorNome();
         }
 
         private void selectCorDBase()
@@ -242,6 +246,11 @@ namespace Projeto_LPRC5
         private void barbtnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
