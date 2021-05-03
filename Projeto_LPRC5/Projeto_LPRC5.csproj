@@ -109,6 +109,7 @@
     <Compile Include="classeVisitantePrestador.cs" />
     <Compile Include="conexao.cs" />
     <Compile Include="conexaoMySql.cs" />
+    <Compile Include="dbCadastroFuncionarios.cs" />
     <Compile Include="dbCidade.cs" />
     <Compile Include="dbCor.cs" />
     <Compile Include="dbDefault.cs" />

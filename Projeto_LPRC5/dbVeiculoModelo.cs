@@ -6,9 +6,9 @@
 //**Instruções:
 //
 //
-//****** Atualizações:ajuste das strings sql para serem compativeis com o banco de dados
-//*** Data:03/05/2021
-//*** Responsável: Guilherme de Andrade Rissato
+//****** Atualizações:
+//*** Data:
+//*** Responsável:
 //****************************************************************************************
 using System;
 using System.Collections.Generic;

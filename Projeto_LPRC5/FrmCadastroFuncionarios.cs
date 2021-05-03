@@ -33,7 +33,7 @@ namespace Projeto_LPRC5
 
 
 
-        //dbCadastroFuncionarios db_CadastroFuncionarios = new dbCadastroFuncionarios();
+        dbCadastroFuncionarios db_CadastroFuncionarios = new dbCadastroFuncionarios();
         classeCadastroFuncionarios CadastroFuncionarios = new classeCadastroFuncionarios();
 
         private void formataGrid()
@@ -43,10 +43,16 @@ namespace Projeto_LPRC5
 
             dataGridView1.Columns[0].HeaderText = "Código";
             dataGridView1.Columns[1].HeaderText = "Nome";
+            dataGridView1.Columns[2].HeaderText = "CPF";
+            dataGridView1.Columns[3].HeaderText = "Telefone";
+            dataGridView1.Columns[4].HeaderText = "Data de Nascimento";
+            dataGridView1.Columns[5].HeaderText = "Endereço";
+            dataGridView1.Columns[6].HeaderText = "Data de Adimissão";
+            dataGridView1.Columns[7].HeaderText = "Sexo";
+            dataGridView1.Columns[8].HeaderText = "Estado Civil";
 
             dataGridView1.Columns[0].Width = 0;
-            dataGridView1.Columns[1].Width = 120;
-
+            
         }
 
         public void atualizaDadosGrid()
@@ -54,12 +60,12 @@ namespace Projeto_LPRC5
 
 
 
-            //dataGridView1.DataSource = db_CadastroFuncionarios.selectCadastroFuncionariosBase();
+            dataGridView1.DataSource = db_CadastroFuncionarios.selectCadastroFuncionariosBase();
         }
 
         private void atualizaDadosControles()
         {
-            //CadastroFuncionarios = db_CadastroFuncionarios.RetornaDadosObjeto(CadastroFuncionarios);
+            CadastroFuncionarios = db_CadastroFuncionarios.RetornaDadosObjeto(CadastroFuncionarios);
 
 
         }
@@ -84,7 +90,7 @@ namespace Projeto_LPRC5
         {
 
 
-            //CadastroFuncionarios.Id = 0;
+            CadastroFuncionarios.Id = 0;
 
         }
 
@@ -110,13 +116,13 @@ namespace Projeto_LPRC5
 
         private void excluiCadastroFuncionarios()
         {
-            if (0 != 0)  //if (CadastroFuncionarios.Id != 0)
+          if (CadastroFuncionarios.Id != 0)
             {
                 DialogResult retorno = MessageBox.Show("A informação será excluida", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    //db_CadastroFuncionarios.excluiCadastroFuncionariosBase(CadastroFuncionarios);
+                    db_CadastroFuncionarios.excluiCadastroFuncionariosBase(CadastroFuncionarios);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -133,15 +139,15 @@ namespace Projeto_LPRC5
             if (verificaDadosObrigatorios() == true)
             {
 
-                if (0 == 0)  //if (CadastroFuncionarios.Id == 0)
+              if (CadastroFuncionarios.Id == 0)
                 {
-                    //Insere os dados
-                    //db_CadastroFuncionarios.insereCadastroFuncionariosBase(CadastroFuncionarios);
+                 
+                    db_CadastroFuncionarios.insereCadastroFuncionariosBase(CadastroFuncionarios);
                 }
                 else
                 {
-                    //Altera os dados
-                    //db_CadastroFuncionarios.alteraCadastroFuncionariosBase(CadastroFuncionarios);
+         
+                    db_CadastroFuncionarios.alteraCadastroFuncionariosBase(CadastroFuncionarios);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -213,9 +219,9 @@ namespace Projeto_LPRC5
             fechaCadastroFuncionarios();
         }
 
-        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //CadastroFuncionarios.Id = Convert.ToInt16(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
+            CadastroFuncionarios.Id = Convert.ToInt16(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
             atualizaDadosControles();
 
         }

@@ -5,9 +5,9 @@
 //**Instruções: Criação do formulário frmVeiculoModelo
 // 
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Tanto código quanto form estão OK, não sendo necessário fazer alterações
+//*** Data: 03/05/2021
+//*** Responsável: Giovanni Marques
 //****************************************************************************************
 using System;
 using System.Collections.Generic;

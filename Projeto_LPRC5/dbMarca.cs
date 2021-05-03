@@ -1,22 +1,21 @@
 ﻿//****************************************************************************************
-//**Criado por: Giovanni Marques, Bruno Bragagnolo
-//**Data de Criação: 20/04/2021
-//**Instruções: Classe para configurar o formulario marca.
+//**Criado por: Giovanni Marques
+//**Data de Criação: 22/04/2021
+//**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:22/04/2021
-//*** Responsável:Giovanni Marques
+//****** Atualizações: 
+//*** Data: 
+//*** Responsável:
+
 //****************************************************************************************
-
-
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 
 namespace Projeto_LPRC5
@@ -24,59 +23,44 @@ namespace Projeto_LPRC5
     class dbMarca
     {
         conexaoMySql connect = new conexaoMySql();
-
-
-        public void inseremarca(classeMarca marca)
-        { 
-            string sql = $"insert into marca (marcaveiculo) values {marca.getmarcaveiculonome()} );";
-
+        public void insereMarcaBase(classeMarca marca)
+        {
+            string sql = $"insert into Marca  (marcaveiculoid, marcaveiculonome)  values {marca.getmarcaveiculoid()}, {marca.getmarcaveiculonome()};";
+        }
+        public void alteraMarcaBase(classeMarca marca)
+        {
+            string sql = $"update marca (marcaveiculonome) set marcaveiculonome = {marca.getmarcaveiculonome()} where marcaveiculoid = {marca.getmarcaveiculoid()}";
+        }
+        public void excluiMarcaBase(classeMarca marca)
+        {
+            string sql = $"delete from marca where marcaveiculoid = {marca.getmarcaveiculoid()} limit 1";
         }
 
-
-        public void alteramarca(classeMarca marca)
+        public MySqlDataAdapter selectMarcaBase(classeMarca marca)
         {
-            string sql = $"update marca (marcaveiculonome) values {marca.getmarcaveiculonome()} where marcaveiculoid = " + marca.getmarcaveiculoid() + ";";
-
-
-        }
-
-
-        public void excluimarca(classeMarca marca)
-        {
-            string sql = $"delete from marca where marcaveiculoID = " + marca.getmarcaveiculoid() + ";";
-
-
-        }
-
-
-        public MySqlDataAdapter selectmarca(classeMarca marca)
-        {
-            string sql = $"select * from marca where marcaveiculoID = " + marca.getmarcaveiculoid() + ";";
-
+            string sql = $"select * from marca where marcaveiculoid = {marca.getmarcaveiculoid()}";
             return null;
         }
 
-        public classeMarca RetornaValores(classeMarca marca) 
+        public classeMarca RetornaDadosObjeto(classeMarca marca)
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataSet ds = new DataSet();
-            classeMarca MarcaTemp = new classeMarca();
+            classeMarca marcaTemp = new classeMarca();
 
 
             adapter.Fill(ds);
 
-            MarcaTemp.setmarcaveiculoid(marca.getmarcaveiculoid());
+            marcaTemp.setmarcaveiculoid(marca.getmarcaveiculoid());
 
 
-            return MarcaTemp;
+            return marcaTemp;
         }
 
-        public DataTable selectMarca()
+        public DataTable selectMarcaBase()
         {
-
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable tabela = new DataTable();
-
             adapter.Fill(tabela);
 
             return tabela;

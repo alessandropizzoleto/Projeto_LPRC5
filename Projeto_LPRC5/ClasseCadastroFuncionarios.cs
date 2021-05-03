@@ -20,6 +20,8 @@ namespace Projeto_LPRC5
     public class classeCadastroFuncionarios
     {
 
+       
+        public int Id { get; set; }
         private string Nome { get; set; }
         private string CPF { get; set; }
         private string NumeroTelefone { get; set; }
