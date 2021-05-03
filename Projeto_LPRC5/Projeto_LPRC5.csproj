@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasseCadastroFuncionarios.cs" />
+    <Compile Include="classeEncomendas.cs" />
     <Compile Include="ClasseEstado.cs" />
     <Compile Include="classeEmpresaPrestadoraServico.cs" />
     <Compile Include="classeMarca.cs" />
@@ -123,6 +124,12 @@
     </Compile>
     <Compile Include="FrmCadastroFuncionarios.Designer.cs">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEncomendas .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEncomendas .designer.cs">
+      <DependentUpon>frmEncomendas .cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVeiculo.cs">
       <SubType>Form</SubType>
@@ -214,6 +221,9 @@
     <Compile Include="util.cs" />
     <EmbeddedResource Include="FrmCadastroFuncionarios.resx">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEncomendas .resx">
+      <DependentUpon>frmEncomendas .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVeiculo.resx">
       <DependentUpon>FrmVeiculo.cs</DependentUpon>

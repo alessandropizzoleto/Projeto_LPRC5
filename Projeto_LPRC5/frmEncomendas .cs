@@ -1,9 +1,9 @@
 ﻿//****************************************************************************************
 //**Grupo: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por: Roberto Marcheti Neto
-//**Data de Criação: 28/04/2021
-//**Instruções: Criação do formulário frmVeiculoModelo
-// 
+//**Data de Criação: 03/05/2021
+//**Instruções: Criação do formulário frmEncomendas
+//
 //
 //****** Atualizações:
 //*** Data:
@@ -21,9 +21,9 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
-    public partial class frmVeiculoModelo : Form
+    public partial class frmEncomendas : Form
     {
-        public frmVeiculoModelo()
+        public frmEncomendas()
         {
             InitializeComponent();
         }
@@ -223,6 +223,11 @@ namespace Projeto_LPRC5
         {
             padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

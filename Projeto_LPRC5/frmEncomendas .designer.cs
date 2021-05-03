@@ -1,6 +1,6 @@
 ﻿namespace Projeto_LPRC5
 {
-    partial class frmVeiculoModelo
+    partial class frmEncomendas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVeiculoModelo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEncomendas));
             this.barManutencao = new System.Windows.Forms.ToolStrip();
             this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
             this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
@@ -38,8 +38,22 @@
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosCid = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.txtVeiculoModelo = new System.Windows.Forms.TextBox();
-            this.lblVeiculoModelo = new System.Windows.Forms.Label();
+            this.lblTipoEncomenda = new System.Windows.Forms.Label();
+            this.txtTipoEncomenda = new System.Windows.Forms.TextBox();
+            this.lblDestinatario = new System.Windows.Forms.Label();
+            this.txtDestinatario = new System.Windows.Forms.TextBox();
+            this.lblRecebida = new System.Windows.Forms.Label();
+            this.txtRecebida = new System.Windows.Forms.TextBox();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
+            this.txtDataEntrada = new System.Windows.Forms.TextBox();
+            this.lblEntreguePor = new System.Windows.Forms.Label();
+            this.txtEntreguePor = new System.Windows.Forms.TextBox();
+            this.lblDataSaida = new System.Windows.Forms.Label();
+            this.txtDataSaida = new System.Windows.Forms.TextBox();
+            this.lblEntreguePara = new System.Windows.Forms.Label();
+            this.txtEntreguePara = new System.Windows.Forms.TextBox();
+            this.lblUnidade = new System.Windows.Forms.Label();
+            this.txtUnidade = new System.Windows.Forms.TextBox();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
             this.SuspendLayout();
@@ -144,37 +158,164 @@
             this.txtBusca.Size = new System.Drawing.Size(239, 26);
             this.txtBusca.TabIndex = 2;
             // 
-            // txtVeiculoModelo
+            // lblTipoEncomenda
             // 
-            this.txtVeiculoModelo.Location = new System.Drawing.Point(265, 67);
-            this.txtVeiculoModelo.Name = "txtVeiculoModelo";
-            this.txtVeiculoModelo.Size = new System.Drawing.Size(239, 26);
-            this.txtVeiculoModelo.TabIndex = 3;
+            this.lblTipoEncomenda.AutoSize = true;
+            this.lblTipoEncomenda.Location = new System.Drawing.Point(261, 76);
+            this.lblTipoEncomenda.Name = "lblTipoEncomenda";
+            this.lblTipoEncomenda.Size = new System.Drawing.Size(133, 19);
+            this.lblTipoEncomenda.TabIndex = 3;
+            this.lblTipoEncomenda.Text = "Tipo de Encomenda:";
             // 
-            // lblVeiculoModelo
+            // txtTipoEncomenda
             // 
-            this.lblVeiculoModelo.AutoSize = true;
-            this.lblVeiculoModelo.Location = new System.Drawing.Point(262, 43);
-            this.lblVeiculoModelo.Name = "lblVeiculoModelo";
-            this.lblVeiculoModelo.Size = new System.Drawing.Size(169, 19);
-            this.lblVeiculoModelo.TabIndex = 4;
-            this.lblVeiculoModelo.Text = "Cadastrar Veículo Modelo";
+            this.txtTipoEncomenda.Location = new System.Drawing.Point(400, 73);
+            this.txtTipoEncomenda.Name = "txtTipoEncomenda";
+            this.txtTipoEncomenda.Size = new System.Drawing.Size(348, 26);
+            this.txtTipoEncomenda.TabIndex = 4;
             // 
-            // frmVeiculoModelo
+            // lblDestinatario
+            // 
+            this.lblDestinatario.AutoSize = true;
+            this.lblDestinatario.Location = new System.Drawing.Point(262, 122);
+            this.lblDestinatario.Name = "lblDestinatario";
+            this.lblDestinatario.Size = new System.Drawing.Size(84, 19);
+            this.lblDestinatario.TabIndex = 5;
+            this.lblDestinatario.Text = "Destinatário:";
+            // 
+            // txtDestinatario
+            // 
+            this.txtDestinatario.Location = new System.Drawing.Point(401, 119);
+            this.txtDestinatario.Name = "txtDestinatario";
+            this.txtDestinatario.Size = new System.Drawing.Size(347, 26);
+            this.txtDestinatario.TabIndex = 6;
+            // 
+            // lblRecebida
+            // 
+            this.lblRecebida.AutoSize = true;
+            this.lblRecebida.Location = new System.Drawing.Point(262, 169);
+            this.lblRecebida.Name = "lblRecebida";
+            this.lblRecebida.Size = new System.Drawing.Size(95, 19);
+            this.lblRecebida.TabIndex = 7;
+            this.lblRecebida.Text = "Recebida Por:";
+            // 
+            // txtRecebida
+            // 
+            this.txtRecebida.Location = new System.Drawing.Point(401, 165);
+            this.txtRecebida.Name = "txtRecebida";
+            this.txtRecebida.Size = new System.Drawing.Size(347, 26);
+            this.txtRecebida.TabIndex = 8;
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.Location = new System.Drawing.Point(263, 214);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Size = new System.Drawing.Size(111, 19);
+            this.lblDataEntrada.TabIndex = 9;
+            this.lblDataEntrada.Text = "Data da Entrada:";
+            // 
+            // txtDataEntrada
+            // 
+            this.txtDataEntrada.Location = new System.Drawing.Point(400, 212);
+            this.txtDataEntrada.Name = "txtDataEntrada";
+            this.txtDataEntrada.Size = new System.Drawing.Size(120, 26);
+            this.txtDataEntrada.TabIndex = 10;
+            // 
+            // lblEntreguePor
+            // 
+            this.lblEntreguePor.AutoSize = true;
+            this.lblEntreguePor.Location = new System.Drawing.Point(263, 260);
+            this.lblEntreguePor.Name = "lblEntreguePor";
+            this.lblEntreguePor.Size = new System.Drawing.Size(91, 19);
+            this.lblEntreguePor.TabIndex = 11;
+            this.lblEntreguePor.Text = "Entregue Por:";
+            // 
+            // txtEntreguePor
+            // 
+            this.txtEntreguePor.Location = new System.Drawing.Point(400, 258);
+            this.txtEntreguePor.Name = "txtEntreguePor";
+            this.txtEntreguePor.Size = new System.Drawing.Size(348, 26);
+            this.txtEntreguePor.TabIndex = 12;
+            // 
+            // lblDataSaida
+            // 
+            this.lblDataSaida.AutoSize = true;
+            this.lblDataSaida.Location = new System.Drawing.Point(262, 308);
+            this.lblDataSaida.Name = "lblDataSaida";
+            this.lblDataSaida.Size = new System.Drawing.Size(102, 19);
+            this.lblDataSaida.TabIndex = 13;
+            this.lblDataSaida.Text = "Data da Saída: ";
+            // 
+            // txtDataSaida
+            // 
+            this.txtDataSaida.Location = new System.Drawing.Point(400, 305);
+            this.txtDataSaida.Name = "txtDataSaida";
+            this.txtDataSaida.Size = new System.Drawing.Size(120, 26);
+            this.txtDataSaida.TabIndex = 14;
+            // 
+            // lblEntreguePara
+            // 
+            this.lblEntreguePara.AutoSize = true;
+            this.lblEntreguePara.Location = new System.Drawing.Point(262, 355);
+            this.lblEntreguePara.Name = "lblEntreguePara";
+            this.lblEntreguePara.Size = new System.Drawing.Size(97, 19);
+            this.lblEntreguePara.TabIndex = 15;
+            this.lblEntreguePara.Text = "Entregue Para:";
+            this.lblEntreguePara.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtEntreguePara
+            // 
+            this.txtEntreguePara.Location = new System.Drawing.Point(400, 351);
+            this.txtEntreguePara.Name = "txtEntreguePara";
+            this.txtEntreguePara.Size = new System.Drawing.Size(347, 26);
+            this.txtEntreguePara.TabIndex = 16;
+            // 
+            // lblUnidade
+            // 
+            this.lblUnidade.AutoSize = true;
+            this.lblUnidade.Location = new System.Drawing.Point(261, 400);
+            this.lblUnidade.Name = "lblUnidade";
+            this.lblUnidade.Size = new System.Drawing.Size(63, 19);
+            this.lblUnidade.TabIndex = 17;
+            this.lblUnidade.Text = "Unidade:";
+            // 
+            // txtUnidade
+            // 
+            this.txtUnidade.Location = new System.Drawing.Point(400, 397);
+            this.txtUnidade.Name = "txtUnidade";
+            this.txtUnidade.Size = new System.Drawing.Size(347, 26);
+            this.txtUnidade.TabIndex = 18;
+            // 
+            // frmEncomendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
-            this.Controls.Add(this.lblVeiculoModelo);
-            this.Controls.Add(this.txtVeiculoModelo);
+            this.ClientSize = new System.Drawing.Size(798, 438);
+            this.Controls.Add(this.txtUnidade);
+            this.Controls.Add(this.lblUnidade);
+            this.Controls.Add(this.txtEntreguePara);
+            this.Controls.Add(this.lblEntreguePara);
+            this.Controls.Add(this.txtDataSaida);
+            this.Controls.Add(this.lblDataSaida);
+            this.Controls.Add(this.txtEntreguePor);
+            this.Controls.Add(this.lblEntreguePor);
+            this.Controls.Add(this.txtDataEntrada);
+            this.Controls.Add(this.lblDataEntrada);
+            this.Controls.Add(this.txtRecebida);
+            this.Controls.Add(this.lblRecebida);
+            this.Controls.Add(this.txtDestinatario);
+            this.Controls.Add(this.lblDestinatario);
+            this.Controls.Add(this.txtTipoEncomenda);
+            this.Controls.Add(this.lblTipoEncomenda);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosCid);
             this.Controls.Add(this.barManutencao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmVeiculoModelo";
+            this.Name = "frmEncomendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manutenção de Veículo Modelo";
+            this.Text = "Manutenção de Encomendas";
             this.Load += new System.EventHandler(this.frmCid_Load);
             this.barManutencao.ResumeLayout(false);
             this.barManutencao.PerformLayout();
@@ -195,7 +336,21 @@
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosCid;
         private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.TextBox txtVeiculoModelo;
-        private System.Windows.Forms.Label lblVeiculoModelo;
+        private System.Windows.Forms.Label lblTipoEncomenda;
+        private System.Windows.Forms.TextBox txtTipoEncomenda;
+        private System.Windows.Forms.Label lblDestinatario;
+        private System.Windows.Forms.TextBox txtDestinatario;
+        private System.Windows.Forms.Label lblRecebida;
+        private System.Windows.Forms.TextBox txtRecebida;
+        private System.Windows.Forms.Label lblDataEntrada;
+        private System.Windows.Forms.TextBox txtDataEntrada;
+        private System.Windows.Forms.Label lblEntreguePor;
+        private System.Windows.Forms.TextBox txtEntreguePor;
+        private System.Windows.Forms.Label lblDataSaida;
+        private System.Windows.Forms.TextBox txtDataSaida;
+        private System.Windows.Forms.Label lblEntreguePara;
+        private System.Windows.Forms.TextBox txtEntreguePara;
+        private System.Windows.Forms.Label lblUnidade;
+        private System.Windows.Forms.TextBox txtUnidade;
     }
 }

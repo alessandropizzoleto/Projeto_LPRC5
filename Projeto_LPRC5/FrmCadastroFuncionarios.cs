@@ -219,5 +219,10 @@ namespace Projeto_LPRC5
             atualizaDadosControles();
 
         }
+
+        private void FrmCadastroFuncionarios_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
