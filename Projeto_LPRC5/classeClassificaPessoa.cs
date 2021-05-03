@@ -20,7 +20,7 @@ namespace Projeto_LPRC5
     {
         //Atributos da Classe
         private int classificapessoaid;
-        private String classificapessoadescricao { get; set; }
+        private String classificapessoadescricao;
 
 
         //Método Construtor
@@ -30,13 +30,19 @@ namespace Projeto_LPRC5
         }
 
         //Métodos Acessores
-        public void setId(int id)
+        public void setClassificapessoaId(int id)
         {
             classificapessoaid = id;
         }
-        public int getId()
+        public int getClassificapessoaId()
         {
             return classificapessoaid;
         }
-     } 
+        public void setClassificaPessoaDescricao(String desc) {
+            classificapessoadescricao = desc;
+        }
+        public String getClassificaPessoaDescricao() {
+            return classificapessoadescricao;
+        }
+    } 
 }
