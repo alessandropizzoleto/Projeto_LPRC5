@@ -39,13 +39,14 @@ namespace Projeto_LPRC5
             this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículoModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcesso = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadastro.SuspendLayout();
             this.barMenu.SuspendLayout();
             this.SuspendLayout();
@@ -59,8 +60,8 @@ namespace Projeto_LPRC5
             this.sobreToolStripMenuItem});
             this.mnuCadastro.Location = new System.Drawing.Point(0, 0);
             this.mnuCadastro.Name = "mnuCadastro";
-            this.mnuCadastro.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mnuCadastro.Size = new System.Drawing.Size(956, 28);
+            this.mnuCadastro.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.mnuCadastro.Size = new System.Drawing.Size(717, 24);
             this.mnuCadastro.TabIndex = 0;
             // 
             // cadastroToolStripMenuItem
@@ -68,7 +69,7 @@ namespace Projeto_LPRC5
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTipoUsuario});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // mnuTipoUsuario
@@ -80,65 +81,73 @@ namespace Projeto_LPRC5
             this.marcaToolStripMenuItem,
             this.estadoToolStripMenuItem,
             this.veículoModeloToolStripMenuItem,
-            this.cidadeToolStripMenuItem});
+            this.cidadeToolStripMenuItem,
+            this.moradoresToolStripMenuItem});
             this.mnuTipoUsuario.Name = "mnuTipoUsuario";
-            this.mnuTipoUsuario.Size = new System.Drawing.Size(224, 26);
+            this.mnuTipoUsuario.Size = new System.Drawing.Size(180, 22);
             this.mnuTipoUsuario.Text = "Básico";
             // 
             // tipoDeUsuárioToolStripMenuItem
             // 
             this.tipoDeUsuárioToolStripMenuItem.Name = "tipoDeUsuárioToolStripMenuItem";
-            this.tipoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.tipoDeUsuárioToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.tipoDeUsuárioToolStripMenuItem.Text = "Tipo de Usuário";
             this.tipoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuárioToolStripMenuItem_Click);
             // 
             // mnuClassificaPessoa
             // 
             this.mnuClassificaPessoa.Name = "mnuClassificaPessoa";
-            this.mnuClassificaPessoa.Size = new System.Drawing.Size(252, 26);
+            this.mnuClassificaPessoa.Size = new System.Drawing.Size(202, 22);
             this.mnuClassificaPessoa.Text = "Classificação de Pessoas";
             this.mnuClassificaPessoa.Click += new System.EventHandler(this.mnuClassificaPessoa_Click);
             // 
             // corToolStripMenuItem
             // 
             this.corToolStripMenuItem.Name = "corToolStripMenuItem";
-            this.corToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.corToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.corToolStripMenuItem.Text = "Cor";
             this.corToolStripMenuItem.Click += new System.EventHandler(this.corToolStripMenuItem_Click);
             // 
             // marcaToolStripMenuItem
             // 
             this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
-            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.marcaToolStripMenuItem.Text = "Marca";
             this.marcaToolStripMenuItem.Click += new System.EventHandler(this.marcaToolStripMenuItem_Click);
             // 
             // estadoToolStripMenuItem
             // 
             this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.estadoToolStripMenuItem.Text = "Estado";
             this.estadoToolStripMenuItem.Click += new System.EventHandler(this.estadoToolStripMenuItem_Click);
             // 
             // veículoModeloToolStripMenuItem
             // 
             this.veículoModeloToolStripMenuItem.Name = "veículoModeloToolStripMenuItem";
-            this.veículoModeloToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.veículoModeloToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.veículoModeloToolStripMenuItem.Text = "Veículo Modelo";
             this.veículoModeloToolStripMenuItem.Click += new System.EventHandler(this.veículoModeloToolStripMenuItem_Click);
+            // 
+            // cidadeToolStripMenuItem
+            // 
+            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
+            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.cidadeToolStripMenuItem.Text = "Cidade";
+            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
             // 
             // configuraçõesToolStripMenuItem
             // 
             this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuAcesso});
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.configuraçõesToolStripMenuItem.Text = "Configurações";
             // 
             // mnuAcesso
             // 
             this.mnuAcesso.Name = "mnuAcesso";
-            this.mnuAcesso.Size = new System.Drawing.Size(180, 26);
+            this.mnuAcesso.Size = new System.Drawing.Size(143, 22);
             this.mnuAcesso.Text = "Acesso SGBD";
             this.mnuAcesso.Click += new System.EventHandler(this.mnuAcesso_Click);
             // 
@@ -147,13 +156,13 @@ namespace Projeto_LPRC5
             this.sobreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sobreToolStripMenuItem1});
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sobreToolStripMenuItem.Text = "Sobre";
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(131, 26);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // barMenu
@@ -161,9 +170,9 @@ namespace Projeto_LPRC5
             this.barMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.barMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
-            this.barMenu.Location = new System.Drawing.Point(0, 28);
+            this.barMenu.Location = new System.Drawing.Point(0, 24);
             this.barMenu.Name = "barMenu";
-            this.barMenu.Size = new System.Drawing.Size(956, 39);
+            this.barMenu.Size = new System.Drawing.Size(717, 39);
             this.barMenu.TabIndex = 1;
             // 
             // toolStripButton1
@@ -175,23 +184,23 @@ namespace Projeto_LPRC5
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // cidadeToolStripMenuItem
+            // moradoresToolStripMenuItem
             // 
-            this.cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            this.cidadeToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
-            this.cidadeToolStripMenuItem.Text = "Cidade";
-            this.cidadeToolStripMenuItem.Click += new System.EventHandler(this.cidadeToolStripMenuItem_Click);
+            this.moradoresToolStripMenuItem.Name = "moradoresToolStripMenuItem";
+            this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.moradoresToolStripMenuItem.Text = "Moradores";
+            this.moradoresToolStripMenuItem.Click += new System.EventHandler(this.moradoresToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 548);
+            this.ClientSize = new System.Drawing.Size(717, 445);
             this.Controls.Add(this.barMenu);
             this.Controls.Add(this.mnuCadastro);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuCadastro;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPrincipal";
             this.Text = "Software de Controle de Condomínio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -223,6 +232,7 @@ namespace Projeto_LPRC5
 		private System.Windows.Forms.ToolStripMenuItem estadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veículoModeloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moradoresToolStripMenuItem;
     }
 }
 

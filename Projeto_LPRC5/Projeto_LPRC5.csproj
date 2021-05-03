@@ -101,7 +101,7 @@
     <Compile Include="classeMarca.cs" />
     <Compile Include="classeCidade.cs" />
     <Compile Include="classeClassificaPessoa.cs" />
-    <Compile Include="classeCor.cs" />
+    <Compile Include="Grupo 6\Cor\classeCor.cs" />
     <Compile Include="classeFeriado.cs" />
     <Compile Include="classeDefault.cs" />
     <Compile Include="ClasseVeiculo.cs" />
@@ -112,7 +112,7 @@
     <Compile Include="dbCadastroFuncionarios.cs" />
     <Compile Include="dbCidade.cs" />
     <Compile Include="dbClassificaPessoa.cs" />
-    <Compile Include="dbCor.cs" />
+    <Compile Include="Grupo 6\Cor\dbCor.cs" />
     <Compile Include="dbDefault.cs" />
     <Compile Include="dbEncomenda.cs" />
     <Compile Include="DbEstado.cs" />
@@ -168,10 +168,10 @@
     <Compile Include="frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCor.cs">
+    <Compile Include="Grupo 6\Cor\frmCor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCor.Designer.cs">
+    <Compile Include="Grupo 6\Cor\frmCor.Designer.cs">
       <DependentUpon>frmCor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAcesso.cs">
@@ -216,6 +216,14 @@
     <Compile Include="frmVisitantePrestador.Designer.cs">
       <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grupo 6\Moradores\classeMoradores.cs" />
+    <Compile Include="Grupo 6\Moradores\dbMoradores.cs" />
+    <Compile Include="Grupo 6\Moradores\frmMoradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupo 6\Moradores\frmMoradores.Designer.cs">
+      <DependentUpon>frmMoradores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="classeTipoUsuario.cs" />
@@ -244,7 +252,7 @@
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCor.resx">
+    <EmbeddedResource Include="Grupo 6\Cor\frmCor.resx">
       <DependentUpon>frmCor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAcesso.resx">
@@ -267,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisitantePrestador.resx">
       <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupo 6\Moradores\frmMoradores.resx">
+      <DependentUpon>frmMoradores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

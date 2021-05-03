@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Projeto_LPRC5.Grupo_6.Moradores;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,8 +47,9 @@ namespace Projeto_LPRC5
 
         private void corToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCor Corno = new frmCor();
-            Corno.Show();
+            frmCor Cor = new frmCor();
+            Cor.MdiParent = this;
+            Cor.Show();
         }
 
         private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,6 +76,13 @@ namespace Projeto_LPRC5
             frmCidade cidade = new frmCidade();
             cidade.MdiParent = this;
             cidade.Show();
+        }
+
+        private void moradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMoradores moradores = new frmMoradores();
+            moradores.MdiParent = this;
+            moradores.Show();
         }
     }
 }

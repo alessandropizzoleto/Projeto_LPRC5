@@ -159,7 +159,7 @@ namespace Projeto_LPRC5
             // 
             this.lblCorNome.AutoSize = true;
             this.lblCorNome.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorNome.Location = new System.Drawing.Point(265, 47);
+            this.lblCorNome.Location = new System.Drawing.Point(274, 76);
             this.lblCorNome.Name = "lblCorNome";
             this.lblCorNome.Size = new System.Drawing.Size(128, 23);
             this.lblCorNome.TabIndex = 11;
@@ -168,16 +168,16 @@ namespace Projeto_LPRC5
             // txtDescricaoCor
             // 
             this.txtDescricaoCor.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoCor.Location = new System.Drawing.Point(269, 75);
+            this.txtDescricaoCor.Location = new System.Drawing.Point(408, 73);
             this.txtDescricaoCor.Name = "txtDescricaoCor";
-            this.txtDescricaoCor.Size = new System.Drawing.Size(302, 32);
+            this.txtDescricaoCor.Size = new System.Drawing.Size(258, 32);
             this.txtDescricaoCor.TabIndex = 10;
             // 
             // frmCor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 431);
+            this.ClientSize = new System.Drawing.Size(678, 438);
             this.Controls.Add(this.lblCorNome);
             this.Controls.Add(this.txtDescricaoCor);
             this.Controls.Add(this.grdDadosCor);
@@ -186,7 +186,6 @@ namespace Projeto_LPRC5
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manutenção Cor";
             this.Load += new System.EventHandler(this.fmrCor_Load);
             this.barManutencaoCor.ResumeLayout(false);
