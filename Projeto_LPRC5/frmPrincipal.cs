@@ -91,5 +91,12 @@ namespace Projeto_LPRC5
             feriado.MdiParent = this;
             feriado.Show();
         }
+
+        private void mnuEncomendas_Click(object sender, EventArgs e)
+        {
+            frmEncomendas encomendas = new frmEncomendas();
+            encomendas.MdiParent = this;
+            encomendas.Show();
+        }
     }
 }

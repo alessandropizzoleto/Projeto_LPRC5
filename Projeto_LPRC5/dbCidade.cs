@@ -20,7 +20,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-
 namespace Projeto_LPRC5 {
     class dbCidade {
         conexaoMySql connect = new conexaoMySql();

@@ -40,20 +40,14 @@ namespace Projeto_LPRC5 {
         }
 
         public void atualizaDadosGrid() {
-            //DataTable tabelaCidade = new DataTable();
-            //tabelaCidade = dbCidade.selectCiddBase();
-            //grdDadosCid.DataSource = tabelaCidade;
-
-            //pode ser também
-
-            grdDadosCid.DataSource = db_Cidade.selectCidadeBase();
+           grdDadosCid.DataSource = db_Cidade.selectCidadeBase();
         }
 
         private void atualizaDadosControles() {
             //verificação se o objeto nao é nulo
             if (classeCidade.Equals(null))
             {
-
+                MessageBox.Show("Não há informações sobre a cidade!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else { 
                 classeCidade = db_Cidade.RetornaDadosObjeto(classeCidade);
@@ -62,24 +56,24 @@ namespace Projeto_LPRC5 {
         }
 
         private void habilitaBotoesMenu(bool hablitar) {
-            barbtnNovo.Enabled = hablitar;
-            barbtnEditar.Enabled = hablitar;
-            barbtnExcluir.Enabled = hablitar;
-            barbtnSalvar.Enabled = !hablitar;
-            barbtnCancelar.Enabled = !hablitar;
-            barbtnFechar.Enabled = hablitar;
+            btnNovo.Enabled = hablitar;
+            btnEditar.Enabled = hablitar;
+            btnExcluir.Enabled = hablitar;
+            btnSalvar.Enabled = !hablitar;
+            btnCancelar.Enabled = !hablitar;
+            btnSair.Enabled = hablitar;
         }
 
         private void habilitaCamposDados(bool habilitar) {
-            //txtNome.Enabled = habilitar;
-            //habilitação do campo txtCidade no form
+            //habilitação do campo txtCidade e o grd no form
+            txtBusca.Enabled = !habilitar;
             txtCidade.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
 
         private void limpaCamposDados() {
             txtCidade.Text = "";
-            classeCidade.setCidadeId(0);
+            classeCidade.setCidadeId(-1);
         }
 
         private bool verificaDadosObrigatorios() {
@@ -125,7 +119,7 @@ namespace Projeto_LPRC5 {
                 //Atualizando os dados do objeto cidade.
                 classeCidade.setCidadeNome(txtCidade.Text);
 
-                if (classeCidade.getCidadeId() == 0) {
+                if (classeCidade.getCidadeId() == -1) {
                     //Insere os dados
                     //alimentacao da classe objeto com a informacao do txtCidade para ser enviado ao banco de dados
                     classeCidade.setCidadeNome(txtCidade.Text);
@@ -165,38 +159,46 @@ namespace Projeto_LPRC5 {
             formataGrid();
         }
 
-        private void barbtnNovo_Click(object sender, EventArgs e) {
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
             insereCidade();
         }
 
-        private void barbtnEditar_Click(object sender, EventArgs e) {
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
             alteraCidade();
         }
 
-        private void barbtnExcluir_Click(object sender, EventArgs e) {
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
             excluiCidade();
         }
 
-        private void barbtnSalvar_Click(object sender, EventArgs e) {
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
             salvaCidade();
         }
 
-        private void barbtnCancelar_Click(object sender, EventArgs e) {
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
             cancelaCidade();
         }
 
-        private void barbtnFechar_Click(object sender, EventArgs e) {
+        private void btnSair_Click(object sender, EventArgs e)
+        {
             fechaCidade();
         }
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
-            classeCidade.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
-            atualizaDadosControles();
+            
         }
 
         private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            classeCidade.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            atualizaDadosControles();
         }
+
+        
     }
 }

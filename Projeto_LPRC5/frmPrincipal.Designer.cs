@@ -34,20 +34,21 @@ namespace Projeto_LPRC5
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTipoUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuClassificaPessoa = new System.Windows.Forms.ToolStripMenuItem();
             this.corToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuClassificaPessoa = new System.Windows.Forms.ToolStripMenuItem();
             this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículoModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feriadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcesso = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barMenu = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.feriadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEncomendas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadastro.SuspendLayout();
             this.barMenu.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +85,8 @@ namespace Projeto_LPRC5
             this.veículoModeloToolStripMenuItem,
             this.cidadeToolStripMenuItem,
             this.moradoresToolStripMenuItem,
-            this.feriadoToolStripMenuItem});
+            this.feriadoToolStripMenuItem,
+            this.mnuEncomendas});
             this.mnuTipoUsuario.Name = "mnuTipoUsuario";
             this.mnuTipoUsuario.Size = new System.Drawing.Size(180, 22);
             this.mnuTipoUsuario.Text = "Básico";
@@ -96,19 +98,19 @@ namespace Projeto_LPRC5
             this.tipoDeUsuárioToolStripMenuItem.Text = "Tipo de Usuário";
             this.tipoDeUsuárioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuárioToolStripMenuItem_Click);
             // 
-            // mnuClassificaPessoa
-            // 
-            this.mnuClassificaPessoa.Name = "mnuClassificaPessoa";
-            this.mnuClassificaPessoa.Size = new System.Drawing.Size(202, 22);
-            this.mnuClassificaPessoa.Text = "Classificação de Pessoas";
-            this.mnuClassificaPessoa.Click += new System.EventHandler(this.mnuClassificaPessoa_Click);
-            // 
             // corToolStripMenuItem
             // 
             this.corToolStripMenuItem.Name = "corToolStripMenuItem";
             this.corToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.corToolStripMenuItem.Text = "Cor";
             this.corToolStripMenuItem.Click += new System.EventHandler(this.corToolStripMenuItem_Click);
+            // 
+            // mnuClassificaPessoa
+            // 
+            this.mnuClassificaPessoa.Name = "mnuClassificaPessoa";
+            this.mnuClassificaPessoa.Size = new System.Drawing.Size(202, 22);
+            this.mnuClassificaPessoa.Text = "Classificação de Pessoas";
+            this.mnuClassificaPessoa.Click += new System.EventHandler(this.mnuClassificaPessoa_Click);
             // 
             // marcaToolStripMenuItem
             // 
@@ -144,6 +146,13 @@ namespace Projeto_LPRC5
             this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.moradoresToolStripMenuItem.Text = "Moradores";
             this.moradoresToolStripMenuItem.Click += new System.EventHandler(this.moradoresToolStripMenuItem_Click);
+            // 
+            // feriadoToolStripMenuItem
+            // 
+            this.feriadoToolStripMenuItem.Name = "feriadoToolStripMenuItem";
+            this.feriadoToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.feriadoToolStripMenuItem.Text = "Feriado";
+            this.feriadoToolStripMenuItem.Click += new System.EventHandler(this.feriadoToolStripMenuItem_Click);
             // 
             // configuraçõesToolStripMenuItem
             // 
@@ -193,12 +202,12 @@ namespace Projeto_LPRC5
             this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // feriadoToolStripMenuItem
+            // mnuEncomendas
             // 
-            this.feriadoToolStripMenuItem.Name = "feriadoToolStripMenuItem";
-            this.feriadoToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.feriadoToolStripMenuItem.Text = "Feriado";
-            this.feriadoToolStripMenuItem.Click += new System.EventHandler(this.feriadoToolStripMenuItem_Click);
+            this.mnuEncomendas.Name = "mnuEncomendas";
+            this.mnuEncomendas.Size = new System.Drawing.Size(202, 22);
+            this.mnuEncomendas.Text = "Encomendas";
+            this.mnuEncomendas.Click += new System.EventHandler(this.mnuEncomendas_Click);
             // 
             // frmPrincipal
             // 
@@ -243,6 +252,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripMenuItem cidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moradoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem feriadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuEncomendas;
     }
 }
 
