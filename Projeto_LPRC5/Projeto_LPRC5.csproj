@@ -107,6 +107,7 @@
     <Compile Include="classeMarca.cs" />
     <Compile Include="classeCidade.cs" />
     <Compile Include="classeClassificaPessoa.cs" />
+    <Compile Include="dbEmpresaPrestacaoServico.cs" />
     <Compile Include="frmEmpresaPrestadoraServico.cs">
       <SubType>Form</SubType>
     </Compile>

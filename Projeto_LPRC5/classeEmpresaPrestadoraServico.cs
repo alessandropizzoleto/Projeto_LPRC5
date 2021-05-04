@@ -16,77 +16,29 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class classeEmpresaPrestadoraServico
+    class ClasseEmpresaPrestadoraServico
     {
         //Atributos da Classe
-            private int     EmpresaPrestadoraServicoid;
-            private string  Empresa;
-            private int     Telefone;
-            private string  TipoServico;
-            private string  Endereco;
-            private string  Descricao;
+        public int EmpresaId { get; set; }
+        public string EmpresaNome { get; set; }
+        public string EmpresaTipoServico { get; set; }
+        public string EmpresaEndereco { get; set; }
+        public string EmpresaTelefone { get; set; }
+        public string EmpresaDescricao { get; set; }
 
-        public classeEmpresaPrestadoraServico()
+        public ClasseEmpresaPrestadoraServico()
         {
 
-        
         }
-        public classeEmpresaPrestadoraServico(int id, string Nome, int Numero, String Servico, String Local, String Desc)
+        public ClasseEmpresaPrestadoraServico(int id, string Nome, string Numero, string Servico, string Local, string Desc)
         {
-        EmpresaPrestadoraServicoid = id;
-        Empresa = Nome;
-        Telefone = Numero;
-        TipoServico = Servico;
-        Endereco = Local;
-        Descricao = Desc;
+            EmpresaId = id;
+            EmpresaNome = Nome;
+            EmpresaTelefone = Numero;
+            EmpresaTipoServico = Servico;
+            EmpresaEndereco = Local;
+            EmpresaDescricao = Desc;
         }
-        public void setEmpresaPrestadoraServicoId(int idEmpresaPrestadoraServicoid)
-        {
-            EmpresaPrestadoraServicoid = idEmpresaPrestadoraServicoid;
-        }
-        public int getEmpresaPrestadoraServicoId()
-        {
-            return EmpresaPrestadoraServicoid;
-        }
-        public void setEmpresaPrestadoraServicoNome(string NomeEmpresaPrestadoraServicoEmpresa)
-        {
-            Empresa = NomeEmpresaPrestadoraServicoEmpresa;
-        }
-        public string getEmpresaPrestadoraServicoNome()
-        {
-            return Empresa;
-        }
-        public void setEmpresaPrestadoraServiconumero(int NomeEmpresaPrestadoraServicoNumero)
-        {
-            Telefone = NomeEmpresaPrestadoraServicoNumero;
-        }
-        public int getEmpresaPrestadoraServiconumero()
-        {
-            return Telefone;
-        }
-        public void setEmpresaPrestadoraServicoservico(string NomeEmpresaPrestadoraServicoServico)
-        {
-            TipoServico = NomeEmpresaPrestadoraServicoServico;
-        }
-        public string getEmpresaPrestadoraServicoservico()
-        {
-            return TipoServico;
-        }
-        public void setEmpresaPrestadoraServicolocal(string NomeEmpresaPrestadoraServicoLocal)
-        {
-            Endereco = NomeEmpresaPrestadoraServicoLocal;
-        }
-        public string getEmpresaPrestadoraServicolocal()
-        {
-            return Endereco;
-        }
-        public void setEmpresaPrestadoraServicoDesc(string NomeEmpresaPrestadoraServicodesc)
-        {
-            Descricao = NomeEmpresaPrestadoraServicodesc;
-        }
-        public string getEmpresaPrestadoraServicoDesc()
-        {
-            return Descricao;
-        }
+
     } 
 }
