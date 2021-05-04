@@ -1,5 +1,5 @@
 ﻿//****************************************************************************************
-//**Grupo: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por: Roberto Marcheti Neto
 //**Data de Criação: 03/05/2021
 //**Instruções: Criação do formulário frmEncomendas
@@ -70,12 +70,12 @@ namespace Projeto_LPRC5
         private void habilitaCamposDados(bool habilitar)
         {
             txtBusca.Enabled = !habilitar;
-            txtDescrição.Enabled = !habilitar;
+            txtDescricao.Enabled = !habilitar;
             txtDestinatario.Enabled = !habilitar;
             txtEntreguePara.Enabled = !habilitar;
             txtEntreguePor.Enabled = !habilitar;
             txtRecebida.Enabled = !habilitar;
-            txtUnidade.Enabled = !habilitar;
+            txtComplemento.Enabled = !habilitar;
             msktxtDataEntrada.Enabled = !habilitar;
             msktxtDataSaida.Enabled = !habilitar;
             grdDadosEncomenda.Enabled = !habilitar;
@@ -98,10 +98,10 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            if (txtDestinatario.Text == "" || txtDescrição.Text == "" || 
+            if (txtDestinatario.Text == "" || txtDescricao.Text == "" || 
                 txtEntreguePara.Text == "" || txtEntreguePor.Text == "" ||
                 msktxtDataEntrada.Text == "" ||
-                txtRecebida.Text == ""|| txtUnidade.Text == "")
+                txtRecebida.Text == ""|| txtComplemento.Text == "")
                 {
                     resultado = false;
                 }

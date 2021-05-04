@@ -1,5 +1,5 @@
 ﻿//****************************************************************************************
-//**Grupo: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por: Roberto Marcheti Neto
 //**Data de Criação: 28/04/2021
 //**Instruções: Criação do formulário frmVeiculoModelo
@@ -8,6 +8,10 @@
 //****** Atualizações: Tanto código quanto form estão OK, não sendo necessário fazer alterações
 //*** Data: 03/05/2021
 //*** Responsável: Giovanni Marques
+
+//****** Atualizações: Alteração e correção do código do formulário frmVeiculoModelo
+//*** Data: 04/05/2021
+//*** Responsável: Roberto Marcheti Neto
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -28,38 +32,34 @@ namespace Projeto_LPRC5
             InitializeComponent();
         }
 
-        dbDefault db_Default = new dbDefault();
-        classeDefault padrao = new classeDefault();
+        dbVeiculoModelo db_veiculoMode = new dbVeiculoModelo();
+        classeVeiculoModelo veiculoModelo = new classeVeiculoModelo();
 
         private void formataGrid()
         {
             //Opção para selecionar a linha inteira do grid
-            grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdDadosVeiculoModelo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            grdDadosCid.Columns[0].HeaderText = "Código";
-            grdDadosCid.Columns[1].HeaderText = "Nome";
+            grdDadosVeiculoModelo.Columns[0].HeaderText = "Código";
+            grdDadosVeiculoModelo.Columns[1].HeaderText = "Nome";
 
-            grdDadosCid.Columns[0].Width = 0;
-            grdDadosCid.Columns[1].Width = 120;
+            grdDadosVeiculoModelo.Columns[0].Width = 0;
+            grdDadosVeiculoModelo.Columns[1].Width = 120;
 
         }
 
         public void atualizaDadosGrid()
         {
-            //DataTable tabelaCidade = new DataTable();
-            //tabelaCidade = dbCidade.selectCiddBase();
-            //grdDadosCid.DataSource = tabelaCidade;
+            
 
-            //pode ser também
-
-            grdDadosCid.DataSource = db_Default.selectDefaultBase();
+            grdDadosVeiculoModelo.DataSource = db_veiculoMode.selectDefaultBase();
         }
 
         private void atualizaDadosControles()
         {
-            padrao = db_Default.RetornaDadosObjeto(padrao);
+            veiculoModelo = db_veiculoMode.RetornaDadosObjeto(veiculoModelo);
 
-            //txtNome.Text = cidade.getNome();
+            
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -74,53 +74,53 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            //txtNome.Enabled = habilitar;
-            grdDadosCid.Enabled = !habilitar;
+            txtVeiculoModelo.Enabled = habilitar;
+
+
+            grdDadosVeiculoModelo.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            //txtNome.Text = "";
-
-            padrao.setId(0);
-            //padrao.setNome("");
+            veiculoModelo.setVeiculoID(-1);
+            veiculoModelo.setnomeVeiculo("");
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            //if (txtNome.Text.Trim().Length < 4)
-            //{
-            //    resultado = false;
-            //}
+            if (txtVeiculoModelo.Text.Trim().Length < 2)
+            {
+               resultado = false;
+            }
 
 
             return resultado;
         }
 
-        private void insereDefault()
+        private void insereVeiculoModelo()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
             limpaCamposDados();
         }
 
-        private void alteraDefault()
+        private void alteraVeiculoModelo()
         {
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
         }
 
-        private void excluiDefault()
+        private void excluiVeiculoModelo()
         {
-            if (padrao.getId() != 0)
+            if (veiculoModelo.getVeiculoID() != -1)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_Default.excluiDefaultBase(padrao);
+                    db_veiculoMode.excluiVeiculoModelo(veiculoModelo);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -132,22 +132,20 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void salvaDefault()
+        private void salvaVeiculoModelo()
         {
             if (verificaDadosObrigatorios() == true)
             {
-                //Atualizando os dados do objeto estado.
-                //padrao.setNome(txtNome.Text);
-
-                if (padrao.getId() == 0)
+                
+                if (veiculoModelo.getVeiculoID() == -1)
                 {
                     //Insere os dados
-                    db_Default.insereDefaultBase(padrao);
+                    db_veiculoMode.insereVeiculoModelo(veiculoModelo);
                 }
                 else
                 {
                     //Altera os dados
-                    db_Default.alteraDefaultBase(padrao);
+                    db_veiculoMode.alteraVeiculoModelo(veiculoModelo);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -160,7 +158,7 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void cancelaDefault()
+        private void cancelaVeiculoModelo()
         {
             DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Default?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -171,58 +169,54 @@ namespace Projeto_LPRC5
                 limpaCamposDados();
             }
         }
-        private void fechaDefault()
-        {
-            this.Close();
-        }
 
-        private void lblNome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmCid_Load(object sender, EventArgs e)
+        private void frmVeiculoModelo_Load(object sender, EventArgs e)
         {
             habilitaBotoesMenu(true);
-            habilitaCamposDados(false);
+            habilitaCamposDados(true);
             atualizaDadosGrid();
             formataGrid();
         }
-
+        private void fechaVeiculoModelo()
+        {
+            this.Close();
+        }        
         private void barbtnNovo_Click(object sender, EventArgs e)
         {
-            insereDefault();
+            insereVeiculoModelo();
         }
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
-            alteraDefault();
+            alteraVeiculoModelo();
         }
 
         private void barbtnExcluir_Click(object sender, EventArgs e)
         {
-            excluiDefault();
+            excluiVeiculoModelo();
         }
 
         private void barbtnSalvar_Click(object sender, EventArgs e)
         {
-            salvaDefault();
+            salvaVeiculoModelo();
         }
 
         private void barbtnCancelar_Click(object sender, EventArgs e)
         {
-            cancelaDefault();
+            cancelaVeiculoModelo();
         }
 
         private void barbtnFechar_Click(object sender, EventArgs e)
         {
-            fechaDefault();
+            fechaVeiculoModelo();
         }
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            veiculoModelo.setVeiculoID(Convert.ToInt16(grdDadosVeiculoModelo.Rows[grdDadosVeiculoModelo.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
         }
+
+       
     }
 }

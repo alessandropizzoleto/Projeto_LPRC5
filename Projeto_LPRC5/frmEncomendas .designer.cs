@@ -38,8 +38,8 @@
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosEncomenda = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.lblTipoEncomenda = new System.Windows.Forms.Label();
-            this.txtDescrição = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDestinatario = new System.Windows.Forms.Label();
             this.txtDestinatario = new System.Windows.Forms.TextBox();
             this.lblRecebida = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.lblEntreguePara = new System.Windows.Forms.Label();
             this.txtEntreguePara = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
-            this.txtUnidade = new System.Windows.Forms.TextBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.msktxtDataEntrada = new System.Windows.Forms.MaskedTextBox();
             this.msktxtDataSaida = new System.Windows.Forms.MaskedTextBox();
             this.barManutencao.SuspendLayout();
@@ -158,21 +158,21 @@
             this.txtBusca.Size = new System.Drawing.Size(239, 26);
             this.txtBusca.TabIndex = 2;
             // 
-            // lblTipoEncomenda
+            // lblDescricao
             // 
-            this.lblTipoEncomenda.AutoSize = true;
-            this.lblTipoEncomenda.Location = new System.Drawing.Point(269, 310);
-            this.lblTipoEncomenda.Name = "lblTipoEncomenda";
-            this.lblTipoEncomenda.Size = new System.Drawing.Size(73, 19);
-            this.lblTipoEncomenda.TabIndex = 3;
-            this.lblTipoEncomenda.Text = "Descrição:";
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(269, 310);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(73, 19);
+            this.lblDescricao.TabIndex = 3;
+            this.lblDescricao.Text = "Descrição:";
             // 
-            // txtDescrição
+            // txtDescricao
             // 
-            this.txtDescrição.Location = new System.Drawing.Point(409, 303);
-            this.txtDescrição.Name = "txtDescrição";
-            this.txtDescrição.Size = new System.Drawing.Size(347, 26);
-            this.txtDescrição.TabIndex = 4;
+            this.txtDescricao.Location = new System.Drawing.Point(409, 303);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(347, 26);
+            this.txtDescricao.TabIndex = 4;
             // 
             // lblDestinatario
             // 
@@ -265,12 +265,12 @@
             this.lblComplemento.TabIndex = 17;
             this.lblComplemento.Text = "Complemento:";
             // 
-            // txtUnidade
+            // txtComplemento
             // 
-            this.txtUnidade.Location = new System.Drawing.Point(408, 261);
-            this.txtUnidade.Name = "txtUnidade";
-            this.txtUnidade.Size = new System.Drawing.Size(347, 26);
-            this.txtUnidade.TabIndex = 18;
+            this.txtComplemento.Location = new System.Drawing.Point(408, 261);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(347, 26);
+            this.txtComplemento.TabIndex = 18;
             // 
             // msktxtDataEntrada
             // 
@@ -297,7 +297,7 @@
             this.ClientSize = new System.Drawing.Size(768, 351);
             this.Controls.Add(this.msktxtDataSaida);
             this.Controls.Add(this.msktxtDataEntrada);
-            this.Controls.Add(this.txtUnidade);
+            this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.lblComplemento);
             this.Controls.Add(this.txtEntreguePara);
             this.Controls.Add(this.lblEntreguePara);
@@ -309,8 +309,8 @@
             this.Controls.Add(this.lblRecebida);
             this.Controls.Add(this.txtDestinatario);
             this.Controls.Add(this.lblDestinatario);
-            this.Controls.Add(this.txtDescrição);
-            this.Controls.Add(this.lblTipoEncomenda);
+            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosEncomenda);
             this.Controls.Add(this.barManutencao);
@@ -339,8 +339,8 @@
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosEncomenda;
         private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.Label lblTipoEncomenda;
-        private System.Windows.Forms.TextBox txtDescrição;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDestinatario;
         private System.Windows.Forms.TextBox txtDestinatario;
         private System.Windows.Forms.Label lblRecebida;
@@ -352,7 +352,7 @@
         private System.Windows.Forms.Label lblEntreguePara;
         private System.Windows.Forms.TextBox txtEntreguePara;
         private System.Windows.Forms.Label lblComplemento;
-        private System.Windows.Forms.TextBox txtUnidade;
+        private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.MaskedTextBox msktxtDataEntrada;
         private System.Windows.Forms.MaskedTextBox msktxtDataSaida;
     }

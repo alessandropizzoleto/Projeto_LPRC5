@@ -36,12 +36,12 @@
             this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
             this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
-            this.grdDadosCid = new System.Windows.Forms.DataGridView();
+            this.grdDadosVeiculoModelo = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.txtVeiculoModelo = new System.Windows.Forms.TextBox();
             this.lblVeiculoModelo = new System.Windows.Forms.Label();
             this.barManutencao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDadosVeiculoModelo)).BeginInit();
             this.SuspendLayout();
             // 
             // barManutencao
@@ -127,15 +127,15 @@
             this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
             // 
-            // grdDadosCid
+            // grdDadosVeiculoModelo
             // 
-            this.grdDadosCid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCid.Location = new System.Drawing.Point(12, 76);
-            this.grdDadosCid.Name = "grdDadosCid";
-            this.grdDadosCid.RowHeadersWidth = 51;
-            this.grdDadosCid.Size = new System.Drawing.Size(240, 350);
-            this.grdDadosCid.TabIndex = 1;
-            this.grdDadosCid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
+            this.grdDadosVeiculoModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDadosVeiculoModelo.Location = new System.Drawing.Point(12, 76);
+            this.grdDadosVeiculoModelo.Name = "grdDadosVeiculoModelo";
+            this.grdDadosVeiculoModelo.RowHeadersWidth = 51;
+            this.grdDadosVeiculoModelo.Size = new System.Drawing.Size(240, 350);
+            this.grdDadosVeiculoModelo.TabIndex = 1;
+            this.grdDadosVeiculoModelo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
             // 
             // txtBusca
             // 
@@ -168,17 +168,17 @@
             this.Controls.Add(this.lblVeiculoModelo);
             this.Controls.Add(this.txtVeiculoModelo);
             this.Controls.Add(this.txtBusca);
-            this.Controls.Add(this.grdDadosCid);
+            this.Controls.Add(this.grdDadosVeiculoModelo);
             this.Controls.Add(this.barManutencao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVeiculoModelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manutenção de Veículo Modelo";
-            this.Load += new System.EventHandler(this.frmCid_Load);
+            this.Load += new System.EventHandler(this.frmVeiculoModelo_Load);
             this.barManutencao.ResumeLayout(false);
             this.barManutencao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDadosVeiculoModelo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +193,7 @@
         private System.Windows.Forms.ToolStripButton barbtnSalvar;
         private System.Windows.Forms.ToolStripButton barbtnCancelar;
         private System.Windows.Forms.ToolStripButton barbtnFechar;
-        private System.Windows.Forms.DataGridView grdDadosCid;
+        private System.Windows.Forms.DataGridView grdDadosVeiculoModelo;
         private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.TextBox txtVeiculoModelo;
         private System.Windows.Forms.Label lblVeiculoModelo;
