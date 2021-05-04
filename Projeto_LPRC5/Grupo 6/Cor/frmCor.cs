@@ -74,13 +74,13 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            txtDescricaoCor.Enabled = habilitar;
+            txtNomeCor.Enabled = habilitar;
             grdDadosCor.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            txtDescricaoCor.Text = "";
+            txtNomeCor.Text = "";
             tinta.setCorNome("");
             tinta.setCorId(-1);
         }
@@ -89,7 +89,7 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            if (txtDescricaoCor.Text.Length == 0)
+            if (txtNomeCor.Text.Length == 0)
             {
                 resultado = false;
             }
@@ -134,12 +134,12 @@ namespace Projeto_LPRC5
             {
                 if (comando == true)
                 {
-                    tinta.setCorNome(txtDescricaoCor.Text);
+                    tinta.setCorNome(txtNomeCor.Text);
                     db_Cor.insereCorBase(tinta);
                 }
                 else if  (comando == false)
                 {
-                    tinta.setCorNome(txtDescricaoCor.Text);
+                    tinta.setCorNome(txtNomeCor.Text);
                     db_Cor.alteraCorBase(tinta);
                 }
 
@@ -228,7 +228,7 @@ namespace Projeto_LPRC5
         private void selectCorDBase(classeCor tinta)
         {
             tinta = db_Cor.selectCorDBase(tinta);
-            txtDescricaoCor.Text = tinta.getCorNome();
+            txtNomeCor.Text = tinta.getCorNome();
         }
 
         private void selectCorDBase()

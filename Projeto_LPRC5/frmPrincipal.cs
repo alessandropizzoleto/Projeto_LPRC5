@@ -84,5 +84,12 @@ namespace Projeto_LPRC5
             moradores.MdiParent = this;
             moradores.Show();
         }
+
+        private void feriadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFeriado feriado = new frmFeriado();
+            feriado.MdiParent = this;
+            feriado.Show();
+        }
     }
 }

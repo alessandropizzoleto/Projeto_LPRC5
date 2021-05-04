@@ -11,9 +11,9 @@
 //*** Responsável: André Sirikaku
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Get e Set funcionais alem da criação do construtor e nomes corrigidos de acordo com o banco de dados
+//*** Data:03/05/2021
+//*** Responsável:Grupo 6
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -23,20 +23,60 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class ClasseFeriado
+    class classeFeriado
     {
-        //Atributos da Classe
-        public int Id { get; set; }
-        public int Dia { get; set; }
-        public int Mes { get; set; }
-        public string Descricao { get; set; }
 
-        //Método Construtor
-        public ClasseFeriado()
+        private int FeriadoId;
+        private int FeriadoDia;
+        private int FeriadoMes;
+        private string FeriadoNome;
+
+        public classeFeriado() { 
+        
+        
+        
+        }
+        public classeFeriado(int id, int dia, int mes, string nome)
         {
+            FeriadoId = id;
+            FeriadoDia = dia;
+            FeriadoMes = mes;
+            FeriadoNome = nome;
 
         }
 
-        //Métodos Acessores
+        public void setFeriadoId(int IdFeriado)
+        {
+            FeriadoId = IdFeriado;
+        }
+        public int getFeriadoId()
+        {
+            return FeriadoId;
+        }
+        public void setFeriadoDia(int DiaFeriado)
+        {
+            FeriadoDia = DiaFeriado;
+        }
+        public int getFeriadoDia()
+        {
+            return FeriadoDia;
+        }
+        public void setFeriadoMes(int MesFeriado)
+        {
+            FeriadoMes = MesFeriado;
+        }
+        public int getFeriadoMes()
+        {
+            return FeriadoMes;
+        }
+        public void setFeriadoNome(string NomeFeriado)
+        {
+            FeriadoNome = NomeFeriado;
+        }
+        public string getFeriadoNome()
+        {
+            return FeriadoNome;
+        }
     }
 }
+

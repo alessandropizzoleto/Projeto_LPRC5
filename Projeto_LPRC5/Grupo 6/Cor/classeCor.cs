@@ -25,11 +25,10 @@ namespace Projeto_LPRC5
         private int corId;
         private string corNome;
 
-        public classeCor()
-        {
-
+        public classeCor() { 
+        
+        
         }
-
         public classeCor(int id, string nome)
         {
             corId = id;

@@ -4,9 +4,9 @@
 //**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações: Criação de novas funções e modificação das que não funcionavam alem de mostrar resultados no grid e capacidade usar as informações do grid para executar o update e delete.
+//*** Data: 03/05/2021
+//*** Responsável: Grupo 6
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -28,37 +28,37 @@ namespace Projeto_LPRC5
         }
 
         bdFeriado db_Feriado = new bdFeriado();
-        ClasseFeriado feriado = new ClasseFeriado();
+        classeFeriado feriado = new classeFeriado();
+        bool comando;
 
         private void formataGrid()
         {
-            //Opção para selecionar a linha inteira do grid
-            grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
+            grdDadosFe.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdDadosFe.RowHeadersVisible = false;
+            grdDadosFe.Columns[0].HeaderText = "Código";
+            grdDadosFe.Columns[1].HeaderText = "Nome";
+            grdDadosFe.Columns[2].HeaderText = "Dia";
+            grdDadosFe.Columns[3].HeaderText = "Mes";
 
-            grdDadosCid.Columns[0].HeaderText = "Código";
-            grdDadosCid.Columns[1].HeaderText = "Nome";
-
-            grdDadosCid.Columns[0].Width = 0;
-            grdDadosCid.Columns[1].Width = 120;
+            grdDadosFe.Columns[0].Width = 0;
+            grdDadosFe.Columns[1].Width = 120;
+            grdDadosFe.Columns[2].Width = 120;
+            grdDadosFe.Columns[3].Width = 120;
+            grdDadosFe.Columns[0].Visible = false;
 
         }
 
         public void atualizaDadosGrid()
         {
-            //DataTable tabelaCidade = new DataTable();
-            //tabelaCidade = dbCidade.selectCiddBase();
-            //grdDadosCid.DataSource = tabelaCidade;
-
-            //pode ser também
-
-            grdDadosCid.DataSource = db_Feriado.selectFeriadoBase();
+            grdDadosFe.DataSource = db_Feriado.selectFeriadoDBaseGrid();
         }
 
         private void atualizaDadosControles()
         {
-            feriado = db_Feriado.RetornaDadosObjeto(feriado);
+            grdDadosFe.DataSource = db_Feriado.selectFeriadoDBaseGrid();
 
-            //txtNome.Text = cidade.getNome();
+            
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -73,26 +73,37 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            //txtNome.Enabled = habilitar;
-            grdDadosCid.Enabled = !habilitar;
+            txtNome.Enabled = habilitar;
+            txtDia.Enabled = habilitar;
+            txtMes.Enabled = habilitar;
+            grdDadosFe.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            //txtNome.Text = "";
-
-            feriado.Id= 0;
-            //feriado.setNome("");
+            txtNome.Text = "";
+            txtDia.Text = "";
+            txtMes.Text = "";
+           
+           
+           feriado.setFeriadoId(-1);
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            //if (txtNome.Text.Trim().Length < 4)
-            //{
-            //    resultado = false;
-            //}
+            if (txtNome.Text.Length == 0)
+            {
+                resultado = false;
+            }if (txtMes.Text.Length == 0)
+            {
+                resultado = false;
+            }
+            if (txtDia.Text.Length == 0)
+            {
+                resultado = false;
+            }
 
 
             return resultado;
@@ -113,7 +124,7 @@ namespace Projeto_LPRC5
 
         private void excluiFeriado()
         {
-            if (feriado.Id != 0)
+            if (feriado.getFeriadoId() != 0)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -135,17 +146,21 @@ namespace Projeto_LPRC5
         {
             if (verificaDadosObrigatorios() == true)
             {
-                //Atualizando os dados do objeto estado.
-                //feriado.setNome(txtNome.Text);
-
-                if (feriado.Id == 0)
+               
+                if (comando == true)
                 {
                     //Insere os dados
+                    feriado.setFeriadoNome(txtNome.Text);
+                    feriado.setFeriadoDia(Convert.ToInt32(txtDia.Text));
+                    feriado.setFeriadoMes(Convert.ToInt32(txtMes.Text));
+
                     db_Feriado.insereFeriadoBase(feriado);
                 }
-                else
+                else if (comando == false)
                 {
-                    //Altera os dados
+                    feriado.setFeriadoNome(txtNome.Text);
+                    feriado.setFeriadoDia(Convert.ToInt32(txtDia.Text));
+                    feriado.setFeriadoMes(Convert.ToInt32(txtMes.Text));
                     db_Feriado.alteraFeriadoBase(feriado);
                 }
                 habilitaBotoesMenu(true);
@@ -180,7 +195,11 @@ namespace Projeto_LPRC5
 
         }
 
-        private void frmCid_Load(object sender, EventArgs e)
+ 
+
+       
+
+        private void frmFeriado_Load(object sender, EventArgs e)
         {
             habilitaBotoesMenu(true);
             habilitaCamposDados(false);
@@ -188,14 +207,28 @@ namespace Projeto_LPRC5
             formataGrid();
         }
 
-        private void barbtnNovo_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            insereFeriado();
+
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
             alteraFeriado();
+            comando = false;
+        }
+
+        private void barbtnNovo_Click(object sender, EventArgs e)
+        {
+               insereFeriado();
+            comando = true;
         }
 
         private void barbtnExcluir_Click(object sender, EventArgs e)
@@ -218,25 +251,12 @@ namespace Projeto_LPRC5
             fechaFeriado();
         }
 
-        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void grdDadosFe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            feriado.Id = Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString());
+            feriado.setFeriadoId(Convert.ToInt16(grdDadosFe.Rows[grdDadosFe.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
-        }
-
-        private void frmFeriado_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
