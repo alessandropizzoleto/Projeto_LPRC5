@@ -1,4 +1,5 @@
-﻿namespace Projeto_LPRC5
+﻿
+namespace Projeto_LPRC5
 {
     partial class frmEmpresaPrestadoraServico
     {
@@ -28,246 +29,227 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barManutencao = new System.Windows.Forms.ToolStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpresaPrestadoraServico));
+            this.barraManutencaoMarca = new System.Windows.Forms.ToolStrip();
             this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
             this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
             this.barbtnExcluir = new System.Windows.Forms.ToolStripButton();
             this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
             this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
-            this.grdDadosCid = new System.Windows.Forms.DataGridView();
-            this.txtBusca = new System.Windows.Forms.TextBox();
-            this.textDia = new System.Windows.Forms.TextBox();
-            this.dia = new System.Windows.Forms.Label();
-            this.textMes = new System.Windows.Forms.TextBox();
-            this.mes = new System.Windows.Forms.Label();
-            this.descricao = new System.Windows.Forms.Label();
-            this.textDescricao = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.grdDadosEmpresaPrestadoraServico = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescricaoServico = new System.Windows.Forms.TextBox();
+            this.txtDescricaoEndereco = new System.Windows.Forms.TextBox();
+            this.txtDescricaoEmpresa = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.barManutencao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDescricaoTelefone = new System.Windows.Forms.TextBox();
+            this.txtDescricaoDescricao = new System.Windows.Forms.RichTextBox();
+            this.barraManutencaoMarca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDadosEmpresaPrestadoraServico)).BeginInit();
             this.SuspendLayout();
             // 
-            // barManutencao
+            // barraManutencaoMarca
             // 
-            this.barManutencao.Dock = System.Windows.Forms.DockStyle.None;
-            this.barManutencao.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.barManutencao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.barraManutencaoMarca.Dock = System.Windows.Forms.DockStyle.None;
+            this.barraManutencaoMarca.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.barraManutencaoMarca.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barbtnNovo,
             this.barbtnEditar,
             this.barbtnExcluir,
             this.barbtnSalvar,
             this.barbtnCancelar,
             this.barbtnFechar});
-            this.barManutencao.Location = new System.Drawing.Point(0, 0);
-            this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(150, 25);
-            this.barManutencao.TabIndex = 0;
-            this.barManutencao.Text = "toolStrip1";
+            this.barraManutencaoMarca.Location = new System.Drawing.Point(9, 9);
+            this.barraManutencaoMarca.Name = "barraManutencaoMarca";
+            this.barraManutencaoMarca.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.barraManutencaoMarca.Size = new System.Drawing.Size(229, 39);
+            this.barraManutencaoMarca.TabIndex = 8;
+            this.barraManutencaoMarca.Text = "toolStrip1";
             // 
             // barbtnNovo
             // 
             this.barbtnNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnNovo.Image = ((System.Drawing.Image)(resources.GetObject("barbtnNovo.Image")));
             this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnNovo.Name = "barbtnNovo";
-            this.barbtnNovo.Size = new System.Drawing.Size(23, 22);
+            this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
             this.barbtnNovo.Text = "Novo";
-            this.barbtnNovo.ToolTipText = "Adicionar Cidade";
-            this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
+            this.barbtnNovo.ToolTipText = "Adicionar";
             // 
             // barbtnEditar
             // 
             this.barbtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnEditar.Image")));
             this.barbtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnEditar.Name = "barbtnEditar";
-            this.barbtnEditar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnEditar.Size = new System.Drawing.Size(36, 36);
             this.barbtnEditar.Text = "Editar";
-            this.barbtnEditar.ToolTipText = "Editar Cidade";
-            this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
+            this.barbtnEditar.ToolTipText = "Editar";
             // 
             // barbtnExcluir
             // 
             this.barbtnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("barbtnExcluir.Image")));
             this.barbtnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnExcluir.Name = "barbtnExcluir";
-            this.barbtnExcluir.Size = new System.Drawing.Size(23, 22);
+            this.barbtnExcluir.Size = new System.Drawing.Size(36, 36);
             this.barbtnExcluir.Text = "Excluir";
-            this.barbtnExcluir.ToolTipText = "Excluir Cidade";
-            this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
+            this.barbtnExcluir.ToolTipText = "Excluir";
             // 
             // barbtnSalvar
             // 
             this.barbtnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnSalvar.Image")));
             this.barbtnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnSalvar.Name = "barbtnSalvar";
-            this.barbtnSalvar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnSalvar.Size = new System.Drawing.Size(36, 36);
             this.barbtnSalvar.Text = "Salvar";
-            this.barbtnSalvar.ToolTipText = "Salvar nova Cidade";
-            this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
+            this.barbtnSalvar.ToolTipText = "Salvar";
             // 
             // barbtnCancelar
             // 
             this.barbtnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnCancelar.Image")));
             this.barbtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnCancelar.Name = "barbtnCancelar";
-            this.barbtnCancelar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnCancelar.Size = new System.Drawing.Size(36, 36);
             this.barbtnCancelar.Text = "Cancelar";
-            this.barbtnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
-            this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
+            this.barbtnCancelar.ToolTipText = "Cancelar ação";
             // 
             // barbtnFechar
             // 
             this.barbtnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnFechar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnFechar.Image")));
             this.barbtnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnFechar.Name = "barbtnFechar";
-            this.barbtnFechar.Size = new System.Drawing.Size(23, 22);
+            this.barbtnFechar.Size = new System.Drawing.Size(36, 36);
             this.barbtnFechar.Text = "Fechar";
-            this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
-            this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
+            this.barbtnFechar.ToolTipText = "Fechar";
             // 
-            // grdDadosCid
+            // grdDadosEmpresaPrestadoraServico
             // 
-            this.grdDadosCid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCid.Location = new System.Drawing.Point(12, 76);
-            this.grdDadosCid.Name = "grdDadosCid";
-            this.grdDadosCid.RowHeadersWidth = 51;
-            this.grdDadosCid.Size = new System.Drawing.Size(240, 350);
-            this.grdDadosCid.TabIndex = 1;
-            this.grdDadosCid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
+            this.grdDadosEmpresaPrestadoraServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDadosEmpresaPrestadoraServico.Location = new System.Drawing.Point(9, 77);
+            this.grdDadosEmpresaPrestadoraServico.Name = "grdDadosEmpresaPrestadoraServico";
+            this.grdDadosEmpresaPrestadoraServico.Size = new System.Drawing.Size(229, 372);
+            this.grdDadosEmpresaPrestadoraServico.TabIndex = 9;
             // 
-            // txtBusca
+            // textBox1
             // 
-            this.txtBusca.Location = new System.Drawing.Point(13, 41);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 26);
-            this.txtBusca.TabIndex = 2;
-            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
+            this.textBox1.Location = new System.Drawing.Point(9, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(229, 20);
+            this.textBox1.TabIndex = 10;
             // 
-            // textDia
+            // txtDescricaoServico
             // 
-            this.textDia.Location = new System.Drawing.Point(387, 76);
-            this.textDia.Name = "textDia";
-            this.textDia.Size = new System.Drawing.Size(130, 26);
-            this.textDia.TabIndex = 3;
+            this.txtDescricaoServico.Location = new System.Drawing.Point(517, 146);
+            this.txtDescricaoServico.Name = "txtDescricaoServico";
+            this.txtDescricaoServico.Size = new System.Drawing.Size(153, 20);
+            this.txtDescricaoServico.TabIndex = 12;
             // 
-            // dia
+            // txtDescricaoEndereco
             // 
-            this.dia.AutoSize = true;
-            this.dia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.dia.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dia.Location = new System.Drawing.Point(416, 52);
-            this.dia.Name = "dia";
-            this.dia.Size = new System.Drawing.Size(75, 21);
-            this.dia.TabIndex = 4;
-            this.dia.Text = "Empresa";
-            this.dia.Click += new System.EventHandler(this.label1_Click);
+            this.txtDescricaoEndereco.Location = new System.Drawing.Point(314, 237);
+            this.txtDescricaoEndereco.Name = "txtDescricaoEndereco";
+            this.txtDescricaoEndereco.Size = new System.Drawing.Size(356, 20);
+            this.txtDescricaoEndereco.TabIndex = 14;
             // 
-            // textMes
+            // txtDescricaoEmpresa
             // 
-            this.textMes.Location = new System.Drawing.Point(482, 138);
-            this.textMes.Name = "textMes";
-            this.textMes.Size = new System.Drawing.Size(136, 26);
-            this.textMes.TabIndex = 5;
-            // 
-            // mes
-            // 
-            this.mes.AutoSize = true;
-            this.mes.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.mes.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mes.Location = new System.Drawing.Point(488, 114);
-            this.mes.Name = "mes";
-            this.mes.Size = new System.Drawing.Size(130, 21);
-            this.mes.TabIndex = 6;
-            this.mes.Text = "Tipo de Serviço";
-            // 
-            // descricao
-            // 
-            this.descricao.AutoSize = true;
-            this.descricao.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.descricao.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descricao.Location = new System.Drawing.Point(408, 252);
-            this.descricao.Name = "descricao";
-            this.descricao.Size = new System.Drawing.Size(89, 21);
-            this.descricao.TabIndex = 7;
-            this.descricao.Text = "Descrição:";
-            // 
-            // textDescricao
-            // 
-            this.textDescricao.Location = new System.Drawing.Point(297, 276);
-            this.textDescricao.Multiline = true;
-            this.textDescricao.Name = "textDescricao";
-            this.textDescricao.Size = new System.Drawing.Size(321, 116);
-            this.textDescricao.TabIndex = 8;
-            this.textDescricao.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtDescricaoEmpresa.Location = new System.Drawing.Point(399, 77);
+            this.txtDescricaoEmpresa.Name = "txtDescricaoEmpresa";
+            this.txtDescricaoEmpresa.Size = new System.Drawing.Size(182, 20);
+            this.txtDescricaoEmpresa.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(324, 114);
+            this.label1.Location = new System.Drawing.Point(468, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 21);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Telefone";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(297, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 26);
-            this.textBox1.TabIndex = 11;
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Empresa";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(416, 180);
+            this.label2.Location = new System.Drawing.Point(377, 130);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 21);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Endereço";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Telefone";
             // 
-            // textBox2
+            // label3
             // 
-            this.textBox2.Location = new System.Drawing.Point(297, 204);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(321, 26);
-            this.textBox2.TabIndex = 13;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(560, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Tipo de Serviço";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(470, 221);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Endereço";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(468, 321);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Descrição";
+            // 
+            // txtDescricaoTelefone
+            // 
+            this.txtDescricaoTelefone.Location = new System.Drawing.Point(314, 146);
+            this.txtDescricaoTelefone.Name = "txtDescricaoTelefone";
+            this.txtDescricaoTelefone.Size = new System.Drawing.Size(155, 20);
+            this.txtDescricaoTelefone.TabIndex = 23;
+            // 
+            // txtDescricaoDescricao
+            // 
+            this.txtDescricaoDescricao.Location = new System.Drawing.Point(314, 337);
+            this.txtDescricaoDescricao.Name = "txtDescricaoDescricao";
+            this.txtDescricaoDescricao.Size = new System.Drawing.Size(356, 96);
+            this.txtDescricaoDescricao.TabIndex = 24;
+            this.txtDescricaoDescricao.Text = "";
             // 
             // frmEmpresaPrestadoraServico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(696, 462);
+            this.Controls.Add(this.txtDescricaoDescricao);
+            this.Controls.Add(this.txtDescricaoTelefone);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textDescricao);
-            this.Controls.Add(this.descricao);
-            this.Controls.Add(this.mes);
-            this.Controls.Add(this.textMes);
-            this.Controls.Add(this.dia);
-            this.Controls.Add(this.textDia);
-            this.Controls.Add(this.txtBusca);
-            this.Controls.Add(this.grdDadosCid);
-            this.Controls.Add(this.barManutencao);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.txtDescricaoEmpresa);
+            this.Controls.Add(this.txtDescricaoEndereco);
+            this.Controls.Add(this.txtDescricaoServico);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.grdDadosEmpresaPrestadoraServico);
+            this.Controls.Add(this.barraManutencaoMarca);
             this.Name = "frmEmpresaPrestadoraServico";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manutenção EmpresaPrestadoraServico";
-            this.Load += new System.EventHandler(this.frmCid_Load);
-            this.barManutencao.ResumeLayout(false);
-            this.barManutencao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).EndInit();
+            this.Text = "Form1";
+            this.barraManutencaoMarca.ResumeLayout(false);
+            this.barraManutencaoMarca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDadosEmpresaPrestadoraServico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,25 +257,24 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip barManutencao;
+        private System.Windows.Forms.ToolStrip barraManutencaoMarca;
         private System.Windows.Forms.ToolStripButton barbtnNovo;
         private System.Windows.Forms.ToolStripButton barbtnEditar;
         private System.Windows.Forms.ToolStripButton barbtnExcluir;
         private System.Windows.Forms.ToolStripButton barbtnSalvar;
         private System.Windows.Forms.ToolStripButton barbtnCancelar;
         private System.Windows.Forms.ToolStripButton barbtnFechar;
-        private System.Windows.Forms.DataGridView grdDadosCid;
-        private System.Windows.Forms.TextBox txtBusca;
-        private System.Windows.Forms.TextBox textDia;
-        private System.Windows.Forms.Label dia;
-        private System.Windows.Forms.TextBox textMes;
-        private System.Windows.Forms.Label mes;
-        private System.Windows.Forms.Label descricao;
-        private System.Windows.Forms.TextBox textDescricao;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView grdDadosEmpresaPrestadoraServico;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescricaoServico;
+        private System.Windows.Forms.TextBox txtDescricaoEndereco;
+        private System.Windows.Forms.TextBox txtDescricaoEmpresa;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-     
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDescricaoTelefone;
+        private System.Windows.Forms.RichTextBox txtDescricaoDescricao;
     }
 }

@@ -101,6 +101,12 @@
     <Compile Include="classeMarca.cs" />
     <Compile Include="classeCidade.cs" />
     <Compile Include="classeClassificaPessoa.cs" />
+    <Compile Include="frmEmpresaPrestadoraServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpresaPrestadoraServico.Designer.cs">
+      <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grupo 6\Cor\classeCor.cs" />
     <Compile Include="classeFeriado.cs" />
     <Compile Include="classeDefault.cs" />
@@ -155,12 +161,6 @@
     </Compile>
     <Compile Include="frmDefault.designer.cs">
       <DependentUpon>frmDefault.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEmpresaPrestadoraServico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEmpresaPrestadoraServico.designer.cs">
-      <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMarca.cs">
       <SubType>Form</SubType>
@@ -231,6 +231,9 @@
     <EmbeddedResource Include="FrmCadastroFuncionarios.resx">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpresaPrestadoraServico.resx">
+      <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEncomendas .resx">
       <DependentUpon>frmEncomendas .cs</DependentUpon>
     </EmbeddedResource>
@@ -245,9 +248,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDefault.resx">
       <DependentUpon>frmDefault.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEmpresaPrestadoraServico.resx">
-      <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>

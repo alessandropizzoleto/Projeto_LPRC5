@@ -1,6 +1,6 @@
 ﻿//****************************************************************************************
 //**Criado por: Mateus Siste
-//**Data de Criação: 20/04/2021
+//**Data de Criação:
 //**Instruções:
 //
 //
@@ -8,6 +8,7 @@
 //*** Data:
 //*** Responsável:
 //****************************************************************************************
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,44 +22,48 @@ using System.Windows.Forms;
 namespace Projeto_LPRC5
 {
     public partial class frmEmpresaPrestadoraServico : Form
-    { 
+    {
         public frmEmpresaPrestadoraServico()
         {
             InitializeComponent();
         }
 
-        //bdEmpresaPrestadoraServico db_EmpresaPrestadoraServico = new bdEmpresaPrestadoraServico();
-        ClasseEmpresaPrestadoraServico EmpresaPrestadoraServico = new ClasseEmpresaPrestadoraServico();
+        //dbEmpresaPrestadoraServico db_EmpresaPrestadoraServico = new dbEmpresaPrestadoraServico();
+        classeEmpresaPrestadoraServico padrao = new classeEmpresaPrestadoraServico();
 
+        bool comando;
         private void formataGrid()
         {
             //Opção para selecionar a linha inteira do grid
-            grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdDadosEmpresaPrestadoraServico.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            grdDadosCid.Columns[0].HeaderText = "Código";
-            grdDadosCid.Columns[1].HeaderText = "Nome";
+            grdDadosEmpresaPrestadoraServico.Columns[0].HeaderText = "Empresa";
+            grdDadosEmpresaPrestadoraServico.Columns[1].HeaderText = "Telefone";
+            grdDadosEmpresaPrestadoraServico.Columns[3].HeaderText = "Tipo de Serviço";
+            grdDadosEmpresaPrestadoraServico.Columns[4].HeaderText = "Endereço";
+            grdDadosEmpresaPrestadoraServico.Columns[5].HeaderText = "Descrição";
 
-            grdDadosCid.Columns[0].Width = 0;
-            grdDadosCid.Columns[1].Width = 120;
+            grdDadosEmpresaPrestadoraServico.Columns[0].Width = 0;
+            grdDadosEmpresaPrestadoraServico.Columns[1].Width = 120;
 
         }
 
         public void atualizaDadosGrid()
         {
-            //DataTable tabelaCidade = new DataTable();
-            //tabelaCidade = dbCidade.selectCiddBase();
-            //grdDadosCid.DataSource = tabelaCidade;
+            //DataTable tabelaEmpresaPrestadoraServicoade = new DataTable();
+            //tabelaEmpresaPrestadoraServicoade = dbEmpresaPrestadoraServicoade.selectEmpresaPrestadoraServicodBase();
+            //grdDadosEmpresaPrestadoraServico.DataSource = tabelaEmpresaPrestadoraServicoade;
 
             //pode ser também
 
-            //grdDadosCid.DataSource = db_EmpresaPrestadoraServico.selectEmpresaPrestadoraServicoBase();
+           // grdDadosEmpresaPrestadoraServico.DataSource = db_EmpresaPrestadoraServico.selectEmpresaPrestadoraServicoBase();
         }
 
         private void atualizaDadosControles()
         {
             //EmpresaPrestadoraServico = db_EmpresaPrestadoraServico.RetornaDadosObjeto(EmpresaPrestadoraServico);
 
-            //txtNome.Text = cidade.getNome();
+
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -73,29 +78,52 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            //txtNome.Enabled = habilitar;
-            grdDadosCid.Enabled = !habilitar;
+            txtDescricaoEmpresa.Enabled = habilitar;
+            txtDescricaoTelefone.Enabled = habilitar;
+            txtDescricaoServico.Enabled = habilitar;
+            txtDescricaoEndereco.Enabled = habilitar;
+            txtDescricaoDescricao.Enabled = habilitar;
+
+            grdDadosEmpresaPrestadoraServico.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            //txtNome.Text = "";
-
-            //EmpresaPrestadoraServico.Id= 0;
-            //EmpresaPrestadoraServico.setNome("");
+            txtDescricaoEmpresa.Text = "";
+            txtDescricaoTelefone.Text = "";
+            txtDescricaoServico.Text = "";
+            txtDescricaoEndereco.Text = "";
+            txtDescricaoDescricao.Text = "";
+            padrao.setEmpresaPrestadoraServicoId (-1);
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            //if (txtNome.Text.Trim().Length < 4)
-            //{
-            //    resultado = false;
-            //}
-
+            if (txtDescricaoEmpresa.Text.Length == 0)
+            {
+                resultado = false;
+            }
+            if (txtDescricaoEmpresa.Text.Length == 0)
+            {
+                resultado = false;
+            }
+            if (txtDescricaoTelefone.Text.Length == 0)
+            {
+                resultado = false;
+            }
+            if (txtDescricaoEndereco.Text.Length == 0)
+            {
+                resultado = false;
+            }
+            if (txtDescricaoDescricao.Text.Length == 0)
+            {
+                resultado = false;
+            }
 
             return resultado;
+
         }
 
         private void insereEmpresaPrestadoraServico()
@@ -111,43 +139,49 @@ namespace Projeto_LPRC5
             habilitaCamposDados(true);
         }
 
-        private void excluiEmpresaPrestadoraServico()
-        {
-            if (0 != 0)  //if (EmpresaPrestadoraServico.Id != 0)
+            private void excluiEmpresaPrestadoraServico()
             {
-                DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (retorno == DialogResult.Yes)
+                if (padrao.getEmpresaPrestadoraServicoId() != 0)
                 {
-                    //db_EmpresaPrestadoraServico.excluiEmpresaPrestadoraServicoBase(EmpresaPrestadoraServico);
+                    DialogResult retorno = MessageBox.Show("Deseja excluir os dados informados? ", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    limpaCamposDados();
-                    atualizaDadosGrid();
+                    if (retorno == DialogResult.Yes)
+                    {
+                        //db_EmpresaPrestadoraServico.excluiEmpresaPrestadoraServicoBase(padrao);
+
+                        limpaCamposDados();
+                        atualizaDadosGrid();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível excluir", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void salvaEmpresaPrestadoraServico()
         {
             if (verificaDadosObrigatorios() == true)
             {
-                //Atualizando os dados do objeto estado.
-                //EmpresaPrestadoraServico.setNome(txtNome.Text);
+                if (comando == true)
+                {
+                    padrao.setEmpresaPrestadoraServicoNome(txtDescricaoEmpresa.Text);
+                    padrao.setEmpresaPrestadoraServiconumero(Convert.ToInt32(txtDescricaoTelefone.Text));
+                    padrao.setEmpresaPrestadoraServicoservico(txtDescricaoServico.Text);
+                    padrao.setEmpresaPrestadoraServicolocal(txtDescricaoEndereco.Text);
+                    padrao.setEmpresaPrestadoraServicoDesc(txtDescricaoDescricao.Text);
+                    //db_EmpresaPrestadoraServico.insereEmpresaPrestadoraServicoBase(padrao);
+                }
+                else if (comando == false)
+                {
+                    padrao.setEmpresaPrestadoraServicoNome(txtDescricaoEmpresa.Text);
+                    padrao.setEmpresaPrestadoraServiconumero(Convert.ToInt32(txtDescricaoTelefone.Text));
+                    padrao.setEmpresaPrestadoraServicoservico(txtDescricaoServico.Text);
+                    padrao.setEmpresaPrestadoraServicolocal(txtDescricaoEndereco.Text);
+                    padrao.setEmpresaPrestadoraServicoDesc(txtDescricaoDescricao.Text);
+                    //db_EmpresaPrestadoraServico.alteraEmpresaPrestadoraServicoBase(padrao);
+                }
 
-                if (0 != 0)  //if (EmpresaPrestadoraServico.Id == 0)
-                {
-                    //Insere os dados
-                    //db_EmpresaPrestadoraServico.insereEmpresaPrestadoraServicoBase(EmpresaPrestadoraServico);
-                }
-                else
-                {
-                    //Altera os dados
-                    //db_EmpresaPrestadoraServico.alteraEmpresaPrestadoraServicoBase(EmpresaPrestadoraServico);
-                }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
                 limpaCamposDados();
@@ -155,8 +189,9 @@ namespace Projeto_LPRC5
             }
             else
             {
-                MessageBox.Show("Dados Obrigatórios não informados ", "Urgente!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Insira todos os dados obrigatórios nos campos mostrados. ", "Urgente!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void cancelaEmpresaPrestadoraServico()
@@ -175,12 +210,8 @@ namespace Projeto_LPRC5
             this.Close();
         }
 
-        private void lblNome_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void frmCid_Load(object sender, EventArgs e)
+        private void frmEmpresaPrestadoraServico_Load(object sender, EventArgs e)
         {
             habilitaBotoesMenu(true);
             habilitaCamposDados(false);
@@ -218,40 +249,5 @@ namespace Projeto_LPRC5
             fechaEmpresaPrestadoraServico();
         }
 
-        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //EmpresaPrestadoraServico.Id = Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString());
-            atualizaDadosControles();
-        }
-
-        private void frmEmpresaPrestadoraServico_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBusca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
