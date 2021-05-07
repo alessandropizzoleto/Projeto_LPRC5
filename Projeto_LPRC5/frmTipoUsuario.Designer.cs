@@ -47,18 +47,20 @@ namespace Projeto_LPRC5
             // 
             // txtBusca
             // 
-            this.txtBusca.Location = new System.Drawing.Point(10, 35);
+            this.txtBusca.Location = new System.Drawing.Point(13, 43);
+            this.txtBusca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 20);
+            this.txtBusca.Size = new System.Drawing.Size(235, 26);
             this.txtBusca.TabIndex = 5;
             // 
             // grdDadosCid
             // 
             this.grdDadosCid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCid.Location = new System.Drawing.Point(8, 72);
+            this.grdDadosCid.Location = new System.Drawing.Point(13, 77);
+            this.grdDadosCid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grdDadosCid.Name = "grdDadosCid";
             this.grdDadosCid.RowHeadersWidth = 51;
-            this.grdDadosCid.Size = new System.Drawing.Size(240, 350);
+            this.grdDadosCid.Size = new System.Drawing.Size(238, 364);
             this.grdDadosCid.TabIndex = 4;
             this.grdDadosCid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
@@ -74,7 +76,8 @@ namespace Projeto_LPRC5
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(574, 39);
+            this.barManutencao.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.barManutencao.Size = new System.Drawing.Size(673, 39);
             this.barManutencao.TabIndex = 3;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -147,31 +150,35 @@ namespace Projeto_LPRC5
             // txtDescricaoTipo
             // 
             this.txtDescricaoTipo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoTipo.Location = new System.Drawing.Point(263, 63);
+            this.txtDescricaoTipo.Location = new System.Drawing.Point(275, 77);
+            this.txtDescricaoTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescricaoTipo.Name = "txtDescricaoTipo";
-            this.txtDescricaoTipo.Size = new System.Drawing.Size(302, 32);
+            this.txtDescricaoTipo.Size = new System.Drawing.Size(294, 32);
             this.txtDescricaoTipo.TabIndex = 8;
             // 
             // lblDescricaoCor
             // 
             this.lblDescricaoCor.AutoSize = true;
-            this.lblDescricaoCor.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricaoCor.Location = new System.Drawing.Point(259, 35);
+            this.lblDescricaoCor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoCor.Location = new System.Drawing.Point(271, 54);
+            this.lblDescricaoCor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescricaoCor.Name = "lblDescricaoCor";
-            this.lblDescricaoCor.Size = new System.Drawing.Size(99, 23);
+            this.lblDescricaoCor.Size = new System.Drawing.Size(73, 19);
             this.lblDescricaoCor.TabIndex = 9;
             this.lblDescricaoCor.Text = "Descrição:";
             // 
             // frmTipoUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 426);
+            this.ClientSize = new System.Drawing.Size(673, 450);
             this.Controls.Add(this.lblDescricaoCor);
             this.Controls.Add(this.txtDescricaoTipo);
             this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosCid);
             this.Controls.Add(this.barManutencao);
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTipoUsuario";
             this.Text = "Manutenção de Tipo de Usuário";
             this.Load += new System.EventHandler(this.frmTipoUsuario_Load);

@@ -8,6 +8,10 @@
 //*** Data: 01/05/2021
 //*** Responsável: Giovanna Valim Frederico
 //****************************************************************************************
+//****** Atualizações: Alteração em salvaTipoUsuario() e atualizaDadosControles()
+//*** Data: 07/05/2021
+//*** Responsável: André Luiz Costa
+//****************************************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -28,7 +32,7 @@ namespace Projeto_LPRC5
             InitializeComponent();
         }
 
-        dbTipoUsuario dbtipoUsu = new dbTipoUsuario(); //Alterar o nome
+        dbTipoUsuario dbtipoUsu = new dbTipoUsuario(); 
         classeTipoUsuario tipoUsuario = new classeTipoUsuario();
         bool comando;
 
@@ -49,8 +53,6 @@ namespace Projeto_LPRC5
             grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
         }
 
-             
-
             public void atualizaDadosGrid()
         {
             grdDadosCid.DataSource = dbtipoUsu.selectTipoUsuarioDBaseGrid();
@@ -58,8 +60,7 @@ namespace Projeto_LPRC5
 
         private void atualizaDadosControles()
         {
-            
-            //txtNome.Text = cidade.getNome();
+            txtDescricaoTipo.Text = tipoUsuario.getDescricao();
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -135,8 +136,7 @@ namespace Projeto_LPRC5
         {
             if (verificaDadosObrigatorios() == true)
             {
-                //Atualizando os dados do objeto estado.
-                //padrao.setNome(txtNome.Text);
+                //Atualizando os dados do objeto
 
                 if (comando == true)
                 {

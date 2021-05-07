@@ -9,7 +9,7 @@
 //*** Responsável:
 //****************************************************************************************
 
-
+//TODO: Validar os atributos da classe e alterar as conexões do formulário.
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
