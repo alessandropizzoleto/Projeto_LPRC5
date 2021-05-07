@@ -100,190 +100,190 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClasseCadastroFuncionarios.cs" />
-    <Compile Include="classeEncomendas.cs" />
-    <Compile Include="ClasseEstado.cs" />
-    <Compile Include="classeEmpresaPrestadoraServico.cs" />
-    <Compile Include="classeMarca.cs" />
-    <Compile Include="classeCidade.cs" />
-    <Compile Include="classeClassificaPessoa.cs" />
-    <Compile Include="dbEmpresaPrestacaoServico.cs" />
-    <Compile Include="frmEmpresaPrestadoraServico.cs">
+    <Compile Include="Model\Classe\ClasseCadastroFuncionarios.cs" />
+    <Compile Include="Model\Classe\classeEncomendas.cs" />
+    <Compile Include="Model\Classe\ClasseEstado.cs" />
+    <Compile Include="Model\Classe\classeEmpresaPrestadoraServico.cs" />
+    <Compile Include="Model\Classe\classeMarca.cs" />
+    <Compile Include="Model\Classe\classeCidade.cs" />
+    <Compile Include="Model\Classe\classeClassificaPessoa.cs" />
+    <Compile Include="Model\Conexão\dbEmpresaPrestacaoServico.cs" />
+    <Compile Include="View\frmEmpresaPrestadoraServico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmpresaPrestadoraServico.Designer.cs">
+    <Compile Include="View\frmEmpresaPrestadoraServico.Designer.cs">
       <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupo 6\Cor\classeCor.cs" />
-    <Compile Include="classeFeriado.cs" />
-    <Compile Include="classeDefault.cs" />
-    <Compile Include="ClasseVeiculo.cs" />
-    <Compile Include="classeVeiculoModelo.cs" />
-    <Compile Include="classeVisitantePrestador.cs" />
-    <Compile Include="conexao.cs" />
-    <Compile Include="conexaoMySql.cs" />
-    <Compile Include="dbCadastroFuncionarios.cs" />
-    <Compile Include="dbCidade.cs" />
-    <Compile Include="dbClassificaPessoa.cs" />
-    <Compile Include="Grupo 6\Cor\dbCor.cs" />
-    <Compile Include="dbDefault.cs" />
-    <Compile Include="dbEncomenda.cs" />
-    <Compile Include="DbEstado.cs" />
-    <Compile Include="dbFeriado.cs" />
-    <Compile Include="dbMarca.cs" />
-    <Compile Include="dbTipoUsuario.cs" />
-    <Compile Include="dbVeiculoModelo.cs" />
-    <Compile Include="FrmCadastroFuncionarios.cs">
+    <Compile Include="Model\Classe\classeCor.cs" />
+    <Compile Include="Model\Classe\classeFeriado.cs" />
+    <Compile Include="Model\Classe\classeDefault.cs" />
+    <Compile Include="Model\Classe\ClasseVeiculo.cs" />
+    <Compile Include="Model\Classe\classeVeiculoModelo.cs" />
+    <Compile Include="Model\Classe\classeVisitantePrestador.cs" />
+    <Compile Include="Model\Conexão\conexao.cs" />
+    <Compile Include="Model\Conexão\conexaoMySql.cs" />
+    <Compile Include="Model\Conexão\dbCadastroFuncionarios.cs" />
+    <Compile Include="Model\Conexão\dbCidade.cs" />
+    <Compile Include="Model\Conexão\dbClassificaPessoa.cs" />
+    <Compile Include="Model\Conexão\dbCor.cs" />
+    <Compile Include="Model\Conexão\dbDefault.cs" />
+    <Compile Include="Model\Conexão\dbEncomenda.cs" />
+    <Compile Include="Model\Conexão\DbEstado.cs" />
+    <Compile Include="Model\Conexão\dbFeriado.cs" />
+    <Compile Include="Model\Conexão\dbMarca.cs" />
+    <Compile Include="Model\Conexão\dbTipoUsuario.cs" />
+    <Compile Include="Model\Conexão\dbVeiculoModelo.cs" />
+    <Compile Include="View\FrmCadastroFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCadastroFuncionarios.Designer.cs">
+    <Compile Include="View\FrmCadastroFuncionarios.Designer.cs">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEncomendas .cs">
+    <Compile Include="View\frmEncomendas .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEncomendas .designer.cs">
+    <Compile Include="View\frmEncomendas .designer.cs">
       <DependentUpon>frmEncomendas .cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVeiculo.cs">
+    <Compile Include="View\FrmVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVeiculo.designer.cs">
+    <Compile Include="View\FrmVeiculo.designer.cs">
       <DependentUpon>FrmVeiculo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVeiculoModelo .cs">
+    <Compile Include="View\frmVeiculoModelo .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVeiculoModelo .designer.cs">
+    <Compile Include="View\frmVeiculoModelo .designer.cs">
       <DependentUpon>frmVeiculoModelo .cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEstado.cs">
+    <Compile Include="View\FrmEstado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEstado.designer.cs">
+    <Compile Include="View\FrmEstado.designer.cs">
       <DependentUpon>FrmEstado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDefault.cs">
+    <Compile Include="View\frmDefault.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDefault.designer.cs">
+    <Compile Include="View\frmDefault.designer.cs">
       <DependentUpon>frmDefault.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMarca.cs">
+    <Compile Include="View\frmMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMarca.Designer.cs">
+    <Compile Include="View\frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupo 6\Cor\frmCor.cs">
+    <Compile Include="View\frmCor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupo 6\Cor\frmCor.Designer.cs">
+    <Compile Include="View\frmCor.Designer.cs">
       <DependentUpon>frmCor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAcesso.cs">
+    <Compile Include="View\frmAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAcesso.Designer.cs">
+    <Compile Include="View\frmAcesso.Designer.cs">
       <DependentUpon>frmAcesso.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCidade.cs">
+    <Compile Include="View\frmCidade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCidade.Designer.cs">
+    <Compile Include="View\frmCidade.Designer.cs">
       <DependentUpon>frmCidade.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmClassificaPessoa.cs">
+    <Compile Include="View\frmClassificaPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmClassificaPessoa.designer.cs">
+    <Compile Include="View\frmClassificaPessoa.designer.cs">
       <DependentUpon>frmClassificaPessoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFeriado.cs">
+    <Compile Include="View\frmFeriado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFeriado.designer.cs">
+    <Compile Include="View\frmFeriado.designer.cs">
       <DependentUpon>frmFeriado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs">
+    <Compile Include="View\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
+    <Compile Include="View\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTipoUsuario.cs">
+    <Compile Include="View\frmTipoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTipoUsuario.Designer.cs">
+    <Compile Include="View\frmTipoUsuario.Designer.cs">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVisitantePrestador.cs">
+    <Compile Include="View\frmVisitantePrestador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVisitantePrestador.Designer.cs">
+    <Compile Include="View\frmVisitantePrestador.Designer.cs">
       <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grupo 6\Moradores\classeMoradores.cs" />
-    <Compile Include="Grupo 6\Moradores\dbMoradores.cs" />
-    <Compile Include="Grupo 6\Moradores\frmMoradores.cs">
+    <Compile Include="Model\Classe\classeMoradores.cs" />
+    <Compile Include="Model\Conexão\dbMoradores.cs" />
+    <Compile Include="View\frmMoradores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grupo 6\Moradores\frmMoradores.Designer.cs">
+    <Compile Include="View\frmMoradores.Designer.cs">
       <DependentUpon>frmMoradores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="classeTipoUsuario.cs" />
-    <Compile Include="util.cs" />
-    <EmbeddedResource Include="FrmCadastroFuncionarios.resx">
+    <Compile Include="Model\Classe\classeTipoUsuario.cs" />
+    <Compile Include="Controller\util.cs" />
+    <EmbeddedResource Include="View\FrmCadastroFuncionarios.resx">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmpresaPrestadoraServico.resx">
+    <EmbeddedResource Include="View\frmEmpresaPrestadoraServico.resx">
       <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEncomendas .resx">
+    <EmbeddedResource Include="View\frmEncomendas .resx">
       <DependentUpon>frmEncomendas .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVeiculo.resx">
+    <EmbeddedResource Include="View\FrmVeiculo.resx">
       <DependentUpon>FrmVeiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVeiculoModelo .resx">
+    <EmbeddedResource Include="View\frmVeiculoModelo .resx">
       <DependentUpon>frmVeiculoModelo .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEstado.resx">
+    <EmbeddedResource Include="View\FrmEstado.resx">
       <DependentUpon>FrmEstado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDefault.resx">
+    <EmbeddedResource Include="View\frmDefault.resx">
       <DependentUpon>frmDefault.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMarca.resx">
+    <EmbeddedResource Include="View\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupo 6\Cor\frmCor.resx">
+    <EmbeddedResource Include="View\frmCor.resx">
       <DependentUpon>frmCor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAcesso.resx">
+    <EmbeddedResource Include="View\frmAcesso.resx">
       <DependentUpon>frmAcesso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCidade.resx">
+    <EmbeddedResource Include="View\frmCidade.resx">
       <DependentUpon>frmCidade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmClassificaPessoa.resx">
+    <EmbeddedResource Include="View\frmClassificaPessoa.resx">
       <DependentUpon>frmClassificaPessoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFeriado.resx">
+    <EmbeddedResource Include="View\frmFeriado.resx">
       <DependentUpon>frmFeriado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
+    <EmbeddedResource Include="View\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTipoUsuario.resx">
+    <EmbeddedResource Include="View\frmTipoUsuario.resx">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVisitantePrestador.resx">
+    <EmbeddedResource Include="View\frmVisitantePrestador.resx">
       <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grupo 6\Moradores\frmMoradores.resx">
+    <EmbeddedResource Include="View\frmMoradores.resx">
       <DependentUpon>frmMoradores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -309,8 +309,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="icones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
