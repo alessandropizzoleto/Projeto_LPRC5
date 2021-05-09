@@ -8,6 +8,9 @@
 //****** Atualizações: Ajustes das funçoes de procedures
 //*** Data:03/05/2021
 //*** Responsável: Guilherme de Andrade Rissato
+//****** Atualizações: verificacao da data na procedure de dados obrigatorios
+//*** Data:03/05/2021
+//*** Responsável: Guilherme de Andrade Rissato
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -26,6 +29,7 @@ namespace Projeto_LPRC5
         public frmEncomendas()
         {
             InitializeComponent();
+            
         }
 
         dbEncomenda db_Encomenda = new dbEncomenda();
@@ -41,8 +45,8 @@ namespace Projeto_LPRC5
             grdDadosEncomenda.Columns[2].HeaderText = "Complemento";
 
             grdDadosEncomenda.Columns[0].Width = 0;
-            grdDadosEncomenda.Columns[1].Width = 60;
-            grdDadosEncomenda.Columns[2].Width = 60;
+            grdDadosEncomenda.Columns[1].Width = 100;
+            grdDadosEncomenda.Columns[2].Width = 80;
 
         }
 
@@ -55,12 +59,21 @@ namespace Projeto_LPRC5
         {
             encomenda = db_Encomenda.RetornaDadosObjeto(encomenda);
 
+            txtDestinatario.Text = encomenda.getdestinatario();
+            txtComplemento.Text = encomenda.getComplemento();
+            txtDescricao.Text = encomenda.getDescricao();
+            txtEntreguePara.Text = encomenda.getEntreguePara();
+            txtEntreguePor.Text = encomenda.getEntreguePor();
+            txtRecebida.Text = encomenda.getRecebidaPor();
+            msktxtDataEntrada.Text = Convert.ToString(encomenda.getDataEntrada());
+            msktxtDataSaida.Text = Convert.ToString(encomenda.getDataSaida());
+
         }
 
         private void habilitaBotoesMenu(bool hablitar)
         {
             barbtnNovo.Enabled = hablitar;
-            barbtnEditar.Enabled = hablitar;
+            barbtnEditar.Enabled =hablitar;
             barbtnExcluir.Enabled = hablitar;
             barbtnSalvar.Enabled = !hablitar;
             barbtnCancelar.Enabled = !hablitar;
@@ -70,23 +83,33 @@ namespace Projeto_LPRC5
         private void habilitaCamposDados(bool habilitar)
         {
             txtBusca.Enabled = !habilitar;
-            txtDescricao.Enabled = !habilitar;
-            txtDestinatario.Enabled = !habilitar;
-            txtEntreguePara.Enabled = !habilitar;
-            txtEntreguePor.Enabled = !habilitar;
-            txtRecebida.Enabled = !habilitar;
-            txtComplemento.Enabled = !habilitar;
-            msktxtDataEntrada.Enabled = !habilitar;
-            msktxtDataSaida.Enabled = !habilitar;
+            txtDescricao.Enabled = habilitar;
+            txtDestinatario.Enabled = habilitar;
+            txtEntreguePara.Enabled = habilitar;
+            txtEntreguePor.Enabled = habilitar;
+            txtRecebida.Enabled = habilitar;
+            txtComplemento.Enabled = habilitar;
+            msktxtDataEntrada.Enabled = habilitar;
+            msktxtDataSaida.Enabled = habilitar;
             grdDadosEncomenda.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
+            txtBusca.Text = "";
+            txtComplemento.Text = "";
+            txtDescricao.Text = "";
+            txtDestinatario.Text = "";
+            txtEntreguePara.Text = "";
+            txtEntreguePor.Text = "";
+            txtRecebida.Text = "";
+            msktxtDataEntrada.Text = "";
+            msktxtDataSaida.Text = "";
+
             encomenda.setCodigo(-1);
             encomenda.setComplemento("");
-            encomenda.setDataEntrada(null);
-            encomenda.setDataSaida(null);
+            encomenda.setDataEntrada(Convert.ToDateTime(null));
+            encomenda.setDataSaida(Convert.ToDateTime(null));
             encomenda.setDescricao("");
             encomenda.setDestinatario("");
             encomenda.setEntreguePara("");
@@ -98,10 +121,9 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            if (txtDestinatario.Text == "" || txtDescricao.Text == "" || 
-                txtEntreguePara.Text == "" || txtEntreguePor.Text == "" ||
-                msktxtDataEntrada.Text == "" ||
-                txtRecebida.Text == ""|| txtComplemento.Text == "")
+            if (txtDestinatario.Text.ToString() == "" || txtEntreguePor.Text.ToString() == "" ||
+                msktxtDataEntrada.Text.ToString() == "" ||txtRecebida.Text.ToString() == ""|| 
+                txtComplemento.Text.ToString() == "")
                 {
                     resultado = false;
                 }
@@ -142,11 +164,29 @@ namespace Projeto_LPRC5
             }
         }
 
+        private void setEncomendas() {
+            encomenda.setComplemento(txtComplemento.Text.ToString());
+            encomenda.setDataEntrada(Convert.ToDateTime(msktxtDataEntrada.Text));
+            if (msktxtDataSaida.Text.ToString() == "  /  /") {
+                encomenda.setDataSaida(Convert.ToDateTime(null));
+            }
+            else
+            {
+                encomenda.setDataSaida(Convert.ToDateTime(msktxtDataSaida.Text));
+            }
+            encomenda.setDescricao(txtDescricao.Text.ToString());
+            encomenda.setDestinatario(txtDestinatario.Text.ToString());
+            encomenda.setEntreguePara(txtEntreguePara.Text.ToString());
+            encomenda.setEntreguePor(txtEntreguePor.Text.ToString());
+            encomenda.setRecebidaPor(txtRecebida.Text.ToString());
+        }
+
         private void SalvaEncomenda()
         {
+           
             if (verificaDadosObrigatorios() == true)
             {
-                
+                setEncomendas();
 
                 if (encomenda.getCodigo() == -1)
                 {
@@ -169,7 +209,7 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void cancelaDefault()
+        private void cancelaEncomenda()
         {
             DialogResult retorno = MessageBox.Show("Deseja cancelar o Cadastro/Atualização da Encomenda?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -184,7 +224,7 @@ namespace Projeto_LPRC5
         private void frmEncomendas_Load(object sender, EventArgs e)
         {
             habilitaBotoesMenu(true);
-            habilitaCamposDados(true);
+            habilitaCamposDados(false);
             atualizaDadosGrid();
             formataGrid();
         }
@@ -216,7 +256,7 @@ namespace Projeto_LPRC5
 
         private void barbtnCancelar_Click(object sender, EventArgs e)
         {
-            cancelaDefault();
+            cancelaEncomenda();
         }
 
         private void barbtnFechar_Click(object sender, EventArgs e)
@@ -224,7 +264,12 @@ namespace Projeto_LPRC5
             FechaEncomenda();
         }
 
-        private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void grdDadosEncomenda_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void grdDadosEncomenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             encomenda.setCodigo(Convert.ToInt16(grdDadosEncomenda.Rows[grdDadosEncomenda.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();

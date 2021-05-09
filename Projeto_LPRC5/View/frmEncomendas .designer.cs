@@ -143,13 +143,17 @@
             // 
             // grdDadosEncomenda
             // 
+            this.grdDadosEncomenda.AllowUserToAddRows = false;
+            this.grdDadosEncomenda.AllowUserToDeleteRows = false;
             this.grdDadosEncomenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDadosEncomenda.Location = new System.Drawing.Point(12, 76);
             this.grdDadosEncomenda.Name = "grdDadosEncomenda";
+            this.grdDadosEncomenda.ReadOnly = true;
             this.grdDadosEncomenda.RowHeadersWidth = 51;
             this.grdDadosEncomenda.Size = new System.Drawing.Size(240, 253);
             this.grdDadosEncomenda.TabIndex = 1;
-            this.grdDadosEncomenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
+            this.grdDadosEncomenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosEncomenda_CellClick);
+            this.grdDadosEncomenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosEncomenda_CellContentClick);
             // 
             // txtBusca
             // 

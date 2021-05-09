@@ -29,7 +29,7 @@ namespace Projeto_LPRC5
         }
 
         //dbEmpresaPrestadoraServico db_EmpresaPrestadoraServico = new dbEmpresaPrestadoraServico();
-        classeEmpresaPrestadoraServico padrao = new classeEmpresaPrestadoraServico();
+        ClasseEmpresaPrestadoraServico padrao = new ClasseEmpresaPrestadoraServico();
 
         bool comando;
         private void formataGrid()
@@ -94,7 +94,7 @@ namespace Projeto_LPRC5
             txtDescricaoServico.Text = "";
             txtDescricaoEndereco.Text = "";
             txtDescricaoDescricao.Text = "";
-            padrao.setEmpresaPrestadoraServicoId (-1);
+            // padrao.setEmpresaPrestadoraServicoId (-1);
         }
 
         private bool verificaDadosObrigatorios()
@@ -141,23 +141,23 @@ namespace Projeto_LPRC5
 
             private void excluiEmpresaPrestadoraServico()
             {
-                if (padrao.getEmpresaPrestadoraServicoId() != 0)
-                {
-                    DialogResult retorno = MessageBox.Show("Deseja excluir os dados informados? ", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // if (padrao.getEmpresaPrestadoraServicoId() != 0)
+            //  {
+            // DialogResult retorno = MessageBox.Show("Deseja excluir os dados informados? ", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    if (retorno == DialogResult.Yes)
-                    {
-                        //db_EmpresaPrestadoraServico.excluiEmpresaPrestadoraServicoBase(padrao);
+            // if (retorno == DialogResult.Yes)
+            // {
+            //db_EmpresaPrestadoraServico.excluiEmpresaPrestadoraServicoBase(padrao);
 
-                        limpaCamposDados();
-                        atualizaDadosGrid();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Não foi possível excluir", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            // limpaCamposDados();
+            // atualizaDadosGrid();
+            // }
+            //  }
+            //    else
+            // {
+            // MessageBox.Show("Não foi possível excluir", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+        }
 
         private void salvaEmpresaPrestadoraServico()
         {
@@ -165,20 +165,20 @@ namespace Projeto_LPRC5
             {
                 if (comando == true)
                 {
-                    padrao.setEmpresaPrestadoraServicoNome(txtDescricaoEmpresa.Text);
-                    padrao.setEmpresaPrestadoraServiconumero(Convert.ToInt32(txtDescricaoTelefone.Text));
-                    padrao.setEmpresaPrestadoraServicoservico(txtDescricaoServico.Text);
-                    padrao.setEmpresaPrestadoraServicolocal(txtDescricaoEndereco.Text);
-                    padrao.setEmpresaPrestadoraServicoDesc(txtDescricaoDescricao.Text);
+                    // padrao.setEmpresaPrestadoraServicoNome(txtDescricaoEmpresa.Text);
+                    // padrao.setEmpresaPrestadoraServiconumero(Convert.ToInt32(txtDescricaoTelefone.Text));
+                    // padrao.setEmpresaPrestadoraServicoservico(txtDescricaoServico.Text);
+                    //  padrao.setEmpresaPrestadoraServicolocal(txtDescricaoEndereco.Text);
+                    //  padrao.setEmpresaPrestadoraServicoDesc(txtDescricaoDescricao.Text);
                     //db_EmpresaPrestadoraServico.insereEmpresaPrestadoraServicoBase(padrao);
                 }
                 else if (comando == false)
                 {
-                    padrao.setEmpresaPrestadoraServicoNome(txtDescricaoEmpresa.Text);
-                    padrao.setEmpresaPrestadoraServiconumero(Convert.ToInt32(txtDescricaoTelefone.Text));
-                    padrao.setEmpresaPrestadoraServicoservico(txtDescricaoServico.Text);
-                    padrao.setEmpresaPrestadoraServicolocal(txtDescricaoEndereco.Text);
-                    padrao.setEmpresaPrestadoraServicoDesc(txtDescricaoDescricao.Text);
+                    // padrao.setEmpresaPrestadoraServicoNome(txtDescricaoEmpresa.Text);
+                    //  padrao.setEmpresaPrestadoraServiconumero(Convert.ToInt32(txtDescricaoTelefone.Text));
+                    // padrao.setEmpresaPrestadoraServicoservico(txtDescricaoServico.Text);
+                    //  padrao.setEmpresaPrestadoraServicolocal(txtDescricaoEndereco.Text);
+                    //  padrao.setEmpresaPrestadoraServicoDesc(txtDescricaoDescricao.Text);
                     //db_EmpresaPrestadoraServico.alteraEmpresaPrestadoraServicoBase(padrao);
                 }
 

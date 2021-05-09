@@ -69,7 +69,7 @@ namespace Projeto_LPRC5
             return veiculoModeloTemp;
         }
 
-        public DataTable selectDefaultBase()
+        public DataTable selectVeiculoModeloBase()
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable tabela = new DataTable();

@@ -28,6 +28,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Projeto_LPRC5
 {
@@ -84,5 +85,7 @@ namespace Projeto_LPRC5
             texto.WriteLine("sgbd=" + sgbd.ToString() + ";");
             texto.Close();
         }
+
+        
     }
 }

@@ -22,14 +22,14 @@ namespace Projeto_LPRC5
         private int codigo;
         private string destinatario;
         private string recebidaPor;
-        private DateTime? dataEntrada;
+        private DateTime dataEntrada;
         private string entreguePor;
-        private DateTime? dataSaida;
+        private DateTime dataSaida;
         private string entreguePara;
         private string complemento;
         private string descricao;
 
-        public classeEncomendas(int codigo,string descricao, string destinatario, string recebidaPor, DateTime? dataEntrada, string entreguePor, DateTime? dataSaida, string entreguePara, string complemento)
+        public classeEncomendas(int codigo,string descricao, string destinatario, string recebidaPor, DateTime dataEntrada, string entreguePor, DateTime dataSaida, string entreguePara, string complemento)
         {
             this.codigo = codigo;
             this.descricao = descricao;
@@ -83,12 +83,12 @@ namespace Projeto_LPRC5
         {
             return recebidaPor;
         }
-        public void setDataEntrada(DateTime? datentra)
+        public void setDataEntrada(DateTime datentra)
         {
             dataEntrada = datentra;
         }
 
-        public DateTime? getDataEntrada()
+        public DateTime getDataEntrada()
         {
             return dataEntrada;
         }
@@ -101,12 +101,12 @@ namespace Projeto_LPRC5
         {
             return entreguePor;
         }
-        public void setDataSaida(DateTime? datesai)
+        public void setDataSaida(DateTime datesai)
         {
             dataSaida = datesai;
         }
 
-        public DateTime? getDataSaida()
+        public DateTime getDataSaida()
         {
             return dataSaida;
         }

@@ -45,13 +45,8 @@ namespace Projeto_LPRC5 {
 
         private void atualizaDadosControles() {
             //verificação se o objeto nao é nulo
-            if (classeCidade.Equals(null))
-            {
-                MessageBox.Show("Não há informações sobre a cidade!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else { 
-                classeCidade = db_Cidade.RetornaDadosObjeto(classeCidade);
-            }
+            classeCidade = db_Cidade.RetornaDadosObjeto(classeCidade);
+            
             txtCidade.Text = classeCidade.getCidadeNome();
         }
 

@@ -52,7 +52,7 @@ namespace Projeto_LPRC5
         {
             
 
-            grdDadosVeiculoModelo.DataSource = db_veiculoMode.selectDefaultBase();
+            grdDadosVeiculoModelo.DataSource = db_veiculoMode.selectVeiculoModeloBase();
         }
 
         private void atualizaDadosControles()
