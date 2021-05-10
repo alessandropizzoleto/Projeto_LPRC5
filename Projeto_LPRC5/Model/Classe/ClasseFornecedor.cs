@@ -21,20 +21,22 @@ namespace Projeto_LPRC5
 	{
 
 		//Atributos da classe
-		private int empresa_cnpj_cpf;
-		private int empresa_telefone;
-		private string empresa_nome;
+		private int fornecedor_id;
+		private int fornecedor_cnpj_cpf;
+		private int fornecedor_telefone;
+		private string fornecedor_nome;
 		private string tipo_servico;
-		private string empresa_email;
+		private string fornecedor_email;
 		
 
 		
 		//Métodos Acessores
-		public int empresa_cnpj_cpf { get; set; }
-		public int empresa_telefone { get; set; }
-		public string empresa_nome { get; set; }
+		public int fornecedor_id { get; set; }
+		public int fornecedor_cnpj_cpf { get; set; }
+		public int fornecedor_telefone { get; set; }
+		public string fornecedor_nome { get; set; }
 		public string tipo_servico { get; set; }
-		public string empresa_email { get; set; }
+		public string fornecedor_email { get; set; }
 
 	}
 }
