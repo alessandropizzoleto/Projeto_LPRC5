@@ -110,6 +110,12 @@
     <Compile Include="Model\Classe\classeClassificaPessoa.cs" />
     <Compile Include="Model\Conexão\dbFornecedor.cs" />
     <Compile Include="Model\Conexão\dbEmpresaPrestacaoServico.cs" />
+    <Compile Include="View\frmFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmFornecedores.Designer.cs">
+      <DependentUpon>frmFornecedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmEmpresaPrestadoraServico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Classe\classeTipoUsuario.cs" />
     <Compile Include="Controller\util.cs" />
+    <EmbeddedResource Include="View\frmFornecedores.resx">
+      <DependentUpon>frmFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCadastroFuncionarios.resx">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
