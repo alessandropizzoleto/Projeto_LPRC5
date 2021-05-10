@@ -29,6 +29,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Data;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
@@ -86,6 +87,15 @@ namespace Projeto_LPRC5
             texto.Close();
         }
 
-        
+        private string salvaPictureArquivo(PictureBox imagem, string destinoPath)
+        {
+            //string arquivo = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString();
+            string arquivo = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
+
+            imagem.Image.Save(destinoPath + "\\" + arquivo, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            return arquivo;
+        }
+
     }
 }
