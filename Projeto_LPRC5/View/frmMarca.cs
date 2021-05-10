@@ -211,5 +211,15 @@ namespace Projeto_LPRC5
         {
 
         }
+
+        private void txtMarca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barbtnNovo_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
