@@ -100,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Classe\ClassCondominioEmpresa.cs" />
     <Compile Include="Model\Classe\ClasseCadastroFuncionarios.cs" />
     <Compile Include="Model\Classe\classeEncomendas.cs" />
     <Compile Include="Model\Classe\ClasseEstado.cs" />
@@ -107,7 +108,14 @@
     <Compile Include="Model\Classe\classeMarca.cs" />
     <Compile Include="Model\Classe\classeCidade.cs" />
     <Compile Include="Model\Classe\classeClassificaPessoa.cs" />
+    <Compile Include="Model\Conexão\dbCondominioEmpresa.cs" />
     <Compile Include="Model\Conexão\dbEmpresaPrestacaoServico.cs" />
+    <Compile Include="View\frmCondominioEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCondominioEmpresa.designer.cs">
+      <DependentUpon>frmCondominioEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmEmpresaPrestadoraServico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +245,9 @@
     <Compile Include="Controller\util.cs" />
     <EmbeddedResource Include="View\FrmCadastroFuncionarios.resx">
       <DependentUpon>FrmCadastroFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCondominioEmpresa.resx">
+      <DependentUpon>frmCondominioEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmEmpresaPrestadoraServico.resx">
       <DependentUpon>frmEmpresaPrestadoraServico.cs</DependentUpon>
