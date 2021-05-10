@@ -55,7 +55,7 @@
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(229, 39);
+            this.barManutencao.Size = new System.Drawing.Size(228, 39);
             this.barManutencao.TabIndex = 0;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -134,17 +134,18 @@
             this.grdDadosCid.Size = new System.Drawing.Size(240, 350);
             this.grdDadosCid.TabIndex = 1;
             this.grdDadosCid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
+            this.grdDadosCid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
             // txtBusca
             // 
             this.txtBusca.Location = new System.Drawing.Point(13, 41);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 30);
+            this.txtBusca.Size = new System.Drawing.Size(239, 26);
             this.txtBusca.TabIndex = 2;
             // 
             // frmDefault
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 438);
             this.Controls.Add(this.txtBusca);
