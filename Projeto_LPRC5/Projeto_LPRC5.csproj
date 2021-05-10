@@ -101,7 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Classe\ClasseFornecedor.cs" />
-    <Compile Include="Model\Classe\ClassCondominioEmpresa.cs" />
+    <Compile Include="Model\Classe\ClasseCondominioEmpresa.cs" />
     <Compile Include="Model\Classe\ClasseCadastroFuncionarios.cs" />
     <Compile Include="Model\Classe\classeEncomendas.cs" />
     <Compile Include="Model\Classe\ClasseEstado.cs" />
