@@ -223,5 +223,15 @@ namespace Projeto_LPRC5
             padrao.setId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
         }
+
+        private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
