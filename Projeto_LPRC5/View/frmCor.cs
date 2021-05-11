@@ -59,7 +59,8 @@ namespace Projeto_LPRC5
  
         private void atualizaDadosControles()
         {
-            grdDadosCor.DataSource = db_Cor.selectCorDBaseGrid();
+            tinta = db_Cor.selectCorDBase(tinta);
+            txtNomeCor.Text = tinta.getCorNome();
         }
 
         private void habilitaBotoesMenu(bool hablitar)

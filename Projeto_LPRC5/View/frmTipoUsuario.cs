@@ -60,6 +60,7 @@ namespace Projeto_LPRC5
 
         private void atualizaDadosControles()
         {
+            tipoUsuario = dbtipoUsu.selectTipoUsuarioDBase(tipoUsuario);
             txtDescricaoTipo.Text = tipoUsuario.getDescricao();
         }
 
