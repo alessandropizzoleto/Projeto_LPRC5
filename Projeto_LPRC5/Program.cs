@@ -16,7 +16,7 @@ namespace Projeto_LPRC5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMarca());
+            Application.Run(new frmPrincipal());
         }
     }
 }

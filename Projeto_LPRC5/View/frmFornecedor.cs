@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5.View
 {
-    public partial class frmFornecedores : Form
+    public partial class frmFornecedor : Form
     {
-        public frmFornecedores()
+        public frmFornecedor()
         {
             InitializeComponent();
         }

@@ -37,7 +37,6 @@ namespace Projeto_LPRC5
             this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
             this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
-            this.txtBuscaCor = new System.Windows.Forms.TextBox();
             this.grdDadosCor = new System.Windows.Forms.DataGridView();
             this.lblCorNome = new System.Windows.Forms.Label();
             this.txtNomeCor = new System.Windows.Forms.TextBox();
@@ -59,7 +58,7 @@ namespace Projeto_LPRC5
             this.barManutencaoCor.Location = new System.Drawing.Point(0, 0);
             this.barManutencaoCor.Name = "barManutencaoCor";
             this.barManutencaoCor.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barManutencaoCor.Size = new System.Drawing.Size(229, 39);
+            this.barManutencaoCor.Size = new System.Drawing.Size(230, 39);
             this.barManutencaoCor.TabIndex = 1;
             this.barManutencaoCor.Text = "toolStrip1";
             // 
@@ -129,61 +128,51 @@ namespace Projeto_LPRC5
             this.barbtnFechar.ToolTipText = "Fechar";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnSair_Click);
             // 
-            // txtBuscaCor
-            // 
-            this.txtBuscaCor.Enabled = false;
-            this.txtBuscaCor.Location = new System.Drawing.Point(13, 43);
-            this.txtBuscaCor.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBuscaCor.Name = "txtBuscaCor";
-            this.txtBuscaCor.Size = new System.Drawing.Size(239, 26);
-            this.txtBuscaCor.TabIndex = 3;
-            // 
             // grdDadosCor
             // 
             this.grdDadosCor.AllowUserToAddRows = false;
             this.grdDadosCor.AllowUserToDeleteRows = false;
             this.grdDadosCor.AllowUserToResizeColumns = false;
             this.grdDadosCor.AllowUserToResizeRows = false;
-            this.grdDadosCor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdDadosCor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCor.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.grdDadosCor.Location = new System.Drawing.Point(11, 75);
+            this.grdDadosCor.Location = new System.Drawing.Point(10, 41);
             this.grdDadosCor.Margin = new System.Windows.Forms.Padding(4);
             this.grdDadosCor.Name = "grdDadosCor";
+            this.grdDadosCor.ReadOnly = true;
             this.grdDadosCor.RowHeadersWidth = 51;
-            this.grdDadosCor.Size = new System.Drawing.Size(240, 350);
+            this.grdDadosCor.Size = new System.Drawing.Size(220, 282);
             this.grdDadosCor.TabIndex = 4;
+            this.grdDadosCor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
             this.grdDadosCor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
             // lblCorNome
             // 
             this.lblCorNome.AutoSize = true;
-            this.lblCorNome.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorNome.Location = new System.Drawing.Point(274, 76);
+            this.lblCorNome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorNome.Location = new System.Drawing.Point(237, 41);
             this.lblCorNome.Name = "lblCorNome";
-            this.lblCorNome.Size = new System.Drawing.Size(128, 23);
+            this.lblCorNome.Size = new System.Drawing.Size(57, 22);
             this.lblCorNome.TabIndex = 11;
-            this.lblCorNome.Text = "Nome da Cor:";
+            this.lblCorNome.Text = "Nome";
             // 
             // txtNomeCor
             // 
-            this.txtNomeCor.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeCor.Location = new System.Drawing.Point(408, 73);
+            this.txtNomeCor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeCor.Location = new System.Drawing.Point(237, 65);
             this.txtNomeCor.Name = "txtNomeCor";
-            this.txtNomeCor.Size = new System.Drawing.Size(258, 32);
+            this.txtNomeCor.Size = new System.Drawing.Size(237, 30);
             this.txtNomeCor.TabIndex = 10;
             // 
             // frmCor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
+            this.ClientSize = new System.Drawing.Size(482, 331);
             this.Controls.Add(this.lblCorNome);
             this.Controls.Add(this.txtNomeCor);
             this.Controls.Add(this.grdDadosCor);
-            this.Controls.Add(this.txtBuscaCor);
             this.Controls.Add(this.barManutencaoCor);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCor";
             this.Text = "Manutenção Cor";
@@ -205,7 +194,6 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnSalvar;
         private System.Windows.Forms.ToolStripButton barbtnCancelar;
         private System.Windows.Forms.ToolStripButton barbtnFechar;
-        private System.Windows.Forms.TextBox txtBuscaCor;
         private System.Windows.Forms.DataGridView grdDadosCor;
         private System.Windows.Forms.Label lblCorNome;
         private System.Windows.Forms.TextBox txtNomeCor;

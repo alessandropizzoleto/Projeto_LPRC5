@@ -217,14 +217,14 @@ namespace Projeto_LPRC5
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            tinta.setCorId(Convert.ToInt16(grdDadosCor.Rows[grdDadosCor.CurrentRow.Index].Cells[0].Value.ToString()));
+            selectCorDBase(tinta);
+            atualizaDadosControles();
         }
 
         private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tinta.setCorId(Convert.ToInt16(grdDadosCor.Rows[grdDadosCor.CurrentRow.Index].Cells[0].Value.ToString()));
-            selectCorDBase(tinta);
-            atualizaDadosControles();
+            
         }
         private void selectCorDBase(classeCor tinta)
         {

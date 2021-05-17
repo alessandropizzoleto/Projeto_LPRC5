@@ -43,8 +43,8 @@ namespace Projeto_LPRC5
 
             grdDadosFe.Columns[0].Width = 0;
             grdDadosFe.Columns[1].Width = 120;
-            grdDadosFe.Columns[2].Width = 120;
-            grdDadosFe.Columns[3].Width = 120;
+            grdDadosFe.Columns[2].Width = 50;
+            grdDadosFe.Columns[3].Width = 50;
             grdDadosFe.Columns[0].Visible = false;
 
         }
@@ -56,9 +56,12 @@ namespace Projeto_LPRC5
 
         private void atualizaDadosControles()
         {
-            grdDadosFe.DataSource = db_Feriado.selectFeriadoDBaseGrid();
+            feriado = db_Feriado.selectFeriadoDBase(feriado);
 
-            
+            txtNome.Text = feriado.getFeriadoNome();
+            txtDia.Text = feriado.getFeriadoDia().ToString();
+            txtMes.Text = feriado.getFeriadoMes().ToString();
+
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -257,6 +260,11 @@ namespace Projeto_LPRC5
         {
             feriado.setFeriadoId(Convert.ToInt16(grdDadosFe.Rows[grdDadosFe.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
+        }
+
+        private void grdDadosFe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

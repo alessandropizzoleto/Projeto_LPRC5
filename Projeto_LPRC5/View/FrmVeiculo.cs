@@ -41,26 +41,26 @@ namespace Projeto_LPRC5 {
 		}
 
 		private void HabilitaCamposDados(bool habilitar) {
-			TextboxMarca.Enabled = habilitar;
-			TextboxPlaca.Enabled = habilitar;
-			TextboxModelo.Enabled = habilitar;
-			TextboxCor.Enabled = habilitar;
+			//txtVeiculo.Enabled = habilitar;
+			//TextboxPlaca.Enabled = habilitar;
+			//TextboxModelo.Enabled = habilitar;
+			//TextboxCor.Enabled = habilitar;
 
 			grdDadosVec.Enabled = !habilitar;
 		}
 
 		private void LimpaCamposDados() {
-			TextboxMarca.Text = "";
-			TextboxPlaca.Text = "";
-			TextboxModelo.Text = "";
-			TextboxCor.Text = "";
-			veiculo = new ClasseVeiculo();
+			//txtVeiculo.Text = "";
+			//TextboxPlaca.Text = "";
+			//TextboxModelo.Text = "";
+			//TextboxCor.Text = "";
+			//veiculo = new ClasseVeiculo();
 		}
 
 		private bool VerificaDadosObrigatorios() {
-			if (TextboxMarca.Text == "" || TextboxPlaca.Text == "" || TextboxModelo.Text == "" || TextboxCor.Text == "") {
-				return false;
-			}
+			//if (txtVeiculo.Text == "" || TextboxPlaca.Text == "" || TextboxModelo.Text == "" || TextboxCor.Text == "") {
+			//	return false;
+			//}
 
 			return true;
 		}
@@ -83,44 +83,44 @@ namespace Projeto_LPRC5 {
 		}
 
 		private void barbtnExcluir_Click(object sender, EventArgs e) {
-			if (veiculo.Id != 0) {
-				DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			//if (veiculo.Id != 0) {
+			//	DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-				if (retorno == DialogResult.Yes) {
-					//dbEstado.Excluir(veiculo.Id);
+			//	if (retorno == DialogResult.Yes) {
+			//		//dbEstado.Excluir(veiculo.Id);
 
-					LimpaCamposDados();
-					AtualizaDadosGrid();
-				}
-			} else {
-				MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
+			//		LimpaCamposDados();
+			//		AtualizaDadosGrid();
+			//	}
+			//} else {
+			//	MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			//}
 		}
 
 		private void barbtnSalvar_Click(object sender, EventArgs e) {
-			if (VerificaDadosObrigatorios()) {
-				int id = veiculo.Id;
-				veiculo = new ClasseVeiculo() {
-					Id = id,
-					Marca = TextboxMarca.Text,
-					Placa = TextboxPlaca.Text,
-					Modelo = TextboxModelo.Text,
-					Cor = TextboxCor.Text
-				};
+			//if (VerificaDadosObrigatorios()) {
+			//	int id = veiculo.Id;
+			//	veiculo = new ClasseVeiculo() {
+   //                 Id = id,
+   //                 Marca = txtVeiculo.Text,
+   //                 Placa = TextboxPlaca.Text,
+   //                 Modelo = TextboxModelo.Text,
+   //                 Cor = TextboxCor.Text
+   //             };
 
-				//if (id == 0) {
-				//	dbEstado.Salvar(veiculo);
-				//} else {
-				//	dbEstado.Alterar(veiculo);
-				//}
+			//	//if (id == 0) {
+			//	//	dbEstado.Salvar(veiculo);
+			//	//} else {
+			//	//	dbEstado.Alterar(veiculo);
+			//	//}
 				
-				HabilitaBotoesMenu(true);
-				HabilitaCamposDados(false);
-				LimpaCamposDados();
-				AtualizaDadosGrid();
-			} else {
-				MessageBox.Show("Dados Obrigatórios não informados ", "Urgente!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
+			//	HabilitaBotoesMenu(true);
+			//	HabilitaCamposDados(false);
+			//	LimpaCamposDados();
+			//	AtualizaDadosGrid();
+			//} else {
+			//	MessageBox.Show("Dados Obrigatórios não informados ", "Urgente!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			//}
 		}
 
 		private void barbtnCancelar_Click(object sender, EventArgs e) {

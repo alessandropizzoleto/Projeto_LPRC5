@@ -39,14 +39,13 @@ namespace Projeto_LPRC5
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosMarca = new System.Windows.Forms.DataGridView();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
             this.barraManutencaoMarca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosMarca)).BeginInit();
             this.SuspendLayout();
             // 
             // barraManutencaoMarca
             // 
-            this.barraManutencaoMarca.Dock = System.Windows.Forms.DockStyle.None;
             this.barraManutencaoMarca.ImageScalingSize = new System.Drawing.Size(33, 32);
             this.barraManutencaoMarca.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barbtnNovo,
@@ -55,10 +54,10 @@ namespace Projeto_LPRC5
             this.barbtnSalvar,
             this.barbtnCancelar,
             this.barbtnFechar});
-            this.barraManutencaoMarca.Location = new System.Drawing.Point(16, 9);
+            this.barraManutencaoMarca.Location = new System.Drawing.Point(0, 0);
             this.barraManutencaoMarca.Name = "barraManutencaoMarca";
-            this.barraManutencaoMarca.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barraManutencaoMarca.Size = new System.Drawing.Size(266, 39);
+            this.barraManutencaoMarca.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.barraManutencaoMarca.Size = new System.Drawing.Size(499, 39);
             this.barraManutencaoMarca.TabIndex = 3;
             this.barraManutencaoMarca.Text = "toolStrip1";
             // 
@@ -71,7 +70,7 @@ namespace Projeto_LPRC5
             this.barbtnNovo.Size = new System.Drawing.Size(37, 36);
             this.barbtnNovo.Text = "Novo";
             this.barbtnNovo.ToolTipText = "Adicionar Marca";
-            this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click_1);
+            this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
             // 
             // barbtnEditar
             // 
@@ -82,6 +81,7 @@ namespace Projeto_LPRC5
             this.barbtnEditar.Size = new System.Drawing.Size(37, 36);
             this.barbtnEditar.Text = "Editar";
             this.barbtnEditar.ToolTipText = "Editar Marca";
+            this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
             // 
             // barbtnExcluir
             // 
@@ -92,6 +92,7 @@ namespace Projeto_LPRC5
             this.barbtnExcluir.Size = new System.Drawing.Size(37, 36);
             this.barbtnExcluir.Text = "Excluir";
             this.barbtnExcluir.ToolTipText = "Excluir Marca";
+            this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
             // 
             // barbtnSalvar
             // 
@@ -102,6 +103,7 @@ namespace Projeto_LPRC5
             this.barbtnSalvar.Size = new System.Drawing.Size(37, 36);
             this.barbtnSalvar.Text = "Salvar";
             this.barbtnSalvar.ToolTipText = "Salvar nova Marca";
+            this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
             // 
             // barbtnCancelar
             // 
@@ -112,6 +114,7 @@ namespace Projeto_LPRC5
             this.barbtnCancelar.Size = new System.Drawing.Size(37, 36);
             this.barbtnCancelar.Text = "Cancelar";
             this.barbtnCancelar.ToolTipText = "Cancelar ação";
+            this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
             // 
             // barbtnFechar
             // 
@@ -122,43 +125,53 @@ namespace Projeto_LPRC5
             this.barbtnFechar.Size = new System.Drawing.Size(37, 36);
             this.barbtnFechar.Text = "Fechar";
             this.barbtnFechar.ToolTipText = "Fechar";
+            this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
             // 
             // grdDadosMarca
             // 
+            this.grdDadosMarca.AllowUserToAddRows = false;
+            this.grdDadosMarca.AllowUserToDeleteRows = false;
             this.grdDadosMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosMarca.Location = new System.Drawing.Point(16, 91);
+            this.grdDadosMarca.Location = new System.Drawing.Point(13, 43);
+            this.grdDadosMarca.Margin = new System.Windows.Forms.Padding(4);
             this.grdDadosMarca.Name = "grdDadosMarca";
+            this.grdDadosMarca.ReadOnly = true;
             this.grdDadosMarca.RowHeadersWidth = 51;
-            this.grdDadosMarca.Size = new System.Drawing.Size(364, 347);
+            this.grdDadosMarca.Size = new System.Drawing.Size(229, 296);
             this.grdDadosMarca.TabIndex = 5;
+            this.grdDadosMarca.Click += new System.EventHandler(this.grdDadosMarca_Click);
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(179, 65);
+            this.txtMarca.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarca.Location = new System.Drawing.Point(250, 71);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(201, 20);
+            this.txtMarca.Size = new System.Drawing.Size(242, 30);
             this.txtMarca.TabIndex = 7;
             this.txtMarca.TextChanged += new System.EventHandler(this.txtMarca_TextChanged);
             // 
-            // label1
+            // lblMarca
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 23);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Marca do veículo:";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(250, 45);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(156, 22);
+            this.lblMarca.TabIndex = 8;
+            this.lblMarca.Text = "Marca do veículo:";
             // 
             // frmMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(499, 346);
+            this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.grdDadosMarca);
             this.Controls.Add(this.barraManutencaoMarca);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMarca";
             this.Text = "Manutenção Marca";
             this.Load += new System.EventHandler(this.frmMarca_Load);
@@ -181,6 +194,6 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosMarca;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMarca;
     }
 }

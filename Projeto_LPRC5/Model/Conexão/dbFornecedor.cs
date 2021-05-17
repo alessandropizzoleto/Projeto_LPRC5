@@ -27,41 +27,41 @@ namespace Projeto_LPRC5
         //Cria as instrução SQL para insert de dados na Base de dados
 
         //adiciona cnpj ou cpf do fornecedor
-        public void insere_cnpj(ClasseFornecedor dFornecedor)
+        public void insere_cnpj(classeFornecedor dFornecedor)
         {
-            string sql = "insert into fornecedor (fornecedor_cnpj_cpf) values ('" + dFornecedor.fornecedor_cnpj_cpf() + "');";
+            string sql = "insert into fornecedor (fornecedor_cnpj_cpf) values ('" + dFornecedor.fornecedor_cnpj_cpf + "');";
             connectUsu.executaSQL(sql);
         }
 
 
         //adiciona telefone do fornecedor
-        public void insere_telefone(ClasseFornecedor dFornecedor)
+        public void insere_telefone(classeFornecedor dFornecedor)
         {
-            string sql = "insert into fornecedor (fornecedor_telefone) values ('" + dFornecedor.fornecedor_telefone() + "');";
+            string sql = "insert into fornecedor (fornecedor_telefone) values ('" + dFornecedor.fornecedor_telefone + "');";
             connectUsu.executaSQL(sql);
         }
 
 
         //adiciona nome do fornecedor
-        public void insere_nome(ClasseFornecedor dFornecedor)
+        public void insere_nome(classeFornecedor dFornecedor)
         {
-            string sql = "insert into fornecedor (fornecedor_nome) values ('" + dFornecedor.fornecedor_nome() + "');";
+            string sql = "insert into fornecedor (fornecedor_nome) values ('" + dFornecedor.fornecedor_nome + "');";
             connectUsu.executaSQL(sql);
         }
 
 
         //adiciona serviço prestado pelo fornecedor
-        public void insere_servico(ClasseFornecedor dFornecedor)
+        public void insere_servico(classeFornecedor dFornecedor)
         {
-            string sql = "insert into fornecedor (fornecedor_tipo) values ('" + dFornecedor.fornecedor_servico() + "');";
+            string sql = ""; // "insert into fornecedor (fornecedor_tipo) values ('" + dFornecedor.fornecedor_servico + "');";
             connectUsu.executaSQL(sql);
         }
 
 
         //adiciona e-mail do fornecedor
-        public void insere_email(ClasseFornecedor dFornecedor)
+        public void insere_email(classeFornecedor dFornecedor)
         {
-            string sql = "insert into fornecedor (fornecedor_email) values ('" + dFornecedor.fornecedor_email() + "');";
+            string sql = "insert into fornecedor (fornecedor_email) values ('" + dFornecedor.fornecedor_email + "');";
             connectUsu.executaSQL(sql);
         }
 
@@ -73,33 +73,33 @@ namespace Projeto_LPRC5
 
         // altera telefone
 
-        public void altera_telefone(ClasseFornecedor dFornecedor)
+        public void altera_telefone(classeFornecedor dFornecedor)
         {
-            string sql = "update fornecedor set fornecedor_telefone = ('" + dFornecedor.fornecedor_telefone() + "') where fornecedor_id= " + dFornecedor.fornecedor_id() + ";";
+            string sql = "update fornecedor set fornecedor_telefone = ('" + dFornecedor.fornecedor_telefone + "') where fornecedor_id= " + dFornecedor.fornecedor_id + ";";
             connectUsu.executaSQL(sql);
         }
 
         //altera nome
 
-        public void altera_nome(ClasseFornecedor dFornecedor)
+        public void altera_nome(classeFornecedor dFornecedor)
         {
-            string sql = "update fornecedor set fornecedor_nome = ('" + dFornecedor.fornecedor_nome() + "') where fornecedor_id= " + dFornecedor.fornecedor_id() + ";";
+            string sql = "update fornecedor set fornecedor_nome = ('" + dFornecedor.fornecedor_nome + "') where fornecedor_id= " + dFornecedor.fornecedor_id + ";";
             connectUsu.executaSQL(sql);
         }
 
         //altera serviço
 
-        public void altera_servico(ClasseFornecedor dFornecedor)
+        public void altera_servico(classeFornecedor dFornecedor)
         {
-            string sql = "update fornecedor set fornecedor_servico = ('" + dFornecedor.fornecedor_servico() + "') where fornecedor_id= " + dFornecedor.fornecedor_id() + ";";
+            string sql = ""; //"update fornecedor set fornecedor_servico = ('" + dFornecedor.fornecedor_servico + "') where fornecedor_id= " + dFornecedor.fornecedor_id() + ";";
             connectUsu.executaSQL(sql);
         }
 
         //altera email
 
-        public void altera_email(ClasseFornecedor dFornecedor)
+        public void altera_email(classeFornecedor dFornecedor)
         {
-            string sql = "update fornecedor set fornecedor_telefone = ('" + dFornecedor.fornecedor_telefone() + "') where fornecedor_id= " + dFornecedor.fornecedor_id() + ";";
+            string sql = "update fornecedor set fornecedor_telefone = ('" + dFornecedor.fornecedor_telefone + "') where fornecedor_id= " + dFornecedor.fornecedor_id + ";";
             connectUsu.executaSQL(sql);
         }
 
@@ -109,9 +109,9 @@ namespace Projeto_LPRC5
         //Cria a instrução SQL para Delete de dados na base de dados
 
         //exclui o fornecedor
-        public void excluifornecedor(ClasseFornecedor dFornecedor)
+        public void excluifornecedor(classeFornecedor dFornecedor)
         {
-            string sql = "DELETE FROM fornecedor WHERE fornecedor_id = " + dFornecedor.fornecedor_id() + ";";
+            string sql = "DELETE FROM fornecedor WHERE fornecedor_id = " + dFornecedor.fornecedor_id + ";";
             connectUsu.executaSQL(sql);
         }
 
@@ -119,7 +119,7 @@ namespace Projeto_LPRC5
 
 
         //Cria a instrução SQL para Retornar dados da Base de Dados
-        public MySqlDataAdapter selectTipoUsuario(ClasseFornecedor dFornecedor)
+        public MySqlDataAdapter selectTipoUsuario(classeFornecedor dFornecedor)
         {
             string sql = "SELECT fornecedor_id, fornecedor_cnpj_cpf, fornecedor_telefone, fornecedor_nome, tipo_servico, fornecedor_email  FROM fornecedor;";
             return connectUsu.retornaSQL(sql);
@@ -127,22 +127,22 @@ namespace Projeto_LPRC5
 
 
 
-        public classeFornecedor selectcondominiobase(ClasseFornecedor dFornecedor)
+        public classeFornecedor selectcondominiobase(classeFornecedor dFornecedor)
         {
-            classeTipoUsuario tempUsuario = new classeFornecedor();
+            classeFornecedor tempUsuario = new classeFornecedor();
             DataSet ds = new DataSet();
 
-            string sql = "SELECT fornecedor_id, fornecedor_cnpj_cpf, fornecedor_telefone, fornecedor_nome, tipo_servico, fornecedor_email FROM fornecedor where fornecedor_id =" + dFornecedor.fornecedor_id() + " ;";
+            string sql = "SELECT fornecedor_id, fornecedor_cnpj_cpf, fornecedor_telefone, fornecedor_nome, tipo_servico, fornecedor_email FROM fornecedor where fornecedor_id =" + dFornecedor.fornecedor_id + " ;";
 
             MySqlDataAdapter adapter = connectUsu.retornaSQL(sql);
             adapter.Fill(ds);
 
-            
-
-            Tempcondominiobase.setId(dFornecedor.fornecedor_id());
 
 
-            return Tempcondominiobase;
+            //tempUsuario.setId(dFornecedor.fornecedor_id);
+
+
+            return tempUsuario;
 
         }
 
@@ -152,14 +152,14 @@ namespace Projeto_LPRC5
             return connectUsu.retornaSQL(sql);
         }
 
-        public DataTable selectcondominiobase()
-        {
-            MySqlDataAdapter adapter;
-            DataTable tabela = new DataTable();
-            adapter = selectcondominiobase();
-            adapter.Fill(tabela);
-            return tabela;
-        }
+        //public DataTable selectcondominiobase()
+        //{
+        //    MySqlDataAdapter adapter;
+        //    DataTable tabela = new DataTable();
+        //    adapter = selectcondominiobase();
+        //    adapter.Fill(tabela);
+        //    return tabela;
+        //}
 
     }
 }

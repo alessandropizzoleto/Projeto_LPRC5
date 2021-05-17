@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFeriado));
             this.grdDadosFe = new System.Windows.Forms.DataGridView();
-            this.txtBusca = new System.Windows.Forms.TextBox();
             this.txtDia = new System.Windows.Forms.TextBox();
             this.dia = new System.Windows.Forms.Label();
             this.txtMes = new System.Windows.Forms.TextBox();
@@ -56,37 +55,31 @@
             this.grdDadosFe.AllowUserToResizeRows = false;
             this.grdDadosFe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDadosFe.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.grdDadosFe.Location = new System.Drawing.Point(12, 76);
+            this.grdDadosFe.Location = new System.Drawing.Point(12, 41);
             this.grdDadosFe.Name = "grdDadosFe";
+            this.grdDadosFe.ReadOnly = true;
             this.grdDadosFe.RowHeadersWidth = 51;
-            this.grdDadosFe.Size = new System.Drawing.Size(240, 350);
+            this.grdDadosFe.Size = new System.Drawing.Size(240, 336);
             this.grdDadosFe.TabIndex = 1;
             this.grdDadosFe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosFe_CellClick);
-            // 
-            // txtBusca
-            // 
-            this.txtBusca.Enabled = false;
-            this.txtBusca.Location = new System.Drawing.Point(13, 41);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 26);
-            this.txtBusca.TabIndex = 2;
+            this.grdDadosFe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosFe_CellContentClick);
             // 
             // txtDia
             // 
             this.txtDia.Enabled = false;
-            this.txtDia.Location = new System.Drawing.Point(290, 177);
+            this.txtDia.Location = new System.Drawing.Point(258, 121);
             this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(104, 26);
+            this.txtDia.Size = new System.Drawing.Size(65, 30);
             this.txtDia.TabIndex = 3;
             // 
             // dia
             // 
             this.dia.AutoSize = true;
             this.dia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.dia.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dia.Location = new System.Drawing.Point(286, 153);
+            this.dia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dia.Location = new System.Drawing.Point(254, 97);
             this.dia.Name = "dia";
-            this.dia.Size = new System.Drawing.Size(39, 21);
+            this.dia.Size = new System.Drawing.Size(45, 22);
             this.dia.TabIndex = 4;
             this.dia.Text = "Dia:";
             this.dia.Click += new System.EventHandler(this.label1_Click);
@@ -94,19 +87,19 @@
             // txtMes
             // 
             this.txtMes.Enabled = false;
-            this.txtMes.Location = new System.Drawing.Point(290, 254);
+            this.txtMes.Location = new System.Drawing.Point(329, 121);
             this.txtMes.Name = "txtMes";
-            this.txtMes.Size = new System.Drawing.Size(104, 26);
+            this.txtMes.Size = new System.Drawing.Size(69, 30);
             this.txtMes.TabIndex = 5;
             // 
             // mes
             // 
             this.mes.AutoSize = true;
             this.mes.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.mes.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mes.Location = new System.Drawing.Point(286, 230);
+            this.mes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mes.Location = new System.Drawing.Point(330, 97);
             this.mes.Name = "mes";
-            this.mes.Size = new System.Drawing.Size(46, 21);
+            this.mes.Size = new System.Drawing.Size(50, 22);
             this.mes.TabIndex = 6;
             this.mes.Text = "Mês:";
             // 
@@ -114,20 +107,20 @@
             // 
             this.descricao.AutoSize = true;
             this.descricao.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.descricao.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descricao.Location = new System.Drawing.Point(286, 76);
+            this.descricao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descricao.Location = new System.Drawing.Point(254, 40);
             this.descricao.Name = "descricao";
-            this.descricao.Size = new System.Drawing.Size(59, 21);
+            this.descricao.Size = new System.Drawing.Size(124, 22);
             this.descricao.TabIndex = 7;
-            this.descricao.Text = "Nome:";
+            this.descricao.Text = "Comemoração";
             // 
             // txtNome
             // 
             this.txtNome.Enabled = false;
-            this.txtNome.Location = new System.Drawing.Point(290, 100);
+            this.txtNome.Location = new System.Drawing.Point(258, 64);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(321, 26);
+            this.txtNome.Size = new System.Drawing.Size(321, 30);
             this.txtNome.TabIndex = 8;
             this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -145,7 +138,7 @@
             this.barManutencaoCor.Location = new System.Drawing.Point(-2, -1);
             this.barManutencaoCor.Name = "barManutencaoCor";
             this.barManutencaoCor.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barManutencaoCor.Size = new System.Drawing.Size(260, 39);
+            this.barManutencaoCor.Size = new System.Drawing.Size(230, 39);
             this.barManutencaoCor.TabIndex = 9;
             this.barManutencaoCor.Text = "toolStrip1";
             // 
@@ -217,9 +210,9 @@
             // 
             // frmFeriado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
+            this.ClientSize = new System.Drawing.Size(678, 385);
             this.Controls.Add(this.barManutencaoCor);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.descricao);
@@ -227,7 +220,6 @@
             this.Controls.Add(this.txtMes);
             this.Controls.Add(this.dia);
             this.Controls.Add(this.txtDia);
-            this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.grdDadosFe);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -245,7 +237,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView grdDadosFe;
-        private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.TextBox txtDia;
         private System.Windows.Forms.Label dia;
         private System.Windows.Forms.TextBox txtMes;

@@ -17,18 +17,8 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-	class ClasseFornecedor
+	class classeFornecedor
 	{
-
-		//Atributos da classe
-		private int fornecedor_id;
-		private int fornecedor_cnpj_cpf;
-		private int fornecedor_telefone;
-		private string fornecedor_nome;
-		private string tipo_servico;
-		private string fornecedor_email;
-		
-
 		
 		//Métodos Acessores
 		public int fornecedor_id { get; set; }

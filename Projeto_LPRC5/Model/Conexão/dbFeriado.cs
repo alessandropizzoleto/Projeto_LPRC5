@@ -61,13 +61,16 @@ namespace Projeto_LPRC5
             DataSet ds = new DataSet();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            string sql = "SELECT feriadonome FROM feriado where feriadoid =" + feriado.getFeriadoId() + " ;";
+            string sql = "SELECT feriadonome, feriadodia, feriadomes FROM feriado where feriadoid =" + feriado.getFeriadoId() + " ;";
 
             adapter = connect.retornaSQL(sql.ToString());
             adapter.Fill(ds);
 
             FeriadoTemp.setFeriadoId(feriado.getFeriadoId());
             FeriadoTemp.setFeriadoNome(ds.Tables[0].Rows[0][0].ToString());
+            FeriadoTemp.setFeriadoDia(Convert.ToInt32(ds.Tables[0].Rows[0][1].ToString()));
+            FeriadoTemp.setFeriadoMes(Convert.ToInt32(ds.Tables[0].Rows[0][2].ToString()));
+
 
 
             return FeriadoTemp;

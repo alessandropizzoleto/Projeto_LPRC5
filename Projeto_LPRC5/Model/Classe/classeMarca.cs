@@ -24,7 +24,7 @@ namespace Projeto_LPRC5
         private int marcaveiculoid;
         private string marcaveiculonome;
 
-            public classeMarca()
+        public classeMarca()
         {
 
         }
@@ -49,9 +49,5 @@ namespace Projeto_LPRC5
             return marcaveiculonome;
 
         }
-
-
-
-
     }
 }

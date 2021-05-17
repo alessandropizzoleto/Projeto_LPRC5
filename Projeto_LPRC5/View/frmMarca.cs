@@ -36,7 +36,7 @@ namespace Projeto_LPRC5
 
             grdDadosMarca.Columns[0].HeaderText = "Código";
             grdDadosMarca.Columns[1].HeaderText = "Nome";
-
+            
             grdDadosMarca.Columns[0].Width = 0;
             grdDadosMarca.Columns[1].Width = 120;
 
@@ -44,13 +44,15 @@ namespace Projeto_LPRC5
 
         public void atualizaDadosGrid()
         {
-
             grdDadosMarca.DataSource = db_Marca.selectMarcaBase();
         }
 
         private void atualizaDadosControles()
         {
-                CadastroMarca = db_Marca.RetornaDadosObjeto(CadastroMarca);
+            CadastroMarca = db_Marca.RetornaDadosObjeto(CadastroMarca);
+
+            txtMarca.Text = CadastroMarca.getmarcaveiculonome();
+
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -72,7 +74,9 @@ namespace Projeto_LPRC5
         private void limpaCamposDados()
         {
             txtMarca.Text = "";
- 
+
+            CadastroMarca.setmarcaveiculoid(0);
+            CadastroMarca.setmarcaveiculonome("");
         }
 
         private bool verificaDadosObrigatorios()
@@ -203,8 +207,7 @@ namespace Projeto_LPRC5
 
         private void grdDadosMarca_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CadastroMarca.setmarcaveiculoid(Convert.ToInt16(grdDadosMarca.Rows[grdDadosMarca.CurrentRow.Index].Cells[0].Value.ToString()));
-            atualizaDadosControles();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -220,6 +223,12 @@ namespace Projeto_LPRC5
         private void barbtnNovo_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void grdDadosMarca_Click(object sender, EventArgs e)
+        {
+            CadastroMarca.setmarcaveiculoid(Convert.ToInt16(grdDadosMarca.Rows[grdDadosMarca.CurrentRow.Index].Cells[0].Value.ToString()));
+            atualizaDadosControles();
         }
     }
 }

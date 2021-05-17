@@ -27,8 +27,23 @@ namespace Projeto_LPRC5 {
 		private ClasseEstado estado = new ClasseEstado();
 		private readonly DbEstado dbEstado = new DbEstado();
 
+		private void formataGrid()
+		{
+			//Opção para selecionar a linha inteira do grid
+			grdDadosEstado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+			grdDadosEstado.Columns[0].HeaderText = "Código";
+			grdDadosEstado.Columns[1].HeaderText = "Nome";
+			grdDadosEstado.Columns[2].HeaderText = "Sigla";
+
+			grdDadosEstado.Columns[0].Width = 0;
+			grdDadosEstado.Columns[1].Width = 120;
+			grdDadosEstado.Columns[2].Width = 50;
+
+		}
+
 		public void AtualizaDadosGrid() {
-			grdDadosCid.DataSource = dbEstado.SelecionarDataTable();
+			grdDadosEstado.DataSource = dbEstado.SelecionarDataTable();
 		}
 
 		private void HabilitaBotoesMenu(bool hablitar) {
@@ -44,7 +59,7 @@ namespace Projeto_LPRC5 {
 			TextboxNome.Enabled = habilitar;
 			TextboxSigla.Enabled = habilitar;
 
-			grdDadosCid.Enabled = !habilitar;
+			grdDadosEstado.Enabled = !habilitar;
 		}
 
 		private void LimpaCamposDados() {
@@ -65,6 +80,7 @@ namespace Projeto_LPRC5 {
 			HabilitaBotoesMenu(true);
 			HabilitaCamposDados(false);
 			AtualizaDadosGrid();
+			formataGrid();
 		}
 
 		private void barbtnNovo_Click(object sender, EventArgs e) {
@@ -132,9 +148,9 @@ namespace Projeto_LPRC5 {
 		}
 
 		private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
-			int id = Convert.ToInt32(grdDadosCid.CurrentRow.Cells[0].Value);
-			estado = dbEstado.SelecionarObjeto(id);
+			int id = Convert.ToInt32(grdDadosEstado.CurrentRow.Cells[0].Value);
 
+			estado = dbEstado.SelecionarObjeto(id);
 			TextboxNome.Text = estado.Nome;
 			TextboxSigla.Text = estado.Sigla;
 		}

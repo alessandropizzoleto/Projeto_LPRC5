@@ -61,7 +61,6 @@ namespace Projeto_LPRC5 {
 
         private void habilitaCamposDados(bool habilitar) {
             //habilitação do campo txtCidade e o grd no form
-            txtBusca.Enabled = !habilitar;
             txtCidade.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
@@ -185,13 +184,13 @@ namespace Projeto_LPRC5 {
         }
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
-            
+            classeCidade.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
+            atualizaDadosControles();
         }
 
         private void grdDadosCid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            classeCidade.setCidadeId(Convert.ToInt16(grdDadosCid.Rows[grdDadosCid.CurrentRow.Index].Cells[0].Value.ToString()));
-            atualizaDadosControles();
+            
         }
 
         

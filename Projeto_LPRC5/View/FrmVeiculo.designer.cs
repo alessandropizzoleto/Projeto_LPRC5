@@ -32,21 +32,14 @@
             this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosVec = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veiculomarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veiculoplaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veiculomodelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.veiculocor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBusca = new System.Windows.Forms.TextBox();
-            this.TextboxMarca = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtVeiculo = new System.Windows.Forms.TextBox();
+            this.lblVeiculo = new System.Windows.Forms.Label();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosVec)).BeginInit();
             this.SuspendLayout();
             // 
             // barManutencao
             // 
-            this.barManutencao.Dock = System.Windows.Forms.DockStyle.None;
             this.barManutencao.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.barManutencao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barbtnNovo,
@@ -57,7 +50,7 @@
             this.barbtnFechar});
             this.barManutencao.Location = new System.Drawing.Point(0, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(228, 39);
+            this.barManutencao.Size = new System.Drawing.Size(615, 39);
             this.barManutencao.TabIndex = 0;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -132,83 +125,39 @@
             this.grdDadosVec.AllowUserToAddRows = false;
             this.grdDadosVec.AllowUserToDeleteRows = false;
             this.grdDadosVec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosVec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.veiculomarca,
-            this.veiculoplaca,
-            this.veiculomodelo,
-            this.veiculocor});
-            this.grdDadosVec.Location = new System.Drawing.Point(12, 76);
+            this.grdDadosVec.Location = new System.Drawing.Point(12, 42);
             this.grdDadosVec.Name = "grdDadosVec";
+            this.grdDadosVec.ReadOnly = true;
             this.grdDadosVec.RowHeadersWidth = 51;
             this.grdDadosVec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDadosVec.Size = new System.Drawing.Size(240, 350);
+            this.grdDadosVec.Size = new System.Drawing.Size(240, 282);
             this.grdDadosVec.TabIndex = 1;
             this.grdDadosVec.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
             // 
-            // Codigo
+            // txtVeiculo
             // 
-            this.Codigo.DataPropertyName = "veiculoid";
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
+            this.txtVeiculo.Location = new System.Drawing.Point(262, 67);
+            this.txtVeiculo.Name = "txtVeiculo";
+            this.txtVeiculo.Size = new System.Drawing.Size(234, 30);
+            this.txtVeiculo.TabIndex = 3;
             // 
-            // veiculomarca
+            // lblVeiculo
             // 
-            this.veiculomarca.HeaderText = "Marca";
-            this.veiculomarca.Name = "veiculomarca";
-            this.veiculomarca.ReadOnly = true;
-            // 
-            // veiculoplaca
-            // 
-            this.veiculoplaca.HeaderText = "Placa";
-            this.veiculoplaca.Name = "veiculoplaca";
-            this.veiculoplaca.ReadOnly = true;
-            // 
-            // veiculomodelo
-            // 
-            this.veiculomodelo.HeaderText = "Modelo";
-            this.veiculomodelo.Name = "veiculomodelo";
-            this.veiculomodelo.ReadOnly = true;
-            // 
-            // veiculocor
-            // 
-            this.veiculocor.HeaderText = "Cor";
-            this.veiculocor.Name = "veiculocor";
-            this.veiculocor.ReadOnly = true;
-            // 
-            // txtBusca
-            // 
-            this.txtBusca.Location = new System.Drawing.Point(13, 41);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 26);
-            this.txtBusca.TabIndex = 2;
-            // 
-            // TextboxMarca
-            // 
-            this.TextboxMarca.Location = new System.Drawing.Point(274, 41);
-            this.TextboxMarca.Name = "TextboxMarca";
-            this.TextboxMarca.Size = new System.Drawing.Size(211, 26);
-            this.TextboxMarca.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(270, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Marca";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblVeiculo.AutoSize = true;
+            this.lblVeiculo.Location = new System.Drawing.Point(258, 42);
+            this.lblVeiculo.Name = "lblVeiculo";
+            this.lblVeiculo.Size = new System.Drawing.Size(70, 22);
+            this.lblVeiculo.TabIndex = 4;
+            this.lblVeiculo.Text = "Veículo";
+            this.lblVeiculo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FrmVeiculo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TextboxMarca);
-            this.Controls.Add(this.txtBusca);
+            this.ClientSize = new System.Drawing.Size(615, 333);
+            this.Controls.Add(this.lblVeiculo);
+            this.Controls.Add(this.txtVeiculo);
             this.Controls.Add(this.grdDadosVec);
             this.Controls.Add(this.barManutencao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,13 +184,7 @@
 		private System.Windows.Forms.ToolStripButton barbtnCancelar;
 		private System.Windows.Forms.ToolStripButton barbtnFechar;
 		private System.Windows.Forms.DataGridView grdDadosVec;
-		private System.Windows.Forms.TextBox txtBusca;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-		private System.Windows.Forms.DataGridViewTextBoxColumn veiculomarca;
-		private System.Windows.Forms.DataGridViewTextBoxColumn veiculoplaca;
-		private System.Windows.Forms.DataGridViewTextBoxColumn veiculomodelo;
-		private System.Windows.Forms.DataGridViewTextBoxColumn veiculocor;
-		private System.Windows.Forms.TextBox TextboxMarca;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox txtVeiculo;
+		private System.Windows.Forms.Label lblVeiculo;
 	}
 }

@@ -18,10 +18,6 @@ using System.Threading.Tasks;
 namespace Projeto_LPRC5 {
 	class ClasseVeiculo {
 
-		//Atributos da classe
-		private int marcaveiculoid;
-		private string marcaveiculonome;
-
 
 		//Métodos Acessores
 		public int marcaveiculoid { get; set; }
