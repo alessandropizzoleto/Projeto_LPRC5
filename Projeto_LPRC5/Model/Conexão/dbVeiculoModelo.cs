@@ -28,7 +28,7 @@ namespace Projeto_LPRC5
         //Cria as intstrução SQL para insert de dados na Base de dados
         public void insereVeiculoModelo(classeVeiculoModelo veiculoModelo)
         {
-            string sql = "INSERT INTO veiculomodelo(veiculomodelonome) VALUES('" +veiculoModelo.getnomeVeiculo().ToString()+"');";
+            string sql = "INSERT INTO veiculomodelo(veiculomodelonome) VALUES('" + veiculoModelo.getnomeVeiculo().ToString()+"');";
             connect.executaSQL(sql);
         }
 
@@ -59,12 +59,12 @@ namespace Projeto_LPRC5
             DataSet ds = new DataSet();
             classeVeiculoModelo veiculoModeloTemp = new classeVeiculoModelo();
 
-            string sql = "SELECT * FROM veiculomodelo WHERE veiculomodeloid="+ veiculoModelo.getVeiculoID() +";";
+            string sql = "SELECT veiculomodelonome FROM veiculomodelo WHERE veiculomodeloid=" + veiculoModelo.getVeiculoID() +";";
             adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
             veiculoModeloTemp.setVeiculoID(veiculoModelo.getVeiculoID());
-
+            veiculoModeloTemp.setnomeVeiculo(ds.Tables[0].Rows[0][0].ToString());
 
             return veiculoModeloTemp;
         }

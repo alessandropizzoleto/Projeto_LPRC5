@@ -50,8 +50,6 @@ namespace Projeto_LPRC5
 
         public void atualizaDadosGrid()
         {
-            
-
             grdDadosVeiculoModelo.DataSource = db_veiculoMode.selectVeiculoModeloBase();
         }
 
@@ -59,7 +57,7 @@ namespace Projeto_LPRC5
         {
             veiculoModelo = db_veiculoMode.RetornaDadosObjeto(veiculoModelo);
 
-            
+            txtVeiculoModelo.Text = veiculoModelo.getnomeVeiculo();
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -75,13 +73,12 @@ namespace Projeto_LPRC5
         private void habilitaCamposDados(bool habilitar)
         {
             txtVeiculoModelo.Enabled = habilitar;
-
-
             grdDadosVeiculoModelo.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
+            txtVeiculoModelo.Text = "";
             veiculoModelo.setVeiculoID(-1);
             veiculoModelo.setnomeVeiculo("");
         }
@@ -136,7 +133,7 @@ namespace Projeto_LPRC5
         {
             if (verificaDadosObrigatorios() == true)
             {
-                
+                veiculoModelo.setnomeVeiculo(txtVeiculoModelo.Text);
                 if (veiculoModelo.getVeiculoID() == -1)
                 {
                     //Insere os dados
@@ -173,7 +170,7 @@ namespace Projeto_LPRC5
         private void frmVeiculoModelo_Load(object sender, EventArgs e)
         {
             habilitaBotoesMenu(true);
-            habilitaCamposDados(true);
+            habilitaCamposDados(false);
             atualizaDadosGrid();
             formataGrid();
         }

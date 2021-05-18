@@ -128,9 +128,12 @@
             // 
             // grdDadosVeiculoModelo
             // 
+            this.grdDadosVeiculoModelo.AllowUserToAddRows = false;
+            this.grdDadosVeiculoModelo.AllowUserToDeleteRows = false;
             this.grdDadosVeiculoModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDadosVeiculoModelo.Location = new System.Drawing.Point(12, 43);
             this.grdDadosVeiculoModelo.Name = "grdDadosVeiculoModelo";
+            this.grdDadosVeiculoModelo.ReadOnly = true;
             this.grdDadosVeiculoModelo.RowHeadersWidth = 51;
             this.grdDadosVeiculoModelo.Size = new System.Drawing.Size(240, 320);
             this.grdDadosVeiculoModelo.TabIndex = 1;
@@ -138,6 +141,7 @@
             // 
             // txtVeiculoModelo
             // 
+            this.txtVeiculoModelo.Enabled = false;
             this.txtVeiculoModelo.Location = new System.Drawing.Point(266, 68);
             this.txtVeiculoModelo.Name = "txtVeiculoModelo";
             this.txtVeiculoModelo.Size = new System.Drawing.Size(247, 30);
