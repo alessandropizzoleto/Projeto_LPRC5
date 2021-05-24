@@ -14,6 +14,27 @@ namespace Projeto_LPRC5
 {
     public partial class frmPrincipal : Form
     {
+        private Int16 usuarioAtual = -1;
+
+        //Tratar as permições de acesso
+        private void habilitaOpcoesAcesso()
+        {
+            if (usuarioAtual == -1)
+            {
+                tipoDeUsuárioToolStripMenuItem.Enabled = false;
+                corToolStripMenuItem.Enabled = false;
+                mnuClassificaPessoa.Enabled = false;
+                marcaToolStripMenuItem.Enabled = false;
+                mnuAcesso.Enabled = false;
+                estadoToolStripMenuItem.Enabled = false;
+                veículoModeloToolStripMenuItem.Enabled = false;
+                cidadeToolStripMenuItem.Enabled = false;
+                moradoresToolStripMenuItem.Enabled = false;
+                feriadoToolStripMenuItem.Enabled = false;
+                mnuEncomendas.Enabled = false;
+            }
+        }
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -21,7 +42,7 @@ namespace Projeto_LPRC5
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
- 
+            habilitaOpcoesAcesso();
         }
 
         private void tipoDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,6 +119,20 @@ namespace Projeto_LPRC5
             frmEncomendas encomendas = new frmEncomendas();
             encomendas.MdiParent = this;
             encomendas.Show();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.MdiParent = this;
+            login.Show();
+        }
+
+        private void PermissoesDeAcessoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPermissaoAcesso permissao = new frmPermissaoAcesso();
+            permissao.MdiParent = this;
+            permissao.Show();
         }
     }
 }

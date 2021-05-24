@@ -158,6 +158,18 @@
     <Compile Include="View\frmEncomendas .designer.cs">
       <DependentUpon>frmEncomendas .cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmPermissaoAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmPermissaoAcesso.Designer.cs">
+      <DependentUpon>frmPermissaoAcesso.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmEncomendas .resx">
       <DependentUpon>frmEncomendas .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmPermissaoAcesso.resx">
+      <DependentUpon>frmPermissaoAcesso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmVeiculo.resx">
       <DependentUpon>FrmVeiculo.cs</DependentUpon>
