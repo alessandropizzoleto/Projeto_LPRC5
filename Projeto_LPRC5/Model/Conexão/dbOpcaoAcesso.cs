@@ -1,7 +1,7 @@
 ﻿//****************************************************************************************
 //**Criado por: Grupo 6
 //**Data de Criação: 24/05/2021
-//**Instruções:Criação CRUD
+//**Instruções:Criação CRUD.
 //****************************************************************************************
 
 using System;
@@ -25,7 +25,7 @@ namespace Projeto_LPRC5.Model.Conexão
 
         public void alteraOpcaoAcessoBase(classeOpcaoAcesso OpcaoAcesso)
         {
-            string sql = $"update opcaoacesso set opcaoacessotag = {OpcaoAcesso.getOpcaoAcessoTag()}, opcaoacessodescricao = {OpcaoAcesso.getOpcaoAcessoDescricao()}  where opcaoacessoid = {OpcaoAcesso.getOpcaoAcessoId()};";
+            string sql = $"update opcaoacesso set opcaoacessotag = {OpcaoAcesso.getOpcaoAcessoTag()}, opcaoacessodescricao = '{OpcaoAcesso.getOpcaoAcessoDescricao()}'  where opcaoacessoid = {OpcaoAcesso.getOpcaoAcessoId()};";
             connect.executaSQL(sql);
         }
 
