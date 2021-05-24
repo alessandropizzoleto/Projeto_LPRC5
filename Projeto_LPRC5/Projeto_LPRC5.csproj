@@ -111,6 +111,7 @@
     <Compile Include="Model\Conexão\dbCondominioEmpresa.cs" />
     <Compile Include="Model\Conexão\dbEmpresaPrestacaoServico.cs" />
     <Compile Include="Model\Conexão\dbNivelAcesso.cs" />
+    <Compile Include="Model\Conexão\dbOpcaoAcesso.cs" />
     <Compile Include="View\frmFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
