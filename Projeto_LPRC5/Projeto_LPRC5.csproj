@@ -103,6 +103,7 @@
     <Compile Include="Model\Classe\classeEncomendas.cs" />
     <Compile Include="Model\Classe\ClasseEstado.cs" />
     <Compile Include="Model\Classe\classeEmpresaPrestadoraServico.cs" />
+    <Compile Include="Model\Classe\classeFuncionario.cs" />
     <Compile Include="Model\Classe\classeMarca.cs" />
     <Compile Include="Model\Classe\classeCidade.cs" />
     <Compile Include="Model\Classe\classeClassificaPessoa.cs" />
