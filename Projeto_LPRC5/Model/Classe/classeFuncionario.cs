@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto_LPRC5.Model.Classe
+namespace Projeto_LPRC5
 {
     class classeFuncionario
     {
@@ -23,7 +23,11 @@ namespace Projeto_LPRC5.Model.Classe
         private string funcionarioSenha;
         private int funcionarioNivelId;
 
-        public classeFuncionario(int funcionarioId, string funcionarioNome, string funcionarioSenha, int funcionarioNivelId)
+        public classeFuncionario()
+        {
+
+        }
+            public classeFuncionario(int funcionarioId, string funcionarioNome, string funcionarioSenha, int funcionarioNivelId)
         {
             this.funcionarioId = funcionarioId;
             this.funcionarioNome = funcionarioNome;

@@ -16,20 +16,20 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class ClasseOpcaoAcesso
+    class classeOpcaoAcesso
     {
         //Atributos da Classe
         public int Codigo { get; set; }
-        public string CodigoTag { get; set; }
+        public int CodigoTag { get; set; }
         public string Descricao { get; set; }
 
         //Método Construtor
-        public ClasseOpcaoAcesso()
+        public void ClasseOpcaoAcesso()
         {
 
         }
 
-        public ClasseOpcaoAcesso(int codigo, string tag, string descricao)
+        public void ClasseOpcaoAcesso(int codigo, int tag, string descricao)
         {
             this.Codigo = codigo;
             this.CodigoTag = tag;

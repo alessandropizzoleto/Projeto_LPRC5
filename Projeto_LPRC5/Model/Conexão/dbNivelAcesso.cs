@@ -3,12 +3,14 @@
 //**Data de Criação: 24/05/2021
 //**Instruções:
 //****************************************************************************************
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
+
 
 namespace Projeto_LPRC5
 {

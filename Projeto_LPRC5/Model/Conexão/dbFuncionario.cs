@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Projeto_LPRC5
 {
@@ -20,35 +22,35 @@ namespace Projeto_LPRC5
     {
         conexaoMySql connect = new conexaoMySql();
 
-        public void InsireFuncionarioBase(Model.Classe.classeFuncionario funcionario)
+        public void InsireFuncionarioBase(classeFuncionario funcionario)
         {
             string sql = $"insert into funcionario (funcionarioNome, funcionarioSenha, funcionarioNivelId) values ('{funcionario.getFuncionarioNome()}','{funcionario.getFuncionarioSenha()}',{funcionario.getFuncionarioNivelId()});";
             connect.executaSQL(sql);
         }
 
-        public void AlteraFuncionarioBase(Model.Classe.classeFuncionario funcionario)
+        public void AlteraFuncionarioBase(classeFuncionario funcionario)
         {
-            string sql = $"update funcionario set funcionarioNome = {funcionario.getFuncionarioNome()},funcionarioSenha = '{funcionario.getFuncionarioSenha()}', FuncionarioNivelId = {funcionario.getFuncionarioNivelId()} where funcionarioId = {funcionario.getfuncionarioId()};";
+            string sql = $"update funcionario set funcionarioNome = {funcionario.getFuncionarioNome()},funcionarioSenha = '{funcionario.getFuncionarioSenha()}', FuncionarioNivelId = {funcionario.getFuncionarioNivelId()} where funcionarioId = {funcionario.getFuncionarioId()};";
             connect.executaSQL(sql);
         }
 
-        public void excluiFuncionarioBase(Model.Classe.classeFuncionario funcionario)
+        public void excluiFuncionarioBase(classeFuncionario funcionario)
         {
             string sql = $"delete from funcionario where funcionarioId = {funcionario.getFuncionarioId()};";
             connect.executaSQL(sql);
         }
 
-        public MySqlDataAdapter selectFuncionarioBase(Model.Classe.classeFuncionario funcionario)
+        public MySqlDataAdapter selectFuncionarioBase(classeFuncionario funcionario)
         {
             string sql = $"select * from funcionario where funcionarioId = {funcionario.getFuncionarioId()};";
             return connect.retornaSQL(sql);
         }
 
-        public Model.Classe.classeFuncionario RetornaDadosObjeto(Model.Classe.classeFuncionario funcionario)
+        public classeFuncionario RetornaDadosObjeto(classeFuncionario funcionario)
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataSet ds = new DataSet();
-            Model.Classe.classeFuncionario FuncionarioTemp = new Model.Classe.classeFuncionario();
+            classeFuncionario FuncionarioTemp = new classeFuncionario();
 
             string sql = "select funcionarioId, funcionarioNome, funcionarioSenha, funcionarioNivelId from funcionario where funcionarioId = " + funcionario.getFuncionarioId() + ";";
             adapter = connect.retornaSQL(sql);
