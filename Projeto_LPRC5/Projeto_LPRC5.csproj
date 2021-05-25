@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Conexão\dbFuncionario.cs" />
     <Compile Include="Model\Classe\classeFornecedor.cs" />
     <Compile Include="Model\Classe\ClasseCondominioEmpresa.cs" />
     <Compile Include="Model\Classe\ClasseCadastroFuncionarios.cs" />
