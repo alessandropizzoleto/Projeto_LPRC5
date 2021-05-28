@@ -20,7 +20,6 @@ namespace Projeto_LPRC5
 
         public void insereNivelAcessoBase(classeNivelAcesso nivelAcesso)
         {
-            nivelAcesso.Descricao = "pinto";
             string sql = $"insert into nivelacesso (nivelacessodescricao)  values ('{nivelAcesso.Descricao}');";
             connect.executaSQL(sql);
         }

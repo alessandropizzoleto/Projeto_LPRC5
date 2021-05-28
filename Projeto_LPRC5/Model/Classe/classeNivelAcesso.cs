@@ -13,7 +13,6 @@ namespace Projeto_LPRC5.Model.Classe
 
         public classeNivelAcesso()
         {
-
         }
     }
 }
