@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
-
+using Projeto_LPRC5.Model.Classe;
 
 namespace Projeto_LPRC5
 {
@@ -20,25 +20,26 @@ namespace Projeto_LPRC5
 
         public void insereNivelAcessoBase(classeNivelAcesso nivelAcesso)
         {
-            string sql = $"insert into nivelacesso (nivelacessodescricao)  values ('{nivelAcesso.getNivelAcessoDescricao()}');";
+            nivelAcesso.Descricao = "pinto";
+            string sql = $"insert into nivelacesso (nivelacessodescricao)  values ('{nivelAcesso.Descricao}');";
             connect.executaSQL(sql);
         }
 
         public void alteraNivelAcessoBase(classeNivelAcesso nivelAcesso)
         {
-            string sql = $"update nivelacesso set nivelacessodescricao = '{nivelAcesso.getNivelAcessoDescricao()}' where nivelacessoid = {nivelAcesso.getNivelAcessoId()};";
+            string sql = $"update nivelacesso set nivelacessodescricao = '{nivelAcesso.Descricao}' where nivelacessoid = {nivelAcesso.Id};";
             connect.executaSQL(sql);
         }
 
         public void excluiNivelAcessoBase(classeNivelAcesso nivelAcesso)
         {
-            string sql = $"delete from nivelacesso where nivelacessoid = {nivelAcesso.getNivelAcessoId()};";
+            string sql = $"delete from nivelacesso where nivelacessoid = {nivelAcesso.Id};";
             connect.executaSQL(sql);
         }
 
         public MySqlDataAdapter selectNivelAcessoBase(classeNivelAcesso nivelAcesso)
         {
-            string sql = $"select * from nivelacesso where nivelacessoid = {nivelAcesso.getNivelAcessoId()};";
+            string sql = $"select * from nivelacesso where nivelacessoid = {nivelAcesso.Id};";
             return connect.retornaSQL(sql);
         }
 
@@ -48,13 +49,12 @@ namespace Projeto_LPRC5
             DataSet ds = new DataSet();
             classeNivelAcesso nivelAcessoTemp = new classeNivelAcesso();
 
-            string sql = "select nivelacessoid, nivelacessodescricao from nivelacesso where nivelacessoid = " + nivelAcesso.getNivelAcessoId() + ";";
+            string sql = "select nivelacessoid, nivelacessodescricao from nivelacesso where nivelacessoid = " + nivelAcesso.Id + ";";
             adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
-            nivelAcessoTemp.setNivelAcessoId(nivelAcesso.getNivelAcessoId());
-            nivelAcessoTemp.setNivelAcessoDescricao(ds.Tables[0].Rows[0][1].ToString());
-
+            nivelAcessoTemp.Id = nivelAcesso.Id;
+            nivelAcessoTemp.Descricao = ds.Tables[0].Rows[0][1].ToString();
             return nivelAcessoTemp;
         }
 
