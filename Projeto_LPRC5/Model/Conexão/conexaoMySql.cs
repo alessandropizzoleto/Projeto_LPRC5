@@ -25,8 +25,6 @@ namespace Projeto_LPRC5
 {
     public class conexaoMySql
     {
-        util suporte = new util();
-
         private MySqlConnection conexao;
         private MySqlCommand command;
         public void conectaMySql(string servidor, string usuario, string bancoNome, string senha)
@@ -51,8 +49,8 @@ namespace Projeto_LPRC5
 
         public Int32 executaSQL(string instrucaoSQL)
         {
-            suporte.lerArquivoAcessoBanco();
-            conectaMySql(suporte.servidor.ToString(), suporte.usuario.ToString(), suporte.banco.ToString(),suporte.senha.ToString());
+            util.lerArquivoAcessoBanco();
+            conectaMySql(util.servidor.ToString(), util.usuario.ToString(), util.banco.ToString(), util.senha.ToString());
             command = new MySqlCommand(instrucaoSQL, conexao);
             command.ExecuteNonQuery();
             desconectaMySql();
@@ -61,8 +59,8 @@ namespace Projeto_LPRC5
 
         public MySqlDataAdapter retornaSQL(string instrucaoSQL)
         {
-            suporte.lerArquivoAcessoBanco();
-            conectaMySql(suporte.servidor.ToString(), suporte.usuario.ToString(), suporte.banco.ToString(), suporte.senha.ToString());
+            util.lerArquivoAcessoBanco();
+            conectaMySql(util.servidor.ToString(), util.usuario.ToString(), util.banco.ToString(), util.senha.ToString());
             MySqlDataAdapter adapter = new MySqlDataAdapter(instrucaoSQL, conexao);
             desconectaMySql();
             return adapter;

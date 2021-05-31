@@ -33,16 +33,19 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
-    class util
+    public static class util
     {
-        public string servidor = "";
-        public string usuario = "";
-        public string senha = "";
-        public string banco = "";
-        public Int16 sgbd_Id = -1;
-        private string path = "C:\\software\\acesso.txt";
+        public static string servidor = "";
+        public static string usuario = "";
+        public static string senha = "";
+        public static string banco = "";
+        public static Int16 sgbd_Id = -1;
+        private static string path = "C:\\software\\acesso.txt";
 
-        public void lerArquivoAcessoBanco()
+        public static Int16 usuarioAtual;
+
+
+        public static void lerArquivoAcessoBanco()
         {
             string linha = "";
             if (System.IO.File.Exists(path))
@@ -76,7 +79,7 @@ namespace Projeto_LPRC5
             }
         }
 
-        public void gravaArquivoAcessoBanco(string servidor, string usuario, string banco, string senha, Int16 sgbd)
+        public static void gravaArquivoAcessoBanco(string servidor, string usuario, string banco, string senha, Int16 sgbd)
         {
             StreamWriter texto = new StreamWriter(path);
             texto.WriteLine("servidor=" + servidor + ";");
@@ -87,7 +90,7 @@ namespace Projeto_LPRC5
             texto.Close();
         }
 
-        private string salvaPictureArquivo(PictureBox imagem, string destinoPath)
+        private static string salvaPictureArquivo(PictureBox imagem, string destinoPath)
         {
             //string arquivo = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString();
             string arquivo = DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".jpg";
@@ -97,5 +100,19 @@ namespace Projeto_LPRC5
             return arquivo;
         }
 
+        public static bool verificaPermissao(Int16 usuarioCodigo, Int16 tagFormCodigo, Int16 tagOpcaoCodigo)
+        {
+            bool retorno;
+            if (usuarioCodigo == -1)
+            {
+                retorno = false;
+            }
+            else
+            {
+
+                retorno = true;
+            }
+            return retorno;
+        }
     }
 }

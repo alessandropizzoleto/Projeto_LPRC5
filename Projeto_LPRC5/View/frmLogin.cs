@@ -12,6 +12,7 @@ namespace Projeto_LPRC5
 {
     public partial class frmLogin : Form
     {
+        //private static util suporte = new util();
         public frmLogin()
         {
             InitializeComponent();
@@ -26,8 +27,14 @@ namespace Projeto_LPRC5
         {
             if (txtUsuario.Text == "Adm" && txtSenha.Text == "123")
             {
-
+                util.usuarioAtual = 1;
+                Close();
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

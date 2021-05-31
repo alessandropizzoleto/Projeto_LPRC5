@@ -92,6 +92,7 @@
             this.btnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(36, 36);
+            this.btnNovo.Tag = "1";
             this.btnNovo.Text = "Novo";
             this.btnNovo.ToolTipText = "Adicionar Cidade";
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -103,6 +104,7 @@
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(36, 36);
+            this.btnEditar.Tag = "2";
             this.btnEditar.Text = "Editar";
             this.btnEditar.ToolTipText = "Editar Cidade";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -114,6 +116,7 @@
             this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(36, 36);
+            this.btnExcluir.Tag = "3";
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.ToolTipText = "Excluir Cidade";
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -125,6 +128,7 @@
             this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(36, 36);
+            this.btnSalvar.Tag = "4";
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.ToolTipText = "Salvar nova Cidade";
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -136,6 +140,7 @@
             this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(36, 36);
+            this.btnCancelar.Tag = "5";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -147,6 +152,7 @@
             this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(36, 36);
+            this.btnSair.Tag = "6";
             this.btnSair.Text = "Fechar";
             this.btnSair.ToolTipText = "Fechar Manutenção de Cidade";
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -164,6 +170,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCidade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "10";
             this.Text = "Manutenção Cidade";
             this.Load += new System.EventHandler(this.frmCid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).EndInit();

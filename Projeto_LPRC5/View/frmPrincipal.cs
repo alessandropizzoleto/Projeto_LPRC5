@@ -1,4 +1,4 @@
-﻿using Projeto_LPRC5.Grupo_6.Moradores;
+﻿using Projeto_LPRC5;
 
 using System;
 using System.Collections.Generic;
@@ -14,27 +14,6 @@ namespace Projeto_LPRC5
 {
     public partial class frmPrincipal : Form
     {
-        private Int16 usuarioAtual = -1;
-
-        //Tratar as permições de acesso
-        private void habilitaOpcoesAcesso()
-        {
-            if (usuarioAtual == -1)
-            {
-                tipoDeUsuárioToolStripMenuItem.Enabled = false;
-                corToolStripMenuItem.Enabled = false;
-                mnuClassificaPessoa.Enabled = false;
-                marcaToolStripMenuItem.Enabled = false;
-                mnuAcesso.Enabled = false;
-                estadoToolStripMenuItem.Enabled = false;
-                veículoModeloToolStripMenuItem.Enabled = false;
-                cidadeToolStripMenuItem.Enabled = false;
-                moradoresToolStripMenuItem.Enabled = false;
-                feriadoToolStripMenuItem.Enabled = false;
-                mnuEncomendas.Enabled = false;
-            }
-        }
-
         public frmPrincipal()
         {
             InitializeComponent();
@@ -42,7 +21,7 @@ namespace Projeto_LPRC5
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            habilitaOpcoesAcesso();
+            util.usuarioAtual = -1;
         }
 
         private void tipoDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,8 +75,15 @@ namespace Projeto_LPRC5
         private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCidade cidade = new frmCidade();
-            cidade.MdiParent = this;
-            cidade.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(cidade.Tag), 0) == true)
+            {
+                cidade.MdiParent = this;
+                cidade.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Cidade", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void moradoresToolStripMenuItem_Click(object sender, EventArgs e)

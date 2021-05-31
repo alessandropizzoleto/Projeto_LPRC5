@@ -24,7 +24,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projeto_LPRC5.Grupo_6.Moradores
+namespace Projeto_LPRC5
 {
     public partial class frmMoradores : Form
     {

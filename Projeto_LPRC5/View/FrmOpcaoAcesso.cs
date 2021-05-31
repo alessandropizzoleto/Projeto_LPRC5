@@ -150,9 +150,14 @@ namespace Projeto_LPRC5 {
 		private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
 			int id = Convert.ToInt32(grdDados.CurrentRow.Cells[0].Value);
 
-			opcaoAcesso = dbOpcaoAcesso.selectOpcaoAcessoBase(new classeOpcaoAcesso() { Codigo = id });
-			TextBoxDescricao.Text = opcaoAcesso.Descricao;
-			TextboxTag.Text = opcaoAcesso.CodigoTag.ToString();
+			//opcaoAcesso = dbOpcaoAcesso.selectOpcaoAcessoBase( new classeOpcaoAcesso() { Codigo = id });
+			//TextBoxDescricao.Text = opcaoAcesso.Descricao;
+			//TextboxTag.Text = opcaoAcesso.CodigoTag.ToString();
 		}
-	}
+
+        private void grdDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

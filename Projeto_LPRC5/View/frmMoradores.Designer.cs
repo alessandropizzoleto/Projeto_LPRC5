@@ -1,4 +1,4 @@
-﻿namespace Projeto_LPRC5.Grupo_6.Moradores
+﻿namespace Projeto_LPRC5
 {
     partial class frmMoradores
     {

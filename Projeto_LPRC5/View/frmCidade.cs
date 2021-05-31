@@ -20,6 +20,7 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5 {
     public partial class frmCidade : Form {
+
         public frmCidade() {
             InitializeComponent();
         }
@@ -82,29 +83,53 @@ namespace Projeto_LPRC5 {
             return resultado;
         }
 
-        private void insereCidade() {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
-            limpaCamposDados();
+        private void insereCidade() 
+        {
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(btnNovo.Tag)) == true)
+            {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+                limpaCamposDados();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Inclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void alteraCidade() {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(btnEditar.Tag)) == true)
+            {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Alteração de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+                    
         }
 
-        private void excluiCidade() {
-            if (classeCidade.getCidadeId() != 0) {
-                DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        private void excluiCidade() 
+        {
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(btnExcluir.Tag)) == true)
+            {
+                if (classeCidade.getCidadeId() != 0) {
+                    DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (retorno == DialogResult.Yes) {
-                    db_Cidade.excluiCidadeBase(classeCidade);
+                    if (retorno == DialogResult.Yes) {
+                        db_Cidade.excluiCidadeBase(classeCidade);
 
-                    limpaCamposDados();
-                    atualizaDadosGrid();
+                        limpaCamposDados();
+                        atualizaDadosGrid();
+                    }
+                } else {
+                    MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } else {
-                MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Exclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
