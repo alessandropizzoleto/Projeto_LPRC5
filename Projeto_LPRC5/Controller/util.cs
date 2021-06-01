@@ -100,6 +100,24 @@ namespace Projeto_LPRC5
             return arquivo;
         }
 
+        public static string decriptografaDados(string info)
+        {
+
+            return info;
+        }
+
+        public static string criptografaDados(string info)
+        {
+
+            return info;
+        }
+
+        public static Int16 loginAcesso(string login, string senha)
+        {
+            dbFuncionario funcionario = new dbFuncionario();
+            return funcionario.RetornaDadosObjeto(login, senha);
+        }
+
         public static bool verificaPermissao(Int16 usuarioCodigo, Int16 tagFormCodigo, Int16 tagOpcaoCodigo)
         {
             bool retorno;
