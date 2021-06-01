@@ -64,7 +64,25 @@ namespace Projeto_LPRC5
             return FuncionarioTemp;
         }
 
-            public DataTable selectFuncionarioBase()
+        public Int16 RetornaDadosObjeto(string login, string senha)
+        {
+            Int16 codigoFuncionario = 0;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            string sql = "select funcionarioId from funcionario where funcionarioNome = '" + login + "' and funcionarioSenha = '" + senha + "';";
+            adapter = connect.retornaSQL(sql);
+            adapter.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                codigoFuncionario = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
+            }
+
+            return codigoFuncionario;
+        }
+
+        public DataTable selectFuncionarioBase()
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable tabela = new DataTable();

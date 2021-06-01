@@ -25,9 +25,13 @@ namespace Projeto_LPRC5
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Adm" && txtSenha.Text == "123")
+            util.usuarioAtual = util.loginAcesso(txtUsuario.Text, util.criptografaDados(txtSenha.Text));
+            if (util.usuarioAtual <= 0)
             {
-                util.usuarioAtual = 1;
+                MessageBox.Show("Login ou Senha inválido, verifique!!!", "Login de Acesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
                 Close();
             }
         }
