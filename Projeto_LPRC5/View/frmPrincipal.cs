@@ -1,4 +1,16 @@
-﻿using Projeto_LPRC5;
+﻿//****************************************************************************************
+
+//**Criado por:
+//**Data de Criação:
+//**Instruções
+// 
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//****** Atualizações: verificacao de usuario nas manutencoes de veiculo modelo, moradores, feriados e encomendas
+//*** Data: 03/05/2021
+//*** Responsável: Guilherme de Andrade Rissato
+
+//****************************************************************************************
+using Projeto_LPRC5;
 
 using System;
 using System.Collections.Generic;
@@ -68,8 +80,16 @@ namespace Projeto_LPRC5
         private void veículoModeloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVeiculoModelo veiculomodelo = new frmVeiculoModelo();
-            veiculomodelo.MdiParent = this;
-            veiculomodelo.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(veiculomodelo.Tag), 0) == true)
+            {
+                veiculomodelo.MdiParent = this;
+                veiculomodelo.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Veículo Modelo", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,22 +109,43 @@ namespace Projeto_LPRC5
         private void moradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMoradores moradores = new frmMoradores();
-            moradores.MdiParent = this;
-            moradores.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(moradores.Tag), 0) == true)
+            {
+                moradores.MdiParent = this;
+                moradores.Show();
+            }
+            else 
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Moradores", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void feriadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmFeriado feriado = new frmFeriado();
-            feriado.MdiParent = this;
-            feriado.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(feriado.Tag), 0) == true)
+            {
+                feriado.MdiParent = this;
+                feriado.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Feriados", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void mnuEncomendas_Click(object sender, EventArgs e)
         {
             frmEncomendas encomendas = new frmEncomendas();
-            encomendas.MdiParent = this;
-            encomendas.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(encomendas.Tag), 0) == true)
+            {
+                encomendas.MdiParent = this;
+                encomendas.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Encomendas", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
