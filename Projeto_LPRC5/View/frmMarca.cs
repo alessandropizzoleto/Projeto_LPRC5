@@ -3,7 +3,7 @@
 //**Data de Criação:
 //**Instruções:
 //
-//
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //****** Atualizações:mudança do nome da variavel da instancia da classeCidade, verificação se o objeto não é nulo para fazer a requisição no BD 
 //*** Data:02/05/2021
 //*** Responsável:Guilherme de Andrade Rissato

@@ -1,13 +1,17 @@
 ﻿//****************************************************************************************
-
 //**Criado por:
 //**Data de Criação:
 //**Instruções
 // 
 //**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //****** Atualizações: verificacao de usuario nas manutencoes de veiculo modelo, moradores, feriados e encomendas
-//*** Data: 03/05/2021
+//*** Data: 01/06/2021
 //*** Responsável: Guilherme de Andrade Rissato
+
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//****** Atualizações: verificacao de usuario nas manutencoes de tipo de usuario, classificacao de pessoas, cor, marca e estado
+//*** Data: 01/06/2021
+//*** Responsável: Roberto Marcheti Neto
 
 //****************************************************************************************
 using Projeto_LPRC5;
@@ -39,44 +43,76 @@ namespace Projeto_LPRC5
         private void tipoDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmTipoUsuario tipoUsuario = new frmTipoUsuario();
-            tipoUsuario.MdiParent = this;
-            tipoUsuario.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(tipoUsuario.Tag), 0) == true)
+            { 
+                tipoUsuario.MdiParent = this;
+                tipoUsuario.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Tipo de Usuário", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-
         private void mnuClassificaPessoa_Click(object sender, EventArgs e)
         {
             frmClassificaPessoa classificaPessoa = new frmClassificaPessoa();
-            classificaPessoa.MdiParent = this;
-            classificaPessoa.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(classificaPessoa.Tag), 0) == true)
+            {
+                classificaPessoa.MdiParent = this;
+                classificaPessoa.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Classificação de Pessoas", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void mnuAcesso_Click(object sender, EventArgs e)
-        {
-            frmAcesso acesso = new frmAcesso();
-            acesso.MdiParent = this;
-            acesso.Show();
-        }
+            {
+                frmAcesso acesso = new frmAcesso();
+                acesso.MdiParent = this;
+                acesso.Show();                  
+            }
 
         private void corToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCor Cor = new frmCor();
-            Cor.MdiParent = this;
-            Cor.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(Cor.Tag), 0) == true)
+            { 
+                Cor.MdiParent = this;
+                Cor.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Cor", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-
         private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMarca marca = new frmMarca();
-            marca.MdiParent = this;
-            marca.Show();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(marca.Tag), 0) == true)
+            { 
+                marca.MdiParent = this;
+                marca.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Marca", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-
-		private void estadoToolStripMenuItem_Click(object sender, EventArgs e) {
-            new FrmEstado {
-                MdiParent = this
-            }.Show();
-		}
-
+        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstado estado = new FrmEstado();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(estado.Tag), 0) == true)
+            {
+              estado.MdiParent = this;
+              estado.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Estado", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void veículoModeloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVeiculoModelo veiculomodelo = new frmVeiculoModelo();
@@ -84,7 +120,6 @@ namespace Projeto_LPRC5
             {
                 veiculomodelo.MdiParent = this;
                 veiculomodelo.Show();
-
             }
             else
             {
@@ -130,7 +165,7 @@ namespace Projeto_LPRC5
             }
             else
             {
-                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Feriados", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Feriado", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

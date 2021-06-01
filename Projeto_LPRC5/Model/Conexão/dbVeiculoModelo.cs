@@ -1,5 +1,5 @@
 ﻿//****************************************************************************************
-//Grupo: Guilherme A Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//Grupo 7: Guilherme A Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por:Guilherme de Andrade Rissato
 //**Data de Criação:27/04/2021
 //**Descrição: criação dos SQL`s

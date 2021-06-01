@@ -1,5 +1,5 @@
 ﻿//****************************************************************************************
-//**Grupo: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por: Guilherme de Andrade Rissato
 //**Data de Criação: 03/05/2021
 //**Instruções: Criação da classe dbEncomenda

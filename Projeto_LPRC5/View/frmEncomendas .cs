@@ -4,10 +4,12 @@
 //**Data de Criação: 03/05/2021
 //**Instruções: Criação do formulário frmEncomendas
 //
-//
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //****** Atualizações: Ajustes das funçoes de procedures
 //*** Data:03/05/2021
 //*** Responsável: Guilherme de Andrade Rissato
+
+//**Grupo 7: Guilherme A.Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //****** Atualizações: verificacao da data na procedure de dados obrigatorios
 //*** Data:03/05/2021
 //*** Responsável: Guilherme de Andrade Rissato

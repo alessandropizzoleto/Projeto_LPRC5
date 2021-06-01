@@ -1,4 +1,5 @@
 ﻿//****************************************************************************************
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por:Guilherme de Andrade Rissato
 //**Data de Criação:24/05/2021
 //**Instruções: get's e set's do objeto funcionario

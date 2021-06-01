@@ -1,10 +1,10 @@
 ﻿//****************************************************************************************
-//**Grupo: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //**Criado por: Roberto Marcheti Neto
 //**Data de Criação: 03/05/2021
 //**Instruções: Criação dos getters and setters do objeto frmEncomendas
 //
-//
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
 //****** Atualizações:ajuste de variaveis
 //*** Data:03/05/2021
 //*** Responsável:Guilherme de Andrade Rissato
