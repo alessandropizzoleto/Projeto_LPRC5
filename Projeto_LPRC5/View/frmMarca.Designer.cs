@@ -56,8 +56,8 @@ namespace Projeto_LPRC5
             this.barbtnFechar});
             this.barraManutencaoMarca.Location = new System.Drawing.Point(0, 0);
             this.barraManutencaoMarca.Name = "barraManutencaoMarca";
-            this.barraManutencaoMarca.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.barraManutencaoMarca.Size = new System.Drawing.Size(499, 39);
+            this.barraManutencaoMarca.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.barraManutencaoMarca.Size = new System.Drawing.Size(374, 39);
             this.barraManutencaoMarca.TabIndex = 3;
             this.barraManutencaoMarca.Text = "toolStrip1";
             // 
@@ -68,6 +68,7 @@ namespace Projeto_LPRC5
             this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnNovo.Name = "barbtnNovo";
             this.barbtnNovo.Size = new System.Drawing.Size(37, 36);
+            this.barbtnNovo.Tag = "1";
             this.barbtnNovo.Text = "Novo";
             this.barbtnNovo.ToolTipText = "Adicionar Marca";
             this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
@@ -79,6 +80,7 @@ namespace Projeto_LPRC5
             this.barbtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnEditar.Name = "barbtnEditar";
             this.barbtnEditar.Size = new System.Drawing.Size(37, 36);
+            this.barbtnEditar.Tag = "2";
             this.barbtnEditar.Text = "Editar";
             this.barbtnEditar.ToolTipText = "Editar Marca";
             this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
@@ -90,6 +92,7 @@ namespace Projeto_LPRC5
             this.barbtnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnExcluir.Name = "barbtnExcluir";
             this.barbtnExcluir.Size = new System.Drawing.Size(37, 36);
+            this.barbtnExcluir.Tag = "3";
             this.barbtnExcluir.Text = "Excluir";
             this.barbtnExcluir.ToolTipText = "Excluir Marca";
             this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
@@ -101,6 +104,7 @@ namespace Projeto_LPRC5
             this.barbtnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnSalvar.Name = "barbtnSalvar";
             this.barbtnSalvar.Size = new System.Drawing.Size(37, 36);
+            this.barbtnSalvar.Tag = "4";
             this.barbtnSalvar.Text = "Salvar";
             this.barbtnSalvar.ToolTipText = "Salvar nova Marca";
             this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
@@ -112,6 +116,7 @@ namespace Projeto_LPRC5
             this.barbtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnCancelar.Name = "barbtnCancelar";
             this.barbtnCancelar.Size = new System.Drawing.Size(37, 36);
+            this.barbtnCancelar.Tag = "5";
             this.barbtnCancelar.Text = "Cancelar";
             this.barbtnCancelar.ToolTipText = "Cancelar ação";
             this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
@@ -123,6 +128,7 @@ namespace Projeto_LPRC5
             this.barbtnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnFechar.Name = "barbtnFechar";
             this.barbtnFechar.Size = new System.Drawing.Size(37, 36);
+            this.barbtnFechar.Tag = "6";
             this.barbtnFechar.Text = "Fechar";
             this.barbtnFechar.ToolTipText = "Fechar";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
@@ -132,47 +138,47 @@ namespace Projeto_LPRC5
             this.grdDadosMarca.AllowUserToAddRows = false;
             this.grdDadosMarca.AllowUserToDeleteRows = false;
             this.grdDadosMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosMarca.Location = new System.Drawing.Point(13, 43);
-            this.grdDadosMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.grdDadosMarca.Location = new System.Drawing.Point(10, 35);
             this.grdDadosMarca.Name = "grdDadosMarca";
             this.grdDadosMarca.ReadOnly = true;
             this.grdDadosMarca.RowHeadersWidth = 51;
-            this.grdDadosMarca.Size = new System.Drawing.Size(229, 296);
+            this.grdDadosMarca.Size = new System.Drawing.Size(172, 240);
             this.grdDadosMarca.TabIndex = 5;
+            this.grdDadosMarca.Tag = "13";
             this.grdDadosMarca.Click += new System.EventHandler(this.grdDadosMarca_Click);
             // 
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(250, 71);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMarca.Location = new System.Drawing.Point(188, 58);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(242, 30);
+            this.txtMarca.Size = new System.Drawing.Size(182, 26);
             this.txtMarca.TabIndex = 7;
+            this.txtMarca.Tag = "13";
             this.txtMarca.TextChanged += new System.EventHandler(this.txtMarca_TextChanged);
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(250, 45);
-            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarca.Location = new System.Drawing.Point(188, 37);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(156, 22);
+            this.lblMarca.Size = new System.Drawing.Size(118, 19);
             this.lblMarca.TabIndex = 8;
+            this.lblMarca.Tag = "13";
             this.lblMarca.Text = "Marca do veículo:";
             // 
             // frmMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 346);
+            this.ClientSize = new System.Drawing.Size(374, 281);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.grdDadosMarca);
             this.Controls.Add(this.barraManutencaoMarca);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMarca";
+            this.Tag = "13";
             this.Text = "Manutenção Marca";
             this.Load += new System.EventHandler(this.frmMarca_Load);
             this.barraManutencaoMarca.ResumeLayout(false);

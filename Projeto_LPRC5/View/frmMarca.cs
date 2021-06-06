@@ -91,34 +91,55 @@ namespace Projeto_LPRC5
 
         private void insereMarca()
         {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
-            limpaCamposDados();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnNovo.Tag)) == true)
+            {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+                limpaCamposDados();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Inclusão de Marca de Carro", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void alteraMarca()
         {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnEditar.Tag)) == true)
+            {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Alteração da Marca de Carro", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void excluiMarca()
         {
-            if (CadastroMarca.getmarcaveiculoid() != 0)
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnExcluir.Tag)) == true)
             {
-                DialogResult retorno = MessageBox.Show("Realmente deseja excluir esta informação ?", "AVISO!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (retorno == DialogResult.Yes)
+                if (CadastroMarca.getmarcaveiculoid() != 0)
                 {
-                    db_Marca.excluiMarcaBase(CadastroMarca);
+                    DialogResult retorno = MessageBox.Show("Realmente deseja excluir esta informação ?", "AVISO!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    limpaCamposDados();
-                    atualizaDadosGrid();
+                    if (retorno == DialogResult.Yes)
+                    {
+                        db_Marca.excluiMarcaBase(CadastroMarca);
+
+                        limpaCamposDados();
+                        atualizaDadosGrid();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não há nenhuma informação a ser excluida!!", "AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Não há nenhuma informação a ser excluida!!", "AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuário não tem permissão para realizar a Exclusão de Marcas de Carro", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
