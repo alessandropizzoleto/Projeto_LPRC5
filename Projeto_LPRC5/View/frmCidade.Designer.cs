@@ -57,7 +57,7 @@
             this.lblCidade.AutoSize = true;
             this.lblCidade.Location = new System.Drawing.Point(258, 44);
             this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(57, 22);
+            this.lblCidade.Size = new System.Drawing.Size(47, 19);
             this.lblCidade.TabIndex = 3;
             this.lblCidade.Text = "Nome";
             // 
@@ -65,7 +65,7 @@
             // 
             this.txtCidade.Location = new System.Drawing.Point(258, 69);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(286, 30);
+            this.txtCidade.Size = new System.Drawing.Size(286, 26);
             this.txtCidade.TabIndex = 4;
             // 
             // toolStrip1
@@ -81,7 +81,7 @@
             this.btnSair});
             this.toolStrip1.Location = new System.Drawing.Point(-7, -1);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(229, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(259, 39);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -159,7 +159,7 @@
             // 
             // frmCidade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 338);
             this.Controls.Add(this.toolStrip1);

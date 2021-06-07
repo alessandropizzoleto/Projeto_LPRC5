@@ -102,34 +102,48 @@ namespace Projeto_LPRC5{
 
         private void insereClassificaPessoa()
         {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
-            limpaCamposDados();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnNovo.Tag)) == true) {
+
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+                limpaCamposDados();
+            } 
+            else {
+                MessageBox.Show("Usuário não tem permissão para realizar a Inclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         private void alteraClassificaPessoa()
         {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnEditar.Tag)) == true) {
+
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+            }
+            else {
+                MessageBox.Show("Usuário não tem permissão para realizar a Inclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void excluiClassificaPessoa()
         {
-            if (classeClassificaPessoa.getClassificaPessoaId() != 0)
-            {
-                DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnExcluir.Tag)) == true) {
+                if (classeClassificaPessoa.getClassificaPessoaId() != 0) {
+                    DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (retorno == DialogResult.Yes)
-                {
-                    db_ClassificaPessoa.excluiClassificaPessoaBase(classeClassificaPessoa);
+                    if (retorno == DialogResult.Yes) {
+                        db_ClassificaPessoa.excluiClassificaPessoaBase(classeClassificaPessoa);
 
-                    limpaCamposDados();
-                    atualizaDadosGrid();
+                        limpaCamposDados();
+                        atualizaDadosGrid();
+                    }
+                } else {
+                    MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+            else {
+                MessageBox.Show("Usuário não tem permissão para realizar a Exclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

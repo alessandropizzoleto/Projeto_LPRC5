@@ -67,6 +67,7 @@
             this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnNovo.Name = "barbtnNovo";
             this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
+            this.barbtnNovo.Tag = "1";
             this.barbtnNovo.Text = "Novo";
             this.barbtnNovo.ToolTipText = "Adicionar Cidade";
             this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
@@ -78,6 +79,7 @@
             this.barbtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnEditar.Name = "barbtnEditar";
             this.barbtnEditar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnEditar.Tag = "2";
             this.barbtnEditar.Text = "Editar";
             this.barbtnEditar.ToolTipText = "Editar Cidade";
             this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
@@ -89,6 +91,7 @@
             this.barbtnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnExcluir.Name = "barbtnExcluir";
             this.barbtnExcluir.Size = new System.Drawing.Size(36, 36);
+            this.barbtnExcluir.Tag = "3";
             this.barbtnExcluir.Text = "Excluir";
             this.barbtnExcluir.ToolTipText = "Excluir Cidade";
             this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
@@ -100,6 +103,7 @@
             this.barbtnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnSalvar.Name = "barbtnSalvar";
             this.barbtnSalvar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnSalvar.Tag = "4";
             this.barbtnSalvar.Text = "Salvar";
             this.barbtnSalvar.ToolTipText = "Salvar nova Cidade";
             this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
@@ -111,6 +115,7 @@
             this.barbtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnCancelar.Name = "barbtnCancelar";
             this.barbtnCancelar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnCancelar.Tag = "5";
             this.barbtnCancelar.Text = "Cancelar";
             this.barbtnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
             this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
@@ -122,6 +127,7 @@
             this.barbtnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnFechar.Name = "barbtnFechar";
             this.barbtnFechar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnFechar.Tag = "6";
             this.barbtnFechar.Text = "Fechar";
             this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
@@ -173,6 +179,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClassificaPessoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "17";
             this.Text = "Manutenção Classificação de Pessoas";
             this.Load += new System.EventHandler(this.frmCid_Load);
             this.barManutencao.ResumeLayout(false);
