@@ -15,6 +15,10 @@
 //****** Atualizações: Criação do campo "Descrição cor" no form e adaptação do código.
 //*** Data: 03/05/2021
 //*** Responsável: Giovanna Valim
+
+//****** Atualizações: Inserção da função para verificar o nível de permissão do usuário.
+//*** Data: 06/06/2021
+//*** Responsável: Amanda Ferrari, André Costa, Giovanna Valim
 //****************************************************************************************
 
 using System;
@@ -99,35 +103,57 @@ namespace Projeto_LPRC5
         }
         private void insereCor()
         {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
-            limpaCamposDados();
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnNovo.Tag)) == true)
+            {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+                limpaCamposDados();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Inclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void alteraCor()
         {
-            habilitaBotoesMenu(false);
-            habilitaCamposDados(true);
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnEditar.Tag)) == true)
+            {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Alteração de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void excluiCor()
         {
-            if (tinta.getCorId() != 0)
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnExcluir.Tag)) == true)
             {
-                DialogResult retorno = MessageBox.Show("Deseja excluir os dados informados? ", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (retorno == DialogResult.Yes)
+                if (tinta.getCorId() != 0)
                 {
-                    db_Cor.excluiCorBase(tinta);
+                    DialogResult retorno = MessageBox.Show("Deseja excluir os dados informados? ", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    limpaCamposDados();
-                    atualizaDadosGrid();
+                    if (retorno == DialogResult.Yes)
+                    {
+                        db_Cor.excluiCorBase(tinta);
+
+                        limpaCamposDados();
+                        atualizaDadosGrid();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível excluir", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Não foi possível excluir", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuário não tem permissão para realizar a Exclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
         private void salvaCor()
         {

@@ -127,7 +127,6 @@ namespace Projeto_LPRC5
             }
             else
             {
-
                 retorno = true;
             }
             return retorno;

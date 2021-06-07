@@ -58,7 +58,7 @@ namespace Projeto_LPRC5
             this.barManutencaoCor.Location = new System.Drawing.Point(0, 0);
             this.barManutencaoCor.Name = "barManutencaoCor";
             this.barManutencaoCor.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barManutencaoCor.Size = new System.Drawing.Size(230, 39);
+            this.barManutencaoCor.Size = new System.Drawing.Size(229, 39);
             this.barManutencaoCor.TabIndex = 1;
             this.barManutencaoCor.Text = "toolStrip1";
             // 
@@ -69,6 +69,7 @@ namespace Projeto_LPRC5
             this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnNovo.Name = "barbtnNovo";
             this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
+            this.barbtnNovo.Tag = "1";
             this.barbtnNovo.Text = "Novo";
             this.barbtnNovo.ToolTipText = "Adicionar Cor";
             this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
@@ -80,6 +81,7 @@ namespace Projeto_LPRC5
             this.barbtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnEditar.Name = "barbtnEditar";
             this.barbtnEditar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnEditar.Tag = "2";
             this.barbtnEditar.Text = "Editar";
             this.barbtnEditar.ToolTipText = "Editar Cor";
             this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
@@ -91,6 +93,7 @@ namespace Projeto_LPRC5
             this.barbtnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnExcluir.Name = "barbtnExcluir";
             this.barbtnExcluir.Size = new System.Drawing.Size(36, 36);
+            this.barbtnExcluir.Tag = "3";
             this.barbtnExcluir.Text = "Excluir";
             this.barbtnExcluir.ToolTipText = "Excluir Cor";
             this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
@@ -102,6 +105,7 @@ namespace Projeto_LPRC5
             this.barbtnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnSalvar.Name = "barbtnSalvar";
             this.barbtnSalvar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnSalvar.Tag = "4";
             this.barbtnSalvar.Text = "Salvar";
             this.barbtnSalvar.ToolTipText = "Salvar nova Cor";
             this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
@@ -113,6 +117,7 @@ namespace Projeto_LPRC5
             this.barbtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnCancelar.Name = "barbtnCancelar";
             this.barbtnCancelar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnCancelar.Tag = "5";
             this.barbtnCancelar.Text = "Cancelar";
             this.barbtnCancelar.ToolTipText = "Cancelar";
             this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
@@ -124,6 +129,7 @@ namespace Projeto_LPRC5
             this.barbtnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.barbtnFechar.Name = "barbtnFechar";
             this.barbtnFechar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnFechar.Tag = "6";
             this.barbtnFechar.Text = "Fechar";
             this.barbtnFechar.ToolTipText = "Fechar";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnSair_Click);
@@ -151,7 +157,7 @@ namespace Projeto_LPRC5
             this.lblCorNome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorNome.Location = new System.Drawing.Point(237, 41);
             this.lblCorNome.Name = "lblCorNome";
-            this.lblCorNome.Size = new System.Drawing.Size(57, 22);
+            this.lblCorNome.Size = new System.Drawing.Size(47, 19);
             this.lblCorNome.TabIndex = 11;
             this.lblCorNome.Text = "Nome";
             // 
@@ -160,12 +166,12 @@ namespace Projeto_LPRC5
             this.txtNomeCor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCor.Location = new System.Drawing.Point(237, 65);
             this.txtNomeCor.Name = "txtNomeCor";
-            this.txtNomeCor.Size = new System.Drawing.Size(237, 30);
+            this.txtNomeCor.Size = new System.Drawing.Size(237, 26);
             this.txtNomeCor.TabIndex = 10;
             // 
             // frmCor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 331);
             this.Controls.Add(this.lblCorNome);
@@ -175,6 +181,7 @@ namespace Projeto_LPRC5
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCor";
+            this.Tag = "12";
             this.Text = "Manutenção Cor";
             this.Load += new System.EventHandler(this.fmrCor_Load);
             this.barManutencaoCor.ResumeLayout(false);
