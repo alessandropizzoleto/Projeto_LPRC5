@@ -12,6 +12,10 @@
 //*** Data: 07/05/2021
 //*** Responsável: André Luiz Costa
 //****************************************************************************************
+//****** Atualizações: Adicionado verificação nível usuário
+//*** Data: 07/06/2021
+//*** Responsável: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
+//****************************************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -102,6 +106,11 @@ namespace Projeto_LPRC5
 
         private void insereTipoUsuario()
         {
+            if(!util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(Tag), Convert.ToInt16(barbtnNovo.Tag))) {
+                MessageBox.Show("Usuário não tem permissão para realizar a inclusão de Tipo Usuário", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
             limpaCamposDados();
@@ -109,12 +118,22 @@ namespace Projeto_LPRC5
 
         private void alteraTipoUsuario()
         {
+            if (!util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(Tag), Convert.ToInt16(barbtnEditar.Tag))) {
+                MessageBox.Show("Usuário não tem permissão para realizar a edição de Tipo Usuário", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             habilitaBotoesMenu(false);
             habilitaCamposDados(true);
         }
 
         private void excluiTipoUsuario()
         {
+            if (!util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(Tag), Convert.ToInt16(barbtnExcluir.Tag))) {
+                MessageBox.Show("Usuário não tem permissão para realizar a exclusão de Tipo Usuário", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (tipoUsuario.getId() != 0)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
