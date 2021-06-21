@@ -45,6 +45,8 @@ namespace Projeto_LPRC5
             this.mnuEncomendas = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcesso = new System.Windows.Forms.ToolStripMenuItem();
+            this.PermissoesDeAcessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.barMenu = new System.Windows.Forms.ToolStrip();
@@ -52,8 +54,7 @@ namespace Projeto_LPRC5
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PermissoesDeAcessoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.condomínioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCadastro.SuspendLayout();
             this.barMenu.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -76,7 +77,8 @@ namespace Projeto_LPRC5
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuBasico});
+            this.mnuBasico,
+            this.condomínioToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -185,6 +187,20 @@ namespace Projeto_LPRC5
             this.mnuAcesso.Text = "Acesso SGBD";
             this.mnuAcesso.Click += new System.EventHandler(this.mnuAcesso_Click);
             // 
+            // PermissoesDeAcessoToolStripMenuItem
+            // 
+            this.PermissoesDeAcessoToolStripMenuItem.Name = "PermissoesDeAcessoToolStripMenuItem";
+            this.PermissoesDeAcessoToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.PermissoesDeAcessoToolStripMenuItem.Text = "Permissões de Acesso";
+            this.PermissoesDeAcessoToolStripMenuItem.Click += new System.EventHandler(this.PermissoesDeAcessoToolStripMenuItem_Click);
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+            // 
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -242,19 +258,12 @@ namespace Projeto_LPRC5
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
-            // loginToolStripMenuItem
+            // condomínioToolStripMenuItem
             // 
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
-            this.loginToolStripMenuItem.Text = "Login";
-            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
-            // 
-            // PermissoesDeAcessoToolStripMenuItem
-            // 
-            this.PermissoesDeAcessoToolStripMenuItem.Name = "PermissoesDeAcessoToolStripMenuItem";
-            this.PermissoesDeAcessoToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.PermissoesDeAcessoToolStripMenuItem.Text = "Permissões de Acesso";
-            this.PermissoesDeAcessoToolStripMenuItem.Click += new System.EventHandler(this.PermissoesDeAcessoToolStripMenuItem_Click);
+            this.condomínioToolStripMenuItem.Name = "condomínioToolStripMenuItem";
+            this.condomínioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.condomínioToolStripMenuItem.Text = "Condomínio";
+            this.condomínioToolStripMenuItem.Click += new System.EventHandler(this.condomínioToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -308,6 +317,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PermissoesDeAcessoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem condomínioToolStripMenuItem;
     }
 }
 

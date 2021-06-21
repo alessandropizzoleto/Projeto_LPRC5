@@ -196,5 +196,12 @@ namespace Projeto_LPRC5
             permissao.MdiParent = this;
             permissao.Show();
         }
+
+        private void condomínioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpresa empresa = new frmEmpresa();
+            empresa.MdiParent = this;
+            empresa.Show();
+        }
     }
 }
