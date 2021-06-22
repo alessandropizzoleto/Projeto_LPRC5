@@ -13,16 +13,16 @@ namespace Projeto_LPRC5
         conexaoMySql connect = new conexaoMySql();
 
         //Cria as intstrução SQL para insert de dados na Base de dados
-        public void inserePessoaBase(classePessoa cPessoa)
+        public void inserePessoaBase(string nRegistro, string nSocial, string email, string foto)
         {
-            string sql = "";
+            string sql = "INSERT INTO pessoa(pnomeregistro, pnomesocial, pfoto, pemail) VALUES ('" + nRegistro + "', '" + nSocial + "', '" + foto + "', '" + email + "');";
             connect.executaSQL(sql);
         }
 
         //Cria as instrução SQL para update de dados na Base de dados
-        public void alteraPessoaBase(classePessoa cPessoa)
+        public void alteraPessoaBase(Int16 id, string nRegistro, string nSocial, string email, string foto)
         {
-            string sql = "";
+            string sql = "UPDATE pessoa SET pnomeregistro = '" + nRegistro + "', pnomesocial = '" + nSocial + "', pfoto = '" + foto + "', pemail= '" + email + "' WHERE pid = " + id + ";";
             connect.executaSQL(sql);
         }
 

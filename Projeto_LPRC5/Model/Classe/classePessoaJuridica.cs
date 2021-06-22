@@ -52,10 +52,10 @@ namespace Projeto_LPRC5
             switch (operacao)
             {
                 case "Ins":
-                    //pessoaJuridica.inserePessoaJuridicaBase();
+                    pessoaJuridica.inserePessoaJuridicaBase(getPessoaID(), pJuridicaCNPJ, pJuridicaInscEstadual, pJuridicaInscMunicipal);
                     break;
                 case "Upt":
-                    //pessoaJuridica.alteraPessoaJuridicaBase();
+                    pessoaJuridica.alteraPessoaJuridicaBase(getPessoaID(), pJuridicaCNPJ, pJuridicaInscEstadual, pJuridicaInscMunicipal);
                     break;
                 case "Del":
                     pessoaJuridica.excluiPessoaJuridicaBase(getPessoaID());

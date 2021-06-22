@@ -37,9 +37,22 @@
             this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosEmpresa = new System.Windows.Forms.DataGridView();
-            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNomeRegistro = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNomeSocial = new System.Windows.Forms.TextBox();
+            this.picFoto = new System.Windows.Forms.PictureBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.txtInscEstadual = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtInscMunicipal = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // barManutencao
@@ -127,28 +140,141 @@
             // 
             // grdDadosEmpresa
             // 
+            this.grdDadosEmpresa.AllowUserToAddRows = false;
+            this.grdDadosEmpresa.AllowUserToDeleteRows = false;
             this.grdDadosEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosEmpresa.Location = new System.Drawing.Point(12, 76);
+            this.grdDadosEmpresa.Location = new System.Drawing.Point(12, 53);
             this.grdDadosEmpresa.Name = "grdDadosEmpresa";
+            this.grdDadosEmpresa.ReadOnly = true;
             this.grdDadosEmpresa.RowHeadersWidth = 51;
-            this.grdDadosEmpresa.Size = new System.Drawing.Size(240, 350);
+            this.grdDadosEmpresa.Size = new System.Drawing.Size(240, 406);
             this.grdDadosEmpresa.TabIndex = 1;
             this.grdDadosEmpresa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
             this.grdDadosEmpresa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
             // 
-            // txtBusca
+            // label1
             // 
-            this.txtBusca.Location = new System.Drawing.Point(13, 41);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 30);
-            this.txtBusca.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(258, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 28);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nome de Registro";
+            // 
+            // txtNomeRegistro
+            // 
+            this.txtNomeRegistro.Location = new System.Drawing.Point(262, 74);
+            this.txtNomeRegistro.Name = "txtNomeRegistro";
+            this.txtNomeRegistro.Size = new System.Drawing.Size(383, 30);
+            this.txtNomeRegistro.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(258, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 28);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Nome Social";
+            // 
+            // txtNomeSocial
+            // 
+            this.txtNomeSocial.Location = new System.Drawing.Point(262, 129);
+            this.txtNomeSocial.Name = "txtNomeSocial";
+            this.txtNomeSocial.Size = new System.Drawing.Size(383, 30);
+            this.txtNomeSocial.TabIndex = 5;
+            // 
+            // picFoto
+            // 
+            this.picFoto.Location = new System.Drawing.Point(660, 53);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(204, 165);
+            this.picFoto.TabIndex = 6;
+            this.picFoto.TabStop = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(262, 188);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(383, 30);
+            this.txtEmail.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(258, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 28);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "E-mail";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(258, 225);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 28);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "CNPJ";
+            // 
+            // txtCNPJ
+            // 
+            this.txtCNPJ.Location = new System.Drawing.Point(262, 246);
+            this.txtCNPJ.Mask = "00.000.000/0000-00";
+            this.txtCNPJ.Name = "txtCNPJ";
+            this.txtCNPJ.Size = new System.Drawing.Size(211, 30);
+            this.txtCNPJ.TabIndex = 10;
+            // 
+            // txtInscEstadual
+            // 
+            this.txtInscEstadual.Location = new System.Drawing.Point(481, 246);
+            this.txtInscEstadual.Name = "txtInscEstadual";
+            this.txtInscEstadual.Size = new System.Drawing.Size(186, 30);
+            this.txtInscEstadual.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(477, 226);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(150, 28);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Insc. Estadual";
+            // 
+            // txtInscMunicipal
+            // 
+            this.txtInscMunicipal.Location = new System.Drawing.Point(678, 246);
+            this.txtInscMunicipal.Name = "txtInscMunicipal";
+            this.txtInscMunicipal.Size = new System.Drawing.Size(186, 30);
+            this.txtInscMunicipal.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(674, 226);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(166, 28);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Insc. Municipal";
             // 
             // frmEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 438);
-            this.Controls.Add(this.txtBusca);
+            this.ClientSize = new System.Drawing.Size(876, 469);
+            this.Controls.Add(this.txtInscMunicipal);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtInscEstadual);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCNPJ);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.picFoto);
+            this.Controls.Add(this.txtNomeSocial);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNomeRegistro);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.grdDadosEmpresa);
             this.Controls.Add(this.barManutencao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,6 +286,7 @@
             this.barManutencao.ResumeLayout(false);
             this.barManutencao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +302,18 @@
         private System.Windows.Forms.ToolStripButton barbtnCancelar;
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosEmpresa;
-        private System.Windows.Forms.TextBox txtBusca;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNomeRegistro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNomeSocial;
+        private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox txtCNPJ;
+        private System.Windows.Forms.TextBox txtInscEstadual;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtInscMunicipal;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -39,7 +39,6 @@ namespace Projeto_LPRC5
 
             grdDadosEmpresa.Columns[0].Width = 0;
             grdDadosEmpresa.Columns[1].Width = 120;
-
         }
 
         public void atualizaDadosGrid()
@@ -49,7 +48,6 @@ namespace Projeto_LPRC5
             //grdDadosCid.DataSource = tabelaCidade;
 
             //pode ser também
-
             grdDadosEmpresa.DataSource = pJuridica.dtRetornaDados();
         }
 
@@ -57,7 +55,14 @@ namespace Projeto_LPRC5
         {
             pJuridica = pJuridica.objRetornaDados();
 
-            //txtNome.Text = cidade.getNome();
+            txtNomeRegistro.Text = pJuridica.getPessoaNomeRegistro();
+            txtNomeSocial.Text = pJuridica.getPessoaNomeSocial();
+            txtEmail.Text = pJuridica.getPessoaEmail();
+            txtInscEstadual.Text = pJuridica.getPJuridicaInscEstadual();
+            txtInscMunicipal.Text = pJuridica.getPJuridicaInscMunicipal();
+            txtCNPJ.Text = pJuridica.getPJuridicaCNPJ();
+            //Incluir a Foto
+
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -72,16 +77,31 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            //txtNome.Enabled = habilitar;
+            txtNomeRegistro.Enabled = habilitar;
+            txtNomeSocial.Enabled = habilitar;
+            txtEmail.Enabled = habilitar;
+            txtInscEstadual.Enabled = habilitar;
+            txtInscMunicipal.Enabled = habilitar;
+            txtCNPJ.Enabled = habilitar;
             grdDadosEmpresa.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            //txtNome.Text = "";
-
+            txtNomeRegistro.Text = "";
+            txtNomeSocial.Text = "";
+            txtEmail.Text = "";
+            txtInscEstadual.Text = "";
+            txtInscMunicipal.Text = "";
+            txtCNPJ.Text = "";
             pJuridica.setPessoaID(0);
-            //padrao.setNome("");
+            pJuridica.setPessoaNomeRegistro("");
+            pJuridica.setPessoaNomeSocial("");
+            pJuridica.setPessoaEmail("");
+            pJuridica.setPJuridicaInscEstadual("");
+            pJuridica.setPJuridicaInscMunicipal("");
+            pJuridica.setPJuridicaCNPJ("");
+            pJuridica.setPessoaFoto("");
         }
 
         private bool verificaDadosObrigatorios()
@@ -134,7 +154,14 @@ namespace Projeto_LPRC5
             if (verificaDadosObrigatorios() == true)
             {
                 //Atualizando os dados do objeto estado.
-                //padrao.setNome(txtNome.Text);
+                pJuridica.setPessoaNomeRegistro(txtNomeRegistro.Text);
+                pJuridica.setPessoaNomeSocial(txtNomeSocial.Text);
+                pJuridica.setPessoaEmail(txtEmail.Text);
+                pJuridica.setPJuridicaInscEstadual(txtInscEstadual.Text);
+                pJuridica.setPJuridicaInscMunicipal(txtInscMunicipal.Text);
+                pJuridica.setPJuridicaCNPJ(txtCNPJ.Text);
+                //tratar a Foto
+                pJuridica.setPessoaFoto("");
 
                 if (pJuridica.getPessoaID() == 0)
                 {

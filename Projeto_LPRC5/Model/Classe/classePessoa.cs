@@ -72,10 +72,10 @@ namespace Projeto_LPRC5
             switch (operacao)
             {
                 case "Ins":
-                    //pessoa.inserePessoaBase();
+                    pessoa.inserePessoaBase(pessoaNomeRegistro, pessoaNomeSocial, pessoaEmail, pessoaFoto);
                     break;
                 case "Upt":
-                    //pessoa.alteraPessoaBase();
+                    pessoa.alteraPessoaBase(pessoaID, pessoaNomeRegistro, pessoaNomeSocial, pessoaEmail, pessoaFoto);
                     break;
                 case "Del":
                     pessoa.excluiPessoaBase(pessoaID);
