@@ -1,5 +1,5 @@
 ﻿namespace Projeto_LPRC5 {
-	partial class FrmVeiculo {
+	partial class FrmVeiculoPessoa {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -23,7 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVeiculo));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVeiculoPessoa));
 			this.barManutencao = new System.Windows.Forms.ToolStrip();
 			this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
 			this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
@@ -32,10 +32,14 @@
 			this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
 			this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
 			this.grdDadosVec = new System.Windows.Forms.DataGridView();
-			this.txtMarca = new System.Windows.Forms.TextBox();
-			this.lblVeiculo = new System.Windows.Forms.Label();
+			this.txtPlaca = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtModelo = new System.Windows.Forms.TextBox();
+			this.txtMorador = new System.Windows.Forms.TextBox();
+			this.txtCor = new System.Windows.Forms.TextBox();
+			this.txtVeiculo = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.barManutencao.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.grdDadosVec)).BeginInit();
 			this.SuspendLayout();
@@ -136,54 +140,88 @@
 			this.grdDadosVec.TabIndex = 1;
 			this.grdDadosVec.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
 			// 
-			// txtMarca
+			// txtPlaca
 			// 
-			this.txtMarca.Location = new System.Drawing.Point(262, 67);
-			this.txtMarca.Name = "txtMarca";
-			this.txtMarca.Size = new System.Drawing.Size(234, 26);
-			this.txtMarca.TabIndex = 3;
-			// 
-			// lblVeiculo
-			// 
-			this.lblVeiculo.AutoSize = true;
-			this.lblVeiculo.Location = new System.Drawing.Point(258, 42);
-			this.lblVeiculo.Name = "lblVeiculo";
-			this.lblVeiculo.Size = new System.Drawing.Size(49, 19);
-			this.lblVeiculo.TabIndex = 4;
-			this.lblVeiculo.Text = "Marca";
-			this.lblVeiculo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.txtPlaca.Location = new System.Drawing.Point(257, 64);
+			this.txtPlaca.Name = "txtPlaca";
+			this.txtPlaca.Size = new System.Drawing.Size(187, 26);
+			this.txtPlaca.TabIndex = 2;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(258, 133);
+			this.label1.Location = new System.Drawing.Point(258, 42);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(57, 19);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "Modelo";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.label1.Size = new System.Drawing.Size(42, 19);
+			this.label1.TabIndex = 3;
+			this.label1.Text = "Placa";
 			// 
-			// txtModelo
+			// txtMorador
 			// 
-			this.txtModelo.Location = new System.Drawing.Point(262, 155);
-			this.txtModelo.Name = "txtModelo";
-			this.txtModelo.Size = new System.Drawing.Size(234, 26);
-			this.txtModelo.TabIndex = 6;
+			this.txtMorador.Location = new System.Drawing.Point(256, 137);
+			this.txtMorador.Name = "txtMorador";
+			this.txtMorador.Size = new System.Drawing.Size(187, 26);
+			this.txtMorador.TabIndex = 4;
 			// 
-			// FrmVeiculo
+			// txtCor
+			// 
+			this.txtCor.Location = new System.Drawing.Point(257, 216);
+			this.txtCor.Name = "txtCor";
+			this.txtCor.Size = new System.Drawing.Size(186, 26);
+			this.txtCor.TabIndex = 5;
+			// 
+			// txtVeiculo
+			// 
+			this.txtVeiculo.Location = new System.Drawing.Point(257, 295);
+			this.txtVeiculo.Name = "txtVeiculo";
+			this.txtVeiculo.Size = new System.Drawing.Size(186, 26);
+			this.txtVeiculo.TabIndex = 7;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(257, 115);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(64, 19);
+			this.label2.TabIndex = 8;
+			this.label2.Text = "Morador";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(258, 194);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(33, 19);
+			this.label3.TabIndex = 9;
+			this.label3.Text = "Cor";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(258, 273);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(53, 19);
+			this.label4.TabIndex = 10;
+			this.label4.Text = "Veiculo";
+			// 
+			// FrmVeiculoPessoa
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(615, 333);
-			this.Controls.Add(this.txtModelo);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.txtVeiculo);
+			this.Controls.Add(this.txtCor);
+			this.Controls.Add(this.txtMorador);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.lblVeiculo);
-			this.Controls.Add(this.txtMarca);
+			this.Controls.Add(this.txtPlaca);
 			this.Controls.Add(this.grdDadosVec);
 			this.Controls.Add(this.barManutencao);
 			this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "FrmVeiculo";
+			this.Name = "FrmVeiculoPessoa";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Manutenção Veículo";
 			this.Load += new System.EventHandler(this.frmCid_Load);
@@ -205,9 +243,13 @@
 		private System.Windows.Forms.ToolStripButton barbtnCancelar;
 		private System.Windows.Forms.ToolStripButton barbtnFechar;
 		private System.Windows.Forms.DataGridView grdDadosVec;
-		private System.Windows.Forms.TextBox txtMarca;
-		private System.Windows.Forms.Label lblVeiculo;
+		private System.Windows.Forms.TextBox txtPlaca;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtModelo;
+		private System.Windows.Forms.TextBox txtMorador;
+		private System.Windows.Forms.TextBox txtCor;
+		private System.Windows.Forms.TextBox txtVeiculo;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label4;
 	}
 }

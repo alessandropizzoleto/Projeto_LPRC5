@@ -1,14 +1,11 @@
 ﻿//****************************************************************************************
 //**Criado por: Isabelle Caroline de Carvalho Costa, João Pedro Carpanezi dos Santos, Murilo Azevedo Jacon
-//**Data de Criação: 02/05/2021
+//**Data de Criação: 21/07/2021
 //**Instruções:
 //
 //
-//****************************************************************************************
-//****** Atualizações: Atualizado para novo modelo do banco
-//*** Data: 21/07/2021
-//*** Responsável: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
-//****************************************************************************************
+
+using Projeto_LPRC5.Model.Classe;
 using Projeto_LPRC5.Model.Conexão;
 using System;
 using System.Collections.Generic;
@@ -21,16 +18,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projeto_LPRC5 {
-	public partial class FrmVeiculo : Form {
-		public FrmVeiculo() {
+	public partial class FrmVeiculoPessoa : Form {
+		public FrmVeiculoPessoa() {
 			InitializeComponent();
 		}
 
-		private ClasseVeiculo veiculo = new ClasseVeiculo();
-		private DbVeiculo db = new DbVeiculo();
+		private ClasseVeiculoPessoa veiculoPessoa = new ClasseVeiculoPessoa();
+		private DbVeiculoPessoa db = new DbVeiculoPessoa();
 
 		public void AtualizaDadosGrid() {
-			grdDadosVec.DataSource = db.SelectVeiculoDBaseGrid();
+			grdDadosVec.DataSource = db.SelectVeiculoPessoaDBaseGrid();
 		}
 
 		private void HabilitaBotoesMenu(bool hablitar) {
@@ -43,20 +40,24 @@ namespace Projeto_LPRC5 {
 		}
 
 		private void HabilitaCamposDados(bool habilitar) {
-			txtMarca.Enabled = habilitar;
-			txtModelo.Enabled = habilitar;
+			txtPlaca.Enabled = habilitar;
+			txtMorador.Enabled = habilitar;
+			txtCor.Enabled = habilitar;
+			txtVeiculo.Enabled = habilitar;
 
 			grdDadosVec.Enabled = !habilitar;
 		}
 
 		private void LimpaCamposDados() {
-			txtMarca.Text = "";
-			txtModelo.Text = "";
-			veiculo = new ClasseVeiculo();
+			txtPlaca.Text = "";
+			txtMorador.Text = "";
+			txtCor.Text = "";
+			txtVeiculo.Text = "";
+			veiculoPessoa = new ClasseVeiculoPessoa();
 		}
 
 		private bool VerificaDadosObrigatorios() {
-			if (txtModelo.Text == "" || txtMarca.Text == "") {
+			if (txtPlaca.Text == "" || txtMorador.Text == "" || txtCor.Text == "" || txtVeiculo.Text == "") {
 				return false;
 			}
 
@@ -81,11 +82,11 @@ namespace Projeto_LPRC5 {
 		}
 
 		private void barbtnExcluir_Click(object sender, EventArgs e) {
-			if (veiculo.ID != 0) {
+			if (veiculoPessoa.ID != 0) {
 				DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 				if (retorno == DialogResult.Yes) {
-					db.ExcluiVeiculoBase(veiculo);
+					db.ExcluiVeiculoPessoaBase(veiculoPessoa);
 
 					LimpaCamposDados();
 					AtualizaDadosGrid();
@@ -97,17 +98,19 @@ namespace Projeto_LPRC5 {
 
 		private void barbtnSalvar_Click(object sender, EventArgs e) {
 			if (VerificaDadosObrigatorios()) {
-				int id = veiculo.ID;
-				veiculo = new ClasseVeiculo {
+				int id = veiculoPessoa.ID;
+				veiculoPessoa = new ClasseVeiculoPessoa {
 					ID = id,
-					MarcaID = Convert.ToInt32(txtMarca.Text),
-					ModeloID = Convert.ToInt32(txtModelo.Text)
+					Placa = txtPlaca.Text,
+					MoradorID = Convert.ToInt32(txtMorador.Text),
+					CorID = Convert.ToInt32(txtCor.Text),
+					VeiculoID = Convert.ToInt32(txtVeiculo.Text)
 				};
 
 				if (id == 0) {
-					db.InsereVeiculoBase(veiculo);
+					db.InsereVeiculoPessoaBase(veiculoPessoa);
 				} else {
-					db.AlteraVeiculoBase(veiculo);
+					db.AlteraVeiculoPessoaBase(veiculoPessoa);
 				}
 
 
@@ -136,10 +139,12 @@ namespace Projeto_LPRC5 {
 
 		private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e) {
 			int id = Convert.ToInt32(grdDadosVec.CurrentRow.Cells[0].Value);
-			veiculo = db.SelectVeiculoDBase(new ClasseVeiculo { ID = id });
+			veiculoPessoa = db.SelectVeiculoPessoaDBase(new ClasseVeiculoPessoa { ID = id });
 
-			txtMarca.Text = veiculo.MarcaID.ToString();
-			txtModelo.Text = veiculo.ModeloID.ToString();
+			txtPlaca.Text = veiculoPessoa.Placa;
+			txtMorador.Text = veiculoPessoa.MoradorID.ToString();
+			txtCor.Text = veiculoPessoa.CorID.ToString();
+			txtVeiculo.Text = veiculoPessoa.VeiculoID.ToString();
 		}
 	}
 }

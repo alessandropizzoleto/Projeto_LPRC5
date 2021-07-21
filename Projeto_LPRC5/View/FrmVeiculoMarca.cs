@@ -1,22 +1,11 @@
 ﻿//****************************************************************************************
-//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
-//**Criado por: Roberto Marcheti Neto
-//**Data de Criação: 28/04/2021
-//**Instruções: Criação do formulário frmVeiculoModelo
-// 
-//
-//****** Atualizações: Tanto código quanto form estão OK, não sendo necessário fazer alterações
-//*** Data: 03/05/2021
-//*** Responsável: Giovanni Marques
+//**Criado por: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
+//**Data de Criação: 21/07/2021
+//**Instruções:
 
-//****** Atualizações: Alteração e correção do código do formulário frmVeiculoModelo
-//*** Data: 04/05/2021
-//*** Responsável: Roberto Marcheti Neto
-//****************************************************************************************
-//****** Atualizações: Atualizado para novo modelo do banco
-//*** Data: 21/07/2021
-//*** Responsável: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
-//****************************************************************************************
+
+using Projeto_LPRC5.Model.Classe;
+using Projeto_LPRC5.Model.Conexão;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,15 +18,15 @@ using System.Windows.Forms;
 
 namespace Projeto_LPRC5
 {
-    public partial class frmVeiculoModelo : Form
+    public partial class FrmVeiculoMarca : Form
     {
-        public frmVeiculoModelo()
+        public FrmVeiculoMarca()
         {
             InitializeComponent();
         }
 
-        DbVeiculoModelo db_veiculoMode = new DbVeiculoModelo();
-        ClasseVeiculoModelo veiculoModelo = new ClasseVeiculoModelo();
+        DbVeiculoMarca db = new DbVeiculoMarca();
+        ClasseVeiculoMarca veiculoMarca = new ClasseVeiculoMarca();
 
         private void formataGrid()
         {
@@ -54,14 +43,14 @@ namespace Projeto_LPRC5
 
         public void atualizaDadosGrid()
         {
-            grdDadosVeiculoModelo.DataSource = db_veiculoMode.SelectVeiculoModeloBase();
+            grdDadosVeiculoModelo.DataSource = db.SelectVeiculoMarcaDBaseGrid();
         }
 
         private void atualizaDadosControles()
         {
-            veiculoModelo = db_veiculoMode.RetornaDadosObjeto(veiculoModelo);
+            veiculoMarca = db.SelectVeiculoMarcaDBase(veiculoMarca);
 
-            txtVeiculoModelo.Text = veiculoModelo.Nome;
+            txtVeiculoMarca.Text = veiculoMarca.Nome;
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -76,22 +65,22 @@ namespace Projeto_LPRC5
 
         private void habilitaCamposDados(bool habilitar)
         {
-            txtVeiculoModelo.Enabled = habilitar;
+            txtVeiculoMarca.Enabled = habilitar;
             grdDadosVeiculoModelo.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
-            txtVeiculoModelo.Text = "";
-            veiculoModelo.ID = -1;
-            veiculoModelo.Nome = "";
+            txtVeiculoMarca.Text = "";
+            veiculoMarca.ID = -1;
+            veiculoMarca.Nome = "";
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            if (txtVeiculoModelo.Text.Trim().Length < 2)
+            if (txtVeiculoMarca.Text.Trim().Length < 2)
             {
                resultado = false;
             }
@@ -115,13 +104,13 @@ namespace Projeto_LPRC5
 
         private void excluiVeiculoModelo()
         {
-            if (veiculoModelo.ID != -1)
+            if (veiculoMarca.ID != -1)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (retorno == DialogResult.Yes)
                 {
-                    db_veiculoMode.ExcluiVeiculoModelo(veiculoModelo);
+                    db.ExcluiVeiculoMarcaBase(veiculoMarca);
 
                     limpaCamposDados();
                     atualizaDadosGrid();
@@ -137,16 +126,16 @@ namespace Projeto_LPRC5
         {
             if (verificaDadosObrigatorios() == true)
             {
-                veiculoModelo.Nome = txtVeiculoModelo.Text;
-                if (veiculoModelo.ID == -1)
+                veiculoMarca.Nome = txtVeiculoMarca.Text;
+                if (veiculoMarca.ID == -1)
                 {
                     //Insere os dados
-                    db_veiculoMode.InsereVeiculoModelo(veiculoModelo);
+                    db.InsereVeiculoMarcaBase(veiculoMarca);
                 }
                 else
                 {
                     //Altera os dados
-                    db_veiculoMode.AlteraVeiculoModelo(veiculoModelo);
+                    db.AlteraVeiculoMarcaBase(veiculoMarca);
                 }
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -214,10 +203,8 @@ namespace Projeto_LPRC5
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            veiculoModelo.ID = Convert.ToInt16(grdDadosVeiculoModelo.Rows[grdDadosVeiculoModelo.CurrentRow.Index].Cells[0].Value.ToString());
+            veiculoMarca.ID = Convert.ToInt16(grdDadosVeiculoModelo.Rows[grdDadosVeiculoModelo.CurrentRow.Index].Cells[0].Value.ToString());
             atualizaDadosControles();
         }
-
-       
     }
 }

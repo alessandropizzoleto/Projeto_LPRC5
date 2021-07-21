@@ -1,29 +1,34 @@
-﻿namespace Projeto_LPRC5 {
-	partial class FrmVeiculo {
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+﻿namespace Projeto_LPRC5
+{
+    partial class FrmVeiculoMarca
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing) {
-			if (disposing && (components != null)) {
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent() {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVeiculo));
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVeiculoMarca));
 			this.barManutencao = new System.Windows.Forms.ToolStrip();
 			this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
 			this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
@@ -31,17 +36,16 @@
 			this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
 			this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
 			this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
-			this.grdDadosVec = new System.Windows.Forms.DataGridView();
-			this.txtMarca = new System.Windows.Forms.TextBox();
-			this.lblVeiculo = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.txtModelo = new System.Windows.Forms.TextBox();
+			this.grdDadosVeiculoModelo = new System.Windows.Forms.DataGridView();
+			this.txtVeiculoMarca = new System.Windows.Forms.TextBox();
+			this.lblVeiculoMarca = new System.Windows.Forms.Label();
 			this.barManutencao.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.grdDadosVec)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdDadosVeiculoModelo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// barManutencao
 			// 
+			this.barManutencao.Dock = System.Windows.Forms.DockStyle.None;
 			this.barManutencao.ImageScalingSize = new System.Drawing.Size(32, 32);
 			this.barManutencao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barbtnNovo,
@@ -52,7 +56,7 @@
             this.barbtnFechar});
 			this.barManutencao.Location = new System.Drawing.Point(0, 0);
 			this.barManutencao.Name = "barManutencao";
-			this.barManutencao.Size = new System.Drawing.Size(615, 39);
+			this.barManutencao.Size = new System.Drawing.Size(228, 39);
 			this.barManutencao.TabIndex = 0;
 			this.barManutencao.Text = "toolStrip1";
 			// 
@@ -64,7 +68,7 @@
 			this.barbtnNovo.Name = "barbtnNovo";
 			this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
 			this.barbtnNovo.Text = "Novo";
-			this.barbtnNovo.ToolTipText = "Adicionar Estado";
+			this.barbtnNovo.ToolTipText = "Adicionar Cidade";
 			this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click);
 			// 
 			// barbtnEditar
@@ -75,7 +79,7 @@
 			this.barbtnEditar.Name = "barbtnEditar";
 			this.barbtnEditar.Size = new System.Drawing.Size(36, 36);
 			this.barbtnEditar.Text = "Editar";
-			this.barbtnEditar.ToolTipText = "Editar Estado";
+			this.barbtnEditar.ToolTipText = "Editar Cidade";
 			this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
 			// 
 			// barbtnExcluir
@@ -86,7 +90,7 @@
 			this.barbtnExcluir.Name = "barbtnExcluir";
 			this.barbtnExcluir.Size = new System.Drawing.Size(36, 36);
 			this.barbtnExcluir.Text = "Excluir";
-			this.barbtnExcluir.ToolTipText = "Excluir Estado";
+			this.barbtnExcluir.ToolTipText = "Excluir Cidade";
 			this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
 			// 
 			// barbtnSalvar
@@ -97,7 +101,7 @@
 			this.barbtnSalvar.Name = "barbtnSalvar";
 			this.barbtnSalvar.Size = new System.Drawing.Size(36, 36);
 			this.barbtnSalvar.Text = "Salvar";
-			this.barbtnSalvar.ToolTipText = "Salvar novo estado";
+			this.barbtnSalvar.ToolTipText = "Salvar nova Cidade";
 			this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
 			// 
 			// barbtnCancelar
@@ -119,95 +123,73 @@
 			this.barbtnFechar.Name = "barbtnFechar";
 			this.barbtnFechar.Size = new System.Drawing.Size(36, 36);
 			this.barbtnFechar.Text = "Fechar";
-			this.barbtnFechar.ToolTipText = "Fechar Manutenção de Estado";
+			this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
 			this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
 			// 
-			// grdDadosVec
+			// grdDadosVeiculoModelo
 			// 
-			this.grdDadosVec.AllowUserToAddRows = false;
-			this.grdDadosVec.AllowUserToDeleteRows = false;
-			this.grdDadosVec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.grdDadosVec.Location = new System.Drawing.Point(12, 42);
-			this.grdDadosVec.Name = "grdDadosVec";
-			this.grdDadosVec.ReadOnly = true;
-			this.grdDadosVec.RowHeadersWidth = 51;
-			this.grdDadosVec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.grdDadosVec.Size = new System.Drawing.Size(240, 282);
-			this.grdDadosVec.TabIndex = 1;
-			this.grdDadosVec.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
+			this.grdDadosVeiculoModelo.AllowUserToAddRows = false;
+			this.grdDadosVeiculoModelo.AllowUserToDeleteRows = false;
+			this.grdDadosVeiculoModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.grdDadosVeiculoModelo.Location = new System.Drawing.Point(12, 43);
+			this.grdDadosVeiculoModelo.Name = "grdDadosVeiculoModelo";
+			this.grdDadosVeiculoModelo.ReadOnly = true;
+			this.grdDadosVeiculoModelo.RowHeadersWidth = 51;
+			this.grdDadosVeiculoModelo.Size = new System.Drawing.Size(240, 320);
+			this.grdDadosVeiculoModelo.TabIndex = 1;
+			this.grdDadosVeiculoModelo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
 			// 
-			// txtMarca
+			// txtVeiculoMarca
 			// 
-			this.txtMarca.Location = new System.Drawing.Point(262, 67);
-			this.txtMarca.Name = "txtMarca";
-			this.txtMarca.Size = new System.Drawing.Size(234, 26);
-			this.txtMarca.TabIndex = 3;
+			this.txtVeiculoMarca.Enabled = false;
+			this.txtVeiculoMarca.Location = new System.Drawing.Point(266, 68);
+			this.txtVeiculoMarca.Name = "txtVeiculoMarca";
+			this.txtVeiculoMarca.Size = new System.Drawing.Size(247, 26);
+			this.txtVeiculoMarca.TabIndex = 3;
 			// 
-			// lblVeiculo
+			// lblVeiculoMarca
 			// 
-			this.lblVeiculo.AutoSize = true;
-			this.lblVeiculo.Location = new System.Drawing.Point(258, 42);
-			this.lblVeiculo.Name = "lblVeiculo";
-			this.lblVeiculo.Size = new System.Drawing.Size(49, 19);
-			this.lblVeiculo.TabIndex = 4;
-			this.lblVeiculo.Text = "Marca";
-			this.lblVeiculo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.lblVeiculoMarca.AutoSize = true;
+			this.lblVeiculoMarca.Location = new System.Drawing.Point(262, 43);
+			this.lblVeiculoMarca.Name = "lblVeiculoMarca";
+			this.lblVeiculoMarca.Size = new System.Drawing.Size(49, 19);
+			this.lblVeiculoMarca.TabIndex = 4;
+			this.lblVeiculoMarca.Text = "Marca";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(258, 133);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(57, 19);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "Modelo";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			// 
-			// txtModelo
-			// 
-			this.txtModelo.Location = new System.Drawing.Point(262, 155);
-			this.txtModelo.Name = "txtModelo";
-			this.txtModelo.Size = new System.Drawing.Size(234, 26);
-			this.txtModelo.TabIndex = 6;
-			// 
-			// FrmVeiculo
+			// FrmVeiculoMarca
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(615, 333);
-			this.Controls.Add(this.txtModelo);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.lblVeiculo);
-			this.Controls.Add(this.txtMarca);
-			this.Controls.Add(this.grdDadosVec);
+			this.ClientSize = new System.Drawing.Size(528, 374);
+			this.Controls.Add(this.lblVeiculoMarca);
+			this.Controls.Add(this.txtVeiculoMarca);
+			this.Controls.Add(this.grdDadosVeiculoModelo);
 			this.Controls.Add(this.barManutencao);
 			this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "FrmVeiculo";
+			this.Name = "FrmVeiculoMarca";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Manutenção Veículo";
-			this.Load += new System.EventHandler(this.frmCid_Load);
+			this.Text = "Manutenção do Modelo de Veículo";
+			this.Load += new System.EventHandler(this.frmVeiculoModelo_Load);
 			this.barManutencao.ResumeLayout(false);
 			this.barManutencao.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.grdDadosVec)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdDadosVeiculoModelo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-		}
+        }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.ToolStrip barManutencao;
-		private System.Windows.Forms.ToolStripButton barbtnNovo;
-		private System.Windows.Forms.ToolStripButton barbtnEditar;
-		private System.Windows.Forms.ToolStripButton barbtnExcluir;
-		private System.Windows.Forms.ToolStripButton barbtnSalvar;
-		private System.Windows.Forms.ToolStripButton barbtnCancelar;
-		private System.Windows.Forms.ToolStripButton barbtnFechar;
-		private System.Windows.Forms.DataGridView grdDadosVec;
-		private System.Windows.Forms.TextBox txtMarca;
-		private System.Windows.Forms.Label lblVeiculo;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtModelo;
-	}
+        private System.Windows.Forms.ToolStrip barManutencao;
+        private System.Windows.Forms.ToolStripButton barbtnNovo;
+        private System.Windows.Forms.ToolStripButton barbtnEditar;
+        private System.Windows.Forms.ToolStripButton barbtnExcluir;
+        private System.Windows.Forms.ToolStripButton barbtnSalvar;
+        private System.Windows.Forms.ToolStripButton barbtnCancelar;
+        private System.Windows.Forms.ToolStripButton barbtnFechar;
+        private System.Windows.Forms.DataGridView grdDadosVeiculoModelo;
+        private System.Windows.Forms.TextBox txtVeiculoMarca;
+        private System.Windows.Forms.Label lblVeiculoMarca;
+    }
 }

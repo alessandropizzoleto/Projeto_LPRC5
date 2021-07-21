@@ -11,6 +11,10 @@
 //*** Data:01/05/2021
 //*** Responsável:Amanda Ferrari, André Costa, Giovanna Valim
 //****************************************************************************************
+//****** Atualizações: Atualizado para novo modelo do banco
+//*** Data: 21/07/2021
+//*** Responsável: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
+//****************************************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -20,39 +24,9 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class classeCor
+    class ClasseCor
     {
-        private int corId;
-        private string corNome;
-
-        public classeCor() { 
-        
-        
-        }
-        public classeCor(int id, string nome)
-        {
-            corId = id;
-            corNome = nome;
-        }
-
-        public void setCorId(int idCor)
-        {
-            corId = idCor;
-        }
-
-        public int getCorId()
-        {
-            return corId;
-        }
-
-        public void setCorNome(string NomeCor)
-        {
-            corNome = NomeCor;
-        }
-
-        public string getCorNome()
-        {
-            return corNome;
-        }
+        public int ID { get; set; }
+        public string Nome { get; set; }
     }
 }

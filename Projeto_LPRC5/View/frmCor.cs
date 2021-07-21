@@ -20,6 +20,10 @@
 //*** Data: 06/06/2021
 //*** Responsável: Amanda Ferrari, André Costa, Giovanna Valim
 //****************************************************************************************
+//****** Atualizações: Atualizado para novo modelo do banco
+//*** Data: 21/07/2021
+//*** Responsável: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
+//****************************************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -39,8 +43,8 @@ namespace Projeto_LPRC5
         {
             InitializeComponent();
         }
-        dbCor db_Cor = new dbCor();
-        classeCor tinta = new classeCor();
+        DbCor db_Cor = new DbCor();
+        ClasseCor tinta = new ClasseCor();
         bool comando;
 
         private void formataGrid()
@@ -58,13 +62,13 @@ namespace Projeto_LPRC5
 
         public void atualizaDadosGrid()
         {
-            grdDadosCor.DataSource = db_Cor.selectCorDBaseGrid();
+            grdDadosCor.DataSource = db_Cor.SelectCorDBaseGrid();
         }
  
         private void atualizaDadosControles()
         {
-            tinta = db_Cor.selectCorDBase(tinta);
-            txtNomeCor.Text = tinta.getCorNome();
+            tinta = db_Cor.SelectCorDBase(tinta);
+            txtNomeCor.Text = tinta.Nome;
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -86,8 +90,8 @@ namespace Projeto_LPRC5
         private void limpaCamposDados()
         {
             txtNomeCor.Text = "";
-            tinta.setCorNome("");
-            tinta.setCorId(-1);
+            tinta.Nome = "";
+            tinta.ID = -1;
         }
 
         private bool verificaDadosObrigatorios()
@@ -132,13 +136,13 @@ namespace Projeto_LPRC5
         {
             if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnExcluir.Tag)) == true)
             {
-                if (tinta.getCorId() != 0)
+                if (tinta.ID != 0)
                 {
                     DialogResult retorno = MessageBox.Show("Deseja excluir os dados informados? ", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (retorno == DialogResult.Yes)
                     {
-                        db_Cor.excluiCorBase(tinta);
+                        db_Cor.ExcluiCorBase(tinta);
 
                         limpaCamposDados();
                         atualizaDadosGrid();
@@ -161,13 +165,13 @@ namespace Projeto_LPRC5
             {
                 if (comando == true)
                 {
-                    tinta.setCorNome(txtNomeCor.Text);
-                    db_Cor.insereCorBase(tinta);
+                    tinta.Nome = txtNomeCor.Text;
+                    db_Cor.InsereCorBase(tinta);
                 }
                 else if  (comando == false)
                 {
-                    tinta.setCorNome(txtNomeCor.Text);
-                    db_Cor.alteraCorBase(tinta);
+                    tinta.Nome = txtNomeCor.Text;
+                    db_Cor.AlteraCorBase(tinta);
                 }
 
                 habilitaBotoesMenu(true);
@@ -243,7 +247,7 @@ namespace Projeto_LPRC5
 
         private void grdDadosCid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tinta.setCorId(Convert.ToInt16(grdDadosCor.Rows[grdDadosCor.CurrentRow.Index].Cells[0].Value.ToString()));
+            tinta.ID = Convert.ToInt16(grdDadosCor.Rows[grdDadosCor.CurrentRow.Index].Cells[0].Value.ToString());
             selectCorDBase(tinta);
             atualizaDadosControles();
         }
@@ -252,20 +256,20 @@ namespace Projeto_LPRC5
         {
             
         }
-        private void selectCorDBase(classeCor tinta)
+        private void selectCorDBase(ClasseCor tinta)
         {
-            tinta = db_Cor.selectCorDBase(tinta);
-            txtNomeCor.Text = tinta.getCorNome();
+            tinta = db_Cor.SelectCorDBase(tinta);
+            txtNomeCor.Text = tinta.Nome;
         }
 
         private void selectCorDBase()
         {
-            grdDadosCor.DataSource = db_Cor.selectCorDBaseGrid();
+            grdDadosCor.DataSource = db_Cor.SelectCorDBaseGrid();
         }
 
         private void fmrCor_Load(object sender, EventArgs e)
         {
-            db_Cor.selectCorDBase();
+            db_Cor.SelectCorDBase();
             habilitaBotoesMenu(true);
             habilitaCamposDados(false);
             atualizaDadosGrid();

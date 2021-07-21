@@ -10,6 +10,10 @@
 //*** Data: 03/05/2021
 //*** Responsável: Giovanni Marques
 //****************************************************************************************
+//****** Atualizações: Atualizado para novo modelo do banco
+//*** Data: 21/07/2021
+//*** Responsável: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
+//****************************************************************************************
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,39 +22,9 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class classeVeiculoModelo
+    class ClasseVeiculoModelo
     {
-        private int idVeiculo;
-        private string nomeVeiculo;
-
-        public classeVeiculoModelo(int idVeiculo, string nomeVeiculo)
-        {
-            this.idVeiculo = idVeiculo;
-            this.nomeVeiculo = nomeVeiculo;
-        }
-
-        public classeVeiculoModelo() {
-        
-        }
-
-        public void setVeiculoID(int ID) 
-        {
-            idVeiculo = ID;
-        }
-
-        public int getVeiculoID() {
-            return idVeiculo;
-        }
-
-        public void setnomeVeiculo(string nome)
-        {
-            nomeVeiculo = nome;
-        }
-
-        public string getnomeVeiculo()
-        {
-            return nomeVeiculo;
-        }
-
+        public int ID { get; set; }
+        public string Nome { get; set; }
     }
 }
