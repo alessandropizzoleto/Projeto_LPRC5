@@ -39,16 +39,22 @@ namespace Projeto_LPRC5
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.grdDadosEmpresaPrestadoraServico = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtDescricaoServico = new System.Windows.Forms.TextBox();
-            this.txtDescricaoEndereco = new System.Windows.Forms.TextBox();
-            this.txtDescricaoEmpresa = new System.Windows.Forms.TextBox();
+            this.Txt_Servico = new System.Windows.Forms.TextBox();
+            this.Txt_Endereco = new System.Windows.Forms.TextBox();
+            this.Txt_Empresa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDescricaoTelefone = new System.Windows.Forms.TextBox();
-            this.txtDescricaoDescricao = new System.Windows.Forms.RichTextBox();
+            this.Txt_Telefone = new System.Windows.Forms.TextBox();
+            this.Txt_Descricao = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Txt_Cnpj = new System.Windows.Forms.TextBox();
+            this.Txt_InscEstadual = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Txt_InscMunicipal = new System.Windows.Forms.TextBox();
             this.barraManutencaoMarca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosEmpresaPrestadoraServico)).BeginInit();
             this.SuspendLayout();
@@ -146,31 +152,31 @@ namespace Projeto_LPRC5
             this.textBox1.Size = new System.Drawing.Size(229, 20);
             this.textBox1.TabIndex = 10;
             // 
-            // txtDescricaoServico
+            // Txt_Servico
             // 
-            this.txtDescricaoServico.Location = new System.Drawing.Point(517, 146);
-            this.txtDescricaoServico.Name = "txtDescricaoServico";
-            this.txtDescricaoServico.Size = new System.Drawing.Size(153, 20);
-            this.txtDescricaoServico.TabIndex = 12;
+            this.Txt_Servico.Location = new System.Drawing.Point(517, 179);
+            this.Txt_Servico.Name = "Txt_Servico";
+            this.Txt_Servico.Size = new System.Drawing.Size(153, 20);
+            this.Txt_Servico.TabIndex = 12;
             // 
-            // txtDescricaoEndereco
+            // Txt_Endereco
             // 
-            this.txtDescricaoEndereco.Location = new System.Drawing.Point(314, 237);
-            this.txtDescricaoEndereco.Name = "txtDescricaoEndereco";
-            this.txtDescricaoEndereco.Size = new System.Drawing.Size(356, 20);
-            this.txtDescricaoEndereco.TabIndex = 14;
+            this.Txt_Endereco.Location = new System.Drawing.Point(314, 237);
+            this.Txt_Endereco.Name = "Txt_Endereco";
+            this.Txt_Endereco.Size = new System.Drawing.Size(356, 20);
+            this.Txt_Endereco.TabIndex = 14;
             // 
-            // txtDescricaoEmpresa
+            // Txt_Empresa
             // 
-            this.txtDescricaoEmpresa.Location = new System.Drawing.Point(399, 77);
-            this.txtDescricaoEmpresa.Name = "txtDescricaoEmpresa";
-            this.txtDescricaoEmpresa.Size = new System.Drawing.Size(182, 20);
-            this.txtDescricaoEmpresa.TabIndex = 16;
+            this.Txt_Empresa.Location = new System.Drawing.Point(517, 77);
+            this.Txt_Empresa.Name = "Txt_Empresa";
+            this.Txt_Empresa.Size = new System.Drawing.Size(153, 20);
+            this.Txt_Empresa.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(468, 58);
+            this.label1.Location = new System.Drawing.Point(514, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 17;
@@ -179,7 +185,7 @@ namespace Projeto_LPRC5
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(377, 130);
+            this.label2.Location = new System.Drawing.Point(309, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 18;
@@ -188,7 +194,7 @@ namespace Projeto_LPRC5
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(560, 130);
+            this.label3.Location = new System.Drawing.Point(514, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 19;
@@ -197,7 +203,7 @@ namespace Projeto_LPRC5
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(470, 221);
+            this.label4.Location = new System.Drawing.Point(311, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 20;
@@ -212,36 +218,90 @@ namespace Projeto_LPRC5
             this.label5.TabIndex = 22;
             this.label5.Text = "Descrição";
             // 
-            // txtDescricaoTelefone
+            // Txt_Telefone
             // 
-            this.txtDescricaoTelefone.Location = new System.Drawing.Point(314, 146);
-            this.txtDescricaoTelefone.Name = "txtDescricaoTelefone";
-            this.txtDescricaoTelefone.Size = new System.Drawing.Size(155, 20);
-            this.txtDescricaoTelefone.TabIndex = 23;
+            this.Txt_Telefone.Location = new System.Drawing.Point(312, 179);
+            this.Txt_Telefone.Name = "Txt_Telefone";
+            this.Txt_Telefone.Size = new System.Drawing.Size(155, 20);
+            this.Txt_Telefone.TabIndex = 23;
             // 
-            // txtDescricaoDescricao
+            // Txt_Descricao
             // 
-            this.txtDescricaoDescricao.Location = new System.Drawing.Point(314, 337);
-            this.txtDescricaoDescricao.Name = "txtDescricaoDescricao";
-            this.txtDescricaoDescricao.Size = new System.Drawing.Size(356, 96);
-            this.txtDescricaoDescricao.TabIndex = 24;
-            this.txtDescricaoDescricao.Text = "";
+            this.Txt_Descricao.Location = new System.Drawing.Point(314, 337);
+            this.Txt_Descricao.Name = "Txt_Descricao";
+            this.Txt_Descricao.Size = new System.Drawing.Size(356, 96);
+            this.Txt_Descricao.TabIndex = 24;
+            this.Txt_Descricao.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(311, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "CNPJ";
+            // 
+            // Txt_Cnpj
+            // 
+            this.Txt_Cnpj.Location = new System.Drawing.Point(314, 77);
+            this.Txt_Cnpj.Name = "Txt_Cnpj";
+            this.Txt_Cnpj.Size = new System.Drawing.Size(153, 20);
+            this.Txt_Cnpj.TabIndex = 26;
+            // 
+            // Txt_InscEstadual
+            // 
+            this.Txt_InscEstadual.Location = new System.Drawing.Point(314, 126);
+            this.Txt_InscEstadual.Name = "Txt_InscEstadual";
+            this.Txt_InscEstadual.Size = new System.Drawing.Size(153, 20);
+            this.Txt_InscEstadual.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(311, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Inscrição Estadual";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(514, 110);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Inscrição Municipal";
+            // 
+            // Txt_InscMunicipal
+            // 
+            this.Txt_InscMunicipal.Location = new System.Drawing.Point(517, 126);
+            this.Txt_InscMunicipal.Name = "Txt_InscMunicipal";
+            this.Txt_InscMunicipal.Size = new System.Drawing.Size(153, 20);
+            this.Txt_InscMunicipal.TabIndex = 30;
             // 
             // frmEmpresaPrestadoraServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 462);
-            this.Controls.Add(this.txtDescricaoDescricao);
-            this.Controls.Add(this.txtDescricaoTelefone);
+            this.Controls.Add(this.Txt_InscMunicipal);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Txt_InscEstadual);
+            this.Controls.Add(this.Txt_Cnpj);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.Txt_Descricao);
+            this.Controls.Add(this.Txt_Telefone);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDescricaoEmpresa);
-            this.Controls.Add(this.txtDescricaoEndereco);
-            this.Controls.Add(this.txtDescricaoServico);
+            this.Controls.Add(this.Txt_Empresa);
+            this.Controls.Add(this.Txt_Endereco);
+            this.Controls.Add(this.Txt_Servico);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.grdDadosEmpresaPrestadoraServico);
             this.Controls.Add(this.barraManutencaoMarca);
@@ -266,15 +326,21 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView grdDadosEmpresaPrestadoraServico;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtDescricaoServico;
-        private System.Windows.Forms.TextBox txtDescricaoEndereco;
-        private System.Windows.Forms.TextBox txtDescricaoEmpresa;
+        private System.Windows.Forms.TextBox Txt_Servico;
+        private System.Windows.Forms.TextBox Txt_Endereco;
+        private System.Windows.Forms.TextBox Txt_Empresa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDescricaoTelefone;
-        private System.Windows.Forms.RichTextBox txtDescricaoDescricao;
+        private System.Windows.Forms.TextBox Txt_Telefone;
+        private System.Windows.Forms.RichTextBox Txt_Descricao;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox Txt_Cnpj;
+        private System.Windows.Forms.TextBox Txt_InscEstadual;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox Txt_InscMunicipal;
     }
 }

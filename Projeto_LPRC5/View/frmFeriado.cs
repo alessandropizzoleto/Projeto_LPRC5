@@ -58,9 +58,9 @@ namespace Projeto_LPRC5
         {
             feriado = db_Feriado.selectFeriadoDBase(feriado);
 
-            txtNome.Text = feriado.getFeriadoNome();
-            txtDia.Text = feriado.getFeriadoDia().ToString();
-            txtMes.Text = feriado.getFeriadoMes().ToString();
+            txtNome.Text = feriado.FeriadoNome;
+            txtDia.Text = feriado.FeriadoDia.ToString();
+            txtMes.Text = feriado.FeriadoMes.ToString();
 
         }
 
@@ -89,7 +89,7 @@ namespace Projeto_LPRC5
             txtMes.Text = "";
            
            
-           feriado.setFeriadoId(-1);
+           feriado.FeriadoId = -1;
         }
 
         private bool verificaDadosObrigatorios()
@@ -127,7 +127,7 @@ namespace Projeto_LPRC5
 
         private void excluiFeriado()
         {
-            if (feriado.getFeriadoId() != 0)
+            if (feriado.FeriadoId != 0)
             {
                 DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -153,17 +153,17 @@ namespace Projeto_LPRC5
                 if (comando == true)
                 {
                     //Insere os dados
-                    feriado.setFeriadoNome(txtNome.Text);
-                    feriado.setFeriadoDia(Convert.ToInt32(txtDia.Text));
-                    feriado.setFeriadoMes(Convert.ToInt32(txtMes.Text));
+                    feriado.FeriadoNome = txtNome.Text;
+                    feriado.FeriadoDia = Convert.ToInt32(txtDia.Text);
+                    feriado.FeriadoMes = Convert.ToInt32(txtMes.Text);
 
                     db_Feriado.insereFeriadoBase(feriado);
                 }
                 else if (comando == false)
                 {
-                    feriado.setFeriadoNome(txtNome.Text);
-                    feriado.setFeriadoDia(Convert.ToInt32(txtDia.Text));
-                    feriado.setFeriadoMes(Convert.ToInt32(txtMes.Text));
+                    feriado.FeriadoNome = txtNome.Text;
+                    feriado.FeriadoDia = Convert.ToInt32(txtDia.Text);
+                    feriado.FeriadoMes = Convert.ToInt32(txtMes.Text);
                     db_Feriado.alteraFeriadoBase(feriado);
                 }
                 habilitaBotoesMenu(true);
@@ -258,7 +258,7 @@ namespace Projeto_LPRC5
 
         private void grdDadosFe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            feriado.setFeriadoId(Convert.ToInt16(grdDadosFe.Rows[grdDadosFe.CurrentRow.Index].Cells[0].Value.ToString()));
+            feriado.FeriadoId = Convert.ToInt16(grdDadosFe.Rows[grdDadosFe.CurrentRow.Index].Cells[0].Value.ToString());
             atualizaDadosControles();
         }
 

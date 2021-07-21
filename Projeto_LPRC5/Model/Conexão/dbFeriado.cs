@@ -27,7 +27,7 @@ namespace Projeto_LPRC5
         
         public void insereFeriadoBase(classeFeriado feriado)
         {
-            string sql = "insert into feriado  (feriadodia, feriadomes, feriadonome)  values ("+feriado.getFeriadoDia()+", "+feriado.getFeriadoMes()+",'"+feriado.getFeriadoNome() + "')";
+            string sql = "insert into feriado  (feriadodia, feriadomes, feriadonome)  values ("+feriado.FeriadoDia+", "+feriado.FeriadoMes+",'"+feriado.FeriadoNome + "')";
 
             retornoferiado = connect.executaSQL(sql.ToString());
         }
@@ -35,21 +35,21 @@ namespace Projeto_LPRC5
         
         public void alteraFeriadoBase(classeFeriado feriado)
         {
-            string sql = "Update feriado set feriadodia ="+feriado.getFeriadoDia()+", feriadomes ="+feriado.getFeriadoMes()+", feriadonome = '"+feriado.getFeriadoNome()+"' where feriadoid = "+feriado.getFeriadoId()+";";
+            string sql = "Update feriado set feriadodia ="+feriado.FeriadoDia+", feriadomes ="+feriado.FeriadoMes+", feriadonome = '"+feriado.FeriadoNome+"' where feriadoid = "+feriado.FeriadoId+";";
             retornoferiado = connect.executaSQL(sql.ToString());
         }
 
         
         public void excluiFeriadoBase(classeFeriado feriado)
         {
-            string sql = "Delete from feriado where feriadoid = "+feriado.getFeriadoId()+";" ;
+            string sql = "Delete from feriado where feriadoid = "+feriado.FeriadoId+";" ;
             retornoferiado = connect.executaSQL(sql.ToString());
         }
 
         
         public MySqlDataAdapter selectFeriadoBase(classeFeriado feriado)
         {
-            string sql = "Select * from feriado where feriadoid = "+feriado.getFeriadoId()+";" ;
+            string sql = "Select * from feriado where feriadoid = "+feriado.FeriadoId+";" ;
             retornoferiado = connect.executaSQL(sql.ToString());
             return connect.retornaSQL(sql.ToString());
         }
@@ -61,15 +61,15 @@ namespace Projeto_LPRC5
             DataSet ds = new DataSet();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            string sql = "SELECT feriadonome, feriadodia, feriadomes FROM feriado where feriadoid =" + feriado.getFeriadoId() + " ;";
+            string sql = "SELECT feriadonome, feriadodia, feriadomes FROM feriado where feriadoid =" + feriado.FeriadoId + " ;";
 
             adapter = connect.retornaSQL(sql.ToString());
             adapter.Fill(ds);
 
-            FeriadoTemp.setFeriadoId(feriado.getFeriadoId());
-            FeriadoTemp.setFeriadoNome(ds.Tables[0].Rows[0][0].ToString());
-            FeriadoTemp.setFeriadoDia(Convert.ToInt32(ds.Tables[0].Rows[0][1].ToString()));
-            FeriadoTemp.setFeriadoMes(Convert.ToInt32(ds.Tables[0].Rows[0][2].ToString()));
+            FeriadoTemp.FeriadoId = feriado.FeriadoId;
+            FeriadoTemp.FeriadoNome = ds.Tables[0].Rows[0][0].ToString();
+            FeriadoTemp.FeriadoDia = Convert.ToInt32(ds.Tables[0].Rows[0][1].ToString());
+            FeriadoTemp.FeriadoMes = Convert.ToInt32(ds.Tables[0].Rows[0][2].ToString());
 
 
 

@@ -4,9 +4,9 @@
 //**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações:Adição das 'empresaPrestadoraTemp'
+//*** Data:21/07
+//*** Responsável:André Sirikaku, Mateus Siste, Rodrigo Bosso
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -65,7 +65,10 @@ namespace Projeto_LPRC5
 
             empresaPrestadoraTemp.EmpresaId = empresaPrestadora.EmpresaId;
             empresaPrestadoraTemp.EmpresaNome = ds.Tables[0].Rows[0][0].ToString();
-
+            empresaPrestadoraTemp.EmpresaTipoServico = ds.Tables[0].Rows[0][1].ToString();
+            empresaPrestadoraTemp.EmpresaTelefone = ds.Tables[0].Rows[0][2].ToString();
+            empresaPrestadoraTemp.EmpresaEndereco = ds.Tables[0].Rows[0][3].ToString();
+            empresaPrestadoraTemp.EmpresaDescricao = ds.Tables[0].Rows[0][4].ToString();
 
             return empresaPrestadoraTemp;
         }

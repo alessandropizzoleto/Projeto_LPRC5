@@ -4,9 +4,9 @@
 //**Instruções:
 //
 //
-//****** Atualizações:
-//*** Data:
-//*** Responsável:
+//****** Atualizações:Herança com PessoaJuridica
+//*** Data:21/07
+//*** Responsável:André Sirikaku, Mateus Siste, Rodrigo Bosso
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_LPRC5
 {
-    class ClasseEmpresaPrestadoraServico
+    class ClasseEmpresaPrestadoraServico : classePessoaJuridica
     {
         //Atributos da Classe
         public int EmpresaId { get; set; }

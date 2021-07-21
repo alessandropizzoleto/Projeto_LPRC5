@@ -26,10 +26,10 @@ namespace Projeto_LPRC5
     class classeFeriado
     {
 
-        private int FeriadoId;
-        private int FeriadoDia;
-        private int FeriadoMes;
-        private string FeriadoNome;
+        public int FeriadoId { get; set; }
+        public int FeriadoDia { get; set; }
+        public int FeriadoMes { get; set; }
+        public string FeriadoNome { get; set; }
 
         public classeFeriado() { 
         
@@ -45,38 +45,6 @@ namespace Projeto_LPRC5
 
         }
 
-        public void setFeriadoId(int IdFeriado)
-        {
-            FeriadoId = IdFeriado;
-        }
-        public int getFeriadoId()
-        {
-            return FeriadoId;
-        }
-        public void setFeriadoDia(int DiaFeriado)
-        {
-            FeriadoDia = DiaFeriado;
-        }
-        public int getFeriadoDia()
-        {
-            return FeriadoDia;
-        }
-        public void setFeriadoMes(int MesFeriado)
-        {
-            FeriadoMes = MesFeriado;
-        }
-        public int getFeriadoMes()
-        {
-            return FeriadoMes;
-        }
-        public void setFeriadoNome(string NomeFeriado)
-        {
-            FeriadoNome = NomeFeriado;
-        }
-        public string getFeriadoNome()
-        {
-            return FeriadoNome;
-        }
     }
 }
 
