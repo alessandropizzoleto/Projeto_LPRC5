@@ -1,5 +1,7 @@
-﻿namespace Projeto_LPRC5 {
-    partial class frmCidade {
+﻿namespace Projeto_LPRC5.View
+{
+    partial class frmPrestador
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,11 +26,9 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCidade));
-            this.grdDadosCid = new System.Windows.Forms.DataGridView();
-            this.lblCidade = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrestador));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNovo = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -34,39 +36,14 @@
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
+            this.txtPJuridicaId = new System.Windows.Forms.TextBox();
+            this.lblPJuridicaId = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.grdVisitantes = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdVisitantes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grdDadosCid
-            // 
-            this.grdDadosCid.AllowUserToAddRows = false;
-            this.grdDadosCid.AllowUserToDeleteRows = false;
-            this.grdDadosCid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCid.Location = new System.Drawing.Point(12, 44);
-            this.grdDadosCid.Name = "grdDadosCid";
-            this.grdDadosCid.ReadOnly = true;
-            this.grdDadosCid.RowHeadersWidth = 51;
-            this.grdDadosCid.Size = new System.Drawing.Size(240, 279);
-            this.grdDadosCid.TabIndex = 1;
-            this.grdDadosCid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
-            this.grdDadosCid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
-            // 
-            // lblCidade
-            // 
-            this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(258, 44);
-            this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(57, 22);
-            this.lblCidade.TabIndex = 3;
-            this.lblCidade.Text = "Nome";
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Location = new System.Drawing.Point(258, 69);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(286, 30);
-            this.txtCidade.TabIndex = 4;
             // 
             // toolStrip1
             // 
@@ -79,10 +56,11 @@
             this.btnSalvar,
             this.btnCancelar,
             this.btnSair});
-            this.toolStrip1.Location = new System.Drawing.Point(-7, -1);
+            this.toolStrip1.Location = new System.Drawing.Point(8, 4);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(229, 39);
-            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(260, 39);
+            this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnNovo
@@ -107,7 +85,6 @@
             this.btnEditar.Tag = "2";
             this.btnEditar.Text = "Editar";
             this.btnEditar.ToolTipText = "Editar Cidade";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -119,7 +96,6 @@
             this.btnExcluir.Tag = "3";
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.ToolTipText = "Excluir Cidade";
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -131,7 +107,6 @@
             this.btnSalvar.Tag = "4";
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.ToolTipText = "Salvar nova Cidade";
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -143,7 +118,6 @@
             this.btnCancelar.Tag = "5";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSair
             // 
@@ -155,36 +129,82 @@
             this.btnSair.Tag = "6";
             this.btnSair.Text = "Fechar";
             this.btnSair.ToolTipText = "Fechar Manutenção de Cidade";
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // frmCidade
+            // txtPJuridicaId
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.txtPJuridicaId.Location = new System.Drawing.Point(255, 77);
+            this.txtPJuridicaId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPJuridicaId.Name = "txtPJuridicaId";
+            this.txtPJuridicaId.Size = new System.Drawing.Size(255, 26);
+            this.txtPJuridicaId.TabIndex = 8;
+            // 
+            // lblPJuridicaId
+            // 
+            this.lblPJuridicaId.AutoSize = true;
+            this.lblPJuridicaId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPJuridicaId.Location = new System.Drawing.Point(249, 45);
+            this.lblPJuridicaId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPJuridicaId.Name = "lblPJuridicaId";
+            this.lblPJuridicaId.Size = new System.Drawing.Size(119, 19);
+            this.lblPJuridicaId.TabIndex = 7;
+            this.lblPJuridicaId.Text = "Pessoa Jurídica Id";
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(255, 152);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(255, 26);
+            this.txtDescricao.TabIndex = 13;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.Location = new System.Drawing.Point(255, 120);
+            this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(70, 19);
+            this.lblDescricao.TabIndex = 12;
+            this.lblDescricao.Text = "Descrição";
+            // 
+            // grdVisitantes
+            // 
+            this.grdVisitantes.AllowUserToAddRows = false;
+            this.grdVisitantes.AllowUserToDeleteRows = false;
+            this.grdVisitantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdVisitantes.Location = new System.Drawing.Point(8, 46);
+            this.grdVisitantes.Name = "grdVisitantes";
+            this.grdVisitantes.ReadOnly = true;
+            this.grdVisitantes.RowHeadersWidth = 51;
+            this.grdVisitantes.Size = new System.Drawing.Size(240, 279);
+            this.grdVisitantes.TabIndex = 14;
+            // 
+            // frmPrestador
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 338);
+            this.ClientSize = new System.Drawing.Size(558, 346);
+            this.Controls.Add(this.grdVisitantes);
+            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.txtCidade);
-            this.Controls.Add(this.lblCidade);
-            this.Controls.Add(this.grdDadosCid);
+            this.Controls.Add(this.txtPJuridicaId);
+            this.Controls.Add(this.lblPJuridicaId);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmCidade";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Tag = "10";
-            this.Text = "Manutenção Cidade";
-            this.Load += new System.EventHandler(this.frmCid_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).EndInit();
+            this.Name = "frmPrestador";
+            this.Text = "Manutenção Prestador";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdVisitantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView grdDadosCid;
-        private System.Windows.Forms.Label lblCidade;
-        private System.Windows.Forms.TextBox txtCidade;
+
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNovo;
         private System.Windows.Forms.ToolStripButton btnEditar;
@@ -192,5 +212,10 @@
         private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ToolStripButton btnSair;
+        private System.Windows.Forms.TextBox txtPJuridicaId;
+        private System.Windows.Forms.Label lblPJuridicaId;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.DataGridView grdVisitantes;
     }
 }

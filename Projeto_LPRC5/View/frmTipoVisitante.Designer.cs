@@ -1,5 +1,7 @@
-﻿namespace Projeto_LPRC5 {
-    partial class frmCidade {
+﻿namespace Projeto_LPRC5.View
+{
+    partial class frmTipoVisitante
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,11 +26,10 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCidade));
-            this.grdDadosCid = new System.Windows.Forms.DataGridView();
-            this.lblCidade = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoVisitante));
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNovo = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -34,39 +37,20 @@
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).BeginInit();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.grdDescricao = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDescricao)).BeginInit();
             this.SuspendLayout();
             // 
-            // grdDadosCid
+            // txtDescricao
             // 
-            this.grdDadosCid.AllowUserToAddRows = false;
-            this.grdDadosCid.AllowUserToDeleteRows = false;
-            this.grdDadosCid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosCid.Location = new System.Drawing.Point(12, 44);
-            this.grdDadosCid.Name = "grdDadosCid";
-            this.grdDadosCid.ReadOnly = true;
-            this.grdDadosCid.RowHeadersWidth = 51;
-            this.grdDadosCid.Size = new System.Drawing.Size(240, 279);
-            this.grdDadosCid.TabIndex = 1;
-            this.grdDadosCid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellClick);
-            this.grdDadosCid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosCid_CellContentClick);
-            // 
-            // lblCidade
-            // 
-            this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(258, 44);
-            this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(57, 22);
-            this.lblCidade.TabIndex = 3;
-            this.lblCidade.Text = "Nome";
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Location = new System.Drawing.Point(258, 69);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(286, 30);
-            this.txtCidade.TabIndex = 4;
+            this.txtDescricao.Location = new System.Drawing.Point(309, 78);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(236, 26);
+            this.txtDescricao.TabIndex = 0;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // toolStrip1
             // 
@@ -79,10 +63,10 @@
             this.btnSalvar,
             this.btnCancelar,
             this.btnSair});
-            this.toolStrip1.Location = new System.Drawing.Point(-7, -1);
+            this.toolStrip1.Location = new System.Drawing.Point(20, 15);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(229, 39);
-            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Size = new System.Drawing.Size(259, 39);
+            this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnNovo
@@ -107,7 +91,6 @@
             this.btnEditar.Tag = "2";
             this.btnEditar.Text = "Editar";
             this.btnEditar.ToolTipText = "Editar Cidade";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -119,7 +102,6 @@
             this.btnExcluir.Tag = "3";
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.ToolTipText = "Excluir Cidade";
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -131,7 +113,6 @@
             this.btnSalvar.Tag = "4";
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.ToolTipText = "Salvar nova Cidade";
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -143,7 +124,6 @@
             this.btnCancelar.Tag = "5";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSair
             // 
@@ -155,36 +135,55 @@
             this.btnSair.Tag = "6";
             this.btnSair.Text = "Fechar";
             this.btnSair.ToolTipText = "Fechar Manutenção de Cidade";
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // frmCidade
+            // lblDescricao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(307, 55);
+            this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(47, 19);
+            this.lblDescricao.TabIndex = 7;
+            this.lblDescricao.Text = "Nome";
+            this.lblDescricao.Click += new System.EventHandler(this.lblCidade_Click);
+            // 
+            // grdDescricao
+            // 
+            this.grdDescricao.AllowUserToAddRows = false;
+            this.grdDescricao.AllowUserToDeleteRows = false;
+            this.grdDescricao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDescricao.Location = new System.Drawing.Point(20, 55);
+            this.grdDescricao.Name = "grdDescricao";
+            this.grdDescricao.ReadOnly = true;
+            this.grdDescricao.RowHeadersWidth = 51;
+            this.grdDescricao.Size = new System.Drawing.Size(240, 279);
+            this.grdDescricao.TabIndex = 8;
+            // 
+            // frmTipoVisitante
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 338);
+            this.ClientSize = new System.Drawing.Size(558, 346);
+            this.Controls.Add(this.grdDescricao);
+            this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.txtCidade);
-            this.Controls.Add(this.lblCidade);
-            this.Controls.Add(this.grdDadosCid);
+            this.Controls.Add(this.txtDescricao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmCidade";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Tag = "10";
-            this.Text = "Manutenção Cidade";
-            this.Load += new System.EventHandler(this.frmCid_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdDadosCid)).EndInit();
+            this.Name = "frmTipoVisitante";
+            this.Text = "Manutenção Tipo Visitante";
+            this.Load += new System.EventHandler(this.frmTipoVisitante_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDescricao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView grdDadosCid;
-        private System.Windows.Forms.Label lblCidade;
-        private System.Windows.Forms.TextBox txtCidade;
+
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNovo;
         private System.Windows.Forms.ToolStripButton btnEditar;
@@ -192,5 +191,7 @@
         private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ToolStripButton btnSair;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.DataGridView grdDescricao;
     }
 }
