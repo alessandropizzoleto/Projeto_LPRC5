@@ -16,7 +16,7 @@ namespace Projeto_LPRC5.View
     {
 
         public string strconsulta = "SELECT * FROM fornecedor;";
-        classeFornecedor acesso = new classeFornecedor();
+        dbFornecedor acesso = new dbFornecedor();
 
 
         public frmFornecedor()
