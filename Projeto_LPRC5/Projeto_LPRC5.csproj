@@ -52,8 +52,8 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 8.0.22\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2020.0.0\lib\net40\Renci.SshNet.dll</HintPath>
@@ -92,10 +92,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.24\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+      <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.24\lib\net452\Zstandard.Net.dll</HintPath>
+      <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +131,11 @@
     <Compile Include="Model\Conexão\DbVeiculo.cs" />
     <Compile Include="Model\Conexão\DbVeiculoMarca.cs" />
     <Compile Include="Model\Conexão\DbVeiculoPessoa.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\frmEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,13 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\frmVisitantes.resx">
       <DependentUpon>frmVisitantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +440,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-salvar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-excluir-propriedade-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-atualizações-disponíveis-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dustpan-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dustpan-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_78935.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar-ícone-de-disco-flexível-o-botão-quadrado-azul-89658451.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savetheapplication_guardar_2958.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
