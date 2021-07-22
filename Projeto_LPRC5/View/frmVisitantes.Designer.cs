@@ -36,15 +36,21 @@
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
-            this.txtPessoaFisicaId = new System.Windows.Forms.TextBox();
-            this.lblPessoaFisicaId = new System.Windows.Forms.Label();
             this.grdVisitantes = new System.Windows.Forms.DataGridView();
-            this.lblTipoVisitante = new System.Windows.Forms.Label();
-            this.txtHabitacao = new System.Windows.Forms.TextBox();
-            this.lblHabitacao = new System.Windows.Forms.Label();
+            this.txtNomeRegitro = new System.Windows.Forms.TextBox();
+            this.lblNomeRegistro = new System.Windows.Forms.Label();
+            this.txtRg = new System.Windows.Forms.TextBox();
+            this.lblRg = new System.Windows.Forms.Label();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.lblCpf = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtNomeSocial = new System.Windows.Forms.TextBox();
+            this.lblNomeSocial = new System.Windows.Forms.Label();
+            this.cmbHabitacaoId = new System.Windows.Forms.ComboBox();
             this.cmbTipoVisitante = new System.Windows.Forms.ComboBox();
-            this.txtVeiculoId = new System.Windows.Forms.TextBox();
-            this.lblVeiculoId = new System.Windows.Forms.Label();
+            this.lblHabitacao = new System.Windows.Forms.Label();
+            this.lblTipoVisitante = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVisitantes)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +68,7 @@
             this.btnSair});
             this.toolStrip1.Location = new System.Drawing.Point(4, 11);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(259, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(268, 39);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -88,6 +94,7 @@
             this.btnEditar.Tag = "2";
             this.btnEditar.Text = "Editar";
             this.btnEditar.ToolTipText = "Editar Cidade";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -99,6 +106,7 @@
             this.btnExcluir.Tag = "3";
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.ToolTipText = "Excluir Cidade";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -110,6 +118,7 @@
             this.btnSalvar.Tag = "4";
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.ToolTipText = "Salvar nova Cidade";
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -121,6 +130,7 @@
             this.btnCancelar.Tag = "5";
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSair
             // 
@@ -132,98 +142,164 @@
             this.btnSair.Tag = "6";
             this.btnSair.Text = "Fechar";
             this.btnSair.ToolTipText = "Fechar Manutenção de Cidade";
-            // 
-            // txtPessoaFisicaId
-            // 
-            this.txtPessoaFisicaId.Location = new System.Drawing.Point(250, 78);
-            this.txtPessoaFisicaId.Name = "txtPessoaFisicaId";
-            this.txtPessoaFisicaId.Size = new System.Drawing.Size(286, 26);
-            this.txtPessoaFisicaId.TabIndex = 8;
-            // 
-            // lblPessoaFisicaId
-            // 
-            this.lblPessoaFisicaId.AutoSize = true;
-            this.lblPessoaFisicaId.Location = new System.Drawing.Point(250, 56);
-            this.lblPessoaFisicaId.Name = "lblPessoaFisicaId";
-            this.lblPessoaFisicaId.Size = new System.Drawing.Size(103, 19);
-            this.lblPessoaFisicaId.TabIndex = 7;
-            this.lblPessoaFisicaId.Text = "Pessoa física Id";
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // grdVisitantes
             // 
             this.grdVisitantes.AllowUserToAddRows = false;
             this.grdVisitantes.AllowUserToDeleteRows = false;
             this.grdVisitantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdVisitantes.Location = new System.Drawing.Point(4, 56);
+            this.grdVisitantes.Location = new System.Drawing.Point(4, 57);
             this.grdVisitantes.Name = "grdVisitantes";
             this.grdVisitantes.ReadOnly = true;
             this.grdVisitantes.RowHeadersWidth = 51;
-            this.grdVisitantes.Size = new System.Drawing.Size(240, 279);
+            this.grdVisitantes.Size = new System.Drawing.Size(238, 294);
             this.grdVisitantes.TabIndex = 6;
             // 
-            // lblTipoVisitante
+            // txtNomeRegitro
             // 
-            this.lblTipoVisitante.AutoSize = true;
-            this.lblTipoVisitante.Location = new System.Drawing.Point(250, 115);
-            this.lblTipoVisitante.Name = "lblTipoVisitante";
-            this.lblTipoVisitante.Size = new System.Drawing.Size(88, 19);
-            this.lblTipoVisitante.TabIndex = 10;
-            this.lblTipoVisitante.Text = "Tipo visitante";
+            this.txtNomeRegitro.Location = new System.Drawing.Point(253, 81);
+            this.txtNomeRegitro.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeRegitro.Name = "txtNomeRegitro";
+            this.txtNomeRegitro.Size = new System.Drawing.Size(185, 30);
+            this.txtNomeRegitro.TabIndex = 45;
             // 
-            // txtHabitacao
+            // lblNomeRegistro
             // 
-            this.txtHabitacao.Location = new System.Drawing.Point(250, 193);
-            this.txtHabitacao.Name = "txtHabitacao";
-            this.txtHabitacao.Size = new System.Drawing.Size(286, 26);
-            this.txtHabitacao.TabIndex = 13;
+            this.lblNomeRegistro.AutoSize = true;
+            this.lblNomeRegistro.Location = new System.Drawing.Point(249, 55);
+            this.lblNomeRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeRegistro.Name = "lblNomeRegistro";
+            this.lblNomeRegistro.Size = new System.Drawing.Size(129, 22);
+            this.lblNomeRegistro.TabIndex = 44;
+            this.lblNomeRegistro.Text = "Nome Registro";
             // 
-            // lblHabitacao
+            // txtRg
             // 
-            this.lblHabitacao.AutoSize = true;
-            this.lblHabitacao.Location = new System.Drawing.Point(250, 171);
-            this.lblHabitacao.Name = "lblHabitacao";
-            this.lblHabitacao.Size = new System.Drawing.Size(71, 19);
-            this.lblHabitacao.TabIndex = 12;
-            this.lblHabitacao.Text = "Habitação";
+            this.txtRg.Location = new System.Drawing.Point(249, 321);
+            this.txtRg.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(189, 30);
+            this.txtRg.TabIndex = 43;
+            // 
+            // lblRg
+            // 
+            this.lblRg.AutoSize = true;
+            this.lblRg.Location = new System.Drawing.Point(249, 295);
+            this.lblRg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRg.Name = "lblRg";
+            this.lblRg.Size = new System.Drawing.Size(32, 22);
+            this.lblRg.TabIndex = 42;
+            this.lblRg.Text = "Rg";
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(249, 261);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(189, 30);
+            this.txtCpf.TabIndex = 41;
+            // 
+            // lblCpf
+            // 
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.Location = new System.Drawing.Point(249, 235);
+            this.lblCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(39, 22);
+            this.lblCpf.TabIndex = 40;
+            this.lblCpf.Text = "Cpf";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(249, 201);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(189, 30);
+            this.txtEmail.TabIndex = 39;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(249, 175);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(57, 22);
+            this.lblEmail.TabIndex = 38;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtNomeSocial
+            // 
+            this.txtNomeSocial.Location = new System.Drawing.Point(253, 141);
+            this.txtNomeSocial.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeSocial.Name = "txtNomeSocial";
+            this.txtNomeSocial.Size = new System.Drawing.Size(185, 30);
+            this.txtNomeSocial.TabIndex = 37;
+            // 
+            // lblNomeSocial
+            // 
+            this.lblNomeSocial.AutoSize = true;
+            this.lblNomeSocial.Location = new System.Drawing.Point(249, 115);
+            this.lblNomeSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeSocial.Name = "lblNomeSocial";
+            this.lblNomeSocial.Size = new System.Drawing.Size(113, 22);
+            this.lblNomeSocial.TabIndex = 36;
+            this.lblNomeSocial.Text = "Nome Social";
+            // 
+            // cmbHabitacaoId
+            // 
+            this.cmbHabitacaoId.FormattingEnabled = true;
+            this.cmbHabitacaoId.Location = new System.Drawing.Point(458, 139);
+            this.cmbHabitacaoId.Name = "cmbHabitacaoId";
+            this.cmbHabitacaoId.Size = new System.Drawing.Size(167, 30);
+            this.cmbHabitacaoId.TabIndex = 51;
             // 
             // cmbTipoVisitante
             // 
             this.cmbTipoVisitante.FormattingEnabled = true;
-            this.cmbTipoVisitante.Location = new System.Drawing.Point(250, 137);
+            this.cmbTipoVisitante.Location = new System.Drawing.Point(458, 81);
             this.cmbTipoVisitante.Name = "cmbTipoVisitante";
-            this.cmbTipoVisitante.Size = new System.Drawing.Size(286, 27);
-            this.cmbTipoVisitante.TabIndex = 14;
+            this.cmbTipoVisitante.Size = new System.Drawing.Size(167, 30);
+            this.cmbTipoVisitante.TabIndex = 48;
             // 
-            // txtVeiculoId
+            // lblHabitacao
             // 
-            this.txtVeiculoId.Location = new System.Drawing.Point(250, 252);
-            this.txtVeiculoId.Name = "txtVeiculoId";
-            this.txtVeiculoId.Size = new System.Drawing.Size(286, 26);
-            this.txtVeiculoId.TabIndex = 16;
+            this.lblHabitacao.AutoSize = true;
+            this.lblHabitacao.Location = new System.Drawing.Point(458, 114);
+            this.lblHabitacao.Name = "lblHabitacao";
+            this.lblHabitacao.Size = new System.Drawing.Size(112, 22);
+            this.lblHabitacao.TabIndex = 47;
+            this.lblHabitacao.Text = "Habitação Id";
             // 
-            // lblVeiculoId
+            // lblTipoVisitante
             // 
-            this.lblVeiculoId.AutoSize = true;
-            this.lblVeiculoId.Location = new System.Drawing.Point(250, 230);
-            this.lblVeiculoId.Name = "lblVeiculoId";
-            this.lblVeiculoId.Size = new System.Drawing.Size(70, 19);
-            this.lblVeiculoId.TabIndex = 15;
-            this.lblVeiculoId.Text = "Veículo Id";
+            this.lblTipoVisitante.AutoSize = true;
+            this.lblTipoVisitante.Location = new System.Drawing.Point(458, 57);
+            this.lblTipoVisitante.Name = "lblTipoVisitante";
+            this.lblTipoVisitante.Size = new System.Drawing.Size(119, 22);
+            this.lblTipoVisitante.TabIndex = 46;
+            this.lblTipoVisitante.Text = "Tipo visitante";
             // 
             // frmVisitantes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 346);
-            this.Controls.Add(this.txtVeiculoId);
-            this.Controls.Add(this.lblVeiculoId);
+            this.ClientSize = new System.Drawing.Size(648, 359);
+            this.Controls.Add(this.cmbHabitacaoId);
             this.Controls.Add(this.cmbTipoVisitante);
-            this.Controls.Add(this.txtHabitacao);
             this.Controls.Add(this.lblHabitacao);
             this.Controls.Add(this.lblTipoVisitante);
+            this.Controls.Add(this.txtNomeRegitro);
+            this.Controls.Add(this.lblNomeRegistro);
+            this.Controls.Add(this.txtRg);
+            this.Controls.Add(this.lblRg);
+            this.Controls.Add(this.txtCpf);
+            this.Controls.Add(this.lblCpf);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.txtNomeSocial);
+            this.Controls.Add(this.lblNomeSocial);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.txtPessoaFisicaId);
-            this.Controls.Add(this.lblPessoaFisicaId);
             this.Controls.Add(this.grdVisitantes);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -246,14 +322,20 @@
         private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ToolStripButton btnSair;
-        private System.Windows.Forms.TextBox txtPessoaFisicaId;
-        private System.Windows.Forms.Label lblPessoaFisicaId;
         private System.Windows.Forms.DataGridView grdVisitantes;
-        private System.Windows.Forms.Label lblTipoVisitante;
-        private System.Windows.Forms.TextBox txtHabitacao;
-        private System.Windows.Forms.Label lblHabitacao;
+        private System.Windows.Forms.TextBox txtNomeRegitro;
+        private System.Windows.Forms.Label lblNomeRegistro;
+        private System.Windows.Forms.TextBox txtRg;
+        private System.Windows.Forms.Label lblRg;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.Label lblCpf;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtNomeSocial;
+        private System.Windows.Forms.Label lblNomeSocial;
+        private System.Windows.Forms.ComboBox cmbHabitacaoId;
         private System.Windows.Forms.ComboBox cmbTipoVisitante;
-        private System.Windows.Forms.TextBox txtVeiculoId;
-        private System.Windows.Forms.Label lblVeiculoId;
+        private System.Windows.Forms.Label lblHabitacao;
+        private System.Windows.Forms.Label lblTipoVisitante;
     }
 }

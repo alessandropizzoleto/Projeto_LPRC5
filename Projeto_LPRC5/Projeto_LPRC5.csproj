@@ -131,6 +131,7 @@
     <Compile Include="Model\Conexão\DbVeiculo.cs" />
     <Compile Include="Model\Conexão\DbVeiculoMarca.cs" />
     <Compile Include="Model\Conexão\DbVeiculoPessoa.cs" />
+    <Compile Include="Model\Conexão\dbVisitantes.cs" />
     <Compile Include="View\frmEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
