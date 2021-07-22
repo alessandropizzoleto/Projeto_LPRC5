@@ -197,5 +197,6 @@ namespace Projeto_LPRC5
 			Txt_Servico.Text = empresa.EmpresaTipoServico;
 			Txt_Telefone.Text = empresa.EmpresaTelefone;
 		}
-	}
+
+    }
 }
