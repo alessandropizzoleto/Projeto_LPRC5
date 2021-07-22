@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_LPRC5.Model.Conexão;
 using Projeto_LPRC5.Model.Classe;
+using MySql.Data.MySqlClient;
 
 namespace Projeto_LPRC5.View
 {
@@ -25,25 +26,40 @@ namespace Projeto_LPRC5.View
         }
 
         dbVisitantes db_Visitantes = new dbVisitantes();
+        dbTipoVisitante dbTipoVisitante = new dbTipoVisitante();
         classeVisitantes ClasseVisitantes = new classeVisitantes();
 
+        private void carregaCmbox()
+        {
+            MySqlDataReader reader;
+            reader = dbTipoVisitante.SelectCmbBox();
+            while (reader.Read())
+            {
+                cmbTipoVisitante.ValueMember = reader["tipo_visitante_id"].ToString();
+                cmbTipoVisitante.DisplayMember = reader["visitante_descricao"].ToString();
+                cmbTipoVisitante.Items.Add(reader["visitante_descricao"]);
+            }
+        }
         private void formataGrid()
         {
             
             grdVisitantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
            
-            grdVisitantes.Columns[0].HeaderText = "Id Visita";
-            grdVisitantes.Columns[1].HeaderText = "Nome";
+            
+            grdVisitantes.Columns[0].HeaderText = "Nome";
+            grdVisitantes.Columns[1].HeaderText = "Id Visita";
             grdVisitantes.Columns[2].HeaderText = "Data Visita";
-            grdVisitantes.Columns[3].HeaderText = "Habitação Id";
-            grdVisitantes.Columns[4].HeaderText = "Tipo Visitante Id";
+            grdVisitantes.Columns[3].HeaderText = "Id pessoa";
+            grdVisitantes.Columns[4].HeaderText = "Habitação Id";
+            grdVisitantes.Columns[5].HeaderText = "Tipo Visitante Id";
 
             grdVisitantes.Columns[0].Width = 100;
-            grdVisitantes.Columns[1].Width = 100;
-            grdVisitantes.Columns[2].Width = 100;
-            grdVisitantes.Columns[3].Width = 100;
-            grdVisitantes.Columns[4].Width = 100;
+            grdVisitantes.Columns[1].Width = 50;
+            grdVisitantes.Columns[2].Width = 50;
+            grdVisitantes.Columns[3].Width = 50;
+            grdVisitantes.Columns[4].Width = 50;
+            grdVisitantes.Columns[5].Width = 50;
 
         }
 
@@ -87,11 +103,11 @@ namespace Projeto_LPRC5.View
         {
             bool resultado = true;
 
-            if (cmbHabitacaoId.SelectedItem == null)
+           /* if (cmbHabitacaoId.SelectedItem == null)
             {
                 resultado = false;
-            }
-            else if (txtNomeRegitro.Text.Length < 2)
+            }*/
+            if (txtNomeRegitro.Text.Length < 2)
             {
                 resultado = false;
             }
@@ -149,8 +165,8 @@ namespace Projeto_LPRC5.View
                 ClasseVisitantes.setPessoaEmail(txtEmail.Text.ToString());
                 ClasseVisitantes.cpf = txtCpf.Text.ToString();
                 ClasseVisitantes.rg = txtRg.Text.ToString();
-                ClasseVisitantes.habitacaoId = Convert.ToInt32(cmbHabitacaoId.Text);
-                ClasseVisitantes.tipoVisitanteId = Convert.ToInt32(cmbTipoVisitante.Text);
+               // ClasseVisitantes.habitacaoId = Convert.ToInt32(cmbHabitacaoId.Text);
+                ClasseVisitantes.tipoVisitanteId = Convert.ToInt32(cmbTipoVisitante.ValueMember);
 
                 db_Visitantes.insereVisitante(ClasseVisitantes);
 
@@ -204,6 +220,15 @@ namespace Projeto_LPRC5.View
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmVisitantes_Load(object sender, EventArgs e)
+        {
+            habilitaBotoesMenu(true);
+            habilitaCamposDados(false);
+            atualizaDadosGrid();
+            formataGrid();
+            carregaCmbox();
         }
     }
 }
