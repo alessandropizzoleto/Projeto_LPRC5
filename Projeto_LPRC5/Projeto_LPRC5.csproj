@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Classe\classeEntregaFornecedor.cs" />
     <Compile Include="Model\Classe\classeNivelAcesso.cs" />
     <Compile Include="Model\Classe\classeOpcaoAcesso.cs" />
     <Compile Include="Model\Classe\classePessoa.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Model\Classe\ClasseVeiculoMarca.cs" />
     <Compile Include="Model\Classe\ClasseVeiculoPessoa.cs" />
     <Compile Include="Model\Classe\classeVisitantes.cs" />
+    <Compile Include="Model\Conexão\dbEntregaFornecedor.cs" />
     <Compile Include="Model\Conexão\dbFuncionario.cs" />
     <Compile Include="Model\Classe\classeFornecedor.cs" />
     <Compile Include="Model\Classe\ClasseCondominioEmpresa.cs" />
@@ -126,7 +128,6 @@
     <Compile Include="Model\Conexão\dbPessoa.cs" />
     <Compile Include="Model\Conexão\dbPessoaFisica.cs" />
     <Compile Include="Model\Conexão\dbPessoaJuridica.cs" />
-    <Compile Include="Model\Conexão\dbTipoVisitante.cs" />
     <Compile Include="Model\Conexão\DbVeiculo.cs" />
     <Compile Include="Model\Conexão\DbVeiculoMarca.cs" />
     <Compile Include="Model\Conexão\DbVeiculoPessoa.cs" />
@@ -141,6 +142,12 @@
     </Compile>
     <Compile Include="View\frmEmpresa.designer.cs">
       <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEntregasFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEntregasFornecedor.Designer.cs">
+      <DependentUpon>frmEntregasFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmNivelAcesso.cs">
       <SubType>Form</SubType>
@@ -330,6 +337,9 @@
     </Compile>
     <EmbeddedResource Include="View\frmEmpresa.resx">
       <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEntregasFornecedor.resx">
+      <DependentUpon>frmEntregasFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmNivelAcesso.resx">
       <DependentUpon>frmNivelAcesso.cs</DependentUpon>
