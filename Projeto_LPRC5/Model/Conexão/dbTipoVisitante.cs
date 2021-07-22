@@ -23,8 +23,6 @@ namespace Projeto_LPRC5
 
         public MySqlDataReader SelectCmbBox()
         {
-            List<classeTipoVisitante> tipoVisitantes = new List<classeTipoVisitante>();
-            classeTipoVisitante classeTipoVisitante = new classeTipoVisitante();
 
             MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;database=dbcondominio;pwd=");
             conn.Open();
@@ -37,7 +35,7 @@ namespace Projeto_LPRC5
 
         public void InsereTipoVisitanteBase(classeTipoVisitante tipoVisitante)
         {
-            string sql = "INSERT INTO tipo_visitante(visitante_descricao) VALUES('"+ tipoVisitante.visitanteDescricao +"')";
+            string sql = "INSERT INTO tipo_visitante(visitante_descricao) VALUES('" + tipoVisitante.visitanteDescricao + "')";
             retorno = connect.executaSQL(sql);
         }
 

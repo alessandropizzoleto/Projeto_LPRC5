@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using MySql.Data.MySqlClient;
+using Projeto_LPRC5.Model.Conexão;
 
 namespace Projeto_LPRC5.View
 {
