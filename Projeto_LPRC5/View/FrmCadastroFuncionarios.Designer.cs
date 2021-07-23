@@ -43,7 +43,7 @@ namespace Projeto_LPRC5
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nome_registro = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedbox_tel = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.combox_estadocivil = new System.Windows.Forms.ComboBox();
@@ -189,13 +189,13 @@ namespace Projeto_LPRC5
             this.nome_registro.Size = new System.Drawing.Size(357, 20);
             this.nome_registro.TabIndex = 9;
             // 
-            // maskedTextBox2
+            // maskedbox_tel
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(389, 164);
-            this.maskedTextBox2.Mask = "(00) 00000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(357, 20);
-            this.maskedTextBox2.TabIndex = 11;
+            this.maskedbox_tel.Location = new System.Drawing.Point(389, 164);
+            this.maskedbox_tel.Mask = "(00) 00000-0000";
+            this.maskedbox_tel.Name = "maskedbox_tel";
+            this.maskedbox_tel.Size = new System.Drawing.Size(357, 20);
+            this.maskedbox_tel.TabIndex = 11;
             // 
             // label8
             // 
@@ -321,7 +321,7 @@ namespace Projeto_LPRC5
             this.Controls.Add(this.combox_estadocivil);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedbox_tel);
             this.Controls.Add(this.maskedbox_cpf);
             this.Controls.Add(this.nome_registro);
             this.Controls.Add(this.dataGridView1);
@@ -357,7 +357,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox nome_registro;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedbox_tel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ComboBox combox_estadocivil;

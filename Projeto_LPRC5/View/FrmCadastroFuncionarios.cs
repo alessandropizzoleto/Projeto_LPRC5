@@ -12,6 +12,7 @@
 
 
 
+using Projeto_LPRC5.Model.Classe;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,7 +85,20 @@ namespace Projeto_LPRC5
         {
 
             dataGridView1.Enabled = !habilitar;
+            nome_registro.Enabled = !habilitar;
+            nome_social.Enabled = !habilitar;
+            maskedbox_cpf.Enabled = !habilitar;
+            maskedbox_rg = !habilitar;
+            maskedbox_tel = !habilitar;
+            email = !habilitar;
+            dateTimePicker2 = !habilitar;
+            combobox_sexo = !habilitar;
+            combox_estadocivil = !habilitar;
+
+
+
         }
+
 
         private void limpaCamposDados()
         {
@@ -97,6 +111,27 @@ namespace Projeto_LPRC5
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
+
+            if (nome_registro.Text.Length < 2)
+            {
+                resultado = false;
+            }
+            else if (nome_social.Text.Length < 2)
+            {
+                resultado = false;
+            }
+            else if (email.Text.Length < 2)
+            {
+                resultado = false;
+            }
+            else if (maskedbox_cpf.Text.Length < 12)
+            {
+                resultado = false;
+            }
+            else if (maskedbox_rg.Text.Length < 10)
+            {
+                resultado = false;
+            }
 
             return resultado;
         }
