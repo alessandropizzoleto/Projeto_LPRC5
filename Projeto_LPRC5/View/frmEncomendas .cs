@@ -13,7 +13,13 @@
 //****** Atualizações: verificacao da data na procedure de dados obrigatorios
 //*** Data:03/05/2021
 //*** Responsável: Guilherme de Andrade Rissato
+
+//**Grupo 7: Guilherme A.Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//****** Atualizações: atualizacao dos campos para insert, update e delete, ja que houve alteracoes no modo como o nome do morador e acessado devido a heranca entre as classes
+//*** Data:03/05/2021
+//*** Responsável: Guilherme de Andrade Rissato
 //****************************************************************************************
+using Projeto_LPRC5.Model.Classe;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +34,9 @@ namespace Projeto_LPRC5
 {
     public partial class frmEncomendas : Form
     {
+
+        dbEncomenda db_Encomenda = new dbEncomenda();
+        classeEncomendas encomenda = new classeEncomendas();
         public frmEncomendas()
         {
             InitializeComponent();
@@ -36,35 +45,30 @@ namespace Projeto_LPRC5
 
         private void preencherComboMorador()
         {
-
+            cmbDestinatario.DataSource = db_Encomenda.selectMorador();
+            cmbDestinatario.ValueMember = "moradorid";
+            cmbDestinatario.DisplayMember = "nome";
         }
 
         private void preencherComboFuncionario()
         {
-
+            cmbDestinatario.DataSource = db_Encomenda.selectFuncionario();
+            cmbDestinatario.ValueMember = "funcionarioid";
+            cmbDestinatario.DisplayMember = "nome";
         }
 
         private void preencherComboHabitacao()
         {
-
+            cmbDestinatario.DataSource = db_Encomenda.selectHabitacao();
+            cmbDestinatario.ValueMember = "habitacaoid";
+            cmbDestinatario.DisplayMember = "numero";
         }
 
-        dbEncomenda db_Encomenda = new dbEncomenda();
-        classeEncomendas encomenda = new classeEncomendas();
-
-        private void formataGrid()
+        private void preencherComboMoradorRecebeu()
         {
-            //Opção para selecionar a linha inteira do grid
-            grdDadosEncomenda.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            grdDadosEncomenda.Columns[0].HeaderText = "Código";
-            grdDadosEncomenda.Columns[1].HeaderText = "Destinatário";
-            grdDadosEncomenda.Columns[2].HeaderText = "Habitação";
-
-            grdDadosEncomenda.Columns[0].Width = 0;
-            grdDadosEncomenda.Columns[1].Width = 100;
-            grdDadosEncomenda.Columns[2].Width = 80;
-
+            cmbDestinatario.DataSource = db_Encomenda.selectMorador();
+            cmbDestinatario.ValueMember = "moradorid";
+            cmbDestinatario.DisplayMember = "nome";
         }
 
         public void atualizaDadosGrid()
@@ -72,16 +76,39 @@ namespace Projeto_LPRC5
             grdDadosEncomenda.DataSource = db_Encomenda.selectEncomendaBase();
         }
 
+        private void formataGrid()
+        {
+            //Opção para selecionar a linha inteira do grid
+            grdDadosEncomenda.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            grdDadosEncomenda.Columns[0].HeaderText = "Código";
+            grdDadosEncomenda.Columns[1].HeaderText = "Nome";
+            grdDadosEncomenda.Columns[2].HeaderText = "Habitação";
+
+            grdDadosEncomenda.Columns[0].Width = 0;
+            grdDadosEncomenda.Columns[1].Width = 80;
+            grdDadosEncomenda.Columns[2].Width = 80;
+
+        }
+
+        private void iniciaCombos()
+        {
+            preencherComboFuncionario();
+            preencherComboHabitacao();
+            preencherComboMorador();
+            preencherComboMoradorRecebeu();
+        }
+
         private void atualizaDadosControles()
         {
             encomenda = db_Encomenda.RetornaDadosObjeto(encomenda);
 
-            txtDestinatario.Text = encomenda.getdestinatario();
-            txtComplemento.Text = encomenda.getComplemento();
+            cmbDestinatario.SelectedValue = encomenda.getdestinatario();
+            cmbHabitacao.SelectedValue = encomenda.getHabitacao();
             txtDescricao.Text = encomenda.getDescricao();
-            txtEntreguePara.Text = encomenda.getEntreguePara();
+            cmbFuncionario.SelectedValue = encomenda.getEntreguePara();
             txtEntreguePor.Text = encomenda.getEntreguePor();
-            txtRecebida.Text = encomenda.getRecebidaPor();
+            cmbMoradorRecebeu.SelectedValue = encomenda.getRecebidaPor();
             msktxtDataEntrada.Text = Convert.ToString(encomenda.getDataEntrada());
             msktxtDataSaida.Text = Convert.ToString(encomenda.getDataSaida());
 
@@ -101,11 +128,11 @@ namespace Projeto_LPRC5
         {
             txtBusca.Enabled = !habilitar;
             txtDescricao.Enabled = habilitar;
-            txtDestinatario.Enabled = habilitar;
-            txtEntreguePara.Enabled = habilitar;
+            cmbDestinatario.Enabled = habilitar;
+            cmbFuncionario.Enabled = habilitar;
             txtEntreguePor.Enabled = habilitar;
-            txtRecebida.Enabled = habilitar;
-            txtComplemento.Enabled = habilitar;
+            cmbHabitacao.Enabled = habilitar;
+            cmbMoradorRecebeu.Enabled = habilitar;
             msktxtDataEntrada.Enabled = habilitar;
             msktxtDataSaida.Enabled = habilitar;
             grdDadosEncomenda.Enabled = !habilitar;
@@ -114,33 +141,33 @@ namespace Projeto_LPRC5
         private void limpaCamposDados()
         {
             txtBusca.Text = "";
-            txtComplemento.Text = "";
+            cmbHabitacao.SelectedValue = -1;
             txtDescricao.Text = "";
-            txtDestinatario.Text = "";
-            txtEntreguePara.Text = "";
+            cmbDestinatario.SelectedValue = -1;
+            cmbHabitacao.SelectedValue = -1;
             txtEntreguePor.Text = "";
-            txtRecebida.Text = "";
+            cmbMoradorRecebeu.SelectedValue = -1;
             msktxtDataEntrada.Text = "";
             msktxtDataSaida.Text = "";
 
             encomenda.setCodigo(-1);
-            encomenda.setComplemento("");
+            encomenda.setHabitacao(-1);
             encomenda.setDataEntrada(Convert.ToDateTime(null));
             encomenda.setDataSaida(Convert.ToDateTime(null));
             encomenda.setDescricao("");
-            encomenda.setDestinatario("");
-            encomenda.setEntreguePara("");
+            encomenda.setDestinatario(-1);
+            encomenda.setEntreguePara(-1);
             encomenda.setEntreguePor("");
-            encomenda.setRecebidaPor("");
+            encomenda.setRecebidaPor(-1);
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            if (txtDestinatario.Text.ToString() == "" || txtEntreguePor.Text.ToString() == "" ||
-                msktxtDataEntrada.Text.ToString() == "" ||txtRecebida.Text.ToString() == ""|| 
-                txtComplemento.Text.ToString() == "")
+            if (cmbDestinatario.SelectedIndex == -1 || txtEntreguePor.Text.ToString() == "" ||
+                msktxtDataEntrada.Text.ToString() == "" ||cmbFuncionario.SelectedIndex == -1|| 
+                cmbHabitacao.SelectedIndex == -1)
                 {
                     resultado = false;
                 }
@@ -172,7 +199,7 @@ namespace Projeto_LPRC5
                     db_Encomenda.excluiEncomendaBase(encomenda);
 
                     limpaCamposDados();
-                    atualizaDadosGrid();
+                    
                 }
             }
             else
@@ -182,7 +209,7 @@ namespace Projeto_LPRC5
         }
 
         private void setEncomendas() {
-            encomenda.setComplemento(txtComplemento.Text.ToString());
+            encomenda.setHabitacao(cmbHabitacao.SelectedIndex);
             encomenda.setDataEntrada(Convert.ToDateTime(msktxtDataEntrada.Text));
             if (msktxtDataSaida.Text.ToString() == "  /  /") {
                 encomenda.setDataSaida(Convert.ToDateTime(null));
@@ -192,10 +219,10 @@ namespace Projeto_LPRC5
                 encomenda.setDataSaida(Convert.ToDateTime(msktxtDataSaida.Text));
             }
             encomenda.setDescricao(txtDescricao.Text.ToString());
-            encomenda.setDestinatario(txtDestinatario.Text.ToString());
-            encomenda.setEntreguePara(txtEntreguePara.Text.ToString());
+            encomenda.setDestinatario(cmbDestinatario.SelectedIndex);
+            encomenda.setEntreguePara(cmbFuncionario.SelectedIndex);
             encomenda.setEntreguePor(txtEntreguePor.Text.ToString());
-            encomenda.setRecebidaPor(txtRecebida.Text.ToString());
+            encomenda.setRecebidaPor(cmbMoradorRecebeu.SelectedIndex);
         }
 
         private void SalvaEncomenda()
@@ -218,7 +245,6 @@ namespace Projeto_LPRC5
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
                 limpaCamposDados();
-                atualizaDadosGrid();
             }
             else
             {
@@ -254,11 +280,13 @@ namespace Projeto_LPRC5
         private void barbtnNovo_Click(object sender, EventArgs e)
         {
             InsereEncomenda();
+            iniciaCombos();
         }
 
         private void barbtnEditar_Click(object sender, EventArgs e)
         {
             AlteraEncomenda();
+            iniciaCombos();
         }
 
         private void barbtnExcluir_Click(object sender, EventArgs e)
@@ -283,14 +311,28 @@ namespace Projeto_LPRC5
 
         private void grdDadosEncomenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-        }
-
-        private void grdDadosEncomenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             encomenda.setCodigo(Convert.ToInt16(grdDadosEncomenda.Rows[grdDadosEncomenda.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
         }
 
+        private void cmbDestinatario_DropDown(object sender, EventArgs e)
+        {
+            iniciaCombos();
+        }
+
+        private void cmbFuncionario_DropDown(object sender, EventArgs e)
+        {
+            iniciaCombos();
+        }
+
+        private void cmbMoradorRecebeu_DropDown(object sender, EventArgs e)
+        {
+            iniciaCombos();
+        }
+
+        private void cmbHabitacao_DropDown(object sender, EventArgs e)
+        {
+            iniciaCombos();
+        }
     }
 }

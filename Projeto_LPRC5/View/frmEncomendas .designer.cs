@@ -36,7 +36,6 @@
             this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
             this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
             this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
-            this.grdDadosEncomenda = new System.Windows.Forms.DataGridView();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.cmbMoradorRecebeu = new System.Windows.Forms.ComboBox();
             this.cmbHabitacao = new System.Windows.Forms.ComboBox();
+            this.grdDadosEncomenda = new System.Windows.Forms.DataGridView();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosEncomenda)).BeginInit();
             this.SuspendLayout();
@@ -140,20 +140,6 @@
             this.barbtnFechar.Text = "Fechar";
             this.barbtnFechar.ToolTipText = "Fechar Manutenção de Encomenda";
             this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
-            // 
-            // grdDadosEncomenda
-            // 
-            this.grdDadosEncomenda.AllowUserToAddRows = false;
-            this.grdDadosEncomenda.AllowUserToDeleteRows = false;
-            this.grdDadosEncomenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDadosEncomenda.Location = new System.Drawing.Point(12, 76);
-            this.grdDadosEncomenda.Name = "grdDadosEncomenda";
-            this.grdDadosEncomenda.ReadOnly = true;
-            this.grdDadosEncomenda.RowHeadersWidth = 51;
-            this.grdDadosEncomenda.Size = new System.Drawing.Size(216, 188);
-            this.grdDadosEncomenda.TabIndex = 1;
-            this.grdDadosEncomenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosEncomenda_CellClick);
-            this.grdDadosEncomenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosEncomenda_CellContentClick);
             // 
             // txtBusca
             // 
@@ -273,6 +259,7 @@
             this.cmbDestinatario.Name = "cmbDestinatario";
             this.cmbDestinatario.Size = new System.Drawing.Size(117, 27);
             this.cmbDestinatario.TabIndex = 21;
+            this.cmbDestinatario.DropDown += new System.EventHandler(this.cmbDestinatario_DropDown);
             // 
             // cmbFuncionario
             // 
@@ -281,6 +268,7 @@
             this.cmbFuncionario.Name = "cmbFuncionario";
             this.cmbFuncionario.Size = new System.Drawing.Size(116, 27);
             this.cmbFuncionario.TabIndex = 22;
+            this.cmbFuncionario.DropDown += new System.EventHandler(this.cmbFuncionario_DropDown);
             // 
             // cmbMoradorRecebeu
             // 
@@ -289,6 +277,7 @@
             this.cmbMoradorRecebeu.Name = "cmbMoradorRecebeu";
             this.cmbMoradorRecebeu.Size = new System.Drawing.Size(117, 27);
             this.cmbMoradorRecebeu.TabIndex = 23;
+            this.cmbMoradorRecebeu.DropDown += new System.EventHandler(this.cmbMoradorRecebeu_DropDown);
             // 
             // cmbHabitacao
             // 
@@ -297,12 +286,27 @@
             this.cmbHabitacao.Name = "cmbHabitacao";
             this.cmbHabitacao.Size = new System.Drawing.Size(117, 27);
             this.cmbHabitacao.TabIndex = 24;
+            this.cmbHabitacao.DropDown += new System.EventHandler(this.cmbHabitacao_DropDown);
+            // 
+            // grdDadosEncomenda
+            // 
+            this.grdDadosEncomenda.AllowUserToAddRows = false;
+            this.grdDadosEncomenda.AllowUserToDeleteRows = false;
+            this.grdDadosEncomenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDadosEncomenda.Location = new System.Drawing.Point(13, 73);
+            this.grdDadosEncomenda.Name = "grdDadosEncomenda";
+            this.grdDadosEncomenda.ReadOnly = true;
+            this.grdDadosEncomenda.RowHeadersWidth = 51;
+            this.grdDadosEncomenda.Size = new System.Drawing.Size(215, 200);
+            this.grdDadosEncomenda.TabIndex = 25;
+            this.grdDadosEncomenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosEncomenda_CellClick);
             // 
             // frmEncomendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 285);
+            this.Controls.Add(this.grdDadosEncomenda);
             this.Controls.Add(this.cmbHabitacao);
             this.Controls.Add(this.cmbMoradorRecebeu);
             this.Controls.Add(this.cmbFuncionario);
@@ -320,7 +324,6 @@
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.txtBusca);
-            this.Controls.Add(this.grdDadosEncomenda);
             this.Controls.Add(this.barManutencao);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -345,7 +348,6 @@
         private System.Windows.Forms.ToolStripButton barbtnSalvar;
         private System.Windows.Forms.ToolStripButton barbtnCancelar;
         private System.Windows.Forms.ToolStripButton barbtnFechar;
-        private System.Windows.Forms.DataGridView grdDadosEncomenda;
         private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox txtDescricao;
@@ -363,5 +365,6 @@
         private System.Windows.Forms.ComboBox cmbFuncionario;
         private System.Windows.Forms.ComboBox cmbMoradorRecebeu;
         private System.Windows.Forms.ComboBox cmbHabitacao;
+        private System.Windows.Forms.DataGridView grdDadosEncomenda;
     }
 }
