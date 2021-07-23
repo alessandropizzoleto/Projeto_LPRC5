@@ -121,5 +121,20 @@ namespace Projeto_LPRC5.View
         {
             LimpaTxt();
         }
+
+        private void telaInicialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPrincipal novo = new frmPrincipal();
+            novo.Show();
+
+        }
+
+        private void cadastroDeFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmFornecedor fornece = new frmFornecedor();
+            fornece.Show();
+        }
     }
 }

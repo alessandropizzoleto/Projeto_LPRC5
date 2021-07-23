@@ -35,22 +35,22 @@ namespace Projeto_LPRC5.View
             this.BtnDeletar = new System.Windows.Forms.Button();
             this.BtnAtualizar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtFuncionario = new System.Windows.Forms.MaskedTextBox();
-            this.TxtCondominio = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TxtHorario = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtEntrega = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtFornecedor = new System.Windows.Forms.MaskedTextBox();
+            this.Razao = new System.Windows.Forms.Label();
+            this.TxtCondominio = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtFuncionario = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Razao = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtEntrega = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtHorario = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.telaInicialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,60 +127,6 @@ namespace Projeto_LPRC5.View
             this.BtnSalvar.UseVisualStyleBackColor = true;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 16);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Funcionário remetente:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(189, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(361, 16);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "*Somente para casos de consulta ou atualização de dados";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TxtFuncionario
-            // 
-            this.TxtFuncionario.Location = new System.Drawing.Point(180, 26);
-            this.TxtFuncionario.Name = "TxtFuncionario";
-            this.TxtFuncionario.Size = new System.Drawing.Size(223, 20);
-            this.TxtFuncionario.TabIndex = 26;
-            // 
-            // TxtCondominio
-            // 
-            this.TxtCondominio.Location = new System.Drawing.Point(180, 105);
-            this.TxtCondominio.Name = "TxtCondominio";
-            this.TxtCondominio.Size = new System.Drawing.Size(223, 20);
-            this.TxtCondominio.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 109);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "ID do condomínio:";
-            // 
-            // TxtFornecedor
-            // 
-            this.TxtFornecedor.Location = new System.Drawing.Point(180, 68);
-            this.TxtFornecedor.Name = "TxtFornecedor";
-            this.TxtFornecedor.Size = new System.Drawing.Size(223, 20);
-            this.TxtFornecedor.TabIndex = 18;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.TxtHorario);
@@ -198,6 +144,93 @@ namespace Projeto_LPRC5.View
             this.groupBox2.Size = new System.Drawing.Size(561, 231);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
+            // 
+            // TxtHorario
+            // 
+            this.TxtHorario.Location = new System.Drawing.Point(180, 185);
+            this.TxtHorario.Mask = "00:00";
+            this.TxtHorario.Name = "TxtHorario";
+            this.TxtHorario.Size = new System.Drawing.Size(38, 20);
+            this.TxtHorario.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(42, 186);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 16);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Horário da entrega:";
+            // 
+            // TxtEntrega
+            // 
+            this.TxtEntrega.Location = new System.Drawing.Point(180, 141);
+            this.TxtEntrega.Mask = "00/00/0000";
+            this.TxtEntrega.Name = "TxtEntrega";
+            this.TxtEntrega.Size = new System.Drawing.Size(68, 20);
+            this.TxtEntrega.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(50, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Data da entrega:";
+            // 
+            // TxtFornecedor
+            // 
+            this.TxtFornecedor.Location = new System.Drawing.Point(180, 68);
+            this.TxtFornecedor.Name = "TxtFornecedor";
+            this.TxtFornecedor.Size = new System.Drawing.Size(223, 20);
+            this.TxtFornecedor.TabIndex = 18;
+            // 
+            // Razao
+            // 
+            this.Razao.AutoSize = true;
+            this.Razao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Razao.Location = new System.Drawing.Point(55, 72);
+            this.Razao.Name = "Razao";
+            this.Razao.Size = new System.Drawing.Size(111, 16);
+            this.Razao.TabIndex = 17;
+            this.Razao.Text = "ID do fornecedor:";
+            // 
+            // TxtCondominio
+            // 
+            this.TxtCondominio.Location = new System.Drawing.Point(180, 105);
+            this.TxtCondominio.Name = "TxtCondominio";
+            this.TxtCondominio.Size = new System.Drawing.Size(223, 20);
+            this.TxtCondominio.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 16);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Funcionário remetente:";
+            // 
+            // TxtFuncionario
+            // 
+            this.TxtFuncionario.Location = new System.Drawing.Point(180, 26);
+            this.TxtFuncionario.Name = "TxtFuncionario";
+            this.TxtFuncionario.Size = new System.Drawing.Size(223, 20);
+            this.TxtFuncionario.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "ID do condomínio:";
             // 
             // groupBox4
             // 
@@ -220,6 +253,19 @@ namespace Projeto_LPRC5.View
             this.label4.TabIndex = 27;
             this.label4.Text = " ID da entrega";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(189, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(361, 16);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "*Somente para casos de consulta ou atualização de dados";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(144, 11);
@@ -237,52 +283,6 @@ namespace Projeto_LPRC5.View
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
-            // 
-            // Razao
-            // 
-            this.Razao.AutoSize = true;
-            this.Razao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Razao.Location = new System.Drawing.Point(55, 72);
-            this.Razao.Name = "Razao";
-            this.Razao.Size = new System.Drawing.Size(111, 16);
-            this.Razao.TabIndex = 17;
-            this.Razao.Text = "ID do fornecedor:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 16);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Data da entrega:";
-            // 
-            // TxtEntrega
-            // 
-            this.TxtEntrega.Location = new System.Drawing.Point(180, 141);
-            this.TxtEntrega.Mask = "00/00/0000";
-            this.TxtEntrega.Name = "TxtEntrega";
-            this.TxtEntrega.Size = new System.Drawing.Size(68, 20);
-            this.TxtEntrega.TabIndex = 32;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Horário da entrega:";
-            // 
-            // TxtHorario
-            // 
-            this.TxtHorario.Location = new System.Drawing.Point(180, 185);
-            this.TxtHorario.Mask = "00:00";
-            this.TxtHorario.Name = "TxtHorario";
-            this.TxtHorario.Size = new System.Drawing.Size(38, 20);
-            this.TxtHorario.TabIndex = 34;
             // 
             // menuStrip1
             // 
@@ -308,12 +308,14 @@ namespace Projeto_LPRC5.View
             this.telaInicialToolStripMenuItem.Name = "telaInicialToolStripMenuItem";
             this.telaInicialToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.telaInicialToolStripMenuItem.Text = "Tela inicial";
+            this.telaInicialToolStripMenuItem.Click += new System.EventHandler(this.telaInicialToolStripMenuItem_Click);
             // 
             // cadastroDeFornecedorToolStripMenuItem
             // 
             this.cadastroDeFornecedorToolStripMenuItem.Name = "cadastroDeFornecedorToolStripMenuItem";
             this.cadastroDeFornecedorToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.cadastroDeFornecedorToolStripMenuItem.Text = "Cadastro de fornecedor";
+            this.cadastroDeFornecedorToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeFornecedorToolStripMenuItem_Click);
             // 
             // frmEntregasFornecedor
             // 
