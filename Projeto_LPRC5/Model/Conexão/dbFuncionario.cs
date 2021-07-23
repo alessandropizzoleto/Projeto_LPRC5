@@ -4,7 +4,7 @@
 //**Instruções: criação do CRUD
 //
 //
-//****** Atualizações:
+//****** Atualizações: Montamos o banco de dados pedido pelo professor, os botoes e a classe
 //*** Data:
 //*** Responsável:
 //****************************************************************************************

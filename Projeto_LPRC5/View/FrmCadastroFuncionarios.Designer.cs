@@ -35,7 +35,7 @@ namespace Projeto_LPRC5
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.barraManutencaoMarca = new System.Windows.Forms.ToolStrip();
-            this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
+            this.barbtnnovofuncionario_click = new System.Windows.Forms.ToolStripButton();
             this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
             this.barbtnExcluir = new System.Windows.Forms.ToolStripButton();
             this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
@@ -101,7 +101,7 @@ namespace Projeto_LPRC5
             this.barraManutencaoMarca.Dock = System.Windows.Forms.DockStyle.None;
             this.barraManutencaoMarca.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.barraManutencaoMarca.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.barbtnNovo,
+            this.barbtnnovofuncionario_click,
             this.barbtnEditar,
             this.barbtnExcluir,
             this.barbtnSalvar,
@@ -110,19 +110,20 @@ namespace Projeto_LPRC5
             this.barraManutencaoMarca.Location = new System.Drawing.Point(9, 9);
             this.barraManutencaoMarca.Name = "barraManutencaoMarca";
             this.barraManutencaoMarca.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.barraManutencaoMarca.Size = new System.Drawing.Size(229, 39);
+            this.barraManutencaoMarca.Size = new System.Drawing.Size(260, 39);
             this.barraManutencaoMarca.TabIndex = 7;
             this.barraManutencaoMarca.Text = "toolStrip1";
             // 
-            // barbtnNovo
+            // barbtnnovofuncionario_click
             // 
-            this.barbtnNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.barbtnNovo.Image = ((System.Drawing.Image)(resources.GetObject("barbtnNovo.Image")));
-            this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.barbtnNovo.Name = "barbtnNovo";
-            this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
-            this.barbtnNovo.Text = "Novo";
-            this.barbtnNovo.ToolTipText = "Adicionar";
+            this.barbtnnovofuncionario_click.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnnovofuncionario_click.Image = ((System.Drawing.Image)(resources.GetObject("barbtnnovofuncionario_click.Image")));
+            this.barbtnnovofuncionario_click.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.barbtnnovofuncionario_click.Name = "barbtnnovofuncionario_click";
+            this.barbtnnovofuncionario_click.Size = new System.Drawing.Size(36, 36);
+            this.barbtnnovofuncionario_click.Text = "Novo";
+            this.barbtnnovofuncionario_click.ToolTipText = "Adicionar";
+            this.barbtnnovofuncionario_click.Click += new System.EventHandler(this.barbtnNovo_Click_1);
             // 
             // barbtnEditar
             // 
@@ -349,7 +350,7 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStrip barraManutencaoMarca;
-        private System.Windows.Forms.ToolStripButton barbtnNovo;
+        private System.Windows.Forms.ToolStripButton barbtnnovofuncionario_click;
         private System.Windows.Forms.ToolStripButton barbtnEditar;
         private System.Windows.Forms.ToolStripButton barbtnExcluir;
         private System.Windows.Forms.ToolStripButton barbtnSalvar;
