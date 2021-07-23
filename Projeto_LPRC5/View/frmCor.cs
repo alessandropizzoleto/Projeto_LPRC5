@@ -24,6 +24,10 @@
 //*** Data: 21/07/2021
 //*** Responsável: Murilo Azevedo Jacon, João Pedro Carpanezi dos Santos, Isabelle Caroline de Carvalho de Costa
 //****************************************************************************************
+//****** Atualizações: Correção nas mensagens de Erro.
+//*** Data:22/07/2021
+//*** Responsável: Alexandro Junior, Caique Bruno e Guilherme Beig
+//***************************************************************************************
 
 using System;
 using System.Collections.Generic;
@@ -115,7 +119,7 @@ namespace Projeto_LPRC5
             }
             else
             {
-                MessageBox.Show("Usuário não tem permissão para realizar a Inclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Usuário não tem permissão para realizar a Inclusão da Cor selecionada", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -128,7 +132,7 @@ namespace Projeto_LPRC5
             }
             else
             {
-                MessageBox.Show("Usuário não tem permissão para realizar a Alteração de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Usuário não tem permissão para realizar a Alteração da Cor selecionada", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -155,7 +159,7 @@ namespace Projeto_LPRC5
             }
             else
             {
-                MessageBox.Show("Usuário não tem permissão para realizar a Exclusão de Cidades", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Usuário não tem permissão para realizar a Exclusão da Cor selecionada", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

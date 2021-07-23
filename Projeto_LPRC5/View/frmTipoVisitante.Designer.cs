@@ -1,4 +1,4 @@
-﻿namespace Projeto_LPRC5.View
+﻿namespace Projeto_LPRC5
 {
     partial class frmTipoVisitante
     {
@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoVisitante));
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnNovo = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
-            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.btnSair = new System.Windows.Forms.ToolStripButton();
+            this.barbtnNovo = new System.Windows.Forms.ToolStripButton();
+            this.barbtnEditar = new System.Windows.Forms.ToolStripButton();
+            this.barbtnExcluir = new System.Windows.Forms.ToolStripButton();
+            this.barbtnSalvar = new System.Windows.Forms.ToolStripButton();
+            this.barbtnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.barbtnFechar = new System.Windows.Forms.ToolStripButton();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.grdDescricao = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
@@ -45,125 +45,129 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(309, 78);
+            this.txtDescricao.Location = new System.Drawing.Point(240, 60);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(236, 26);
             this.txtDescricao.TabIndex = 0;
-            this.txtDescricao.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNovo,
-            this.btnEditar,
-            this.btnExcluir,
-            this.btnSalvar,
-            this.btnCancelar,
-            this.btnSair});
-            this.toolStrip1.Location = new System.Drawing.Point(20, 15);
+            this.barbtnNovo,
+            this.barbtnEditar,
+            this.barbtnExcluir,
+            this.barbtnSalvar,
+            this.barbtnCancelar,
+            this.barbtnFechar});
+            this.toolStrip1.Location = new System.Drawing.Point(1, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(259, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(228, 39);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnNovo
+            // barbtnNovo
             // 
-            this.btnNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
-            this.btnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(36, 36);
-            this.btnNovo.Tag = "1";
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.ToolTipText = "Adicionar Cidade";
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.barbtnNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnNovo.Image = ((System.Drawing.Image)(resources.GetObject("barbtnNovo.Image")));
+            this.barbtnNovo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.barbtnNovo.Name = "barbtnNovo";
+            this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
+            this.barbtnNovo.Tag = "1";
+            this.barbtnNovo.Text = "Novo";
+            this.barbtnNovo.ToolTipText = "Adicionar Cidade";
+            this.barbtnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // btnEditar
+            // barbtnEditar
             // 
-            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(36, 36);
-            this.btnEditar.Tag = "2";
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.ToolTipText = "Editar Cidade";
+            this.barbtnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnEditar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnEditar.Image")));
+            this.barbtnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.barbtnEditar.Name = "barbtnEditar";
+            this.barbtnEditar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnEditar.Tag = "2";
+            this.barbtnEditar.Text = "Editar";
+            this.barbtnEditar.ToolTipText = "Editar Cidade";
+            this.barbtnEditar.Click += new System.EventHandler(this.barbtnEditar_Click);
             // 
-            // btnExcluir
+            // barbtnExcluir
             // 
-            this.btnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(36, 36);
-            this.btnExcluir.Tag = "3";
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.ToolTipText = "Excluir Cidade";
+            this.barbtnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("barbtnExcluir.Image")));
+            this.barbtnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.barbtnExcluir.Name = "barbtnExcluir";
+            this.barbtnExcluir.Size = new System.Drawing.Size(36, 36);
+            this.barbtnExcluir.Tag = "3";
+            this.barbtnExcluir.Text = "Excluir";
+            this.barbtnExcluir.ToolTipText = "Excluir Cidade";
+            this.barbtnExcluir.Click += new System.EventHandler(this.barbtnExcluir_Click);
             // 
-            // btnSalvar
+            // barbtnSalvar
             // 
-            this.btnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(36, 36);
-            this.btnSalvar.Tag = "4";
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.ToolTipText = "Salvar nova Cidade";
+            this.barbtnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnSalvar.Image")));
+            this.barbtnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.barbtnSalvar.Name = "barbtnSalvar";
+            this.barbtnSalvar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnSalvar.Tag = "4";
+            this.barbtnSalvar.Text = "Salvar";
+            this.barbtnSalvar.ToolTipText = "Salvar nova Cidade";
+            this.barbtnSalvar.Click += new System.EventHandler(this.barbtnSalvar_Click);
             // 
-            // btnCancelar
+            // barbtnCancelar
             // 
-            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(36, 36);
-            this.btnCancelar.Tag = "5";
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
+            this.barbtnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnCancelar.Image")));
+            this.barbtnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.barbtnCancelar.Name = "barbtnCancelar";
+            this.barbtnCancelar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnCancelar.Tag = "5";
+            this.barbtnCancelar.Text = "Cancelar";
+            this.barbtnCancelar.ToolTipText = "Cancela a operação de conclusão ou edição";
+            this.barbtnCancelar.Click += new System.EventHandler(this.barbtnCancelar_Click);
             // 
-            // btnSair
+            // barbtnFechar
             // 
-            this.btnSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(36, 36);
-            this.btnSair.Tag = "6";
-            this.btnSair.Text = "Fechar";
-            this.btnSair.ToolTipText = "Fechar Manutenção de Cidade";
+            this.barbtnFechar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.barbtnFechar.Image = ((System.Drawing.Image)(resources.GetObject("barbtnFechar.Image")));
+            this.barbtnFechar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.barbtnFechar.Name = "barbtnFechar";
+            this.barbtnFechar.Size = new System.Drawing.Size(36, 36);
+            this.barbtnFechar.Tag = "6";
+            this.barbtnFechar.Text = "Fechar";
+            this.barbtnFechar.ToolTipText = "Fechar Manutenção de Cidade";
+            this.barbtnFechar.Click += new System.EventHandler(this.barbtnFechar_Click);
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(307, 55);
+            this.lblDescricao.Location = new System.Drawing.Point(236, 37);
             this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(47, 19);
+            this.lblDescricao.Size = new System.Drawing.Size(70, 19);
             this.lblDescricao.TabIndex = 7;
-            this.lblDescricao.Text = "Nome";
-            this.lblDescricao.Click += new System.EventHandler(this.lblCidade_Click);
+            this.lblDescricao.Text = "Descrição";
             // 
             // grdDescricao
             // 
             this.grdDescricao.AllowUserToAddRows = false;
             this.grdDescricao.AllowUserToDeleteRows = false;
             this.grdDescricao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDescricao.Location = new System.Drawing.Point(20, 55);
+            this.grdDescricao.Location = new System.Drawing.Point(9, 37);
             this.grdDescricao.Name = "grdDescricao";
             this.grdDescricao.ReadOnly = true;
             this.grdDescricao.RowHeadersWidth = 51;
-            this.grdDescricao.Size = new System.Drawing.Size(240, 279);
+            this.grdDescricao.Size = new System.Drawing.Size(220, 282);
             this.grdDescricao.TabIndex = 8;
+            this.grdDescricao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDescricao_CellClick_1);
             // 
             // frmTipoVisitante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 346);
+            this.ClientSize = new System.Drawing.Size(482, 331);
             this.Controls.Add(this.grdDescricao);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.toolStrip1);
@@ -185,12 +189,12 @@
 
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnNovo;
-        private System.Windows.Forms.ToolStripButton btnEditar;
-        private System.Windows.Forms.ToolStripButton btnExcluir;
-        private System.Windows.Forms.ToolStripButton btnSalvar;
-        private System.Windows.Forms.ToolStripButton btnCancelar;
-        private System.Windows.Forms.ToolStripButton btnSair;
+        private System.Windows.Forms.ToolStripButton barbtnNovo;
+        private System.Windows.Forms.ToolStripButton barbtnEditar;
+        private System.Windows.Forms.ToolStripButton barbtnExcluir;
+        private System.Windows.Forms.ToolStripButton barbtnSalvar;
+        private System.Windows.Forms.ToolStripButton barbtnCancelar;
+        private System.Windows.Forms.ToolStripButton barbtnFechar;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.DataGridView grdDescricao;
     }

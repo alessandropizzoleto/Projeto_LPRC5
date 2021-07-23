@@ -51,6 +51,8 @@
             this.cmbTipoVisitante = new System.Windows.Forms.ComboBox();
             this.lblHabitacao = new System.Windows.Forms.Label();
             this.lblTipoVisitante = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.lblPlaca = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVisitantes)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,7 @@
             this.btnSair});
             this.toolStrip1.Location = new System.Drawing.Point(4, 11);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(268, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(228, 39);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -153,138 +155,158 @@
             this.grdVisitantes.Name = "grdVisitantes";
             this.grdVisitantes.ReadOnly = true;
             this.grdVisitantes.RowHeadersWidth = 51;
-            this.grdVisitantes.Size = new System.Drawing.Size(238, 294);
+            this.grdVisitantes.Size = new System.Drawing.Size(409, 294);
             this.grdVisitantes.TabIndex = 6;
             // 
             // txtNomeRegitro
             // 
-            this.txtNomeRegitro.Location = new System.Drawing.Point(253, 81);
+            this.txtNomeRegitro.Location = new System.Drawing.Point(424, 83);
             this.txtNomeRegitro.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeRegitro.Name = "txtNomeRegitro";
-            this.txtNomeRegitro.Size = new System.Drawing.Size(185, 30);
-            this.txtNomeRegitro.TabIndex = 45;
+            this.txtNomeRegitro.Size = new System.Drawing.Size(185, 26);
+            this.txtNomeRegitro.TabIndex = 1;
             // 
             // lblNomeRegistro
             // 
             this.lblNomeRegistro.AutoSize = true;
-            this.lblNomeRegistro.Location = new System.Drawing.Point(249, 55);
+            this.lblNomeRegistro.Location = new System.Drawing.Point(420, 57);
             this.lblNomeRegistro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeRegistro.Name = "lblNomeRegistro";
-            this.lblNomeRegistro.Size = new System.Drawing.Size(129, 22);
+            this.lblNomeRegistro.Size = new System.Drawing.Size(101, 19);
             this.lblNomeRegistro.TabIndex = 44;
             this.lblNomeRegistro.Text = "Nome Registro";
             // 
             // txtRg
             // 
-            this.txtRg.Location = new System.Drawing.Point(249, 321);
+            this.txtRg.Location = new System.Drawing.Point(424, 325);
             this.txtRg.Margin = new System.Windows.Forms.Padding(4);
             this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(189, 30);
-            this.txtRg.TabIndex = 43;
+            this.txtRg.Size = new System.Drawing.Size(189, 26);
+            this.txtRg.TabIndex = 5;
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(249, 295);
+            this.lblRg.Location = new System.Drawing.Point(420, 297);
             this.lblRg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(32, 22);
+            this.lblRg.Size = new System.Drawing.Size(26, 19);
             this.lblRg.TabIndex = 42;
             this.lblRg.Text = "Rg";
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(249, 261);
+            this.txtCpf.Location = new System.Drawing.Point(424, 260);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(189, 30);
-            this.txtCpf.TabIndex = 41;
+            this.txtCpf.Size = new System.Drawing.Size(189, 26);
+            this.txtCpf.TabIndex = 4;
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(249, 235);
+            this.lblCpf.Location = new System.Drawing.Point(420, 237);
             this.lblCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(39, 22);
+            this.lblCpf.Size = new System.Drawing.Size(32, 19);
             this.lblCpf.TabIndex = 40;
             this.lblCpf.Text = "Cpf";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(249, 201);
+            this.txtEmail.Location = new System.Drawing.Point(424, 200);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(189, 30);
-            this.txtEmail.TabIndex = 39;
+            this.txtEmail.Size = new System.Drawing.Size(189, 26);
+            this.txtEmail.TabIndex = 3;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(249, 175);
+            this.lblEmail.Location = new System.Drawing.Point(420, 177);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(57, 22);
+            this.lblEmail.Size = new System.Drawing.Size(42, 19);
             this.lblEmail.TabIndex = 38;
             this.lblEmail.Text = "Email";
             // 
             // txtNomeSocial
             // 
-            this.txtNomeSocial.Location = new System.Drawing.Point(253, 141);
+            this.txtNomeSocial.Location = new System.Drawing.Point(424, 143);
             this.txtNomeSocial.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeSocial.Name = "txtNomeSocial";
-            this.txtNomeSocial.Size = new System.Drawing.Size(185, 30);
-            this.txtNomeSocial.TabIndex = 37;
+            this.txtNomeSocial.Size = new System.Drawing.Size(185, 26);
+            this.txtNomeSocial.TabIndex = 2;
             // 
             // lblNomeSocial
             // 
             this.lblNomeSocial.AutoSize = true;
-            this.lblNomeSocial.Location = new System.Drawing.Point(249, 115);
+            this.lblNomeSocial.Location = new System.Drawing.Point(420, 117);
             this.lblNomeSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeSocial.Name = "lblNomeSocial";
-            this.lblNomeSocial.Size = new System.Drawing.Size(113, 22);
+            this.lblNomeSocial.Size = new System.Drawing.Size(88, 19);
             this.lblNomeSocial.TabIndex = 36;
             this.lblNomeSocial.Text = "Nome Social";
             // 
             // cmbHabitacaoId
             // 
             this.cmbHabitacaoId.FormattingEnabled = true;
-            this.cmbHabitacaoId.Location = new System.Drawing.Point(458, 139);
+            this.cmbHabitacaoId.Location = new System.Drawing.Point(629, 141);
             this.cmbHabitacaoId.Name = "cmbHabitacaoId";
-            this.cmbHabitacaoId.Size = new System.Drawing.Size(167, 30);
-            this.cmbHabitacaoId.TabIndex = 51;
+            this.cmbHabitacaoId.Size = new System.Drawing.Size(167, 27);
+            this.cmbHabitacaoId.TabIndex = 7;
             // 
             // cmbTipoVisitante
             // 
             this.cmbTipoVisitante.FormattingEnabled = true;
-            this.cmbTipoVisitante.Location = new System.Drawing.Point(458, 81);
+            this.cmbTipoVisitante.Location = new System.Drawing.Point(629, 83);
             this.cmbTipoVisitante.Name = "cmbTipoVisitante";
-            this.cmbTipoVisitante.Size = new System.Drawing.Size(167, 30);
-            this.cmbTipoVisitante.TabIndex = 48;
+            this.cmbTipoVisitante.Size = new System.Drawing.Size(167, 27);
+            this.cmbTipoVisitante.TabIndex = 6;
             // 
             // lblHabitacao
             // 
             this.lblHabitacao.AutoSize = true;
-            this.lblHabitacao.Location = new System.Drawing.Point(458, 114);
+            this.lblHabitacao.Location = new System.Drawing.Point(629, 116);
             this.lblHabitacao.Name = "lblHabitacao";
-            this.lblHabitacao.Size = new System.Drawing.Size(112, 22);
+            this.lblHabitacao.Size = new System.Drawing.Size(88, 19);
             this.lblHabitacao.TabIndex = 47;
             this.lblHabitacao.Text = "Habitação Id";
             // 
             // lblTipoVisitante
             // 
             this.lblTipoVisitante.AutoSize = true;
-            this.lblTipoVisitante.Location = new System.Drawing.Point(458, 57);
+            this.lblTipoVisitante.Location = new System.Drawing.Point(629, 59);
             this.lblTipoVisitante.Name = "lblTipoVisitante";
-            this.lblTipoVisitante.Size = new System.Drawing.Size(119, 22);
+            this.lblTipoVisitante.Size = new System.Drawing.Size(88, 19);
             this.lblTipoVisitante.TabIndex = 46;
             this.lblTipoVisitante.Text = "Tipo visitante";
             // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Location = new System.Drawing.Point(629, 200);
+            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(167, 26);
+            this.txtPlaca.TabIndex = 48;
+            // 
+            // lblPlaca
+            // 
+            this.lblPlaca.AutoSize = true;
+            this.lblPlaca.Location = new System.Drawing.Point(629, 178);
+            this.lblPlaca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlaca.Name = "lblPlaca";
+            this.lblPlaca.Size = new System.Drawing.Size(108, 19);
+            this.lblPlaca.TabIndex = 49;
+            this.lblPlaca.Text = "Placa do veículo";
+            // 
             // frmVisitantes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 359);
+            this.ClientSize = new System.Drawing.Size(828, 373);
+            this.Controls.Add(this.txtPlaca);
+            this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.cmbHabitacaoId);
             this.Controls.Add(this.cmbTipoVisitante);
             this.Controls.Add(this.lblHabitacao);
@@ -305,6 +327,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVisitantes";
             this.Text = "Manutenção Visitantes";
+            this.Load += new System.EventHandler(this.frmVisitantes_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVisitantes)).EndInit();
@@ -337,5 +360,7 @@
         private System.Windows.Forms.ComboBox cmbTipoVisitante;
         private System.Windows.Forms.Label lblHabitacao;
         private System.Windows.Forms.Label lblTipoVisitante;
+        private System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.Label lblPlaca;
     }
 }

@@ -14,38 +14,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using MySql.Data.MySqlClient;
 
-namespace Projeto_LPRC5
+namespace Projeto_LPRC5.Model.Classe
 {
-    public class classeCadastroFuncionarios
+    class ClasseCadastroFuncionarios : classePessoaFisica
     {
 
-       
+
         public int Id { get; set; }
-        private string Nome { get; set; }
-        private string CPF { get; set; }
+        public string NomeRegistro { get; set; }
+        public string NomeSocial { get; set; }
+        public string CPF { get; set; }
+        public string RG { get; set; }
         private string NumeroTelefone { get; set; }
-        private string DataNascimento { get; set; }
-        private string Endereco { get; set; }
+        public string Email { get; set; }
         private string DataAdmissao { get; set; }
-        private char Sexo { get; set; }
         private string EstadoCivil { get; set; }
+        private char Sexo { get; set; }
+ 
 
 
-        public classeCadastroFuncionarios()
+        public ClasseCadastroFuncionarios()
         {
 
         }
-        public classeCadastroFuncionarios(string nome, string cpf, string telefone, string datanascimento, string endereco, string dataadimissao, char sexo, string EstadoCivil)
+        public ClasseCadastroFuncionarios(string nomeregistro, string nomesocial, string cpf, string rg, string numerotelefone, string email, string dataadimissao, char estadocivil, string sexo)
         {
-            this.Nome = nome;
+            this.NomeRegistro = nomeregistro;
+            this.NomeSocial = nomesocial;
             this.CPF = cpf;
-            this.NumeroTelefone = telefone;
-            this.DataNascimento = datanascimento;
-            this.Endereco = endereco;
+            this.RG = rg;
+            this.Email = email;
+            this.NumeroTelefone = numerotelefone;
             this.DataAdmissao = dataadimissao;
+            this.EstadoCivil = estadocivil;
             this.Sexo = sexo;
-            this.EstadoCivil = EstadoCivil;
+
         }
     }
 }

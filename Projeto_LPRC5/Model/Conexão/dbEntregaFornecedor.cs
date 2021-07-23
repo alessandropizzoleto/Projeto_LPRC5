@@ -1,12 +1,7 @@
 ﻿//****************************************************************************************
-//**Criado por: Daniel Galdencio dos Santos, Antonio Naranjo
-//**Data de Criação: 09/05/2021
+//**Criado por: Daniel Galdencio, Antonio Naranjo, Rafael de Angelis Fogaça e Letícia Lopes Abelha
+//**Data de Criação: 22/07/2021
 //**Instruções: Realizada a criação dos parâmetros de insert, update e select dos dados da tabela no banco de dados 
-//
-//
-//****** Atualizações: Criação de funções e métodos de conexão ao banco de dados mysql
-//*** Data: 22/07/2021
-//*** Responsável: Daniel Galdencio, Antonio Naranjo, Rafael de Angelis Fogaça e Letícia Lopes Abelha
 //****************************************************************************************
 
 using System;
@@ -18,9 +13,9 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
 
-namespace Projeto_LPRC5
+namespace Projeto_LPRC5.Model.Conexão
 {
-    class dbFornecedor
+    class dbEntregaFornecedor
     {
         public static MySqlConnection conexao;
         public static MySqlCommand command;
@@ -39,6 +34,7 @@ namespace Projeto_LPRC5
                 MessageBox.Show(e.Message.ToString());
             }
         }
+
 
         public static void Desconectar()
         {
@@ -65,6 +61,19 @@ namespace Projeto_LPRC5
             Desconectar();
             return dt;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
-
