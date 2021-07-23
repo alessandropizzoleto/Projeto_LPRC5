@@ -1,5 +1,5 @@
 ﻿//****************************************************************************************
-//**Criado por: Amanda, André e Giovanna 
+//**Criado por: Amanda Iaquinta, André Costa e Giovanna Frederico 
 //**Data de Criação: 20/07/2021
 //**Instruções:
 //****************************************************************************************
@@ -69,8 +69,8 @@ namespace Projeto_LPRC5.Model.Conexão
             pessoaTemp.setPessoaNomeSocial(ds.Tables[0].Rows[0][2].ToString());
             pessoaTemp.setPessoaFoto(ds.Tables[0].Rows[0][3].ToString());
             pessoaTemp.setPessoaEmail(ds.Tables[0].Rows[0][4].ToString());
-            pessoaTemp.setCpf(ds.Tables[0].Rows[0][5].ToString());
-            pessoaTemp.setRg(ds.Tables[0].Rows[0][6].ToString());
+            pessoaTemp.cpf = (ds.Tables[0].Rows[0][5].ToString());
+            pessoaTemp.rg = (ds.Tables[0].Rows[0][6].ToString());
 
             return pessoaTemp;
         }

@@ -13,9 +13,14 @@
 //*** Data: 01/06/2021
 //*** Responsável: Roberto Marcheti Neto
 
+//**Criado por: Amanda Iaquinta, André Costa e Giovanna Frederico
+//****** Atualizações: inserção dos botões de acesso aos forms de Visitante e TipoVisitante.
+//*** Data: 21/07/2021
+//**Instruções:
+
 //****************************************************************************************
 using Projeto_LPRC5;
-
+using Projeto_LPRC5.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -202,6 +207,20 @@ namespace Projeto_LPRC5
             frmEmpresa empresa = new frmEmpresa();
             empresa.MdiParent = this;
             empresa.Show();
+        }
+
+        private void visitantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVisitantes visitantes = new frmVisitantes();
+            visitantes.MdiParent = this;
+            visitantes.Show();
+        }
+
+        private void tipoVisitanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoVisitante visitante = new frmTipoVisitante();
+            visitante.MdiParent = this;
+            visitante.Show();
         }
     }
 }

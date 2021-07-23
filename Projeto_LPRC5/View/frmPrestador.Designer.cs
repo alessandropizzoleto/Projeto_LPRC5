@@ -51,8 +51,6 @@
             this.lblInsMunicipal = new System.Windows.Forms.Label();
             this.txtInscEstadual = new System.Windows.Forms.TextBox();
             this.lblInscEstadual = new System.Windows.Forms.Label();
-            this.txtVisitaId = new System.Windows.Forms.TextBox();
-            this.lblVisitaId = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPrestador)).BeginInit();
             this.SuspendLayout();
@@ -168,7 +166,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(547, 257);
+            this.txtDescricao.Location = new System.Drawing.Point(547, 195);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(255, 26);
@@ -178,7 +176,7 @@
             // 
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(543, 234);
+            this.lblDescricao.Location = new System.Drawing.Point(543, 172);
             this.lblDescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(70, 19);
@@ -292,32 +290,11 @@
             this.lblInscEstadual.TabIndex = 21;
             this.lblInscEstadual.Text = "Inscrição Estadual";
             // 
-            // txtVisitaId
-            // 
-            this.txtVisitaId.Location = new System.Drawing.Point(547, 195);
-            this.txtVisitaId.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVisitaId.Name = "txtVisitaId";
-            this.txtVisitaId.Size = new System.Drawing.Size(255, 26);
-            this.txtVisitaId.TabIndex = 26;
-            // 
-            // lblVisitaId
-            // 
-            this.lblVisitaId.AutoSize = true;
-            this.lblVisitaId.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisitaId.Location = new System.Drawing.Point(543, 172);
-            this.lblVisitaId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVisitaId.Name = "lblVisitaId";
-            this.lblVisitaId.Size = new System.Drawing.Size(62, 19);
-            this.lblVisitaId.TabIndex = 25;
-            this.lblVisitaId.Text = "Visita ID";
-            // 
             // frmPrestador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 342);
-            this.Controls.Add(this.txtVisitaId);
-            this.Controls.Add(this.lblVisitaId);
             this.Controls.Add(this.txtInsMunicipal);
             this.Controls.Add(this.lblInsMunicipal);
             this.Controls.Add(this.txtInscEstadual);
@@ -371,7 +348,5 @@
         private System.Windows.Forms.Label lblInsMunicipal;
         private System.Windows.Forms.TextBox txtInscEstadual;
         private System.Windows.Forms.Label lblInscEstadual;
-        private System.Windows.Forms.TextBox txtVisitaId;
-        private System.Windows.Forms.Label lblVisitaId;
     }
 }

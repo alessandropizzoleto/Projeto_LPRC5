@@ -86,7 +86,7 @@ namespace Projeto_LPRC5
             this.barbtnNovo.Size = new System.Drawing.Size(36, 36);
             this.barbtnNovo.Text = "Novo";
             this.barbtnNovo.ToolTipText = "Adicionar";
-            this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click_1);
+          //  this.barbtnNovo.Click += new System.EventHandler(this.barbtnNovo_Click_1);
             // 
             // barbtnEditar
             // 

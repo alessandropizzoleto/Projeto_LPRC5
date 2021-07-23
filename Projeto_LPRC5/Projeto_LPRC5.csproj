@@ -52,9 +52,7 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2020.0.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
@@ -131,9 +129,11 @@
     <Compile Include="Model\Conexão\dbPessoaFisica.cs" />
     <Compile Include="Model\Conexão\dbPessoaJuridica.cs" />
     <Compile Include="Model\Conexão\dbPrestador.cs" />
+    <Compile Include="Model\Conexão\dbTipoVisitante.cs" />
     <Compile Include="Model\Conexão\DbVeiculo.cs" />
     <Compile Include="Model\Conexão\DbVeiculoMarca.cs" />
     <Compile Include="Model\Conexão\DbVeiculoPessoa.cs" />
+    <Compile Include="Model\Conexão\dbVisitantes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -319,12 +319,6 @@
     <Compile Include="View\frmTipoUsuario.Designer.cs">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmVisitantePrestador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmVisitantePrestador.Designer.cs">
-      <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Classe\classeMoradores.cs" />
     <Compile Include="Model\Conexão\dbMoradores.cs" />
     <Compile Include="View\frmMoradores.cs">
@@ -423,9 +417,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmTipoUsuario.resx">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmVisitantePrestador.resx">
-      <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmMoradores.resx">
       <DependentUpon>frmMoradores.cs</DependentUpon>

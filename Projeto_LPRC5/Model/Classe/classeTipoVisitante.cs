@@ -10,11 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto_LPRC5.Model.Classe
+namespace Projeto_LPRC5
 {
     class classeTipoVisitante
     {
-        private int tipoVisitanteId { get; set; }
-        private string visitanteDescricao { get; set; }
+        public int tipoVisitanteId { get; set; }
+        public string visitanteDescricao { get; set; }
     }
 }
