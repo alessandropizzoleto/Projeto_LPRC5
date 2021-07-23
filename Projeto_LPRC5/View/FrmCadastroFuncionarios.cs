@@ -34,22 +34,22 @@ namespace Projeto_LPRC5
 
 
         dbCadastroFuncionarios db_CadastroFuncionarios = new dbCadastroFuncionarios();
-        classeCadastroFuncionarios CadastroFuncionarios = new classeCadastroFuncionarios();
+        ClasseCadastroFuncionarios CadastroFuncionarios = new ClasseCadastroFuncionarios();
 
         private void formataGrid()
         {
 
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dataGridView1.Columns[0].HeaderText = "Código";
-            dataGridView1.Columns[1].HeaderText = "Nome";
+            dataGridView1.Columns[0].HeaderText = "Nome Registro";
+            dataGridView1.Columns[1].HeaderText = "Nome Social";
             dataGridView1.Columns[2].HeaderText = "CPF";
-            dataGridView1.Columns[3].HeaderText = "Telefone";
-            dataGridView1.Columns[4].HeaderText = "Data de Nascimento";
-            dataGridView1.Columns[5].HeaderText = "Endereço";
+            dataGridView1.Columns[3].HeaderText = "RG";
+            dataGridView1.Columns[4].HeaderText = "Telefone";
+            dataGridView1.Columns[5].HeaderText = "Email";
             dataGridView1.Columns[6].HeaderText = "Data de Adimissão";
-            dataGridView1.Columns[7].HeaderText = "Sexo";
-            dataGridView1.Columns[8].HeaderText = "Estado Civil";
+            dataGridView1.Columns[7].HeaderText = "Estado Civil";
+            dataGridView1.Columns[8].HeaderText = "Sexo";
 
             dataGridView1.Columns[0].Width = 0;
             
@@ -227,6 +227,11 @@ namespace Projeto_LPRC5
         }
 
         private void FrmCadastroFuncionarios_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
