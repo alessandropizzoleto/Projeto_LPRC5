@@ -13,14 +13,9 @@
 //*** Data: 01/06/2021
 //*** Responsável: Roberto Marcheti Neto
 
-//**Criado por: Amanda Iaquinta, André Costa e Giovanna Frederico
-//****** Atualizações: inserção dos botões de acesso aos forms de Visitante e TipoVisitante.
-//*** Data: 21/07/2021
-//**Instruções:
-
 //****************************************************************************************
 using Projeto_LPRC5;
-using Projeto_LPRC5.View;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -177,15 +172,17 @@ namespace Projeto_LPRC5
         private void mnuEncomendas_Click(object sender, EventArgs e)
         {
             frmEncomendas encomendas = new frmEncomendas();
-            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(encomendas.Tag), 0) == true)
-            {
-                encomendas.MdiParent = this;
-                encomendas.Show();
-            }
-            else
-            {
-                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Encomendas", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            encomendas.MdiParent = this;
+            encomendas.Show();
+            
+            ;// if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(encomendas.Tag), 0) == true)
+            //{
+                
+            //}
+            //else
+           // {
+            //    MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Encomendas", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          // }
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,18 +206,6 @@ namespace Projeto_LPRC5
             empresa.Show();
         }
 
-        private void visitantesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmVisitantes visitantes = new frmVisitantes();
-            visitantes.MdiParent = this;
-            visitantes.Show();
-        }
-
-        private void tipoVisitanteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTipoVisitante visitante = new frmTipoVisitante();
-            visitante.MdiParent = this;
-            visitante.Show();
-        }
+       
     }
 }

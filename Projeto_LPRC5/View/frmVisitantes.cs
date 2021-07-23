@@ -86,6 +86,9 @@ namespace Projeto_LPRC5.View
             txtCpf.Enabled = habilitar;
             txtRg.Enabled = habilitar;
             grdVisitantes.Enabled = !habilitar;
+            cmbTipoVisitante.Enabled = habilitar;
+            cmbHabitacaoId.Enabled = habilitar;
+            txtPlaca.Enabled = habilitar;
         }
 
         private void limpaCamposDados()
@@ -103,10 +106,11 @@ namespace Projeto_LPRC5.View
         {
             bool resultado = true;
 
-           /* if (cmbHabitacaoId.SelectedItem == null)
-            {
-                resultado = false;
-            }*/
+            // Descomentar a linha abaixo após a implementação das classe habitação (resposabilidade de outro grupo). 
+            /* if (cmbHabitacaoId.SelectedItem == null)
+             {
+                 resultado = false;
+             }*/
             if (txtNomeRegitro.Text.Length < 2)
             {
                 resultado = false;
@@ -165,10 +169,24 @@ namespace Projeto_LPRC5.View
                 ClasseVisitantes.setPessoaEmail(txtEmail.Text.ToString());
                 ClasseVisitantes.cpf = txtCpf.Text.ToString();
                 ClasseVisitantes.rg = txtRg.Text.ToString();
+
+                // Descomentar a linha abaixo após a implementação das classe habitação (resposabilidade de outro grupo). 
                // ClasseVisitantes.habitacaoId = Convert.ToInt32(cmbHabitacaoId.Text);
                 ClasseVisitantes.tipoVisitanteId = Convert.ToInt32(cmbTipoVisitante.ValueMember);
 
                 db_Visitantes.insereVisitante(ClasseVisitantes);
+
+                if(txtPlaca.Text != "")
+                {
+                    db_Visitantes.insereVeiculo(txtPlaca.Text);
+                }
+               
+                if (cmbTipoVisitante.GetItemText(cmbTipoVisitante.SelectedItem) == "Prestadores")
+                {
+                    frmPrestador frmPrestador = new frmPrestador();
+                    this.Close();
+                    frmPrestador.Show();
+                }
 
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);

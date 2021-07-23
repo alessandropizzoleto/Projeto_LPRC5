@@ -51,6 +51,8 @@
             this.cmbTipoVisitante = new System.Windows.Forms.ComboBox();
             this.lblHabitacao = new System.Windows.Forms.Label();
             this.lblTipoVisitante = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.lblPlaca = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdVisitantes)).BeginInit();
             this.SuspendLayout();
@@ -280,11 +282,31 @@
             this.lblTipoVisitante.TabIndex = 46;
             this.lblTipoVisitante.Text = "Tipo visitante";
             // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Location = new System.Drawing.Point(629, 200);
+            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(167, 26);
+            this.txtPlaca.TabIndex = 48;
+            // 
+            // lblPlaca
+            // 
+            this.lblPlaca.AutoSize = true;
+            this.lblPlaca.Location = new System.Drawing.Point(629, 178);
+            this.lblPlaca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPlaca.Name = "lblPlaca";
+            this.lblPlaca.Size = new System.Drawing.Size(108, 19);
+            this.lblPlaca.TabIndex = 49;
+            this.lblPlaca.Text = "Placa do veículo";
+            // 
             // frmVisitantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 373);
+            this.Controls.Add(this.txtPlaca);
+            this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.cmbHabitacaoId);
             this.Controls.Add(this.cmbTipoVisitante);
             this.Controls.Add(this.lblHabitacao);
@@ -338,5 +360,7 @@
         private System.Windows.Forms.ComboBox cmbTipoVisitante;
         private System.Windows.Forms.Label lblHabitacao;
         private System.Windows.Forms.Label lblTipoVisitante;
+        private System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.Label lblPlaca;
     }
 }

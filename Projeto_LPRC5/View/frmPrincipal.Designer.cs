@@ -43,8 +43,6 @@ namespace Projeto_LPRC5
             this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feriadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEncomendas = new System.Windows.Forms.ToolStripMenuItem();
-            this.visitantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoVisitanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condomínioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAcesso = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,11 +95,9 @@ namespace Projeto_LPRC5
             this.cidadeToolStripMenuItem,
             this.moradoresToolStripMenuItem,
             this.feriadoToolStripMenuItem,
-            this.mnuEncomendas,
-            this.visitantesToolStripMenuItem,
-            this.tipoVisitanteToolStripMenuItem});
+            this.mnuEncomendas});
             this.mnuBasico.Name = "mnuBasico";
-            this.mnuBasico.Size = new System.Drawing.Size(180, 22);
+            this.mnuBasico.Size = new System.Drawing.Size(141, 22);
             this.mnuBasico.Text = "Básico";
             // 
             // tipoDeUsuárioToolStripMenuItem
@@ -174,20 +170,6 @@ namespace Projeto_LPRC5
             this.mnuEncomendas.Size = new System.Drawing.Size(202, 22);
             this.mnuEncomendas.Text = "Encomendas";
             this.mnuEncomendas.Click += new System.EventHandler(this.mnuEncomendas_Click);
-            // 
-            // visitantesToolStripMenuItem
-            // 
-            this.visitantesToolStripMenuItem.Name = "visitantesToolStripMenuItem";
-            this.visitantesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.visitantesToolStripMenuItem.Text = "Visitantes";
-            this.visitantesToolStripMenuItem.Click += new System.EventHandler(this.visitantesToolStripMenuItem_Click);
-            // 
-            // tipoVisitanteToolStripMenuItem
-            // 
-            this.tipoVisitanteToolStripMenuItem.Name = "tipoVisitanteToolStripMenuItem";
-            this.tipoVisitanteToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.tipoVisitanteToolStripMenuItem.Text = "Tipo Visitante";
-            this.tipoVisitanteToolStripMenuItem.Click += new System.EventHandler(this.tipoVisitanteToolStripMenuItem_Click);
             // 
             // condomínioToolStripMenuItem
             // 
@@ -294,7 +276,7 @@ namespace Projeto_LPRC5
             this.Controls.Add(this.mnuCadastro);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuCadastro;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPrincipal";
             this.Text = "Software de Controle de Condomínio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -337,8 +319,6 @@ namespace Projeto_LPRC5
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PermissoesDeAcessoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem condomínioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visitantesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoVisitanteToolStripMenuItem;
     }
 }
 

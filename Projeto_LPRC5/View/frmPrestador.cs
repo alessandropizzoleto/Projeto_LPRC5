@@ -1,5 +1,5 @@
 ﻿//****************************************************************************************
-//**Criado por: Amanda, André e Giovanna 
+//**Criado por: Amanda Iaquinta, André Costa e Giovanna Frederico 
 //**Data de Criação: 20/07/2021
 //**Instruções:
 //****************************************************************************************
@@ -67,7 +67,6 @@ namespace Projeto_LPRC5.View
             txtCNPJ.Enabled = habilitar;
             txtInscEstadual.Enabled = habilitar;
             txtInsMunicipal.Enabled = habilitar;
-            txtVisitaId.Enabled = habilitar;
             txtDescricao.Enabled = habilitar;
             grdPrestador.Enabled = !habilitar;
         }
@@ -80,7 +79,6 @@ namespace Projeto_LPRC5.View
             txtCNPJ.Text = "";
             txtInscEstadual.Text = "";
             txtInsMunicipal.Text = "";
-            txtVisitaId.Text = "";
             txtDescricao.Text = "";
         }
 
@@ -112,14 +110,11 @@ namespace Projeto_LPRC5.View
             {
                 resultado = false;
             }
-            else if (txtVisitaId.Text.Length == 0)
-            {
-                resultado = false;
-            }
             else if (txtDescricao.Text.Length == 0)
             {
                 resultado = false;
             }
+
             return resultado;
         }
 
@@ -139,49 +134,12 @@ namespace Projeto_LPRC5.View
 
         private void alteraPrestador()
         {
-            if (verificaDadosObrigatorios() == true)
-            {
-                //Atualizando os dados do objeto
-                ClassePrestador.visitaId = Convert.ToInt32(txtVisitaId.Text);
-                ClassePrestador.servicodescricao = txtDescricao.Text;
-
-                db_Prestador.alteraPrestador(ClassePrestador.visitaId, ClassePrestador.servicodescricao);
-
-                habilitaBotoesMenu(true);
-                habilitaCamposDados(false);
-                limpaCamposDados();
-                atualizaDadosGrid();
-            }
-            else
-            {
-                MessageBox.Show("Dados Obrigatórios não informados ", "Urgente!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("Não é possível alterar dados de visitas de prestadores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void excluiPrestador()
         {
-            if (!util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(Tag), Convert.ToInt16(btnExcluir.Tag)))
-            {
-                MessageBox.Show("Usuário não tem permissão para realizar a exclusão de Prestador", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (ClassePrestador.visitaId != 0)
-            {
-                DialogResult retorno = MessageBox.Show("Deseja excluir a informação selecionada ?", "Aviso!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (retorno == DialogResult.Yes)
-                {
-                    db_Prestador.excluiPrestador(ClassePrestador.visitaId);
-
-                    limpaCamposDados();
-                    atualizaDadosGrid();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Não há informação selecionada para excluir!!", "Aviso!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("Não é possível excluir visitas de prestadores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void salvaPrestador()
@@ -194,7 +152,6 @@ namespace Projeto_LPRC5.View
                 ClassePrestador.setPJuridicaCNPJ(txtCNPJ.Text.ToString());
                 ClassePrestador.setPJuridicaInscEstadual(txtInscEstadual.Text.ToString());
                 ClassePrestador.setPJuridicaInscMunicipal(txtInsMunicipal.Text.ToString());
-                ClassePrestador.visitaId = Convert.ToInt32(txtVisitaId.Text);
                 ClassePrestador.servicodescricao = txtDescricao.Text;
 
                 db_Prestador.inserePrestador(ClassePrestador);
@@ -228,7 +185,10 @@ namespace Projeto_LPRC5.View
 
         private void frmPrestador_Load(object sender, EventArgs e)
         {
-
+            habilitaBotoesMenu(true);
+            habilitaCamposDados(false);
+            limpaCamposDados();
+            atualizaDadosGrid();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

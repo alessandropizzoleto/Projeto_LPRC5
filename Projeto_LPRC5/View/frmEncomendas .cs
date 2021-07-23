@@ -34,6 +34,21 @@ namespace Projeto_LPRC5
             
         }
 
+        private void preencherComboMorador()
+        {
+
+        }
+
+        private void preencherComboFuncionario()
+        {
+
+        }
+
+        private void preencherComboHabitacao()
+        {
+
+        }
+
         dbEncomenda db_Encomenda = new dbEncomenda();
         classeEncomendas encomenda = new classeEncomendas();
 
@@ -44,7 +59,7 @@ namespace Projeto_LPRC5
 
             grdDadosEncomenda.Columns[0].HeaderText = "Código";
             grdDadosEncomenda.Columns[1].HeaderText = "Destinatário";
-            grdDadosEncomenda.Columns[2].HeaderText = "Complemento";
+            grdDadosEncomenda.Columns[2].HeaderText = "Habitação";
 
             grdDadosEncomenda.Columns[0].Width = 0;
             grdDadosEncomenda.Columns[1].Width = 100;
@@ -276,5 +291,6 @@ namespace Projeto_LPRC5
             encomenda.setCodigo(Convert.ToInt16(grdDadosEncomenda.Rows[grdDadosEncomenda.CurrentRow.Index].Cells[0].Value.ToString()));
             atualizaDadosControles();
         }
+
     }
 }

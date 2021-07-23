@@ -8,6 +8,10 @@
 //****** Atualizações:ajuste de variaveis
 //*** Data:03/05/2021
 //*** Responsável:Guilherme de Andrade Rissato
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//****** Atualizações:ajuste dos tipos das variaveis
+//*** Data:03/05/2021
+//*** Responsável:Roberto Marcheti Neto
 //****************************************************************************************
 using System;
 using System.Collections.Generic;
@@ -20,32 +24,15 @@ namespace Projeto_LPRC5
     class classeEncomendas
     {
         private int codigo;
-        private string destinatario;
-        private string recebidaPor;
+        private int destinatario;
+        private int recebidaPor;
         private DateTime dataEntrada;
         private string entreguePor;
         private DateTime dataSaida;
-        private string entreguePara;
-        private string complemento;
+        private int entreguePara;
+        private int habitacao;
         private string descricao;
 
-        public classeEncomendas(int codigo,string descricao, string destinatario, string recebidaPor, DateTime dataEntrada, string entreguePor, DateTime dataSaida, string entreguePara, string complemento)
-        {
-            this.codigo = codigo;
-            this.descricao = descricao;
-            this.destinatario = destinatario;
-            this.recebidaPor = recebidaPor;
-            this.dataEntrada = dataEntrada;
-            this.entreguePor = entreguePor;
-            this.dataSaida = dataSaida;
-            this.entreguePara = entreguePara;
-            this.complemento = complemento;
-        }
-
-        public classeEncomendas()
-        {
-
-        }       
 
         public void setCodigo(int codigo)
         {
@@ -65,21 +52,21 @@ namespace Projeto_LPRC5
         {
             return descricao;
         }
-        public void setDestinatario(string destina)
+        public void setDestinatario(int destina)
         {
             destinatario = destina;
         }
 
-        public string getdestinatario()
+        public int getdestinatario()
         {
             return destinatario;
         }
-        public void setRecebidaPor(string recepor)
+        public void setRecebidaPor(int recepor)
         {
             recebidaPor = recepor;
         }
 
-        public string getRecebidaPor()
+        public int getRecebidaPor()
         {
             return recebidaPor;
         }
@@ -110,23 +97,23 @@ namespace Projeto_LPRC5
         {
             return dataSaida;
         }
-        public void setEntreguePara(string entrepara)
+        public void setEntreguePara(int entrepara)
         {
             entreguePara = entrepara;
         }
 
-        public string getEntreguePara()
+        public int getEntreguePara()
         {
             return entreguePara;
         }
-        public void setComplemento(string complemento)
+        public void setHabitacao(int habitacao)
         {
-            this.complemento = complemento;
+            this.habitacao = habitacao;
         }
 
-        public string getComplemento()
+        public int getComplemento()
         {
-            return complemento;
+            return habitacao;
         }
     }
 }
