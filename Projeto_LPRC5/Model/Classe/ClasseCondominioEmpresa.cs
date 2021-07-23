@@ -16,12 +16,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Projeto_LPRC5{
-    class classeCondominioEmpresa {
+    public class classeCondominioEmpresa{
+
         //Atributos da Classe
         public int ceId { get; set; }
         public string ceNome { get; set; }
-        public string ceLocalizacao { get; set; }
-        public string ceTipo { get; set; }
+        public string ceCEP { get; set; }
+        public string ceTipoHabitacao { get; set; }
+        public string ceContato { get; set; }
+        public string ceTipoCondominio { get; set; }
+        public string ceSindico { get; set; }
+        public string ceCNPJ { get; set; }
+        public string ceInscMunicipal { get; set; }
+        public string ceInscEstadual { get; set; }
+
 
 
         //Método Construtor
@@ -29,11 +37,17 @@ namespace Projeto_LPRC5{
 
         }
 
-        public classeCondominioEmpresa(int Id, string nome, string localizacao, string tipo) {
+        public classeCondominioEmpresa(int Id, string nome, string CEP, string tipoHab, string contato, string tipoCond, string sindico, string CNPJ, string inscMunicipal, string inscEstadual) {
             this.ceId = Id;
             this.ceNome = nome;
-            this.ceLocalizacao = localizacao;
-            this.ceTipo = tipo;
+            this.ceCEP = CEP;
+            this.ceTipoHabitacao = tipoHab;
+            this.ceContato = contato;
+            this.ceTipoCondominio = tipoCond;
+            this.ceSindico = sindico;
+            this.ceInscMunicipal = inscMunicipal;
+            this.ceCNPJ = CNPJ;
+            this.ceInscEstadual = inscEstadual;
         }
 
         

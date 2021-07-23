@@ -64,8 +64,8 @@ namespace Projeto_LPRC5
             condominioEmpresa = dbCondominioEmpresa.RetornaDadosObjeto(condominioEmpresa);
 
             txtNomeCE.Text = condominioEmpresa.ceNome;
-            txtLocalizacaoCE.Text = condominioEmpresa.ceLocalizacao;
-            txtTipoCE.Text = condominioEmpresa.ceTipo;
+            txtCEP.Text = condominioEmpresa.ceCEP;
+            txtTipoHabitacao.Text = condominioEmpresa.ceTipoHabitacao;
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -82,16 +82,16 @@ namespace Projeto_LPRC5
         {
             txtBusca.Enabled = !habilitar;
             txtNomeCE.Enabled = habilitar;
-            txtLocalizacaoCE.Enabled = habilitar;
-            txtTipoCE.Enabled = habilitar;
+            txtCEP.Enabled = habilitar;
+            txtTipoHabitacao.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
 
         private void limpaCamposDados()
         {
             txtNomeCE.Text = "";
-            txtLocalizacaoCE.Text = "";
-            txtTipoCE.Text = "";
+            txtCEP.Text = "";
+            txtTipoHabitacao.Text = "";
 
             condominioEmpresa.ceId = -1;
             //padrao.setNome("");
@@ -101,7 +101,7 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            if (txtNomeCE.Text.Trim().Length < 2 || txtLocalizacaoCE.Text.Trim().Length < 4 || txtTipoCE.Text.Trim().Length < 1)
+            if (txtNomeCE.Text.Trim().Length < 2 || txtCEP.Text.Trim().Length < 4 || txtTipoHabitacao.Text.Trim().Length < 1)
             {
                 resultado = false;
             }
@@ -149,23 +149,23 @@ namespace Projeto_LPRC5
             {
                 //Atualizando os dados do objeto estado.
                 condominioEmpresa.ceNome = txtNomeCE.Text;
-                condominioEmpresa.ceLocalizacao = txtLocalizacaoCE.Text;
-                condominioEmpresa.ceTipo = txtTipoCE.Text;
+                condominioEmpresa.ceCEP = txtCEP.Text;
+                condominioEmpresa.ceTipoHabitacao = txtTipoHabitacao.Text;
 
                 if (condominioEmpresa.ceId == -1)
                 {
                     //Insere os dados
                     condominioEmpresa.ceNome = txtNomeCE.Text;
-                    condominioEmpresa.ceLocalizacao = txtLocalizacaoCE.Text;
-                    condominioEmpresa.ceTipo = txtTipoCE.Text;
+                    condominioEmpresa.ceCEP = txtCEP.Text;
+                    condominioEmpresa.ceTipoHabitacao = txtTipoHabitacao.Text;
                     dbCondominioEmpresa.insereCondominioEmpresaBase(condominioEmpresa);
                 }
                 else
                 {
                     //Altera os dados
                     condominioEmpresa.ceNome = txtNomeCE.Text;
-                    condominioEmpresa.ceLocalizacao = txtLocalizacaoCE.Text;
-                    condominioEmpresa.ceTipo = txtTipoCE.Text;
+                    condominioEmpresa.ceCEP = txtCEP.Text;
+                    condominioEmpresa.ceTipoHabitacao = txtTipoHabitacao.Text;
                     dbCondominioEmpresa.alteraCondominioEmpresaBase(condominioEmpresa);
                 }
                 habilitaBotoesMenu(true);

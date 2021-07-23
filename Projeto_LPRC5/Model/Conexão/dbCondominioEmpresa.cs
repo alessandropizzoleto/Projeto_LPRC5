@@ -21,25 +21,32 @@ namespace Projeto_LPRC5.Model.Conexão {
 
         //Cria as intstrução SQL para insert de dados na Base de dados
         public void insereCondominioEmpresaBase(classeCondominioEmpresa condominioEmpresa) {
-            string sql = $"INSERT INTO condominioEmpresa (ceNome, ceLocalizacao, ceTipo) VALUES ('{condominioEmpresa.ceNome}','{condominioEmpresa.ceLocalizacao}','{condominioEmpresa.ceTipo}')";
+            string sql = $"INSERT INTO pessoa_juridica (CNPJ, Inscricao_Municipal, Inscricao_Estadual) VALUES ('{condominioEmpresa.ceCNPJ}','{condominioEmpresa.ceInscMunicipal}','{condominioEmpresa.ceInscEstadual}')";
+            connect.executaSQL(sql);
+            int pj_id = Convert.ToInt32(connect.retornaSQL($"SELECT P_Juridica_ID FROM pessoa_juridica WHERE CNPJ = '{condominioEmpresa.ceCNPJ}'"));
+            sql = $"INSERT INTO condominio_empresa (P_Juridica_ID, nome, CEP, tpHabit, sindico, tpCond, contato) VALUES ('{pj_id}','{condominioEmpresa.ceNome}','{condominioEmpresa.ceCEP}','{condominioEmpresa.ceTipoHabitacao}', '{condominioEmpresa.ceSindico}','{condominioEmpresa.ceTipoCondominio}','{condominioEmpresa.ceContato}')";
             connect.executaSQL(sql);
         }
 
         //Cria as instrução SQL para update de dados na Base de dados
         public void alteraCondominioEmpresaBase(classeCondominioEmpresa condominioEmpresa) {
-            string sql = $"UPDATE condominioEmpresa SET ceNome = '{condominioEmpresa.ceNome}', ceLocalizacao = '{condominioEmpresa.ceLocalizacao}', ceTipo = '{condominioEmpresa.ceTipo}' WHERE condominioEmpresa.ceId = '{condominioEmpresa.ceId}'";
+            string sql = $"UPDATE condominio_empresa SET nome = '{condominioEmpresa.ceNome}', CEP = '{condominioEmpresa.ceCEP}', tpHabit = '{condominioEmpresa.ceTipoHabitacao}', sindico = '{condominioEmpresa.ceSindico}', tpCond = '{condominioEmpresa.ceTipoCondominio}', contato = '{condominioEmpresa.ceContato}' WHERE condominioEmpresa.ceId = '{condominioEmpresa.ceId}'";
+            connect.executaSQL(sql);
+            int pj_id = Convert.ToInt32(connect.retornaSQL($"SELECT P_Juridica_ID FROM pessoa_juridica WHERE CNPJ = '{condominioEmpresa.ceCNPJ}'"));
+            sql = $"UPDATE pessoa_juridica SET CNPJ = '{condominioEmpresa.ceCNPJ}', Inscricao_Municipal = '{condominioEmpresa.ceInscMunicipal}', Inscricao_Estadual = '{condominioEmpresa.ceInscEstadual}' WHERE P_Juridica_ID = {pj_id}";
             connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Delete de dados na base de dados
         public void excluiCondominioEmpresaBase(classeCondominioEmpresa condominioEmpresa) {
-            string sql = $"DELETE FROM condominioEmpresa WHERE condominioEmpresa.Id = '{condominioEmpresa.ceId}' LIMIT 1";
+            string sql = $"DELETE FROM pessoa_juridica WHERE CNPJ = '{condominioEmpresa.ceCNPJ}' LIMITE 1";
+            sql = $"DELETE FROM condominioEmpresa WHERE condominioEmpresa.Id = '{condominioEmpresa.ceId}' LIMIT 1";
             connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Retornar dados da Base de Dados
         public MySqlDataAdapter selectCondominioEmpresaBase(classeCondominioEmpresa condominioEmpresa) {
-            string sql = $"SELECT ceId, ceNome, ceLocalizacao, ceTipo FROM condominioEmpresa WHERE ceId = '{condominioEmpresa.ceId}'";
+            string sql = $"SELECT * FROM condominioEmpresa c INNER JOIN pessoa_juridica pj on c.P_Juridica_ID WHERE ceId = '{condominioEmpresa.ceId}'";
             return connect.retornaSQL(sql);
         }
 
