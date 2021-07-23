@@ -10,11 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
-using Projeto_LPRC5.Model;
+using Projeto_LPRC5.Model.Classe;
+using Projeto_LPRC5.Model.Conexão;
 
 
 
-namespace Projeto_LPRC5
+namespace Projeto_LPRC5.Model.Classe
 {
     class classeMoradores : classePessoaFisica
     {
@@ -22,7 +23,7 @@ namespace Projeto_LPRC5
         private Int16 moradores_id;
         private Int16 habitacao_id;
         
-        classeMoradores()
+        public classeMoradores()
         {
         
         }
@@ -53,17 +54,17 @@ namespace Projeto_LPRC5
             switch (operacao)
             {
                 case "inserir":
-                    moradores.insereMoradoresBase(moradoresMoradoresId, moradoresHabitacaoId);
+                    moradores.insereMoradoresBase(getPessoaNomeRegistro(), getPessoaNomeSocial(), getPessoaEmail(),cpf,rg,getHabitacaoId());
                     
                 break;
 
                 case "alterar":
-                    moradores.alteraMoradoresBase(moradoresMoradoresId, moradoresHabitacaoId);
+                    moradores.alteraMoradoresBase(getPessoaID(),getPessoaNomeRegistro(), getPessoaNomeSocial(), getPessoaEmail(), cpf, rg, getHabitacaoId());
 
                     break;
 
                 case "deletar":
-                    moradores.excluiMoradoresBase(moradoresMoradoresId, moradoresHabitacaoId);
+                    moradores.excluiMoradoresBase(getPessoaID());
 
                     break;
                 

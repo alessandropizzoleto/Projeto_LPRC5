@@ -12,7 +12,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using Projeto_LPRC5.Model.Classe;
 
-namespace Projeto_LPRC5
+namespace Projeto_LPRC5.Model.Conexão
 {
     class dbMoradores
     {
@@ -58,7 +58,7 @@ namespace Projeto_LPRC5
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataSet ds = new DataSet();
             classeMoradores moradoresTemp = new classeMoradores();
-
+          
             string sql = "SELECT p.pid, p.pnomeregistro, p.pnomesocial, p.pemail, pf.cpf, pf.rg , m.habitacao_id  FROM pessoa p JOIN pessoa_fisica pf ON p.pid = pf.pessoa_id JOIN moradores m ON p.pid = m.moradores_id WHERE p.pid = " + id + ";";
             adapter = con.retornaSQL(sql);
             adapter.Fill(ds);
@@ -70,10 +70,22 @@ namespace Projeto_LPRC5
             moradoresTemp.setPessoaEmail(ds.Tables[0].Rows[0][4].ToString());
             moradoresTemp.cpf = (ds.Tables[0].Rows[0][5].ToString());
             moradoresTemp.rg = (ds.Tables[0].Rows[0][6].ToString());
-            moradoresTemp.setHabitacaoId = Convert.ToInt32(ds.Tables[0].Rows[0][7].ToString());
+            moradoresTemp.setHabitacaoId(Convert.ToInt16(ds.Tables[0].Rows[0][7].ToString()));
             
 
             return moradoresTemp;
+        }
+
+        public DataTable selectMoradoresBase()
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable tabela = new DataTable();
+
+            string sql = "SELECT p.pid, p.pnomeregistro, p.pnomesocial, p.pemail, pf.cpf, pf.rg , m.habitacao_id  FROM pessoa p JOIN pessoa_fisica pf ON p.pid = pf.pessoa_id JOIN moradores m ON p.pid = m.moradores_id ;";
+            adapter = con.retornaSQL(sql);
+            adapter.Fill(tabela);
+
+            return tabela;
         }
     }
 }
