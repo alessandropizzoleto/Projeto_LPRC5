@@ -37,7 +37,8 @@ namespace Projeto_LPRC5
         }
 
         dbMoradores db_Moradores = new dbMoradores();
-        classeMoradores ClasseMoradores = new classeMoradores();
+        classeMoradores morad = new classeMoradores();
+        bool comando;
 
         private void carregaCmbox()
         {
@@ -109,17 +110,18 @@ namespace Projeto_LPRC5
         {
             comboxhabid.SelectedItem = null;
             txtnomemorad.Text = txtnomesocial.Text = mtxtcpfmorad.Text = mtxtrgmorad.Text = txtemail.Text = null;
+            morad.setPessoaID(-1);
         }
 
         private bool verificaDadosObrigatorios()
         {
             bool resultado = true;
 
-            // Descomentar a linha abaixo após a implementação das classe habitação (resposabilidade de outro grupo). 
-            /* if (cmbHabitacaoId.SelectedItem == null)
+            
+            if (comboxhabid.SelectedItem == null)
              {
                  resultado = false;
-             }*/
+             }
             if (txtnomemorad.Text.Length < 2)
             {
                 resultado = false;
@@ -144,13 +146,14 @@ namespace Projeto_LPRC5
             return resultado;
         }
 
-        private void insereMorador()
+        private void insereMoradores()
         {
             if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnnovomorad.Tag)) == true)
             {
                 habilitaBotoesMenu(false);
                 habilitaCamposDados(true);
                 limpaCamposDados();
+                
             }
             else
             {
@@ -158,31 +161,83 @@ namespace Projeto_LPRC5
             }
         }
 
-        private void alteraMorador()
+        private void alteraMoradores()
         {
-            MessageBox.Show("Não é possível alterar dados de moradores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnnovomorad.Tag)) == true)
+            {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+                limpaCamposDados();
+
+            }
+            else
+            {
+                MessageBox.Show("Não é possível alterar dados de moradores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
 
         }
 
-        private void excluiMorador()
+        private void excluiMoradores()
         {
-            MessageBox.Show("Não é possível excluir moradores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(this.Tag), Convert.ToInt16(barbtnexcluirmorad.Tag)) == true)
+            {
+
+                if (morad.getPessoaID() != 0)
+                {
+                habilitaBotoesMenu(false);
+                habilitaCamposDados(true);
+                limpaCamposDados();
+
+                morad.atualizaMoradores("excluir");
+
+                }
+            else
+            {
+                MessageBox.Show("Não é possível excluir moradores.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            }
+            else
+            {
+                MessageBox.Show("Usuário não tem permissão para realizar a Exclusão da Cor selecionada", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
-        private void salvaVisita()
+        private void salvaMoradores()
         {
             if (verificaDadosObrigatorios() == true)
             {
-               // ClasseMoradores.setPessoaNomeRegistro(txtnomemorad.Text.ToString());
-               //ClasseMoradores.setPessoaNomeSocial(txtnomesocial.Text.ToString());
-               // ClasseMoradores.setPessoaEmail(txtemail.Text.ToString());
-               // ClasseMoradores.cpf = mtxtcpfmorad.Text.ToString();
-               // ClasseMoradores.rg = mtxtrgmorad.Text.ToString();
-               // ClasseMoradores.setHabitacaoId(Convert.ToInt16(comboxhabid.Text.ToString()));
-               
 
-                db_Moradores.insereMoradoresBase(txtnomemorad.Text.ToString(), txtnomesocial.Text.ToString(), txtemail.Text.ToString(), mtxtcpfmorad.Text.ToString(), mtxtrgmorad.Text.ToString(), Convert.ToInt16(comboxhabid.Text.ToString()));
-                           
+                if (comando == true)
+                {
+                    morad.setPessoaNomeRegistro(txtnomemorad.Text.ToString());
+                    morad.setPessoaNomeSocial(txtnomesocial.Text.ToString());
+                    morad.setPessoaEmail(txtemail.Text.ToString());
+                    morad.cpf = mtxtcpfmorad.Text.ToString();
+                    morad.rg = mtxtrgmorad.Text.ToString();
+                    morad.setHabitacaoId(Convert.ToInt16(comboxhabid.Text.ToString()));
+
+
+                    // db_Moradores.insereMoradoresBase(morad);
+                    morad.atualizaMoradores("inserir");
+
+                    
+                }
+                else if (comando == false)
+                {
+
+                    morad.setPessoaNomeRegistro(txtnomemorad.Text.ToString());
+                    morad.setPessoaNomeSocial(txtnomesocial.Text.ToString());
+                    morad.setPessoaEmail(txtemail.Text.ToString());
+                    morad.cpf = mtxtcpfmorad.Text.ToString();
+                    morad.rg = mtxtrgmorad.Text.ToString();
+                    morad.setHabitacaoId(Convert.ToInt16(comboxhabid.Text.ToString()));
+
+                    //db_Moradores.alteraMoradoresBase(morad);
+                    morad.atualizaMoradores("atualizar");
+                }
 
                 habilitaBotoesMenu(true);
                 habilitaCamposDados(false);
@@ -201,38 +256,67 @@ namespace Projeto_LPRC5
             if (retorno == DialogResult.Yes)
             {
                 habilitaBotoesMenu(true);
+                habilitaCamposDados(false);
                 limpaCamposDados();
             }
         }
 
+        private void fechaMoradores()
+        {
+            this.Close();
+        }
+
         private void barbtnnovomorad_Click(object sender, EventArgs e)
         {
-            
+            insereMoradores();
+            comando = true;
         }
 
         private void barbtneditarmorad_Click(object sender, EventArgs e)
         {
-
+            alteraMoradores();
+            comando = false;
         }
 
         private void barbtnexcluirmorad_Click(object sender, EventArgs e)
         {
-
+            excluiMoradores();
         }
 
         private void barbtnsalvarmorad_Click(object sender, EventArgs e)
         {
-
+            salvaMoradores();
         }
 
         private void barbtncancelarmorad_Click(object sender, EventArgs e)
         {
-
+            cancelaMorador();
         }
 
         private void barbtnfecharmorad_Click(object sender, EventArgs e)
         {
+            fechaMoradores();
+        }
 
+        private void atualizaDadosControles()
+        {
+            db_Moradores.selectMoradoresBase(morad.getPessoaID());
+            txtnomemorad.Text = morad.getPessoaNomeRegistro();
+            txtnomesocial.Text = morad.getPessoaNomeSocial();
+            txtemail.Text = morad.getPessoaEmail();
+            mtxtcpfmorad.Text = morad.cpf;
+            mtxtrgmorad.Text = morad.rg;
+            comboxhabid.Text = morad.getHabitacaoId().ToString();
+
+        }
+        private void grddadosmorad_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            morad.setPessoaID(Convert.ToInt16(grddadosmorad.Rows[grddadosmorad.CurrentRow.Index].Cells[0].Value.ToString()));
+           db_Moradores.selectMoradoresBase();
+                   
+
+
+            atualizaDadosControles();
         }
     }
 }

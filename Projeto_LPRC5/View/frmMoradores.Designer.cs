@@ -71,7 +71,7 @@
             this.barbtnfecharmorad});
             this.barManutencao.Location = new System.Drawing.Point(2, 0);
             this.barManutencao.Name = "barManutencao";
-            this.barManutencao.Size = new System.Drawing.Size(259, 39);
+            this.barManutencao.Size = new System.Drawing.Size(228, 39);
             this.barManutencao.TabIndex = 1;
             this.barManutencao.Text = "toolStrip1";
             // 
@@ -306,6 +306,7 @@
             this.grddadosmorad.RowHeadersWidth = 51;
             this.grddadosmorad.Size = new System.Drawing.Size(364, 334);
             this.grddadosmorad.TabIndex = 2;
+            this.grddadosmorad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grddadosmorad_CellClick);
             // 
             // frmMoradores
             // 

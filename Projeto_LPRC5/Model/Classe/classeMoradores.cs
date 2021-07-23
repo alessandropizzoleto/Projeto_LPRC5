@@ -74,7 +74,7 @@ namespace Projeto_LPRC5.Model.Classe
         }
         public MySqlDataAdapter daRetornaMoradores()
         {
-            return moradores.selectMoradoresBase(moradores_id);
+            return moradores.selectMoradoresBase(getPessoaID());
         }
 
         public DataTable dtRetornaMoradores()
@@ -82,9 +82,9 @@ namespace Projeto_LPRC5.Model.Classe
             return moradores.selectMoradoresBase();
         }
 
-        public classeMoradores objRetornaMoradores()
+        public classeMoradores objRetornaMoradores(classeMoradores morad)
         {
-            return moradores.RetornaDadosObjeto(moradores_id);
+            return moradores.RetornaDadosObjeto(morad);
         }
 
     }

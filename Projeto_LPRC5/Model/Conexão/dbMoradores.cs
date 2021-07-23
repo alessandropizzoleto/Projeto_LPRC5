@@ -16,6 +16,7 @@ namespace Projeto_LPRC5.Model.Conexão
 {
     class dbMoradores
     {
+        private Int16 retorno;
         conexaoMySql con = new conexaoMySql();
 
         public void insereMoradoresBase(string nRegistro, string nSocial, string email, string cpf, string rg, Int16 habitacaoId)
@@ -28,6 +29,8 @@ namespace Projeto_LPRC5.Model.Conexão
 
             string sql3 = "INSERT INTO Moradores( morador_id habitacao_id) VALUES ((select max(pid) from pessoa) , " + habitacaoId + ");";
             con.executaSQL(sql3);
+
+           
         }
 
         public void alteraMoradoresBase(Int16 id, string nRegistro, string nSocial, string email, string cpf, string rg, Int16 habitacaoId)
@@ -100,5 +103,7 @@ namespace Projeto_LPRC5.Model.Conexão
 
             
         }
+
+       
     }
 }
