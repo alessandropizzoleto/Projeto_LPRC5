@@ -4,8 +4,8 @@
 //**Data de Criação:24/05/2021
 //**Instruções: get's e set's do objeto funcionario
 //
-//
-//****** Atualizações:
+//**Grupo 7: Guilherme A. Rissato, Caio Costa Braga, Roberto Marcheti Neto
+//****** Atualizações: 
 //*** Data:
 //*** Responsável:
 //****************************************************************************************
@@ -20,21 +20,22 @@ namespace Projeto_LPRC5
     class classeFuncionario
     {
         private int funcionarioId;
+        private int pessoaFisicaID;
         private string funcionarioNome;
         private string funcionarioSenha;
         private int funcionarioNivelId;
 
-        public classeFuncionario()
+        public void setPessoaFisicaID(int id)
         {
+            pessoaFisicaID = id;
+        }
 
-        }
-            public classeFuncionario(int funcionarioId, string funcionarioNome, string funcionarioSenha, int funcionarioNivelId)
+        public int getPessoaFisicaID()
         {
-            this.funcionarioId = funcionarioId;
-            this.funcionarioNome = funcionarioNome;
-            this.funcionarioSenha = funcionarioSenha;
-            this.funcionarioNivelId = funcionarioNivelId;
+            return pessoaFisicaID;
         }
+
+
 
         public void setFuncionarioId(int id) {
             funcionarioId = id;

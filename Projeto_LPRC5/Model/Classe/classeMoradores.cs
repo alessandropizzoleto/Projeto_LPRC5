@@ -72,6 +72,7 @@ namespace Projeto_LPRC5.Model.Classe
                     break;
             }
         }
+
         public MySqlDataAdapter daRetornaMoradores()
         {
             return moradores.selectMoradoresBase(getPessoaID());

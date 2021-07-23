@@ -111,7 +111,7 @@ namespace Projeto_LPRC5
             this.habitacao = habitacao;
         }
 
-        public int getComplemento()
+        public int getHabitacao()
         {
             return habitacao;
         }

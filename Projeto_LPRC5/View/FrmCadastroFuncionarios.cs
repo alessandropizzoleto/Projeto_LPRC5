@@ -4,7 +4,7 @@
 //**Instruções: Criação e configuração do formCadastroFuncionario".
 //
 //
-//****** Atualizações:
+//****** Atualizações: Montamos o banco de dados pedido pelo professor, os botoes e a classe como atividade final do semestre
 //*** Data:
 //*** Responsável:
 //*****************************************************************
@@ -22,6 +22,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql;
+
 
 namespace Projeto_LPRC5
 {
@@ -58,22 +60,17 @@ namespace Projeto_LPRC5
 
         public void atualizaDadosGrid()
         {
-
-
-
             dataGridView1.DataSource = db_CadastroFuncionarios.selectCadastroFuncionariosBase();
         }
 
         private void atualizaDadosControles()
         {
             CadastroFuncionarios = db_CadastroFuncionarios.RetornaDadosObjeto(CadastroFuncionarios);
-
-
         }
 
         private void habilitaBotoesMenu(bool hablitar)
         {
-            barbtnNovo.Enabled = hablitar;
+            barbtnnovofuncionario_click.Enabled = hablitar;
             barbtnEditar.Enabled = hablitar;
             barbtnExcluir.Enabled = hablitar;
             barbtnSalvar.Enabled = !hablitar;
@@ -102,10 +99,7 @@ namespace Projeto_LPRC5
 
         private void limpaCamposDados()
         {
-
-
             CadastroFuncionarios.Id = 0;
-
         }
 
         private bool verificaDadosObrigatorios()
@@ -158,7 +152,6 @@ namespace Projeto_LPRC5
                 if (retorno == DialogResult.Yes)
                 {
                     db_CadastroFuncionarios.excluiCadastroFuncionariosBase(CadastroFuncionarios);
-
                     limpaCamposDados();
                     atualizaDadosGrid();
                 }
@@ -176,7 +169,6 @@ namespace Projeto_LPRC5
 
               if (CadastroFuncionarios.Id == 0)
                 {
-                 
                     db_CadastroFuncionarios.insereCadastroFuncionariosBase(CadastroFuncionarios);
                 }
                 else
@@ -267,6 +259,11 @@ namespace Projeto_LPRC5
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void barbtnNovo_Click_1(object sender, EventArgs e)
         {
 
         }
