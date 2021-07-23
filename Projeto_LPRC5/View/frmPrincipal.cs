@@ -172,15 +172,17 @@ namespace Projeto_LPRC5
         private void mnuEncomendas_Click(object sender, EventArgs e)
         {
             frmEncomendas encomendas = new frmEncomendas();
-            if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(encomendas.Tag), 0) == true)
-            {
-                encomendas.MdiParent = this;
-                encomendas.Show();
-            }
-            else
-            {
-                MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Encomendas", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            encomendas.MdiParent = this;
+            encomendas.Show();
+            
+            ;// if (util.verificaPermissao(util.usuarioAtual, Convert.ToInt16(encomendas.Tag), 0) == true)
+            //{
+                
+            //}
+            //else
+           // {
+            //    MessageBox.Show("Usuário não tem permissão para realizar Manutenção em Encomendas", "Acesso Restrito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          // }
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -203,5 +205,7 @@ namespace Projeto_LPRC5
             empresa.MdiParent = this;
             empresa.Show();
         }
+
+       
     }
 }

@@ -41,19 +41,19 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDestinatario = new System.Windows.Forms.Label();
-            this.txtDestinatario = new System.Windows.Forms.TextBox();
             this.lblRecebida = new System.Windows.Forms.Label();
-            this.txtRecebida = new System.Windows.Forms.TextBox();
             this.lblDataEntrada = new System.Windows.Forms.Label();
             this.lblEntreguePor = new System.Windows.Forms.Label();
             this.txtEntreguePor = new System.Windows.Forms.TextBox();
             this.lblDataSaida = new System.Windows.Forms.Label();
             this.lblEntreguePara = new System.Windows.Forms.Label();
-            this.txtEntreguePara = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.msktxtDataEntrada = new System.Windows.Forms.MaskedTextBox();
             this.msktxtDataSaida = new System.Windows.Forms.MaskedTextBox();
+            this.cmbDestinatario = new System.Windows.Forms.ComboBox();
+            this.cmbFuncionario = new System.Windows.Forms.ComboBox();
+            this.cmbMoradorRecebeu = new System.Windows.Forms.ComboBox();
+            this.cmbHabitacao = new System.Windows.Forms.ComboBox();
             this.barManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDadosEncomenda)).BeginInit();
             this.SuspendLayout();
@@ -150,7 +150,7 @@
             this.grdDadosEncomenda.Name = "grdDadosEncomenda";
             this.grdDadosEncomenda.ReadOnly = true;
             this.grdDadosEncomenda.RowHeadersWidth = 51;
-            this.grdDadosEncomenda.Size = new System.Drawing.Size(240, 253);
+            this.grdDadosEncomenda.Size = new System.Drawing.Size(216, 188);
             this.grdDadosEncomenda.TabIndex = 1;
             this.grdDadosEncomenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosEncomenda_CellClick);
             this.grdDadosEncomenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDadosEncomenda_CellContentClick);
@@ -159,13 +159,13 @@
             // 
             this.txtBusca.Location = new System.Drawing.Point(13, 41);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(239, 26);
+            this.txtBusca.Size = new System.Drawing.Size(215, 26);
             this.txtBusca.TabIndex = 2;
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(269, 310);
+            this.lblDescricao.Location = new System.Drawing.Point(242, 222);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(73, 19);
             this.lblDescricao.TabIndex = 3;
@@ -173,47 +173,33 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(409, 303);
+            this.txtDescricao.Location = new System.Drawing.Point(400, 219);
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(347, 26);
+            this.txtDescricao.Size = new System.Drawing.Size(332, 26);
             this.txtDescricao.TabIndex = 4;
             // 
             // lblDestinatario
             // 
             this.lblDestinatario.AutoSize = true;
-            this.lblDestinatario.Location = new System.Drawing.Point(269, 44);
+            this.lblDestinatario.Location = new System.Drawing.Point(242, 41);
             this.lblDestinatario.Name = "lblDestinatario";
             this.lblDestinatario.Size = new System.Drawing.Size(84, 19);
             this.lblDestinatario.TabIndex = 5;
             this.lblDestinatario.Text = "Destinatário:";
             // 
-            // txtDestinatario
-            // 
-            this.txtDestinatario.Location = new System.Drawing.Point(408, 37);
-            this.txtDestinatario.Name = "txtDestinatario";
-            this.txtDestinatario.Size = new System.Drawing.Size(347, 26);
-            this.txtDestinatario.TabIndex = 6;
-            // 
             // lblRecebida
             // 
             this.lblRecebida.AutoSize = true;
-            this.lblRecebida.Location = new System.Drawing.Point(269, 91);
+            this.lblRecebida.Location = new System.Drawing.Point(523, 40);
             this.lblRecebida.Name = "lblRecebida";
             this.lblRecebida.Size = new System.Drawing.Size(95, 19);
             this.lblRecebida.TabIndex = 7;
             this.lblRecebida.Text = "Recebida Por:";
             // 
-            // txtRecebida
-            // 
-            this.txtRecebida.Location = new System.Drawing.Point(407, 84);
-            this.txtRecebida.Name = "txtRecebida";
-            this.txtRecebida.Size = new System.Drawing.Size(347, 26);
-            this.txtRecebida.TabIndex = 8;
-            // 
             // lblDataEntrada
             // 
             this.lblDataEntrada.AutoSize = true;
-            this.lblDataEntrada.Location = new System.Drawing.Point(269, 132);
+            this.lblDataEntrada.Location = new System.Drawing.Point(242, 86);
             this.lblDataEntrada.Name = "lblDataEntrada";
             this.lblDataEntrada.Size = new System.Drawing.Size(111, 19);
             this.lblDataEntrada.TabIndex = 9;
@@ -222,23 +208,23 @@
             // lblEntreguePor
             // 
             this.lblEntreguePor.AutoSize = true;
-            this.lblEntreguePor.Location = new System.Drawing.Point(269, 182);
+            this.lblEntreguePor.Location = new System.Drawing.Point(242, 132);
             this.lblEntreguePor.Name = "lblEntreguePor";
-            this.lblEntreguePor.Size = new System.Drawing.Size(91, 19);
+            this.lblEntreguePor.Size = new System.Drawing.Size(149, 19);
             this.lblEntreguePor.TabIndex = 11;
-            this.lblEntreguePor.Text = "Entregue Por:";
+            this.lblEntreguePor.Text = "Entregue pela empresa:";
             // 
             // txtEntreguePor
             // 
-            this.txtEntreguePor.Location = new System.Drawing.Point(407, 175);
+            this.txtEntreguePor.Location = new System.Drawing.Point(400, 129);
             this.txtEntreguePor.Name = "txtEntreguePor";
-            this.txtEntreguePor.Size = new System.Drawing.Size(348, 26);
+            this.txtEntreguePor.Size = new System.Drawing.Size(332, 26);
             this.txtEntreguePor.TabIndex = 12;
             // 
             // lblDataSaida
             // 
             this.lblDataSaida.AutoSize = true;
-            this.lblDataSaida.Location = new System.Drawing.Point(545, 132);
+            this.lblDataSaida.Location = new System.Drawing.Point(516, 86);
             this.lblDataSaida.Name = "lblDataSaida";
             this.lblDataSaida.Size = new System.Drawing.Size(102, 19);
             this.lblDataSaida.TabIndex = 13;
@@ -247,71 +233,89 @@
             // lblEntreguePara
             // 
             this.lblEntreguePara.AutoSize = true;
-            this.lblEntreguePara.Location = new System.Drawing.Point(270, 223);
+            this.lblEntreguePara.Location = new System.Drawing.Point(242, 173);
             this.lblEntreguePara.Name = "lblEntreguePara";
             this.lblEntreguePara.Size = new System.Drawing.Size(97, 19);
             this.lblEntreguePara.TabIndex = 15;
             this.lblEntreguePara.Text = "Entregue Para:";
             // 
-            // txtEntreguePara
-            // 
-            this.txtEntreguePara.Location = new System.Drawing.Point(408, 216);
-            this.txtEntreguePara.Name = "txtEntreguePara";
-            this.txtEntreguePara.Size = new System.Drawing.Size(347, 26);
-            this.txtEntreguePara.TabIndex = 16;
-            // 
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(269, 268);
+            this.lblComplemento.Location = new System.Drawing.Point(529, 177);
             this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(97, 19);
+            this.lblComplemento.Size = new System.Drawing.Size(74, 19);
             this.lblComplemento.TabIndex = 17;
-            this.lblComplemento.Text = "Complemento:";
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(408, 261);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(347, 26);
-            this.txtComplemento.TabIndex = 18;
+            this.lblComplemento.Text = "Habitação:";
             // 
             // msktxtDataEntrada
             // 
-            this.msktxtDataEntrada.Location = new System.Drawing.Point(409, 129);
+            this.msktxtDataEntrada.Location = new System.Drawing.Point(400, 83);
             this.msktxtDataEntrada.Mask = "00/00/0000";
             this.msktxtDataEntrada.Name = "msktxtDataEntrada";
-            this.msktxtDataEntrada.Size = new System.Drawing.Size(100, 26);
+            this.msktxtDataEntrada.Size = new System.Drawing.Size(118, 26);
             this.msktxtDataEntrada.TabIndex = 19;
             this.msktxtDataEntrada.ValidatingType = typeof(System.DateTime);
             // 
             // msktxtDataSaida
             // 
-            this.msktxtDataSaida.Location = new System.Drawing.Point(653, 129);
+            this.msktxtDataSaida.Location = new System.Drawing.Point(616, 83);
             this.msktxtDataSaida.Mask = "00/00/0000";
             this.msktxtDataSaida.Name = "msktxtDataSaida";
-            this.msktxtDataSaida.Size = new System.Drawing.Size(100, 26);
+            this.msktxtDataSaida.Size = new System.Drawing.Size(116, 26);
             this.msktxtDataSaida.TabIndex = 20;
             this.msktxtDataSaida.ValidatingType = typeof(System.DateTime);
+            // 
+            // cmbDestinatario
+            // 
+            this.cmbDestinatario.FormattingEnabled = true;
+            this.cmbDestinatario.Location = new System.Drawing.Point(400, 38);
+            this.cmbDestinatario.Name = "cmbDestinatario";
+            this.cmbDestinatario.Size = new System.Drawing.Size(117, 27);
+            this.cmbDestinatario.TabIndex = 21;
+            // 
+            // cmbFuncionario
+            // 
+            this.cmbFuncionario.FormattingEnabled = true;
+            this.cmbFuncionario.Location = new System.Drawing.Point(616, 32);
+            this.cmbFuncionario.Name = "cmbFuncionario";
+            this.cmbFuncionario.Size = new System.Drawing.Size(116, 27);
+            this.cmbFuncionario.TabIndex = 22;
+            // 
+            // cmbMoradorRecebeu
+            // 
+            this.cmbMoradorRecebeu.FormattingEnabled = true;
+            this.cmbMoradorRecebeu.Location = new System.Drawing.Point(400, 174);
+            this.cmbMoradorRecebeu.Name = "cmbMoradorRecebeu";
+            this.cmbMoradorRecebeu.Size = new System.Drawing.Size(117, 27);
+            this.cmbMoradorRecebeu.TabIndex = 23;
+            // 
+            // cmbHabitacao
+            // 
+            this.cmbHabitacao.FormattingEnabled = true;
+            this.cmbHabitacao.Location = new System.Drawing.Point(615, 173);
+            this.cmbHabitacao.Name = "cmbHabitacao";
+            this.cmbHabitacao.Size = new System.Drawing.Size(117, 27);
+            this.cmbHabitacao.TabIndex = 24;
             // 
             // frmEncomendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 351);
+            this.ClientSize = new System.Drawing.Size(752, 285);
+            this.Controls.Add(this.cmbHabitacao);
+            this.Controls.Add(this.cmbMoradorRecebeu);
+            this.Controls.Add(this.cmbFuncionario);
+            this.Controls.Add(this.cmbDestinatario);
             this.Controls.Add(this.msktxtDataSaida);
             this.Controls.Add(this.msktxtDataEntrada);
-            this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.lblComplemento);
-            this.Controls.Add(this.txtEntreguePara);
             this.Controls.Add(this.lblEntreguePara);
             this.Controls.Add(this.lblDataSaida);
             this.Controls.Add(this.txtEntreguePor);
             this.Controls.Add(this.lblEntreguePor);
             this.Controls.Add(this.lblDataEntrada);
-            this.Controls.Add(this.txtRecebida);
             this.Controls.Add(this.lblRecebida);
-            this.Controls.Add(this.txtDestinatario);
             this.Controls.Add(this.lblDestinatario);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.lblDescricao);
@@ -346,18 +350,18 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDestinatario;
-        private System.Windows.Forms.TextBox txtDestinatario;
         private System.Windows.Forms.Label lblRecebida;
-        private System.Windows.Forms.TextBox txtRecebida;
         private System.Windows.Forms.Label lblDataEntrada;
         private System.Windows.Forms.Label lblEntreguePor;
         private System.Windows.Forms.TextBox txtEntreguePor;
         private System.Windows.Forms.Label lblDataSaida;
         private System.Windows.Forms.Label lblEntreguePara;
-        private System.Windows.Forms.TextBox txtEntreguePara;
         private System.Windows.Forms.Label lblComplemento;
-        private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.MaskedTextBox msktxtDataEntrada;
         private System.Windows.Forms.MaskedTextBox msktxtDataSaida;
+        private System.Windows.Forms.ComboBox cmbDestinatario;
+        private System.Windows.Forms.ComboBox cmbFuncionario;
+        private System.Windows.Forms.ComboBox cmbMoradorRecebeu;
+        private System.Windows.Forms.ComboBox cmbHabitacao;
     }
 }
