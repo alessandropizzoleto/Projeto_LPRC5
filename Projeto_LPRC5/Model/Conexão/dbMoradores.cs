@@ -87,5 +87,18 @@ namespace Projeto_LPRC5.Model.Conexão
 
             return tabela;
         }
+
+        public MySqlDataReader SelectComboBox()
+        {
+            MySqlConnection conn = new MySqlConnection("server=localhost;uid=root;database=dbcondominio;pwd=");
+            conn.Open();
+            MySqlCommand sql = new MySqlCommand("SELECT habitacao_id FROM habitacao;", conn);
+            MySqlDataReader reader;
+            reader = sql.ExecuteReader();
+
+            return reader;
+
+            
+        }
     }
 }
