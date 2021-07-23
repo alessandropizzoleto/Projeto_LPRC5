@@ -1,12 +1,90 @@
-﻿using System;
+﻿//****************************************************************************************
+//**Criado por: Alexandro Junior, Caique Bruno e Guilherme Beig
+//**Data de Criação: 22/07/2021
+//**Instruções: Criação da classe Moradores completa
+//****************************************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using MySql.Data.MySqlClient;
+using Projeto_LPRC5.Model;
 
-namespace Projeto_LPRC5.Grupo_6.Moradores
+
+
+namespace Projeto_LPRC5
 {
-    class classeMoradores
+    class classeMoradores : classePessoaFisica
     {
+        dbMoradores moradores = new dbMoradores();
+        private Int16 moradores_id;
+        private Int16 habitacao_id;
+        
+        classeMoradores()
+        {
+        
+        }
+        public Int16 getMoradoresId()
+        {
+            return moradores_id;
+        }
+
+        public void setMoradoresId(Int16 MoradoresId) 
+        {
+
+            moradores_id = MoradoresId;
+
+        }
+
+        public Int16 getHabitacaoId()
+        {
+            return habitacao_id;
+        }
+
+        public void setHabitacaoId(Int16 HabitacaoId)
+        {
+            habitacao_id = HabitacaoId;
+        }
+
+        public virtual void atualizaMoradores(string operacao)
+        {
+            switch (operacao)
+            {
+                case "inserir":
+                    moradores.insereMoradoresBase(moradoresMoradoresId, moradoresHabitacaoId);
+                    
+                break;
+
+                case "alterar":
+                    moradores.alteraMoradoresBase(moradoresMoradoresId, moradoresHabitacaoId);
+
+                    break;
+
+                case "deletar":
+                    moradores.excluiMoradoresBase(moradoresMoradoresId, moradoresHabitacaoId);
+
+                    break;
+                
+                default:
+                    break;
+            }
+        }
+        public MySqlDataAdapter daRetornaMoradores()
+        {
+            return moradores.selectMoradoresBase(moradores_id);
+        }
+
+        public DataTable dtRetornaMoradores()
+        {
+            return moradores.selectMoradoresBase();
+        }
+
+        public classeMoradores objRetornaMoradores()
+        {
+            return moradores.RetornaDadosObjeto(moradores_id);
+        }
+
     }
 }

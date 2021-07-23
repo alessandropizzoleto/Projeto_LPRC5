@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="barbtnNovoMorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="barbtnnovomorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACDcSURBVHhe7d0J1G1nXd9xyM0MmZgDBEhCGEyCTIpAEEII
@@ -267,7 +267,7 @@
         JEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEkaqJvd7P8CDit/rAT+KYoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="barbtnEditarMorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="barbtneditarmorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACuXSURBVHhe7d0LuC51WffxvWHDRtjESQlFBElEVBDceoFl
@@ -459,7 +459,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAADatGTJ/we97ntIEAQsEgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="barbtnExcluirMorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="barbtnexcluirmorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACkzSURBVHhe7d17zKZ5fdfxHU67zCws2O7OVEpjGajaA9pC
@@ -641,7 +641,7 @@
         1daCtibwV/6iXHXV/wO69rHwD7YKlgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="barbtnSalvarMorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="barbtnsalvarmorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACZwSURBVHhe7d1f7O3pVdfx6Yz2YmYQE20CWBGDiSGd1AsS
@@ -811,7 +811,7 @@
         ktdu34F9F/ad2Hdj35F9V/ad2Xfngdx11/8HS7uwJJKu8MIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="barbtnCancelarMorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="barbtncancelarmorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAD2ESURBVHhe7d1nmCVVvbbxJudkQnJQMoqKIBIEFFQMRyVK
@@ -1080,7 +1080,7 @@
         MraxAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="barbtnFecharMorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="barbtnfecharmorad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACH7SURBVHhe7d0LsK1nXd/xkwsJF7lDIqB4K1IBcSze64yC

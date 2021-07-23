@@ -57,5 +57,10 @@ namespace Projeto_LPRC5
         {
 
         }
+
+        private void mtxtCPFMorad_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
