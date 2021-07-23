@@ -18,6 +18,11 @@ namespace Projeto_LPRC5.Model.Conexão
     {
         conexaoMySql connect = new conexaoMySql();
 
+        public void insereVeiculo(string placa)
+        {
+            string sql = "INSERT INTO veiculo_visitante(visita_id, veiculo_id) values((select max(visita_id) from visitantes), (select id_veiculo from veiculopessoa where placaveiculo = '" + placa + "'));";
+            connect.executaSQL(sql);
+        }
 
         public void insereVisitante(classeVisitantes visitante)
         {

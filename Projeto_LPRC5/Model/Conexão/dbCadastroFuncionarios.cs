@@ -11,30 +11,30 @@ namespace Projeto_LPRC5
     class dbCadastroFuncionarios
     {
         conexaoMySql connect = new conexaoMySql();
-        public void insereCadastroFuncionariosBase(classeCadastroFuncionarios CF)
+        public void insereCadastroFuncionariosBase(ClasseCadastroFuncionarios CF)
         {
             
         }
-        public void alteraCadastroFuncionariosBase(classeCadastroFuncionarios CF)
+        public void alteraCadastroFuncionariosBase(ClasseCadastroFuncionarios CF)
         {
             
         }
-        public void excluiCadastroFuncionariosBase(classeCadastroFuncionarios CF)
+        public void excluiCadastroFuncionariosBase(ClasseCadastroFuncionarios CF)
         {
           
         }
 
-        public MySqlDataAdapter selectCadastroFuncionariosBase(classeCadastroFuncionarios CF)
+        public MySqlDataAdapter selectCadastroFuncionariosBase(ClasseCadastroFuncionarios CF)
         {
            
             return null;
         }
 
-        public classeCadastroFuncionarios RetornaDadosObjeto(classeCadastroFuncionarios CF)
+        public ClasseCadastroFuncionarios RetornaDadosObjeto(ClasseCadastroFuncionarios CF)
         {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataSet ds = new DataSet();
-            classeCadastroFuncionarios CFTemp = new classeCadastroFuncionarios();
+            ClasseCadastroFuncionarios CFTemp = new ClasseCadastroFuncionarios();
 
 
             adapter.Fill(ds);
