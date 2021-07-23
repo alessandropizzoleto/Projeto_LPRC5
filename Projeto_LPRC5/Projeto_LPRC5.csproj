@@ -311,12 +311,6 @@
     <Compile Include="View\frmTipoUsuario.Designer.cs">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmVisitantePrestador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmVisitantePrestador.Designer.cs">
-      <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Classe\classeMoradores.cs" />
     <Compile Include="Model\Conexão\dbMoradores.cs" />
     <Compile Include="View\frmMoradores.cs">
@@ -412,9 +406,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmTipoUsuario.resx">
       <DependentUpon>frmTipoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\frmVisitantePrestador.resx">
-      <DependentUpon>frmVisitantePrestador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmMoradores.resx">
       <DependentUpon>frmMoradores.cs</DependentUpon>
