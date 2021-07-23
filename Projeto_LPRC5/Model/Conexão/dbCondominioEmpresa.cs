@@ -40,13 +40,13 @@ namespace Projeto_LPRC5.Model.Conexão {
         //Cria a instrução SQL para Delete de dados na base de dados
         public void excluiCondominioEmpresaBase(classeCondominioEmpresa condominioEmpresa) {
             string sql = $"DELETE FROM pessoa_juridica WHERE CNPJ = '{condominioEmpresa.ceCNPJ}' LIMITE 1";
-            sql = $"DELETE FROM condominioEmpresa WHERE condominioEmpresa.Id = '{condominioEmpresa.ceId}' LIMIT 1";
+            sql = $"DELETE FROM condominio_empresa WHERE condominio_empresa.Id = '{condominioEmpresa.ceId}' LIMIT 1";
             connect.executaSQL(sql);
         }
 
         //Cria a instrução SQL para Retornar dados da Base de Dados
         public MySqlDataAdapter selectCondominioEmpresaBase(classeCondominioEmpresa condominioEmpresa) {
-            string sql = $"SELECT * FROM condominioEmpresa c INNER JOIN pessoa_juridica pj on c.P_Juridica_ID WHERE ceId = '{condominioEmpresa.ceId}'";
+            string sql = $"SELECT * FROM condominio_empresa c INNER JOIN pessoa_juridica pj on c.P_Juridica_ID = pj.P_Juridica_ID WHERE ceId = '{condominioEmpresa.ceId}';";
             return connect.retornaSQL(sql);
         }
 
@@ -55,7 +55,7 @@ namespace Projeto_LPRC5.Model.Conexão {
             DataSet ds = new DataSet();
             classeCondominioEmpresa condominioEmpresaTemp = new classeCondominioEmpresa();
 
-            string sql = $"SELECT ceId, ceNome, ceLocalizacao, ceTipo FROM condominioEmpresa WHERE ceId = '{condominioEmpresa.ceId}'";
+            string sql = $"SELECT * FROM condominio_empresa c INNER JOIN pessoa_juridica pj on c.P_Juridica_ID = pj.P_Juridica_ID WHERE ceId = '{condominioEmpresa.ceId}';";
             adapter = connect.retornaSQL(sql);
             adapter.Fill(ds);
 
@@ -69,7 +69,7 @@ namespace Projeto_LPRC5.Model.Conexão {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable tabela = new DataTable();
 
-            string sql = "SELECT ceId, ceNome, ceLocalizacao, ceTipo FROM condominioEmpresa;";
+            string sql = $"SELECT * FROM condominio_empresa c INNER JOIN pessoa_juridica pj on c.P_Juridica_ID = pj.P_juridica_ID;";
             adapter = connect.retornaSQL(sql);
             adapter.Fill(tabela);
 

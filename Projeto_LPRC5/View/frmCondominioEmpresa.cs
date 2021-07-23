@@ -36,15 +36,32 @@ namespace Projeto_LPRC5
             //Opção para selecionar a linha inteira do grid
             grdDadosCid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            grdDadosCid.Columns[0].HeaderText = "Código";
+            grdDadosCid.Columns[0].HeaderText = "CódigoCondEmp";
             grdDadosCid.Columns[1].HeaderText = "Nome";
-            grdDadosCid.Columns[2].HeaderText = "Localização";
-            grdDadosCid.Columns[3].HeaderText = "Tipo";
+            grdDadosCid.Columns[2].HeaderText = "ID_PJ";
+            grdDadosCid.Columns[3].HeaderText = "CEP";
+            grdDadosCid.Columns[4].HeaderText = "Síndico";
+            grdDadosCid.Columns[5].HeaderText = "Tipo de Habitação";
+            grdDadosCid.Columns[6].HeaderText = "Tipo de Condominio";
+            grdDadosCid.Columns[7].HeaderText = "Contato";
+            grdDadosCid.Columns[8].HeaderText = "ID_PJ2";
+            grdDadosCid.Columns[9].HeaderText = "Insc. Estadual";
+            grdDadosCid.Columns[10].HeaderText = "Insc. Municipal";
+            grdDadosCid.Columns[11].HeaderText = "CNPJ";
 
             grdDadosCid.Columns[0].Width = 0;
             grdDadosCid.Columns[1].Width = 120;
             grdDadosCid.Columns[2].Width = 0;
-            grdDadosCid.Columns[3].Width = 20;
+            grdDadosCid.Columns[3].Width = 30;
+            grdDadosCid.Columns[4].Width = 80;
+            grdDadosCid.Columns[5].Width = 80;
+            grdDadosCid.Columns[6].Width = 80;
+            grdDadosCid.Columns[7].Width = 80;
+            grdDadosCid.Columns[8].Width = 0;
+            grdDadosCid.Columns[9].Width = 100;
+            grdDadosCid.Columns[10].Width = 100;
+            grdDadosCid.Columns[11].Width = 80;
+
 
         }
 
@@ -65,7 +82,13 @@ namespace Projeto_LPRC5
 
             txtNomeCE.Text = condominioEmpresa.ceNome;
             txtCEP.Text = condominioEmpresa.ceCEP;
-            txtTipoHabitacao.Text = condominioEmpresa.ceTipoHabitacao;
+            TxtTipoHabitacao.Text = condominioEmpresa.ceTipoHabitacao;
+            TxtTipoCondominio.Text = condominioEmpresa.ceTipoCondominio;
+            txtCEP.Text = condominioEmpresa.ceCEP;
+            TxtContato.Text = condominioEmpresa.ceContato;
+            TxtCNPJ.Text = Convert.ToString(condominioEmpresa.ceCNPJ);
+            TxtSindico.Text = condominioEmpresa.ceSindico;
+
         }
 
         private void habilitaBotoesMenu(bool hablitar)
@@ -83,7 +106,11 @@ namespace Projeto_LPRC5
             txtBusca.Enabled = !habilitar;
             txtNomeCE.Enabled = habilitar;
             txtCEP.Enabled = habilitar;
-            txtTipoHabitacao.Enabled = habilitar;
+            TxtTipoHabitacao.Enabled = habilitar;
+            TxtTipoCondominio.Enabled = habilitar;
+            TxtContato.Enabled = habilitar;
+            TxtCNPJ.Enabled = habilitar;
+            TxtSindico.Enabled = habilitar;
             grdDadosCid.Enabled = !habilitar;
         }
 
@@ -91,7 +118,11 @@ namespace Projeto_LPRC5
         {
             txtNomeCE.Text = "";
             txtCEP.Text = "";
-            txtTipoHabitacao.Text = "";
+            TxtTipoHabitacao.Text = "";
+            TxtTipoCondominio.Text = "";
+            TxtContato.Text = "";
+            TxtCNPJ.Text = "";
+            TxtSindico.Text = "";
 
             condominioEmpresa.ceId = -1;
             //padrao.setNome("");
@@ -101,7 +132,7 @@ namespace Projeto_LPRC5
         {
             bool resultado = true;
 
-            if (txtNomeCE.Text.Trim().Length < 2 || txtCEP.Text.Trim().Length < 4 || txtTipoHabitacao.Text.Trim().Length < 1)
+            if (txtNomeCE.Text == string.Empty || txtCEP.Text == string.Empty || TxtTipoHabitacao.Text == string.Empty || TxtTipoCondominio.Text == string.Empty || TxtCNPJ.Text == string.Empty || TxtContato.Text == string.Empty)
             {
                 resultado = false;
             }
@@ -150,22 +181,20 @@ namespace Projeto_LPRC5
                 //Atualizando os dados do objeto estado.
                 condominioEmpresa.ceNome = txtNomeCE.Text;
                 condominioEmpresa.ceCEP = txtCEP.Text;
-                condominioEmpresa.ceTipoHabitacao = txtTipoHabitacao.Text;
+                condominioEmpresa.ceTipoHabitacao = TxtTipoHabitacao.Text;
+                condominioEmpresa.ceTipoCondominio = TxtTipoCondominio.Text;
+                condominioEmpresa.ceCNPJ = TxtCNPJ.Text;
+                condominioEmpresa.ceContato = txtCEP.Text;
+                condominioEmpresa.ceSindico = TxtSindico.Text;
 
                 if (condominioEmpresa.ceId == -1)
                 {
                     //Insere os dados
-                    condominioEmpresa.ceNome = txtNomeCE.Text;
-                    condominioEmpresa.ceCEP = txtCEP.Text;
-                    condominioEmpresa.ceTipoHabitacao = txtTipoHabitacao.Text;
                     dbCondominioEmpresa.insereCondominioEmpresaBase(condominioEmpresa);
                 }
                 else
                 {
                     //Altera os dados
-                    condominioEmpresa.ceNome = txtNomeCE.Text;
-                    condominioEmpresa.ceCEP = txtCEP.Text;
-                    condominioEmpresa.ceTipoHabitacao = txtTipoHabitacao.Text;
                     dbCondominioEmpresa.alteraCondominioEmpresaBase(condominioEmpresa);
                 }
                 habilitaBotoesMenu(true);
